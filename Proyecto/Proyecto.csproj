@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{217738A1-CC1D-4A59-BB48-84FDD9C3B47A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proyecto</RootNamespace>
+    <AssemblyName>Proyecto</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="interfaces\css\reset.css" />
+    <Content Include="interfaces\css\styles.css" />
+    <Content Include="interfaces\Documentation\assets\960.css" />
+    <Content Include="interfaces\Documentation\assets\960_24_col.css" />
+    <Content Include="interfaces\Documentation\assets\html_footer.png" />
+    <Content Include="interfaces\Documentation\assets\html_logo.png" />
+    <Content Include="interfaces\Documentation\assets\html_rotator.png" />
+    <Content Include="interfaces\Documentation\assets\html_structure.png" />
+    <Content Include="interfaces\Documentation\assets\html_title.png" />
+    <Content Include="interfaces\Documentation\assets\php_config.png" />
+    <Content Include="interfaces\Documentation\assets\reset.css" />
+    <Content Include="interfaces\Documentation\assets\styles.css" />
+    <Content Include="interfaces\Documentation\assets\text.css" />
+    <Content Include="interfaces\Documentation\README.html" />
+    <Content Include="interfaces\images\223x112.gif" />
+    <Content Include="interfaces\images\600x300.gif" />
+    <Content Include="interfaces\images\610x150.gif" />
+    <Content Include="interfaces\images\agenda.jpg" />
+    <Content Include="interfaces\images\alert-overlay.png" />
+    <Content Include="interfaces\images\Art_Artdesigner.lv.png" />
+    <Content Include="interfaces\images\audifonos.jpg" />
+    <Content Include="interfaces\images\auto.jpg" />
+    <Content Include="interfaces\images\banner.jpg" />
+    <Content Include="interfaces\images\bg.jpg" />
+    <Content Include="interfaces\images\bg.png" />
+    <Content Include="interfaces\images\Blog_Artdesigner.lv.png" />
+    <Content Include="interfaces\images\camarasony.jpg" />
+    <Content Include="interfaces\images\camarasonyDSCH5.jpg" />
+    <Content Include="interfaces\images\card1.jpg" />
+    <Content Include="interfaces\images\card2.jpg" />
+    <Content Include="interfaces\images\card3.jpg" />
+    <Content Include="interfaces\images\card4.jpg" />
+    <Content Include="interfaces\images\carroCompras.png" />
+    <Content Include="interfaces\images\celular.jpg" />
+    <Content Include="interfaces\images\computadora.jpg" />
+    <Content Include="interfaces\images\computadora1.jpg" />
+    <Content Include="interfaces\images\computadora2.jpg" />
+    <Content Include="interfaces\images\computadora3.jpg" />
+    <Content Include="interfaces\images\computadora4.jpg" />
+    <Content Include="interfaces\images\control.jpg" />
+    <Content Include="interfaces\images\converse.jpg" />
+    <Content Include="interfaces\images\delicious.png" />
+    <Content Include="interfaces\images\facebook.png" />
+    <Content Include="interfaces\images\flickr.png" />
+    <Content Include="interfaces\images\gravatar.png" />
+    <Content Include="interfaces\images\guitar.jpg" />
+    <Content Include="interfaces\images\hungry_bird.png" />
+    <Content Include="interfaces\images\impresoraCannon.PNG" />
+    <Content Include="interfaces\images\info.png" />
+    <Content Include="interfaces\images\link_bg.png" />
+    <Content Include="interfaces\images\link_bg_hover.png" />
+    <Content Include="interfaces\images\link_border.png" />
+    <Content Include="interfaces\images\log--o.jpg" />
+    <Content Include="interfaces\images\machala.jpg" />
+    <Content Include="interfaces\images\modem.jpg" />
+    <Content Include="interfaces\images\palancaXbox.jpg" />
+    <Content Include="interfaces\images\pendrive.jpg" />
+    <Content Include="interfaces\images\perro.jpg" />
+    <Content Include="interfaces\images\play3.jpg" />
+    <Content Include="interfaces\images\play4.jpg" />
+    <Content Include="interfaces\images\portatil.jpg" />
+    <Content Include="interfaces\images\search.png" />
+    <Content Include="interfaces\images\stumbleupon.png" />
+    <Content Include="interfaces\images\tomyPerf.jpg" />
+    <Content Include="interfaces\images\triangle.gif" />
+    <Content Include="interfaces\images\twitter.png" />
+    <Content Include="interfaces\js\contact.js" />
+    <Content Include="interfaces\js\DD_belatedPNG_0.0.8a-min.js" />
+    <Content Include="interfaces\js\jquery.easing.1.3.js" />
+    <Content Include="interfaces\js\jquery.roundabout-1.0.min.js" />
+    <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
+    <Content Include="interfaces\negociacion.aspx" />
+    <Content Include="interfaces\productos.aspx" />
+    <Content Include="interfaces\producto.aspx" />
+    <Content Include="interfaces\publicar.aspx" />
+    <Content Include="interfaces\usuario.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="interfaces\index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="interfaces\negociacion.aspx.cs">
+      <DependentUpon>negociacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\negociacion.aspx.designer.cs">
+      <DependentUpon>negociacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\productos.aspx.cs">
+      <DependentUpon>productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\productos.aspx.designer.cs">
+      <DependentUpon>productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\producto.aspx.cs">
+      <DependentUpon>producto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\producto.aspx.designer.cs">
+      <DependentUpon>producto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\publicar.aspx.cs">
+      <DependentUpon>publicar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\publicar.aspx.designer.cs">
+      <DependentUpon>publicar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\usuario.aspx.cs">
+      <DependentUpon>usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\usuario.aspx.designer.cs">
+      <DependentUpon>usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="interfaces\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="interfaces\Principal.Master" />
+    <Content Include="interfaces\images\Thumbs.db" />
+    <Content Include="interfaces\psd\Blog_Preview.psd" />
+    <Content Include="interfaces\psd\Image_Rotator_Item.psd" />
+    <Content Include="interfaces\psd\Portfolio_Item.psd" />
+    <Content Include="interfaces\psd\Thumbs.db" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:37040/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
