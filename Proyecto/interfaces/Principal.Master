@@ -37,8 +37,8 @@
 		
 		<!-- Navigation Menu -->
 		<ul id="navigation" class="grid_8">
-			<li><a href="usuario.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
-			<li><a href="#"><span class="meta">Registrate¡</span><br />Registro</a></li>
+			<li><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
+			<li><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
 			<li><a href="productos.aspx"><span class="meta">Productos</span><br />Publicaciones</a></li>
 			<li><a href="#"><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
 			<li><a href="index.aspx" class="current"><span class="meta">Pagina inicial</span><br />Inicio</a></li>

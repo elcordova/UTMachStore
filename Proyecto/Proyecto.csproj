@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="interfaces\compra.aspx" />
+    <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
     <Content Include="interfaces\Documentation\assets\960.css" />
@@ -110,6 +112,7 @@
     <Content Include="interfaces\images\link_bg_hover.png" />
     <Content Include="interfaces\images\link_border.png" />
     <Content Include="interfaces\images\log--o.jpg" />
+    <Content Include="interfaces\images\log.png" />
     <Content Include="interfaces\images\machala.jpg" />
     <Content Include="interfaces\images\modem.jpg" />
     <Content Include="interfaces\images\palancaXbox.jpg" />
@@ -118,25 +121,50 @@
     <Content Include="interfaces\images\play3.jpg" />
     <Content Include="interfaces\images\play4.jpg" />
     <Content Include="interfaces\images\portatil.jpg" />
+    <Content Include="interfaces\images\registro1.png" />
     <Content Include="interfaces\images\search.png" />
+    <Content Include="interfaces\images\SolicitudU.png" />
     <Content Include="interfaces\images\stumbleupon.png" />
     <Content Include="interfaces\images\tomyPerf.jpg" />
     <Content Include="interfaces\images\triangle.gif" />
     <Content Include="interfaces\images\twitter.png" />
+    <Content Include="interfaces\index.aspx" />
     <Content Include="interfaces\js\contact.js" />
     <Content Include="interfaces\js\DD_belatedPNG_0.0.8a-min.js" />
     <Content Include="interfaces\js\jquery.easing.1.3.js" />
     <Content Include="interfaces\js\jquery.roundabout-1.0.min.js" />
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
+    <Content Include="interfaces\log.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
-    <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\producto.aspx" />
+    <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\publicar.aspx" />
+    <Content Include="interfaces\Registro.aspx" />
     <Content Include="interfaces\usuario.aspx" />
     <Content Include="Web.config" />
-    <Content Include="interfaces\index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="interfaces\compra.aspx.cs">
+      <DependentUpon>compra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\compra.aspx.designer.cs">
+      <DependentUpon>compra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\log.aspx.cs">
+      <DependentUpon>log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\log.aspx.designer.cs">
+      <DependentUpon>log.aspx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\negociacion.aspx.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,13 +179,6 @@
     <Compile Include="interfaces\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
-    <Compile Include="interfaces\productos.aspx.cs">
-      <DependentUpon>productos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="interfaces\productos.aspx.designer.cs">
-      <DependentUpon>productos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="interfaces\producto.aspx.cs">
       <DependentUpon>producto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -165,12 +186,26 @@
     <Compile Include="interfaces\producto.aspx.designer.cs">
       <DependentUpon>producto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\productos.aspx.cs">
+      <DependentUpon>productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\productos.aspx.designer.cs">
+      <DependentUpon>productos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\publicar.aspx.cs">
       <DependentUpon>publicar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\publicar.aspx.designer.cs">
       <DependentUpon>publicar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\usuario.aspx.cs">
       <DependentUpon>usuario.aspx</DependentUpon>
@@ -180,17 +215,10 @@
       <DependentUpon>usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="interfaces\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="interfaces\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="interfaces\Principal.Master" />
     <Content Include="interfaces\images\Thumbs.db" />
+    <Content Include="interfaces\Principal.Master" />
     <Content Include="interfaces\psd\Blog_Preview.psd" />
     <Content Include="interfaces\psd\Image_Rotator_Item.psd" />
     <Content Include="interfaces\psd\Portfolio_Item.psd" />

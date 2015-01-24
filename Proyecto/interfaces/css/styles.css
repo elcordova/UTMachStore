@@ -247,3 +247,19 @@ DESCRIPTION: A premium business and portfolio theme.
 	* html .clearfix 					{height:1%;}
 	.alpha								{margin-left:0;}
 	.omega								{margin-right:0;}
+
+.imgn
+{
+    margin-left:250px;
+    float:left;
+}
+.text1
+{
+    float:left;
+    margin-left:20px;
+}
+.text2
+{
+    float:left;
+    margin-left:100px;
+}
