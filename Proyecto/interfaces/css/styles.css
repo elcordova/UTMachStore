@@ -233,7 +233,8 @@ DESCRIPTION: A premium business and portfolio theme.
 	#comment_form input,
 	#comment_form textarea				{float:left; padding:8px; border:1px solid #CCCCCC; margin-left:10px; background:#fcfcfc; -moz-border-radius:5px; -webkit-border-radius:5px;}
 	#comment_form input					{width:400px;}
-	#comment_form textarea				{width:500px; height:150px; resize:none;}
+	#comment_form textarea				{resize:none;
+}
 	
 /* Contact Page Sidebar */
 
