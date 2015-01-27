@@ -15,3 +15,29 @@ insert into [dbo].[Publicaciones]([codigo_Cat],[codigo_Usu], [nombre_Pub], [dato
 values (@codigo_categoria, @codigo_usuario, @nombre_publicacion, @datos_publicacion, @fecha_publicacion, @numero_contacto, @precio, @estado_logico_publicacion, @stock_produc)
 END
 GO
+
+
+
+CREATE PROCEDURE[dbo].[cp_insertarComentario]
+
+	@codigoUsu varchar(10),
+	@codigoPub Bigint,
+	@contenido varchar(max),
+	@fecha varchar(10)
+AS
+BEGIN
+SET NOCOUNT ON;
+	insert into [dbo].[Comentarios]([codigo_Usu],[codigo_Pub],[contenido_Com],[fecha_Com])
+	values(@codigoUsu,@codigoPub,@contenido,@fecha)
+END
+
+CREATE PROCEDURE[dbo].[cp_insertarFoto]
+	@codigoPub Bigint,
+	@nombre varchar(25),
+	@ruta varchar(max)
+AS
+BEGIN
+SET NOCOUNT ON;
+	insert into [dbo].[Fotos] ([codigo_Pub],[nombre_Fot],[ruta_Fot])
+	values(@codigoPub,@nombre,@ruta)
+END
