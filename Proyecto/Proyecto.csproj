@@ -232,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dataBase\" />
+    <Folder Include="procesos almacenados MIguelKerly\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
