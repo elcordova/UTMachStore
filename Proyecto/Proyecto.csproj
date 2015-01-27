@@ -141,6 +141,7 @@
     <Content Include="interfaces\publicar.aspx" />
     <Content Include="interfaces\Registro.aspx" />
     <Content Include="interfaces\usuario.aspx" />
+    <Content Include="procesos almacenados MIguelKerly\ProcesosAlmacenadosMiguelKerly.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -232,7 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dataBase\" />
-    <Folder Include="procesos almacenados MIguelKerly\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

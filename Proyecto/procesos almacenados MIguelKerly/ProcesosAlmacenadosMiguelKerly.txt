@@ -1,0 +1,17 @@
+﻿create procedure insertarPublicacion
+@codigo_categoria bigint,
+@codigo_usuario varchar(10),
+@nombre_publicacion varchar(50),
+@datos_publicacion varchar(MAX),
+@fecha_publicacion date,
+@numero_contacto varchar(10),
+@precio decimal(18, 2),
+@estado_logico_publicacion bit,
+@stock_produc int
+
+AS
+BEGIN
+insert into [dbo].[Publicaciones]([codigo_Cat],[codigo_Usu], [nombre_Pub], [datos_Pub], [fecha_Pub], [numero_con_Pub], [precio_Pub], [estado_Pub], [stock_Pub])
+values (@codigo_categoria, @codigo_categoria, @nombre_publicacion, @datos_publicacion, @fecha_publicacion, @numero_contacto, @precio, @estado_logico_publicacion, @stock_produc)
+END
+GO
