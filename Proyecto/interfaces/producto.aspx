@@ -101,19 +101,11 @@
 				<div class="hr dotted clearfix">&nbsp;</div>
 				
 					
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label for="name">Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label> 
-                        &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> 
-                        <br /><br />
-					
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label for="email">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                        <br /><br />
+						
 					
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <label for="message">Comentario</label> 
-                        <asp:TextBox ID="TextBox2" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" TextMode="MultiLine" Height="58px" Width="535px"></asp:TextBox>
                         <br /><br />
 					
 						<!-- Add Comment Button -->
