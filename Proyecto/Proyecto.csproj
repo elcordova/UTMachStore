@@ -231,7 +231,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="interfaces\data\" />
+    <Folder Include="dataBase\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
