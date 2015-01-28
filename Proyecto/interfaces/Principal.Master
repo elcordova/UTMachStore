@@ -70,6 +70,8 @@
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="negociacion" runat="server"> 
             </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="notificaciones" runat="server"> 
+            </asp:ContentPlaceHolder>
         </div>
         <div id="pie">
             <p class="grid_12 footer clearfix">

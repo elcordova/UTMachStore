@@ -137,6 +137,7 @@
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
     <Content Include="interfaces\log.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
+    <Content Include="interfaces\notificaciones.aspx" />
     <Content Include="interfaces\producto.aspx" />
     <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\publicar.aspx" />
@@ -179,6 +180,13 @@
     </Compile>
     <Compile Include="interfaces\negociacion.aspx.designer.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\notificaciones.aspx.cs">
+      <DependentUpon>notificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\notificaciones.aspx.designer.cs">
+      <DependentUpon>notificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
