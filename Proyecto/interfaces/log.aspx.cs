@@ -13,5 +13,12 @@ namespace Proyecto.interfaces
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //Verifico si existe
+            //Luego veo si esta activo
+
+        }
     }
 }
