@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 
+
 namespace Proyecto.interfaces
 {
     public partial class notificaciones : System.Web.UI.Page
@@ -15,17 +16,13 @@ namespace Proyecto.interfaces
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            ImageButton imgButton = new ImageButton();
-                Image imange = new Image();
-               imgButton.ImageUrl = "~/images/notif.png";
-                          
-
-            string ruta=Server.MapPath(((ImageButton)sender).ImageUrl);
-            System.IO.File.Delete(@ruta);
-             System.IO.File.Delete("images/notif.png");
-             System.IO.File.Move("iamges/rojo.png", "images/noti.png");
+        protected void Button1_Click1(object sender, EventArgs e)
+        {            
+            string pathCurrent = Server.MapPath("~/");
+            System.IO.File.Delete(pathCurrent + @"interfaces\images\notificacion.png");
+            System.IO.File.Copy(pathCurrent + @"interfaces\images\verde.png", pathCurrent + @"interfaces\images\notificacion.png");
         }
+
+       
     }
 }
