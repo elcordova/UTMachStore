@@ -21,6 +21,8 @@ namespace Proyecto.LogicaDeNegocio
             catch(Exception)
             {
 
+
+
                             }
 
                 
