@@ -265,6 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="interfaces\imagenesPublicaciones\" />
+    <Folder Include="PRUEBA\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
