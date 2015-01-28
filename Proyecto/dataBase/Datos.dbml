@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UTMachStore" Class="DatosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LUIS;Initial Catalog=UTMachStore;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UTMachStoreConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LUIS;Initial Catalog=UTMachStore;User ID=usuario" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UTMachStoreConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Categorias" Member="Categorias">
     <Type Name="Categorias">
       <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -155,6 +155,16 @@
     <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.actualizarUsuario" Method="actualizarUsuario">
+    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.cp_insertarComentario" Method="cp_insertarComentario">
     <Parameter Name="codigoUsu" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
@@ -168,6 +178,10 @@
     <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.eliminarUsuario" Method="eliminarUsuario">
+    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.insertarPublicacion" Method="insertarPublicacion">
     <Parameter Name="codigo_categoria" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="codigo_usuario" Type="System.String" DbType="VarChar(10)" />
@@ -178,20 +192,6 @@
     <Parameter Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
     <Parameter Name="estado_logico_publicacion" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="stock_produc" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.actualizarUsuario" Method="actualizarUsuario">
-    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.eliminarUsuario" Method="eliminarUsuario">
-    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

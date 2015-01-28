@@ -72,7 +72,7 @@ namespace Proyecto.dataBase
     #endregion
 		
 		public DatosDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["UTMachStoreConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["UTMachStoreConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -212,6 +212,13 @@ namespace Proyecto.dataBase
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarUsuario")]
+		public int actualizarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarComentario")]
 		public int cp_insertarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string contenido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha)
 		{
@@ -226,24 +233,17 @@ namespace Proyecto.dataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarPublicacion")]
-		public int insertarPublicacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string codigo_usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string datos_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string numero_contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_logico_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stock_produc)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_categoria, codigo_usuario, nombre_publicacion, datos_publicacion, fecha_publicacion, numero_contacto, precio, estado_logico_publicacion, stock_produc);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarUsuario")]
-		public int actualizarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminarUsuario")]
 		public int eliminarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula_Usu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarPublicacion")]
+		public int insertarPublicacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string codigo_usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string datos_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string numero_contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_logico_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stock_produc)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_categoria, codigo_usuario, nombre_publicacion, datos_publicacion, fecha_publicacion, numero_contacto, precio, estado_logico_publicacion, stock_produc);
 			return ((int)(result.ReturnValue));
 		}
 	}
