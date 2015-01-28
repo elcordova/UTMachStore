@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UTMachStore" Class="DatosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LUIS;Initial Catalog=UTMachStore;User ID=usuario" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UTMachStoreConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=25.191.119.37;Initial Catalog=UTMachStore;User ID=usuario" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UTMachStoreConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Categorias" Member="Categorias">
     <Type Name="Categorias">
       <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -145,6 +145,16 @@
       <Association Name="Usuario_Publicaciones" Member="Publicaciones" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Publicaciones" />
     </Type>
   </Table>
+  <Function Name="dbo.actualizarUsuario" Method="actualizarUsuario">
+    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.insertarUsuario" Method="insertarUsuario">
     <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
@@ -155,15 +165,18 @@
     <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.actualizarUsuario" Method="actualizarUsuario">
-    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
+  <Function Name="dbo.buscarNickname" Method="buscarNickname">
     <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
+    <ElementType Name="buscarNicknameResult">
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="password_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="email_Usu" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
   <Function Name="dbo.cp_insertarComentario" Method="cp_insertarComentario">
     <Parameter Name="codigoUsu" Type="System.String" DbType="VarChar(10)" />
@@ -193,18 +206,5 @@
     <Parameter Name="estado_logico_publicacion" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="stock_produc" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.buscarNickname" Method="buscarNickname">
-    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
-    <ElementType Name="buscarNicknameResult">
-      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="password_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="email_Usu" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
   </Function>
 </Database>

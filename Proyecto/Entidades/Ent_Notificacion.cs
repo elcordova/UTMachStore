@@ -7,71 +7,49 @@ namespace Proyecto.Entidades
 {
     public class Ent_Notificacion
     {
-        private string nombre_usu;
-        private string nic_usu;
-        private string direccion_usu;
-        private string passwd_usu;
-        private string email_usu;
-        private bool estado_usu;
-        private string cedula_usu;
+        private int cod_Plubicacion;
+        private string ruta;
+        private string cod_usuario;
+        private int cod_comentario;
+
 
         public Ent_Notificacion() 
         {
-            nombre_usu = "";
-            nic_usu = "";
-            direccion_usu = "";
-            passwd_usu = "";
-            email_usu = "";
-            estado_usu = false;
-            cedula_usu = "";
+            cod_Plubicacion = 0;
+            ruta = "";
+            cod_usuario = "";
+            cod_comentario = 0;
         }
 
-        public Ent_Notificacion(string nombre, string nic, string direccion, string passwd, string email, bool estado, string cedula)
+        public Ent_Notificacion(int codigoPublicacion, string rutaPublic, string codigoUsuario, int codigoComentario)
         {
-            nombre_usu = nombre;
-            nic_usu = nic;
-            direccion_usu = direccion;
-            passwd_usu = passwd;
-            email_usu = email;
-            estado_usu = estado;
-            cedula_usu = cedula;
+            cod_Plubicacion = codigoPublicacion;
+            ruta = rutaPublic;
+            cod_usuario = codigoUsuario;
+            cod_comentario = codigoComentario;
         }
 
-        public string Nombre_usu
+        public int Codigo_Publicacion
         {
-            get { return nombre_usu; }
-            set { nombre_usu = value; }
+            get { return cod_Plubicacion; }
+            set { cod_Plubicacion = value; }
         }
 
-        public string Nic_usu
+        public string Ruta_Publicacion
         {
-            get { return nic_usu; }
-            set { nic_usu = value; }
+            get { return ruta; }
+            set { ruta = value; }
         }
-        public string Direccion_usu
+        public string Codigo_Usuario
         {
-            get { return direccion_usu; }
-            set { direccion_usu = value; }
+            get { return cod_usuario; }
+            set { cod_usuario = value; }
         }
-        public string Passwd_usu
+        public int Codigo_Comentario
         {
-            get { return passwd_usu; }
-            set { passwd_usu = value; }
+            get { return cod_comentario; }
+            set { cod_comentario = value; }
         }
-        public string Email_usu
-        {
-            get { return email_usu; }
-            set { email_usu = value; }
-        }
-        public bool Estado_usu
-        {
-            get { return estado_usu; }
-            set { estado_usu = value; }
-        }
-        public string Cedula_usu
-        {
-            get { return cedula_usu; }
-            set { cedula_usu = value; }
-        }
+       
     }
 }

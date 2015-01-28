@@ -137,7 +137,6 @@
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
     <Content Include="interfaces\log.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
-    <Content Include="interfaces\notificaciones.aspx" />
     <Content Include="interfaces\producto.aspx" />
     <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\publicar.aspx" />
@@ -152,8 +151,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Datos.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Entidades\Ent_Notificacion.cs" />
-    <Compile Include="Entidades\Ent_Publicaciones.cs" />
+    <Compile Include="Entidades\Ent_Comentario.cs" />
+    <Compile Include="Entidades\Ent_Fotos.cs" />
     <Compile Include="Entidades\Ent_Usuario.cs" />
     <Compile Include="interfaces\compra.aspx.cs">
       <DependentUpon>compra.aspx</DependentUpon>
@@ -182,13 +181,6 @@
     </Compile>
     <Compile Include="interfaces\negociacion.aspx.designer.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="interfaces\notificaciones.aspx.cs">
-      <DependentUpon>notificaciones.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="interfaces\notificaciones.aspx.designer.cs">
-      <DependentUpon>notificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -233,6 +225,8 @@
       <DependentUpon>usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogicaDeNegocio\Email.cs" />
+    <Compile Include="LogicaDeNegocio\LNComentario.cs" />
+    <Compile Include="LogicaDeNegocio\LNFoto.cs" />
     <Compile Include="LogicaDeNegocio\LN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PRUEBA\borrame.cs" />
@@ -257,15 +251,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="dataBase\Datos.dbml.layout">
-      <DependentUpon>Datos.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="interfaces\imagenesPublicaciones\" />
+    <None Include="dataBase\Datos.dbml.layout">
+      <DependentUpon>Datos.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
