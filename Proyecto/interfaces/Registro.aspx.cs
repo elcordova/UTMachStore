@@ -13,5 +13,10 @@ namespace Proyecto.interfaces
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
