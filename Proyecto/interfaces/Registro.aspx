@@ -38,7 +38,7 @@
                     <label class="control-label" for="h3">Nickname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cédula</label>&nbsp;
                     <div class="controls input">
                         &nbsp;<asp:TextBox ID="TextBoxNickname" runat="server"></asp:TextBox>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TextBoxCedula" runat="server"></asp:TextBox>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TextBoxCedula" runat="server" MaxLength="10"></asp:TextBox>
                         <br />
                     </div>
                 </div>
@@ -62,9 +62,9 @@
                 <div class="control-group clearfix required ">
                     <label class="control-label" for="h6">Password</label><label class="control-label" for="h7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Confirm Password</label>&nbsp;
                     <div class="controls input">
-                        &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server" MaxLength="15" TextMode="Password"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxConfPasswd" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxConfPasswd" runat="server" MaxLength="15" TextMode="Password"></asp:TextBox>
                         <br />
                     </div>
                 </div>

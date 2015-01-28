@@ -26,19 +26,38 @@ namespace Proyecto.interfaces
             usuario.Email_usu = TextBoxEmail.Text;
             usuario.Cedula_usu = TextBoxCedula.Text;
             usuario.Estado_usu = false;
-
-            if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+            
+            if (usuario.Nombre_usu.Equals("") || usuario.Nic_usu.Equals("") || usuario.Direccion_usu.Equals("")
+                || usuario.Email_usu.Equals("") || usuario.Cedula_usu.Equals("") || TextBoxPasswd.Text.Equals("")
+                || TextBoxConfPasswd.Text.Equals(""))
             {
-                usuario.Passwd_usu = TextBoxPasswd.Text;
-                lnUsuario.insertarUsuario(usuario);
+                //mensaje de Error
             }
             else 
             {
-                //mostrar mensaje de error
-                
+                if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+                {
+                    usuario.Passwd_usu = TextBoxPasswd.Text;
+                    lnUsuario.insertarUsuario(usuario);
+                    limpiarCampos();
+                }
+                else
+                {
+                    //mostrar mensaje de error
+                }    
             }
-            
-            
+                  
+        }
+
+        public void limpiarCampos() 
+        {
+            TextBoxNombre.Text = "";
+            TextBoxNickname.Text = "";
+            TextBoxDireccion.Text = "";
+            TextBoxEmail.Text = "";
+            TextBoxCedula.Text = "";
+            TextBoxPasswd.Text = "";
+            TextBoxConfPasswd.Text = "";
         }
     }
 }
