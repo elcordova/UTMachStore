@@ -14,7 +14,7 @@ namespace Proyecto.LogicaDeNegocio
         {
             try
             {
-                DB.insertarUsuario(usuario.Nombre_usu, usuario.Nic_usu, usuario.Direccion_usu, usuario.Passwd_usu, usuario.Email_usu, usuario.Estado_usu, usuario.Cedula_usu);
+               // DB.insertarUsuario(usuario.Nombre_usu, usuario.Nic_usu, usuario.Direccion_usu, usuario.Passwd_usu, usuario.Email_usu, usuario.Estado_usu, usuario.Cedula_usu);
 
                 DB.SubmitChanges();
             }
