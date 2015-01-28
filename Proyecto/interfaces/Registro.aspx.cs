@@ -39,8 +39,7 @@ namespace Proyecto.interfaces
                 {
                     usuario.Passwd_usu = TextBoxPasswd.Text;
                     lnUsuario.insertarUsuario(usuario);
-                    //envio de mensaje de verificacion a email
-                    enviarCorreo();
+                    enviarCorreo();     //envio de mensaje de verificacion a email
                     limpiarCampos();
                 }
                 else
