@@ -62,15 +62,16 @@ DESCRIPTION: A premium business and portfolio theme.
 	.grid_9,
 	.grid_10,
 	.grid_11,
-	.grid_12 							{display:inline; float:left; position:relative; margin-left:20px; margin-right:20px;}
+	.grid_12 							{display:inline; float:left;  margin-left:10px; margin-right:10px;}
 	.container_12 .grid_1				{width:45px;}
 	.container_12 .grid_2 				{width:130px;}
 	.container_12 .grid_3 				{width:215px;}
-	.container_12 .grid_4 				{width:300px;}
+	.container_12 .grid_4 				{width:124px;
+}
 	.container_12 .grid_5 				{width:385px;}
 	.container_12 .grid_6 				{width:470px;}
 	.container_12 .grid_7 				{width:555px;}
-	.container_12 .grid_8 				{width:685px;
+	.container_12 .grid_8 				{width:837px;
 }
 	.container_12 .grid_9 				{width:725px;}
 	.container_12 .grid_10 				{width:810px;}
@@ -106,9 +107,14 @@ DESCRIPTION: A premium business and portfolio theme.
 
 	ul#navigation						{text-transform:uppercase;
     top: -146px;
-    left: 306px;
+    left: 249px;
+    height: 114px;
 }
-	ul#navigation li 					{float:right; display:inline; margin : 0 0 0 50px;}
+	ul#navigation li 					{float:right; display:inline; margin : 0 0 0 40px;
+    top: 0px;
+    left: -9px;
+    width: 97px;
+}
 	ul#navigation li a					{font-family:arial, sans-serif !important; display:block; padding:44px 0 0; text-decoration:none; color:#000000; font-size:14px; font-weight:bold;}
 	ul#navigation li a:hover,
 	ul#navigation li a.current			{background:url(../images/triangle.gif) no-repeat center top;}
@@ -164,7 +170,13 @@ DESCRIPTION: A premium business and portfolio theme.
 	.roundabout a:focus,
 	.roundabout a:visited				{outline:none; text-decoration:none;}
 	.roundabou li 						{margin:0}
-	a img								{border:none; outline:0;}
+	a img								{border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    outline: 0;
+    width: 38px;
+    height: 37px;
+}
 
 /* Featured Image Slider */
 
@@ -263,4 +275,11 @@ DESCRIPTION: A premium business and portfolio theme.
 {
     float:left;
     margin-left:100px;
+}
+
+.otromarg
+{
+    margin-top:50px;
+    float:left;
+    width: 121px;
 }

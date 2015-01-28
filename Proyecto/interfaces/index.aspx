@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Proyecto.WebForm1" %>
-<%--<asp:Content ID="Content1" ContentPlaceHolderID="nombreUsuario" runat="server">
-</asp:Content>--%>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenido_principal" runat="server">
     <div class="hr grid_12">&nbsp;</div>
 	 <div class="clear"></div>
