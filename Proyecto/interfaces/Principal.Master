@@ -38,7 +38,7 @@
             <asp:ContentPlaceHolder ID="nombreUsuario" runat="server"> 
 
                 <ul id="navigation" class="grid_8">
-                    <li><a href="#"><span class="meta">Notificaciones</span><br />
+                    <li><a href="notificaciones.aspx"><span class="meta">Notificaciones</span><br />
                         <img src="images/notificacion.png"></a></li>
                     <li><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
                     <li><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
@@ -69,6 +69,8 @@
             <asp:ContentPlaceHolder ID="usuario" runat="server"> 
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="negociacion" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="notificaciones" runat="server"> 
             </asp:ContentPlaceHolder>
         </div>
         <div id="pie">
