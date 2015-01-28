@@ -17,7 +17,7 @@ namespace Proyecto.interfaces
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -39,7 +39,10 @@ namespace Proyecto.interfaces
                     {
                         //USUARIO ACTIVO
 
-                        Response.Write("<scrip>PEDO</scrip>");
+                        Response.Write("<asp:Content ID='idUs' ContentPlaceHolderID='nombreUsuario' runat='server'> PERRA </asp:Content>");
+                       // Response.Redirect("/interfaces/index.aspx");
+
+                        //Response.Write("<script><asp:Content ID='idUsuario' ContentPlaceHolderID='nombreUsuario' runat='server'>HOLA</asp:Content></script>");
                     }
                     else
                     {

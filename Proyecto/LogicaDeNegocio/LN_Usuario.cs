@@ -33,5 +33,7 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.buscarNickname(nick).ToList();
         }
+
+        
     }
 }

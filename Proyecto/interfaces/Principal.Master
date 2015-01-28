@@ -35,7 +35,11 @@
             
 		<h1 id="logo" class="grid_4">UTMACH STORE</h1>
         <h1 align="right">
+            <?php
+                S
+            ?>
             <asp:ContentPlaceHolder ID="nombreUsuario" runat="server"> 
+
             </asp:ContentPlaceHolder>
         </h1>
 		
