@@ -34,6 +34,10 @@
             <!-- Text Logo -->
             
 		<h1 id="logo" class="grid_4">UTMACH STORE</h1>
+        <h1 align="right">
+            <asp:ContentPlaceHolder ID="nombreUsuario" runat="server"> 
+            </asp:ContentPlaceHolder>
+        </h1>
 		
 		<!-- Navigation Menu -->
 		<ul id="navigation" class="grid_8">
@@ -41,7 +45,7 @@
 			<li><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
 			<li><a href="productos.aspx"><span class="meta">Productos</span><br />Publicaciones</a></li>
 			<li><a href="usuario.aspx"><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
-			<li><a href="index.aspx" class="current"><span class="meta">Pagina inicial</span><br />Inicio</a></li>
+			<li><a href="index.aspx"><span class="meta">Pagina inicial</span><br />Inicio</a></li>
 		</ul>
         
         </div>

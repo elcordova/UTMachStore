@@ -28,5 +28,10 @@ namespace Proyecto.LogicaDeNegocio
             DB.eliminarUsuario(cedula);
             DB.SubmitChanges();
         }
+
+        public List<dataBase.buscarNicknameResult> buscarNick(string nick)
+        {
+            return DB.buscarNickname(nick).ToList();
+        }
     }
 }
