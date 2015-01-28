@@ -39,6 +39,8 @@ namespace Proyecto.interfaces
                 {
                     usuario.Passwd_usu = TextBoxPasswd.Text;
                     lnUsuario.insertarUsuario(usuario);
+                    //envio de mensaje de verificacion a email
+                    enviarCorreo();
                     limpiarCampos();
                 }
                 else
@@ -58,6 +60,23 @@ namespace Proyecto.interfaces
             TextBoxCedula.Text = "";
             TextBoxPasswd.Text = "";
             TextBoxConfPasswd.Text = "";
+        }
+
+        public void enviarCorreo() 
+        {
+            string from = "utmachstore@gmail.com";
+            string passwd = "utmachstore2015";
+            string to = usuario.Email_usu;
+            string message = "lol";
+            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message))
+            {
+                Console.WriteLine("Correo enviado con exito");
+            }
+            else 
+            {
+                Console.WriteLine("Correo no enviado");
+            }
+            
         }
     }
 }
