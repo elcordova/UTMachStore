@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Proyecto.interfaces
 {
     public partial class Registro : System.Web.UI.Page
@@ -16,7 +17,7 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }
