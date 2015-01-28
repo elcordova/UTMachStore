@@ -229,7 +229,6 @@
     <Compile Include="LogicaDeNegocio\LNFoto.cs" />
     <Compile Include="LogicaDeNegocio\LN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PRUEBA\borrame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="interfaces\images\Thumbs.db" />
