@@ -151,6 +151,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Datos.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\Ent_Usuario.cs" />
     <Compile Include="interfaces\compra.aspx.cs">
       <DependentUpon>compra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
