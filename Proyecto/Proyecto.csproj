@@ -235,6 +235,7 @@
     <Compile Include="LogicaDeNegocio\Email.cs" />
     <Compile Include="LogicaDeNegocio\LN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRUEBA\borrame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="interfaces\images\Thumbs.db" />
@@ -265,7 +266,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="interfaces\imagenesPublicaciones\" />
-    <Folder Include="PRUEBA\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
