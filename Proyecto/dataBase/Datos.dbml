@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UTMachStore" Class="DatosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LUIS;Initial Catalog=UTMachStore;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UTMachStoreConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categorias" Member="Categorias">
+    <Type Name="Categorias">
+      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_Cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="detalle_Cat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FK_codigo_Cat" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Categorias_Categorias" Member="Categorias2" ThisKey="codigo_Cat" OtherKey="FK_codigo_Cat" Type="Categorias" />
+      <Association Name="Categorias_Publicaciones" Member="Publicaciones" ThisKey="codigo_Cat" OtherKey="codigo_Cat" Type="Publicaciones" />
+      <Association Name="Categorias_Categorias" Member="Categorias1" ThisKey="FK_codigo_Cat" OtherKey="codigo_Cat" Type="Categorias" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsuarioNegociacion" Member="UsuarioNegociacion">
+    <Type Name="UsuarioNegociacion">
+      <Column Name="codigo_Usu_Neg" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha_UsuNeg" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codigo_Neg" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Negociacion_UsuarioNegociacion" Member="Negociacion" ThisKey="codigo_Neg" OtherKey="codigo_Neg" Type="Negociacion" IsForeignKey="true" />
+      <Association Name="Usuario_UsuarioNegociacion" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comentarios" Member="Comentarios">
+    <Type Name="Comentarios">
+      <Column Name="codigo_Com" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contenido_Com" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_Com" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Comentarios_Notificaciones" Member="Notificaciones" ThisKey="codigo_Usu,codigo_Pub,codigo_Com" OtherKey="codigo_Usu,codigo_Pub,codigo_Com" Type="Notificaciones" />
+      <Association Name="Publicaciones_Comentarios" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
+      <Association Name="Usuario_Comentarios" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnvioPublicacion" Member="EnvioPublicacion">
+    <Type Name="EnvioPublicacion">
+      <Column Name="codigo_Env" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FormaEnvio_EnvioPublicacion" Member="FormaEnvio" ThisKey="codigo_FormEnvio" OtherKey="codigo_FormEnvio" Type="FormaEnvio" IsForeignKey="true" />
+      <Association Name="Publicaciones_EnvioPublicacion" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FormaEnvio" Member="FormaEnvio">
+    <Type Name="FormaEnvio">
+      <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_FormEnvio" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="FormaEnvio_EnvioPublicacion" Member="EnvioPublicacion" ThisKey="codigo_FormEnvio" OtherKey="codigo_FormEnvio" Type="EnvioPublicacion" />
+      <Association Name="FormaEnvio_Negociacion" Member="Negociacion" ThisKey="codigo_FormEnvio" OtherKey="codigo_FormEnvio" Type="Negociacion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FormaPago" Member="FormaPago">
+    <Type Name="FormaPago">
+      <Column Name="codigo_formPago" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre_formPago" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="FormaPago_Negociacion" Member="Negociacion" ThisKey="codigo_formPago" OtherKey="codigo_formPago" Type="Negociacion" />
+      <Association Name="FormaPago_PagoPulicacion" Member="PagoPulicacion" ThisKey="codigo_formPago" OtherKey="codigo_formPago" Type="PagoPulicacion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fotos" Member="Fotos">
+    <Type Name="Fotos">
+      <Column Name="codigo_Fot" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nombre_Fot" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="ruta_Fot" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Publicaciones_Fotos" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lista_deseos" Member="Lista_deseos">
+    <Type Name="Lista_deseos">
+      <Column Name="codigo_Lis_Des" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Publicaciones_Lista_deseos" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
+      <Association Name="Usuario_Lista_deseos" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Negociacion" Member="Negociacion">
+    <Type Name="Negociacion">
+      <Column Name="codigo_Neg" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codigo_formPago" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Negociacion_UsuarioNegociacion" Member="UsuarioNegociacion" ThisKey="codigo_Neg" OtherKey="codigo_Neg" Type="UsuarioNegociacion" />
+      <Association Name="FormaPago_Negociacion" Member="FormaPago" ThisKey="codigo_formPago" OtherKey="codigo_formPago" Type="FormaPago" IsForeignKey="true" />
+      <Association Name="FormaEnvio_Negociacion" Member="FormaEnvio" ThisKey="codigo_FormEnvio" OtherKey="codigo_FormEnvio" Type="FormaEnvio" IsForeignKey="true" />
+      <Association Name="Publicaciones_Negociacion" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Notificaciones" Member="Notificaciones">
+    <Type Name="Notificaciones">
+      <Column Name="codigo_not" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ruta" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codigo_Com" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Comentarios_Notificaciones" Member="Comentarios" ThisKey="codigo_Usu,codigo_Pub,codigo_Com" OtherKey="codigo_Usu,codigo_Pub,codigo_Com" Type="Comentarios" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PagoPulicacion" Member="PagoPulicacion">
+    <Type Name="PagoPulicacion">
+      <Column Name="codigo_Pag_Pub" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codigo_formPago" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FormaPago_PagoPulicacion" Member="FormaPago" ThisKey="codigo_formPago" OtherKey="codigo_formPago" Type="FormaPago" IsForeignKey="true" />
+      <Association Name="Publicaciones_PagoPulicacion" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Publicaciones" Member="Publicaciones">
+    <Type Name="Publicaciones">
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_Pub" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="numero_con_Pub" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Publicaciones_Comentarios" Member="Comentarios" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Comentarios" />
+      <Association Name="Publicaciones_EnvioPublicacion" Member="EnvioPublicacion" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="EnvioPublicacion" />
+      <Association Name="Publicaciones_Fotos" Member="Fotos" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Fotos" />
+      <Association Name="Publicaciones_Lista_deseos" Member="Lista_deseos" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Lista_deseos" />
+      <Association Name="Publicaciones_Negociacion" Member="Negociacion" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Negociacion" />
+      <Association Name="Publicaciones_PagoPulicacion" Member="PagoPulicacion" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="PagoPulicacion" />
+      <Association Name="Categorias_Publicaciones" Member="Categorias" ThisKey="codigo_Cat" OtherKey="codigo_Cat" Type="Categorias" IsForeignKey="true" />
+      <Association Name="Usuario_Publicaciones" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="password_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="email_Usu" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Usuario_UsuarioNegociacion" Member="UsuarioNegociacion" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="UsuarioNegociacion" />
+      <Association Name="Usuario_Comentarios" Member="Comentarios" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Comentarios" />
+      <Association Name="Usuario_Lista_deseos" Member="Lista_deseos" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Lista_deseos" />
+      <Association Name="Usuario_Publicaciones" Member="Publicaciones" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Publicaciones" />
+    </Type>
+  </Table>
+</Database>
