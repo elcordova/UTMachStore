@@ -27,6 +27,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+   
     <form id="form1" runat="server">
     <div>
     <img src="images/banner.jpg" />
@@ -34,6 +35,12 @@
             <!-- Text Logo -->
             
 		<h3 id="logo" class="otromarg">UTMACH STORE</h3>
+            <%--<h2 aling="rigth"> 
+                
+                <asp:ContentPlaceHolder ID="ContentNick" runat="server"> 
+                </asp:ContentPlaceHolder>
+               
+            </h2>--%>
         
             <asp:ContentPlaceHolder ID="nombreUsuario" runat="server"> 
 
@@ -48,7 +55,7 @@
                 </ul>
 
             </asp:ContentPlaceHolder>
-        </h1>
+        
 		
 		<!-- Navigation Menu -->
         

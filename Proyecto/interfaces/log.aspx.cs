@@ -39,7 +39,10 @@ namespace Proyecto.interfaces
                     {
                         //USUARIO ACTIVO
 
-                        Response.Write("<asp:Content ID='idUs' ContentPlaceHolderID='nombreUsuario' runat='server'> PERRA </asp:Content>");
+                        //Response.Write("<script><?php SESSION_START(); $_SESSION['nickuser']='hola'; ?></script>");
+                        
+                        //Response.Redirect("/interfaces/acceso.html");
+                        //Response.Write("<asp:Content ID='idUs' ContentPlaceHolderID='nombreUsuario' runat='server'> PERRA </asp:Content>");
                        // Response.Redirect("/interfaces/index.aspx");
 
                         //Response.Write("<script><asp:Content ID='idUsuario' ContentPlaceHolderID='nombreUsuario' runat='server'>HOLA</asp:Content></script>");
