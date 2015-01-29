@@ -18,23 +18,23 @@ namespace Proyecto.interfaces
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        
+        protected void Button1_Click1(object sender, EventArgs e)
         {
-            
             usuario.Nombre_usu = TextBoxNombre.Text;
             usuario.Nic_usu = TextBoxNickname.Text;
             usuario.Direccion_usu = TextBoxDireccion.Text;
             usuario.Email_usu = TextBoxEmail.Text;
             usuario.Cedula_usu = TextBoxCedula.Text;
             usuario.Estado_usu = false;
-            
+
             if (usuario.Nombre_usu.Equals("") || usuario.Nic_usu.Equals("") || usuario.Direccion_usu.Equals("")
                 || usuario.Email_usu.Equals("") || usuario.Cedula_usu.Equals("") || TextBoxPasswd.Text.Equals("")
                 || TextBoxConfPasswd.Text.Equals(""))
             {
                 //Validacion de campos vacios
             }
-            else 
+            else
             {
                 if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
                 {
@@ -46,12 +46,11 @@ namespace Proyecto.interfaces
                 else
                 {
                     //validacion en caso de que las contraseñas no coincidan
-                }    
+                }
             }
-                  
         }
 
-        public void limpiarCampos() 
+        public void limpiarCampos()
         {
             TextBoxNombre.Text = "";
             TextBoxNickname.Text = "";
@@ -62,7 +61,7 @@ namespace Proyecto.interfaces
             TextBoxConfPasswd.Text = "";
         }
 
-        public void enviarCorreo() 
+        public void enviarCorreo()
         {
             string from = "utmachstore@gmail.com";
             string passwd = "utmachstore2015";
@@ -72,16 +71,12 @@ namespace Proyecto.interfaces
             {
                 Console.WriteLine("Correo enviado con exito");
             }
-            else 
+            else
             {
                 Console.WriteLine("Correo no enviado");
             }
-            
-        }
-
-        protected void Button1_Click1(object sender, EventArgs e)
-        {
 
         }
+
     }
 }
