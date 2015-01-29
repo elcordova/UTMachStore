@@ -158,6 +158,8 @@
     </Compile>
     <Compile Include="Entidades\Ent_Comentario.cs" />
     <Compile Include="Entidades\Ent_Fotos.cs" />
+    <Compile Include="Entidades\Ent_Notificacion.cs" />
+    <Compile Include="Entidades\Ent_Publicaciones.cs" />
     <Compile Include="Entidades\Ent_Usuario.cs" />
     <Compile Include="interfaces\compra.aspx.cs">
       <DependentUpon>compra.aspx</DependentUpon>
@@ -262,8 +264,11 @@
       <DependentUpon>VerificacionUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogicaDeNegocio\Email.cs" />
+    <Compile Include="LogicaDeNegocio\EncriptacionDeDatos.cs" />
     <Compile Include="LogicaDeNegocio\LNComentario.cs" />
     <Compile Include="LogicaDeNegocio\LNFoto.cs" />
+    <Compile Include="LogicaDeNegocio\LN_Notificacion.cs" />
+    <Compile Include="LogicaDeNegocio\LN_Publicacion.cs" />
     <Compile Include="LogicaDeNegocio\LN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

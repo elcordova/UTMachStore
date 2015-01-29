@@ -27,9 +27,26 @@ namespace Proyecto.Entidades
             Codigo_Pub = codigoPub;
             Nombre = nombre;
             Ruta = ruta;
-          
+        }
+     
+        public int Codigo_Publicacion
+        {
+            get { return Codigo_Pub; }
+            set { Codigo_Pub = value; }
         }
 
+        public string Nombre_Foto
+        {
+            get { return Nombre; }
+            set { Nombre = value; }
+        }
+
+
+        public string Ruta_Foto
+        {
+            get { return Ruta; }
+            set { Ruta = value; }
+        }
        
     }
 }
