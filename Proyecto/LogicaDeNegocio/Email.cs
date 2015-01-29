@@ -19,7 +19,7 @@ namespace Proyecto.LogicaDeNegocio
                 mail.From = new MailAddress(from);
                 mail.To.Add(new MailAddress(to));
                 mail.Body = message;
-                mail.Subject = "¡Bienvenido, "+nick+" Solo te falta confirmar tu cuenta‏";
+                mail.Subject = "¡Bienvenido!, "+nick+" Solo te falta confirmar tu cuenta‏";
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
                 smtp.Credentials = new NetworkCredential(from, passwd);
