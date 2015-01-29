@@ -117,6 +117,7 @@
     <Content Include="interfaces\images\log.png" />
     <Content Include="interfaces\images\machala.jpg" />
     <Content Include="interfaces\images\modem.jpg" />
+    <Content Include="interfaces\images\notificacion.png" />
     <Content Include="interfaces\images\palancaXbox.jpg" />
     <Content Include="interfaces\images\pendrive.jpg" />
     <Content Include="interfaces\images\perro.jpg" />
@@ -124,12 +125,14 @@
     <Content Include="interfaces\images\play4.jpg" />
     <Content Include="interfaces\images\portatil.jpg" />
     <Content Include="interfaces\images\registro1.png" />
+    <Content Include="interfaces\images\rojo.png" />
     <Content Include="interfaces\images\search.png" />
     <Content Include="interfaces\images\SolicitudU.png" />
     <Content Include="interfaces\images\stumbleupon.png" />
     <Content Include="interfaces\images\tomyPerf.jpg" />
     <Content Include="interfaces\images\triangle.gif" />
     <Content Include="interfaces\images\twitter.png" />
+    <Content Include="interfaces\images\verde.png" />
     <Content Include="interfaces\index.aspx" />
     <Content Include="interfaces\js\contact.js" />
     <Content Include="interfaces\js\DD_belatedPNG_0.0.8a-min.js" />
@@ -154,6 +157,8 @@
     </Compile>
     <Compile Include="Entidades\Ent_Comentario.cs" />
     <Compile Include="Entidades\Ent_Fotos.cs" />
+    <Compile Include="Entidades\Ent_Notificacion.cs" />
+    <Compile Include="Entidades\Ent_Publicaciones.cs" />
     <Compile Include="Entidades\Ent_Usuario.cs" />
     <Compile Include="interfaces\compra.aspx.cs">
       <DependentUpon>compra.aspx</DependentUpon>
@@ -226,8 +231,11 @@
       <DependentUpon>usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogicaDeNegocio\Email.cs" />
+    <Compile Include="LogicaDeNegocio\EncriptacionDeDatos.cs" />
     <Compile Include="LogicaDeNegocio\LNComentario.cs" />
     <Compile Include="LogicaDeNegocio\LNFoto.cs" />
+    <Compile Include="LogicaDeNegocio\LN_Notificacion.cs" />
+    <Compile Include="LogicaDeNegocio\LN_Publicacion.cs" />
     <Compile Include="LogicaDeNegocio\LN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

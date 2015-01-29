@@ -12,6 +12,8 @@ namespace Proyecto.interfaces
     {
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
+        LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
+        string alertMsg = "return confirm('¿desea borrar estos datos?')";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +22,7 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            
             usuario.Nombre_usu = TextBoxNombre.Text;
             usuario.Nic_usu = TextBoxNickname.Text;
             usuario.Direccion_usu = TextBoxDireccion.Text;
@@ -32,12 +35,13 @@ namespace Proyecto.interfaces
                 || TextBoxConfPasswd.Text.Equals(""))
             {
                 //mensaje de Error
+                ButtonRegistrar.Attributes.Add("onclick", "return confirm('¿desea borrar estos datos?')");
             }
             else 
             {
                 if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
                 {
-                    usuario.Passwd_usu = TextBoxPasswd.Text;
+                    usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
                     lnUsuario.insertarUsuario(usuario);
                     enviarCorreo();     //envio de mensaje de verificacion a email
                     limpiarCampos();
@@ -45,6 +49,7 @@ namespace Proyecto.interfaces
                 else
                 {
                     //mostrar mensaje de error
+                    Response.Write("<h2>ERROR</h2>");
                 }    
             }
                   
