@@ -160,6 +160,7 @@
     <Compile Include="Entidades\Ent_Venta.cs" />
     <Compile Include="interfaces\cerrarSesion.aspx.cs">
       <DependentUpon>cerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\cerrarSesion.aspx.designer.cs">
       <DependentUpon>cerrarSesion.aspx</DependentUpon>
