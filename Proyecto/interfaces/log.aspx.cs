@@ -42,13 +42,7 @@ namespace Proyecto.interfaces
                         Session["usuario"] = TextBox1.Text;
                         Response.Redirect("/interfaces/index.aspx");
 
-                        //Response.Write("<script><?php SESSION_START(); $_SESSION['nickuser']='hola'; ?></script>");
-                        
-                        //Response.Redirect("/interfaces/acceso.html");
-                        //Response.Write("<asp:Content ID='idUs' ContentPlaceHolderID='nombreUsuario' runat='server'> PERRA </asp:Content>");
-                       // Response.Redirect("/interfaces/index.aspx");
-
-                        //Response.Write("<script><asp:Content ID='idUsuario' ContentPlaceHolderID='nombreUsuario' runat='server'>HOLA</asp:Content></script>");
+                    
                     }
                     else
                     {
