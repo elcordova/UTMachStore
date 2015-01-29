@@ -60,6 +60,7 @@
   <ItemGroup>
     <Content Include="interfaces\acceso.html" />
     <Content Include="interfaces\compra.aspx" />
+    <Content Include="interfaces\ControlComentarios.ascx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
@@ -167,6 +168,12 @@
     </Compile>
     <Compile Include="interfaces\compra.aspx.designer.cs">
       <DependentUpon>compra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlComentarios.ascx.cs">
+      <DependentUpon>ControlComentarios.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlComentarios.ascx.designer.cs">
+      <DependentUpon>ControlComentarios.ascx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
