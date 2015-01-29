@@ -19,7 +19,7 @@ namespace Proyecto.interfaces
             llenarDatos();
         }
 
-        static string contrasenaTemp = "";
+        string contrasenaTemp = "";
 
         public void llenarDatos()
         {
@@ -33,7 +33,7 @@ namespace Proyecto.interfaces
 
             contrasenaTemp = TextBoxContrasena.Text;
             Console.WriteLine(contrasenaTemp);
-            Console.Read();
+            //Console.Read();
          
         }
 
