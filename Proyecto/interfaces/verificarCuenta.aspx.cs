@@ -35,7 +35,9 @@ namespace Proyecto.interfaces
 
                     if (datosUsuario.ElementAt(0).password_Usu.Equals(TextBoxCod.Text))
                     {
-                        //Valida Cuenta, Cambia a activa
+                        lnusuario.validarCuenta(usuario.Nic_usu);
+                        Session["usuario"] = usuario.Nic_usu;
+                        Response.Redirect("/interfaces/index.aspx");
                     }
                     else
                     {
