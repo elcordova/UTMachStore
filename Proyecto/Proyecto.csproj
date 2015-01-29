@@ -58,7 +58,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="interfaces\acceso.html" />
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
@@ -75,6 +74,7 @@
     <Content Include="interfaces\Documentation\assets\styles.css" />
     <Content Include="interfaces\Documentation\assets\text.css" />
     <Content Include="interfaces\Documentation\README.html" />
+    <Content Include="interfaces\EdicionPublicacion.aspx" />
     <Content Include="interfaces\images\223x112.gif" />
     <Content Include="interfaces\images\600x300.gif" />
     <Content Include="interfaces\images\610x150.gif" />
@@ -117,7 +117,6 @@
     <Content Include="interfaces\images\log.png" />
     <Content Include="interfaces\images\machala.jpg" />
     <Content Include="interfaces\images\modem.jpg" />
-    <Content Include="interfaces\images\notificacion.png" />
     <Content Include="interfaces\images\palancaXbox.jpg" />
     <Content Include="interfaces\images\pendrive.jpg" />
     <Content Include="interfaces\images\perro.jpg" />
@@ -125,28 +124,29 @@
     <Content Include="interfaces\images\play4.jpg" />
     <Content Include="interfaces\images\portatil.jpg" />
     <Content Include="interfaces\images\registro1.png" />
-    <Content Include="interfaces\images\rojo.png" />
     <Content Include="interfaces\images\search.png" />
     <Content Include="interfaces\images\SolicitudU.png" />
     <Content Include="interfaces\images\stumbleupon.png" />
     <Content Include="interfaces\images\tomyPerf.jpg" />
     <Content Include="interfaces\images\triangle.gif" />
     <Content Include="interfaces\images\twitter.png" />
-    <Content Include="interfaces\images\verde.png" />
     <Content Include="interfaces\index.aspx" />
     <Content Include="interfaces\js\contact.js" />
     <Content Include="interfaces\js\DD_belatedPNG_0.0.8a-min.js" />
     <Content Include="interfaces\js\jquery.easing.1.3.js" />
     <Content Include="interfaces\js\jquery.roundabout-1.0.min.js" />
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
+    <Content Include="interfaces\ListaDeseos.aspx" />
     <Content Include="interfaces\log.aspx" />
+    <Content Include="interfaces\MisPublicaciones.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
+    <Content Include="interfaces\OlvidarClave.aspx" />
     <Content Include="interfaces\producto.aspx" />
     <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\publicar.aspx" />
     <Content Include="interfaces\Registro.aspx" />
     <Content Include="interfaces\usuario.aspx" />
-    <Content Include="LogicaDeNegocio\CredencialesGmail.txt" />
+    <Content Include="interfaces\VerificacionUsuario.aspx" />
     <Content Include="procesos almacenados MIguelKerly\ProcesosAlmacenadosMiguelKerly.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -168,12 +168,25 @@
     <Compile Include="interfaces\compra.aspx.designer.cs">
       <DependentUpon>compra.aspx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
+      <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\EdicionPublicacion.aspx.designer.cs">
+      <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ListaDeseos.aspx.cs">
+      <DependentUpon>ListaDeseos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ListaDeseos.aspx.designer.cs">
+      <DependentUpon>ListaDeseos.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\log.aspx.cs">
       <DependentUpon>log.aspx</DependentUpon>
@@ -182,12 +195,25 @@
     <Compile Include="interfaces\log.aspx.designer.cs">
       <DependentUpon>log.aspx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\MisPublicaciones.aspx.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\MisPublicaciones.aspx.designer.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\negociacion.aspx.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\negociacion.aspx.designer.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\OlvidarClave.aspx.cs">
+      <DependentUpon>OlvidarClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\OlvidarClave.aspx.designer.cs">
+      <DependentUpon>OlvidarClave.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -231,8 +257,13 @@
     <Compile Include="interfaces\usuario.aspx.designer.cs">
       <DependentUpon>usuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\VerificacionUsuario.aspx.cs">
+      <DependentUpon>VerificacionUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\VerificacionUsuario.aspx.designer.cs">
+      <DependentUpon>VerificacionUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LogicaDeNegocio\Email.cs" />
-    <Compile Include="LogicaDeNegocio\EncriptacionDeDatos.cs" />
     <Compile Include="LogicaDeNegocio\LNComentario.cs" />
     <Compile Include="LogicaDeNegocio\LNFoto.cs" />
     <Compile Include="LogicaDeNegocio\LN_Notificacion.cs" />
@@ -252,7 +283,6 @@
       <LastGenOutput>Datos.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="interfaces\acceso.php" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -261,12 +291,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="dataBase\Datos.dbml.layout">
       <DependentUpon>Datos.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
