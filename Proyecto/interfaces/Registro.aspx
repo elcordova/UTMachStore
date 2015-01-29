@@ -60,7 +60,7 @@
                 <div class="controls input">
                     &nbsp;<asp:TextBox ID="TextBoxDireccion" runat="server"></asp:TextBox>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email"></asp:TextBox>
                 </div>
                 &nbsp;<div class="controls input">
                     &nbsp;<br />
@@ -76,7 +76,7 @@
                     <div class="controls input">
                         &nbsp;<asp:TextBox ID="TextBoxNickname" runat="server"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxCedula" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxCedula" runat="server" TextMode="Number"></asp:TextBox>
                         <br />
                     </div>
             </div>
@@ -90,9 +90,9 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Verificar Contraseña</label>&nbsp;
                     <div class="controls input">
-                        &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server" TextMode="Password"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxConfPasswd" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxConfPasswd" runat="server" TextMode="Password"></asp:TextBox>
                         <br />
                     </div>
             </div>
