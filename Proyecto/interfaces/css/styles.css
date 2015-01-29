@@ -210,7 +210,10 @@ DESCRIPTION: A premium business and portfolio theme.
 /* Comment's List */
 	
 	.commentlist						{margin:0; padding:0; margin-bottom:20px; float:left; width:100%;}
-	.commentlist li						{width:100%; clear:both; float:left; padding:0; list-style-type:none; margin:0; position:relative;}
+	.commentlist li						{width:100%; clear:both; float:left; padding:0; list-style-type:none; margin:0; position:relative;
+    top: 0px;
+    left: 0px;
+}
 	.gravatar							{float:left; width:60px; padding:0px 10px 0 0; text-align: center;}
 	.gravatar img						{display:block; padding:5px; padding-left:none; margin-bottom:0px;}
 	.comment_content					{float:left; width:569px;}
