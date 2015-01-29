@@ -13,7 +13,7 @@ namespace Proyecto.interfaces
         {
             if (Session["usuario"] == null)
             {
-                Response.Redirect("interfaces/restriccion.aspx");
+                Response.Redirect("/interfaces/restriccion.aspx");
             }
             
         }

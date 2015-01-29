@@ -19,6 +19,8 @@ namespace Proyecto.interfaces
                 HyperLink1.Text = "Mis Datos";
                 HyperLink2.Text = "Cerrar Sesión";
 
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "myScript", "OcultarDiv();", true);
+                
 
             }
             else

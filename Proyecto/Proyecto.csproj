@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="interfaces\compra.aspx" />
+    <Content Include="interfaces\restriccion.aspx" />
     <Content Include="interfaces\verificarCuenta.aspx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="interfaces\compra.aspx.designer.cs">
       <DependentUpon>compra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\restriccion.aspx.cs">
+      <DependentUpon>restriccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\restriccion.aspx.designer.cs">
+      <DependentUpon>restriccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\verificarCuenta.aspx.cs">
       <DependentUpon>verificarCuenta.aspx</DependentUpon>
