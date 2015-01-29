@@ -60,6 +60,7 @@
   <ItemGroup>
     <Content Include="interfaces\cerrarSesion.aspx" />
     <Content Include="interfaces\compra.aspx" />
+    <Content Include="interfaces\ControlComentarios.ascx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
@@ -138,7 +139,7 @@
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
     <Content Include="interfaces\log.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
-    <Content Include="interfaces\OlvidarClave.aspx" />
+    <Content Include="interfaces\notificaciones.aspx" />
     <Content Include="interfaces\producto.aspx" />
     <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\publicar.aspx" />
@@ -171,9 +172,17 @@
     <Compile Include="interfaces\compra.aspx.designer.cs">
       <DependentUpon>compra.aspx</DependentUpon>
     </Compile>
-    <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
-      <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="interfaces\ControlComentarios.ascx.cs">
+      <DependentUpon>ControlComentarios.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlComentarios.ascx.designer.cs">
+      <DependentUpon>ControlComentarios.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\notificaciones.aspx.cs">
+      <DependentUpon>notificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\notificaciones.aspx.designer.cs">
+      <DependentUpon>notificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\restriccion.aspx.designer.cs">
       <DependentUpon>restriccion.aspx</DependentUpon>
@@ -192,12 +201,6 @@
     <Compile Include="interfaces\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="interfaces\ListaDeseos.aspx.cs">
-      <DependentUpon>ListaDeseos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="interfaces\ListaDeseos.aspx.designer.cs">
-      <DependentUpon>ListaDeseos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="interfaces\log.aspx.cs">
       <DependentUpon>log.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,12 +214,6 @@
     </Compile>
     <Compile Include="interfaces\negociacion.aspx.designer.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="interfaces\OlvidarClave.aspx.cs">
-      <DependentUpon>OlvidarClave.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="interfaces\OlvidarClave.aspx.designer.cs">
-      <DependentUpon>OlvidarClave.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -259,12 +256,6 @@
     </Compile>
     <Compile Include="interfaces\usuario.aspx.designer.cs">
       <DependentUpon>usuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="interfaces\VerificacionUsuario.aspx.cs">
-      <DependentUpon>VerificacionUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="interfaces\VerificacionUsuario.aspx.designer.cs">
-      <DependentUpon>VerificacionUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogicaDeNegocio\Email.cs" />
     <Compile Include="LogicaDeNegocio\EncriptacionDeDatos.cs" />
