@@ -7,5 +7,6 @@ namespace Proyecto.LogicaDeNegocio
 {
     public class LNComentario
     {
+
     }
 }
