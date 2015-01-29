@@ -34,6 +34,10 @@ namespace Proyecto.LogicaDeNegocio
             return DB.buscarNickname(nick).ToList();
         }
 
+        public void validarCuenta(string nickUsu) 
+        {
+            DB.validarCuenta(nickUsu);
+        }
         
     }
 }

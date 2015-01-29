@@ -22,33 +22,55 @@
 	            duration: 600
 	        });
 	    });
+
+	    function OcultarDiv() {
+	        var div = document.getElementById("li01");
+	        var div2 = document.getElementById("li02");
+	        var div3 = document.getElementById("li03");
+            
+	        div.style.display = "none";
+	        div2.style.display = "none";
+	        div3.style.display = "block";
+	    }
+
+	    function MostrarDiv() {
+	        var div = document.getElementById("li01");
+	        var div2 = document.getElementById("li02");
+	        var div3 = document.getElementById("li03");
+
+	        div.style.display = "block";
+	        div2.style.display = "block";
+	        div3.style.display = "none";
+	    }
 	</script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    <img src="images/banner.jpg" />
-        <div id="cabeza" class="container_12 clearfix">
+   
+    <img src="images/banner.jpg" /><h1 align="right"><asp:Label ID="Label1" runat="server"></asp:Label>
+        <asp:Label ID="Label2" runat="server"></asp:Label><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/interfaces/usuario.aspx"></asp:HyperLink><asp:Label ID="Label3" runat="server"></asp:Label><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="/interfaces/cerrarSesion.aspx"></asp:HyperLink>
+        </h1>
+&nbsp;<div id="cabeza" class="container_12 clearfix">
             <!-- Text Logo -->
             
 		<h3 id="logo" class="otromarg">UTMACH STORE</h3>
         
-            <asp:ContentPlaceHolder ID="nombreUsuario" runat="server"> 
+            <asp:ContentPlaceHolder ID="lista1" runat="server"> 
 
-                <ul id="navigation" class="grid_8">
-                    <li><a href="notificaciones.aspx"><span class="meta">Notificaciones</span><br />
-                        <img src="images/notificacion.png"></a></li>
-                    <li><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
-                    <li><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
-                    <li><a href="productos.aspx"><span class="meta">Productos</span><br />Publicaciones</a></li>
-                    <li><a href="usuario.aspx"><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
-                    <li><a href="index.aspx"><span class="meta">Pagina inicial</span><br />Inicio</a></li>
+                <ul id="navigation" class="grid_8" align="left">
+                    <li align="right" id="li03" style="display:none"><a href="notificaciones.aspx"><span class="meta">Notificaciones</span><br />
+                        <img src="images/notificacion.png" /></a></li>
+                    <li align="left" id="li01"><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
+                    <li align="left" id="li02"><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
+                    <li align="left" ><a href="productos.aspx"><span class="meta">Productos</span><br />Publicaciones</a></li>
+                    <li align="left" ><a href="usuario.aspx"><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
+                    <li align="left"><a href="index.aspx"><span class="meta">Pagina inicial</span><br />Inicio</a></li>
                 </ul>
 
             </asp:ContentPlaceHolder>
-        </h1>
+      
 		
 		<!-- Navigation Menu -->
         
@@ -89,7 +111,6 @@
 			<a class="float right" href="#">ir al inicio</a>
 		</p>
         </div>
-    </div>
     </form>
 </body>
 </html>

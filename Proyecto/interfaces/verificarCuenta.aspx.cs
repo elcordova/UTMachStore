@@ -9,11 +9,12 @@ namespace Proyecto.interfaces
 {
 
     
-    public partial class log : System.Web.UI.Page
+    public partial class verificarCuenta : System.Web.UI.Page
     {
 
         LogicaDeNegocio.LN_Usuario lnusuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
+        Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,27 +23,21 @@ namespace Proyecto.interfaces
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
-            //Verifico si existe
-            //Luego veo si esta activo
-            string nick=TextBox1.Text;
-            List<dataBase.buscarNicknameResult> datosUsuario = lnusuario.buscarNick(nick);
+            usuario.Nic_usu = TextBoxNombre.Text;
+            List<dataBase.buscarNicknameResult> datosUsuario = lnusuario.buscarNick(usuario.Nic_usu);
             if (!datosUsuario.Count.Equals(0))
             {
                 //EXISTE
 
-                if (datosUsuario.ElementAt(0).password_Usu.Equals(seguridad.Encriptar(TextBox5.Text)))
+                if (datosUsuario.ElementAt(0).password_Usu.Equals(seguridad.Encriptar(TextBoxPasswd.Text)))
                 {
                     //ACCESO
 
-                    if (datosUsuario.ElementAt(0).estado_Usu.Equals(true))
+                    if (datosUsuario.ElementAt(0).password_Usu.Equals(TextBoxCod.Text))
                     {
-                        //USUARIO ACTIVO
-
-                        Session["usuario"] = TextBox1.Text;
+                        lnusuario.validarCuenta(usuario.Nic_usu);
+                        Session["usuario"] = usuario.Nic_usu;
                         Response.Redirect("/interfaces/index.aspx");
-
-                    
                     }
                     else
                     {
@@ -54,14 +49,12 @@ namespace Proyecto.interfaces
                 {
                     //CONTRASEÑA INCORRECTA
                 }
-
-                
-
             }
-            else 
+            else
             {
                 //NO EXISTE
             }
+            
         }
     }
 }
