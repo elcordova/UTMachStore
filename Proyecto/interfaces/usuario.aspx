@@ -33,7 +33,7 @@
 		<div class="hr dotted clearfix"></div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
-        <table align="center">
+        <table align="right">
             <tr>
                 <td Width="200px">Contraseña Actual</td>
                 <td Width="200px">Nueva Contraseña</td>
