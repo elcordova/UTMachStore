@@ -12,14 +12,14 @@ namespace Proyecto.LogicaDeNegocio
         MailMessage mail = new MailMessage();
         SmtpClient smtp = new SmtpClient();
 
-        public bool correoVerificacion(string from, string passwd, string to, string message) 
+        public bool correoVerificacion(string from, string passwd, string to, string message, string nick) 
         {
             try
             {
                 mail.From = new MailAddress(from);
                 mail.To.Add(new MailAddress(to));
                 mail.Body = message;
-                mail.Subject = "Verificacion de Cuenta";
+                mail.Subject = "¡Bienvenido!, "+nick+" Solo te falta confirmar tu cuenta‏";
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
                 smtp.Credentials = new NetworkCredential(from, passwd);

@@ -10,6 +10,6 @@
 namespace Proyecto.interfaces {
     
     
-    public partial class MisPublicaciones {
+    public partial class restriccion {
     }
 }
