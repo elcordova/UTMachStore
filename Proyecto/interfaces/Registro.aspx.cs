@@ -63,11 +63,12 @@ namespace Proyecto.interfaces
 
         public void enviarCorreo()
         {
-            string from = "utmachstore@gmail.com";
-            string passwd = "utmachstore2015";
+            string from = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlAEAAZwBtAGEAaQBsAC4AYwBvAG0A");
+            string passwd = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlADIAMAAxADUA");
             string to = usuario.Email_usu;
-            string message = "lol";
-            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message))
+            string message = "Hola " + usuario.Nic_usu + ",Confirmando tu cuenta, accedes a todas las funcionalidades de UTMachStore \n \n"
+            + "Vuelve a nuestra Página y en el Logeo ingresa el siguiente codigo: \n" + usuario.Passwd_usu;
+            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, usuario.Nic_usu))
             {
                 Console.WriteLine("Correo enviado con exito");
             }
