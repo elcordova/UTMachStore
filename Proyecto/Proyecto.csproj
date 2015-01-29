@@ -227,6 +227,8 @@
     <Compile Include="LogicaDeNegocio\Email.cs" />
     <Compile Include="LogicaDeNegocio\LNComentario.cs" />
     <Compile Include="LogicaDeNegocio\LNFoto.cs" />
+    <Compile Include="LogicaDeNegocio\LN_Notificacion.cs" />
+    <Compile Include="LogicaDeNegocio\LN_Publicacion.cs" />
     <Compile Include="LogicaDeNegocio\LN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
