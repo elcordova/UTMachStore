@@ -18,7 +18,7 @@ namespace Proyecto.interfaces
 
         }
 
-        
+
         protected void Button1_Click1(object sender, EventArgs e)
         {
             usuario.Nombre_usu = TextBoxNombre.Text;
@@ -63,13 +63,19 @@ namespace Proyecto.interfaces
 
         public void enviarCorreo()
         {
-            string from = "utmachstore@gmail.com";
-            string passwd = "utmachstore2015";
+            string from = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlAEAAZwBtAGEAaQBsAC4AYwBvAG0A");
+            string passwd = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlADIAMAAxADUA");
             string to = usuario.Email_usu;
-            string message = "lol";
-            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message))
+            string message = "Hola!, " + usuario.Nic_usu + "\n \n"
+                + "Muchas gracias por registrarte en UTMachStore. A continuación te damos los datos de acceso a la zona de usuarios: \n \n"
+                + "Usuario: " + usuario.Nic_usu + "\n Clave: " + TextBoxPasswd.Text + "\n \n"
+                + "En estos momentos tu usuario aun no está validado. Cuando lo valides tendrás las ventajas de usuarios registrados de UTMachStore, como promocionar tus productos y realizar compras. \n \n"
+                + "Verás un formulario donde colocar esta clave: \n"
+                + usuario.Passwd_usu +"\n \n"
+                + "Un cordial saludo y bienvenido a la comunidad de UTMachStore!";
+            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, usuario.Nic_usu))
             {
-                Console.WriteLine("Correo enviado con exito");
+                Response.Redirect("verificarCuenta.aspx");
             }
             else
             {

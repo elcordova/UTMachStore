@@ -207,4 +207,8 @@
     <Parameter Name="stock_produc" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.validarCuenta" Method="validarCuenta">
+    <Parameter Name="nick" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
