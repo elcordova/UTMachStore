@@ -60,6 +60,7 @@
   <ItemGroup>
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\restriccion.aspx" />
+    <Content Include="interfaces\VerificacionUsuario.aspx" />
     <Content Include="interfaces\verificarCuenta.aspx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
@@ -170,6 +171,13 @@
     </Compile>
     <Compile Include="interfaces\restriccion.aspx.designer.cs">
       <DependentUpon>restriccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\VerificacionUsuario.aspx.cs">
+      <DependentUpon>VerificacionUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\VerificacionUsuario.aspx.designer.cs">
+      <DependentUpon>VerificacionUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\verificarCuenta.aspx.cs">
       <DependentUpon>verificarCuenta.aspx</DependentUpon>
