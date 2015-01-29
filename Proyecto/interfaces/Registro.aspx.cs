@@ -22,7 +22,7 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ButtonRegistrar.Attributes.Add("onclick", alertMsg);
+            
             usuario.Nombre_usu = TextBoxNombre.Text;
             usuario.Nic_usu = TextBoxNickname.Text;
             usuario.Direccion_usu = TextBoxDireccion.Text;
@@ -35,7 +35,7 @@ namespace Proyecto.interfaces
                 || TextBoxConfPasswd.Text.Equals(""))
             {
                 //mensaje de Error
-                
+                ButtonRegistrar.Attributes.Add("onclick", "return confirm('¿desea borrar estos datos?')");
             }
             else 
             {
