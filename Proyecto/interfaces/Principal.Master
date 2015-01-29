@@ -50,7 +50,7 @@
     <form id="form1" runat="server">
    
     <img src="images/banner.jpg" /><h1 align="right"><asp:Label ID="Label1" runat="server"></asp:Label>
-        <asp:Label ID="Label2" runat="server"></asp:Label><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/interfaces/usuario.aspx"></asp:HyperLink><asp:Label ID="Label3" runat="server"></asp:Label><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl=""></asp:HyperLink>
+        <asp:Label ID="Label2" runat="server"></asp:Label><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/interfaces/usuario.aspx"></asp:HyperLink><asp:Label ID="Label3" runat="server"></asp:Label><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="/interfaces/cerrarSesion.aspx"></asp:HyperLink>
         </h1>
 &nbsp;<div id="cabeza" class="container_12 clearfix">
             <!-- Text Logo -->

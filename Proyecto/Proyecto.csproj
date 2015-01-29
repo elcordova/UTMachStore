@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="interfaces\cerrarSesion.aspx" />
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\restriccion.aspx" />
     <Content Include="interfaces\verificarCuenta.aspx" />
@@ -157,6 +158,13 @@
     <Compile Include="Entidades\Ent_Notificacion.cs" />
     <Compile Include="Entidades\Ent_Publicaciones.cs" />
     <Compile Include="Entidades\Ent_Usuario.cs" />
+    <Compile Include="interfaces\cerrarSesion.aspx.cs">
+      <DependentUpon>cerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\cerrarSesion.aspx.designer.cs">
+      <DependentUpon>cerrarSesion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\compra.aspx.cs">
       <DependentUpon>compra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

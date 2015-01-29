@@ -49,6 +49,33 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.TextBox TextBoxContrasena;
         
         /// <summary>
+        /// Control TextBoxNuevaContra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNuevaContra;
+        
+        /// <summary>
+        /// Control TextBoxConfirContra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxConfirContra;
+        
+        /// <summary>
+        /// Control CheckBoxSi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxSi;
+        
+        /// <summary>
         /// Control TextBoxDireccion.
         /// </summary>
         /// <remarks>
