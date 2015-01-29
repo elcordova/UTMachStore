@@ -19,7 +19,7 @@ namespace Proyecto.interfaces
             llenarDatos();
         }
 
-        static string contrasenaTemp = "";
+        string contrasenaTemp = "";
 
         public void llenarDatos()
         {
