@@ -58,13 +58,13 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
         
         /// <summary>
-        /// Control nombreUsuario.
+        /// Control lista1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder nombreUsuario;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder lista1;
         
         /// <summary>
         /// Control contenido_principal.

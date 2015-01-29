@@ -36,7 +36,7 @@
             
 		<h3 id="logo" class="otromarg">UTMACH STORE</h3>
         
-            <asp:ContentPlaceHolder ID="nombreUsuario" runat="server"> 
+            <asp:ContentPlaceHolder ID="lista1" runat="server"> 
 
                 <ul id="navigation" class="grid_8">
                     <li><a href="notificaciones.aspx"><span class="meta">Notificaciones</span><br />
