@@ -7,19 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto.interfaces
 {
-    public partial class productos : System.Web.UI.Page
+    public partial class restriccion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] != null)
-            {
-                
 
-            }
-            else
-            {
-                Response.Redirect("");
-            }
         }
     }
 }
