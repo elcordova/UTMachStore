@@ -228,7 +228,6 @@
       <DependentUpon>usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogicaDeNegocio\Email.cs" />
-    <Compile Include="LogicaDeNegocio\EncriptacionDeDatos.cs" />
     <Compile Include="LogicaDeNegocio\LNComentario.cs" />
     <Compile Include="LogicaDeNegocio\LNFoto.cs" />
     <Compile Include="LogicaDeNegocio\LN_Notificacion.cs" />
