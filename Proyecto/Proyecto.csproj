@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="interfaces\acceso.html" />
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
@@ -145,6 +146,7 @@
     <Content Include="interfaces\publicar.aspx" />
     <Content Include="interfaces\Registro.aspx" />
     <Content Include="interfaces\usuario.aspx" />
+    <Content Include="LogicaDeNegocio\CredencialesGmail.txt" />
     <Content Include="procesos almacenados MIguelKerly\ProcesosAlmacenadosMiguelKerly.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -250,6 +252,7 @@
       <LastGenOutput>Datos.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="interfaces\acceso.php" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
