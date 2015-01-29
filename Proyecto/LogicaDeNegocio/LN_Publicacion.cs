@@ -9,9 +9,11 @@ namespace Proyecto.LogicaDeNegocio
     {
         dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
 
-        public void insertarUsuario(Entidades.Ent_Usuario usuario)
+        public void insertarUsuario(Entidades.Ent_Publicaciones publicacion)
         {
-            DB.insertarPublicacion(
+            DB.insertarPublicacion(publicacion.Codigo_Categoria, publicacion.Codigo_usuario, publicacion.Nombre_Publicacion, publicacion.Datos_Publicacion,
+                publicacion.Fecha_Publicacion, publicacion.Numero_ContactoPublicacion, publicacion.Precio_ProductoPublicacion, publicacion.Estado_Publicacion,
+                publicacion.Stock_ProductoPublicacion);
             DB.SubmitChanges();
         }
     }
