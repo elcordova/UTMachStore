@@ -94,8 +94,6 @@
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="notificaciones" runat="server"> 
             </asp:ContentPlaceHolder>
-            <asp:ContentPlaceHolder ID="verificacion_usuario" runat="server"> 
-            </asp:ContentPlaceHolder>
         </div>
         <div id="pie">
             <p class="grid_12 footer clearfix">
@@ -103,7 +101,6 @@
 			<a class="float right" href="#">ir al inicio</a>
 		</p>
         </div>
-    </div>
     </form>
 </body>
 </html>
