@@ -12,7 +12,6 @@ namespace Proyecto.interfaces
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
-        //private ErrorProvider warningProvider = new ErrorProvider();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,7 +32,7 @@ namespace Proyecto.interfaces
                 || usuario.Email_usu.Equals("") || usuario.Cedula_usu.Equals("") || TextBoxPasswd.Text.Equals("")
                 || TextBoxConfPasswd.Text.Equals(""))
             {
-                //mensaje de Error
+                //Validacion de campos vacios
             }
             else 
             {
@@ -46,8 +45,7 @@ namespace Proyecto.interfaces
                 }
                 else
                 {
-                    //mostrar mensaje de error
-                    Response.Write("<h2>ERROR</h2>");
+                    //validacion en caso de que las contraseñas no coincidan
                 }    
             }
                   
