@@ -10,7 +10,7 @@
 namespace Proyecto.interfaces {
     
     
-    public partial class verificarCuenta {
+    public partial class log {
         
         /// <summary>
         /// Control TextBox1.
