@@ -33,7 +33,7 @@ namespace Proyecto.interfaces
 
             contrasenaTemp = TextBoxContrasena.Text;
             Console.WriteLine(contrasenaTemp);
-            Console.Read();
+            //Console.Read();
          
         }
 
