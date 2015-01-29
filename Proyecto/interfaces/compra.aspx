@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="Proyecto.interfaces.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="compras" runat="server">
+<asp:Content ID="Content5" ContentPlaceHolderID="compra" runat="server">
     <div class="hr grid_12 clearfix">&nbsp;</div>
 		<div class="hr grid_12 clearfix">&nbsp;</div>	
 
