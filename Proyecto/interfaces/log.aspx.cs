@@ -13,7 +13,7 @@ namespace Proyecto.interfaces
     {
 
         LogicaDeNegocio.LN_Usuario lnusuario = new LogicaDeNegocio.LN_Usuario();
-
+        LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace Proyecto.interfaces
             {
                 //EXISTE
 
-                if (datosUsuario.ElementAt(0).password_Usu.Equals(TextBox5.Text))
+                if (datosUsuario.ElementAt(0).password_Usu.Equals(seguridad.DesEncriptar(TextBox5.Text)))
                 {
                     //ACCESO
 

@@ -75,7 +75,7 @@ namespace Proyecto.interfaces
                 + "Un cordial saludo y bienvenido a la comunidad de UTMachStore!";
             if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, usuario.Nic_usu))
             {
-                Console.WriteLine("Correo enviado con exito");
+                Response.Redirect("verificarCuenta.aspx");
             }
             else
             {
