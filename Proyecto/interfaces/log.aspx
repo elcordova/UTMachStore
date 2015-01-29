@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="loguin" runat="server">
-<br /><br /><br /><br />
+    <br /><br /><br /><br />
 
     
                 <h1>
@@ -82,7 +82,7 @@
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button2" runat="server" Text="Iniciar sesion" />
+                <asp:Button ID="Button2" runat="server" Text="Iniciar sesion" OnClick="Button2_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button1" runat="server" Text="Registrarse" />
             </div>

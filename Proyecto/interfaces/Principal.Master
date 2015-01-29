@@ -28,8 +28,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    <img src="images/banner.jpg" /><asp:Label ID="Label1" runat="server"></asp:Label>
+   
+    <img src="images/banner.jpg" /><h1 align="right"><asp:Label ID="Label1" runat="server"></asp:Label></h1>
 &nbsp;<div id="cabeza" class="container_12 clearfix">
             <!-- Text Logo -->
             
@@ -48,7 +48,7 @@
                 </ul>
 
             </asp:ContentPlaceHolder>
-        </h1>
+      
 		
 		<!-- Navigation Menu -->
         
