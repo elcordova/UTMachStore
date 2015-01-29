@@ -79,10 +79,14 @@ namespace Proyecto.interfaces
             }
             else
             {
-                Console.WriteLine("Correo no enviado");
+                //validacion de no poder haber enviado el correo
             }
 
         }
+
+
+
+
 
     }
 }
