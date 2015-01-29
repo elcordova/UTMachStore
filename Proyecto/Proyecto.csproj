@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BorrenPrueba\Borren.html" />
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
