@@ -11,7 +11,14 @@ namespace Proyecto.interfaces
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["usuario"] != null)
+            {
+                Label1.Text = Session["usuario"].ToString();
+            }
+            else
+            {
+                Label1.Text = "";
+            }
         }
     }
 }

@@ -39,6 +39,9 @@ namespace Proyecto.interfaces
                     {
                         //USUARIO ACTIVO
 
+                        Session["usuario"] = TextBox1.Text;
+                        Response.Redirect("/interfaces/index.aspx");
+
                         //Response.Write("<script><?php SESSION_START(); $_SESSION['nickuser']='hola'; ?></script>");
                         
                         //Response.Redirect("/interfaces/acceso.html");
