@@ -7,5 +7,6 @@ namespace Proyecto.LogicaDeNegocio
 {
     public class LN_Notificacion
     {
+
     }
 }
