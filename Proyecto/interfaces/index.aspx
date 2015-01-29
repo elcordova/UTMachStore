@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Proyecto.WebForm1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Proyecto.WebForm1" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="contenido_principal" runat="server">
     <div class="hr grid_12">&nbsp;</div>
 	 <div class="clear"></div>
@@ -51,3 +50,14 @@
 		<div class="hr grid_12 clearfix">&nbsp;</div>
         
 </asp:Content>
+
+<%--<asp:Content ID="Content1" ContentPlaceHolderID="ContentNick" runat="server">
+     <?php
+         session_start();
+         if (isset($_SESSION['nickuser'])){
+             echo '<p>GOLOSA</p>';
+         }else{
+             echo '<p>VERGA</p>';
+          }
+      ?>
+</asp:Content>--%>

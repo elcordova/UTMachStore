@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="interfaces\acceso.html" />
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
@@ -242,6 +243,7 @@
       <LastGenOutput>Datos.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="interfaces\acceso.php" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
