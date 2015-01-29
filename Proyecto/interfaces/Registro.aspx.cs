@@ -12,6 +12,7 @@ namespace Proyecto.interfaces
     {
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
+        LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,7 +38,8 @@ namespace Proyecto.interfaces
             {
                 if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
                 {
-                    usuario.Passwd_usu = TextBoxPasswd.Text;
+                    usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
+                    Console.WriteLine(seguridad.Encriptar(TextBoxPasswd.Text));
                     lnUsuario.insertarUsuario(usuario);
                     enviarCorreo();     //envio de mensaje de verificacion a email
                     limpiarCampos();
