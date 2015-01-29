@@ -197,7 +197,7 @@
   </Function>
   <Function Name="dbo.insertarPublicacion" Method="insertarPublicacion">
     <Parameter Name="codigo_categoria" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigo_usuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="codigo_usuario" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="nombre_publicacion" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="datos_publicacion" Type="System.String" DbType="VarChar(MAX)" />
     <Parameter Name="fecha_publicacion" Type="System.String" DbType="VarChar(10)" />
