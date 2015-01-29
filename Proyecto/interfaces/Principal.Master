@@ -94,6 +94,16 @@
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="notificaciones" runat="server"> 
             </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="verificafion_usuario" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="mis_publicaciones" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="edicion_publicacion" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="lista_deseos" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="olvidar_clave" runat="server"> 
+            </asp:ContentPlaceHolder>
         </div>
         <div id="pie">
             <p class="grid_12 footer clearfix">

@@ -266,23 +266,114 @@ DESCRIPTION: A premium business and portfolio theme.
 
 .imgn
 {
-    margin-left:250px;
+    margin-left:20%;
     float:left;
 }
 .text1
 {
     float:left;
-    margin-left:20px;
+    margin-left:2%;
 }
 .text2
 {
     float:left;
     margin-left:100px;
 }
-
-.otromarg
+/*para el registro*/
+.centrado_legend
 {
-    margin-top:50px;
+    margin-left:50%;
+}
+
+/*para mis publicaciones*/
+.imgpeq
+{
     float:left;
-    width: 121px;
+    height:100%;
+}
+.centrado_titulo
+{
+    margin-left:45%;
+}
+.parrafo
+{
+    float:left;
+    margin-left:10px;
+    width:800px;
+}
+.publicacion
+{
+    height:150px;
+    margin-left:20px;
+    margin-right:20px;
+    border:1px #000 dashed
+}
+.etiq
+{
+    -webkit-transition:all .6s ease;
+}
+    .etiq:hover
+    {
+        background-color:rgb(0, 161, 132);
+    }
+
+/*para verificacion de correo*/
+
+.centrado_titulo2
+{
+    margin-left:40%;
+}
+.contenido_confirmacion
+{
+    margin-left:250px;
+    margin-right:200px;
+    border:1px #000 solid;
+}
+.link_confirmacion
+{
+    text-decoration: underline;
+    float:left;
+    margin-left:43%;
+}
+.barra_ver
+{
+    height:20px;
+    background-color:#565656;
+}
+/*para la lista de deseos*/
+.imgpeq_deseos
+{
+    float:left;
+    height:50%;
+}
+.parrafo_deseos
+{
+    float:left;
+    margin-left:10px;
+    width:800px;
+}
+.publicacion_deseos
+{
+    float:left;
+    height:250px;
+    width:250px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-bottom:20px;
+    margin-top:20px;
+    border:1px #000 dashed
+}
+.etiq_deseos
+{
+    -webkit-transition:all .6s ease;
+}
+    .etiq_deseos:hover
+    {
+        background-color:rgb(0, 161, 132);
+    }
+.contdese
+{
+    min-height:650px;
+    margin-bottom:10%;
+    margin-left:5%;
 }
