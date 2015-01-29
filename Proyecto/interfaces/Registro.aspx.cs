@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
 namespace Proyecto.interfaces
 {
     public partial class Registro : System.Web.UI.Page
@@ -13,7 +12,7 @@ namespace Proyecto.interfaces
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
-        string alertMsg = "return confirm('¿desea borrar estos datos?')";
+        //private ErrorProvider warningProvider = new ErrorProvider();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,7 +34,6 @@ namespace Proyecto.interfaces
                 || TextBoxConfPasswd.Text.Equals(""))
             {
                 //mensaje de Error
-                ButtonRegistrar.Attributes.Add("onclick", "return confirm('¿desea borrar estos datos?')");
             }
             else 
             {
