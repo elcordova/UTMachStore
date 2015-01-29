@@ -29,7 +29,7 @@ namespace Proyecto.interfaces
             {
                 //EXISTE
 
-                if (datosUsuario.ElementAt(0).password_Usu.Equals(seguridad.DesEncriptar(TextBoxPasswd.Text)))
+                if (datosUsuario.ElementAt(0).password_Usu.Equals(seguridad.Encriptar(TextBoxPasswd.Text)))
                 {
                     //ACCESO
 
