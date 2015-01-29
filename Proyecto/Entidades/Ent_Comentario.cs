@@ -28,6 +28,7 @@ namespace Proyecto.Entidades
             Contenido_Com = contenido;
             Fecha_com = fecha;
           
+
         }
 
        
