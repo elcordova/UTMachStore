@@ -33,24 +33,16 @@
         <div id="cabeza" class="container_12 clearfix">
             <!-- Text Logo -->
             
-		<h3 id="logo" class="otromarg">UTMACH STORE</h3>
-        
-            <asp:ContentPlaceHolder ID="nombreUsuario" runat="server"> 
-
-                <ul id="navigation" class="grid_8">
-                    <li><a href="notificaciones.aspx"><span class="meta">Notificaciones</span><br />
-                        <img src="images/notificacion.png"></a></li>
-                    <li><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
-                    <li><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
-                    <li><a href="productos.aspx"><span class="meta">Productos</span><br />Publicaciones</a></li>
-                    <li><a href="usuario.aspx"><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
-                    <li><a href="index.aspx"><span class="meta">Pagina inicial</span><br />Inicio</a></li>
-                </ul>
-
-            </asp:ContentPlaceHolder>
-        </h1>
+		<h1 id="logo" class="grid_4">UTMACH STORE</h1>
 		
 		<!-- Navigation Menu -->
+		<ul id="navigation" class="grid_8">
+			<li><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
+			<li><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
+			<li><a href="productos.aspx"><span class="meta">Productos</span><br />Publicaciones</a></li>
+			<li><a href="#"><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
+			<li><a href="index.aspx" class="current"><span class="meta">Pagina inicial</span><br />Inicio</a></li>
+		</ul>
         
         </div>
         <div id="cuerpo">
@@ -70,7 +62,15 @@
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="negociacion" runat="server"> 
             </asp:ContentPlaceHolder>
-            <asp:ContentPlaceHolder ID="notificaciones" runat="server"> 
+            <asp:ContentPlaceHolder ID="verificafion_usuario" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="mis_publicaciones" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="edicion_publicacion" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="lista_deseos" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="olvidar_clave" runat="server"> 
             </asp:ContentPlaceHolder>
         </div>
         <div id="pie">
