@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Proyecto.LogicaDeNegocio
 {
-    public class LNComentario
+    public class LN_Notificacion
     {
 
     }

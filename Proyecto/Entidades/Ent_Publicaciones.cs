@@ -8,7 +8,7 @@ namespace Proyecto.Entidades
     public class Ent_Publicaciones
     {
             private int cod_catgoria;
-            private string cod_usuario;
+            private int cod_usuario;
             private string nom_publicacion;
             private string dat_publicacion;
             private string fec_publicacion;
@@ -20,7 +20,7 @@ namespace Proyecto.Entidades
             public Ent_Publicaciones()
             {
                 cod_catgoria = 0;
-                cod_usuario = "";
+                cod_usuario =0;
                 nom_publicacion = "";
                 dat_publicacion = "";
                 fec_publicacion = "";
@@ -30,7 +30,7 @@ namespace Proyecto.Entidades
                 stoc_prod_publicaciones = 0;
             }
 
-            public Ent_Publicaciones(int codigoCategoria, string codigoUsuario, string nombrePublicacion, string datosPublicacion, 
+            public Ent_Publicaciones(int codigoCategoria, int codigoUsuario, string nombrePublicacion, string datosPublicacion, 
                 string fechaPublicidad, string numeroContactoPublicacion, decimal precioProductoublicacion, bool estadoPublicacion, int stocProductoPublicacion)
             {
                 cod_catgoria = codigoCategoria;
@@ -50,7 +50,7 @@ namespace Proyecto.Entidades
                 set { cod_catgoria = value; }
             }
 
-            public string Codigo_usuario
+            public int Codigo_usuario
             {
                 get { return cod_usuario; }
                 set { cod_usuario = value; }
