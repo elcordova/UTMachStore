@@ -15,6 +15,7 @@ namespace Proyecto.Entidades
 
         public Ent_Comentario()
         {
+
             Codigo_Usu = "";
             Codigo_Pub = 0;
             Contenido_Com = "";
