@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="Proyecto.interfaces.Registro" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="Proyecto.interfaces.Registro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="registro" runat="server">
@@ -60,7 +60,7 @@
                 <div class="controls input">
                     &nbsp;<asp:TextBox ID="TextBoxDireccion" runat="server" MaxLength="30"></asp:TextBox>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" MaxLength="50"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" MaxLength="20"></asp:TextBox>
                 </div>
                 &nbsp;<div class="controls input">
                     &nbsp;<br />

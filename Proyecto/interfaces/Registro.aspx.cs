@@ -63,28 +63,22 @@ namespace Proyecto.interfaces
                         }
                         else
                         {
-                            registroUsuario();
+                            if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+                            {
+                                usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
+                                lnUsuario.insertarUsuario(usuario);
+                                enviarCorreo();     //envio de mensaje de verificacion a email
+                                limpiarCampos();
+                            }
+                            else
+                            {
+                                //validacion en caso de que las contraseñas no coincidan
+                                Response.Write("<script language=javascript>alert('Las contrseñas no coinciden');</script>");
+                            }
                            
                         }
                     }
                 }
-                registroUsuario();
-            }
-        }
-
-        private void registroUsuario()
-        {
-            if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
-            {
-                usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
-                lnUsuario.insertarUsuario(usuario);
-                enviarCorreo();     //envio de mensaje de verificacion a email
-                limpiarCampos();
-            }
-            else
-            {
-                //validacion en caso de que las contraseñas no coincidan
-                Response.Write("<script language=javascript>alert('Las contrseñas no coinciden');</script>");
             }
         }
 
