@@ -111,6 +111,8 @@ namespace Proyecto.interfaces
             {
                 if (!camposVacios())
                 {
+
+
                     //ACTUALIZO
                     usuario.Nombre_usu = TextBoxNombre.Text;
                     usuario.Nic_usu = TextBoxNick.Text;
