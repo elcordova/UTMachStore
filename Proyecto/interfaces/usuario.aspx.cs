@@ -23,7 +23,6 @@ namespace Proyecto.interfaces
             else
             {
                
-                lblError.Text = "";
                 cambio = false;
                 contrasenaTemp = "";
                 TextBoxContrasena.Enabled = false;
