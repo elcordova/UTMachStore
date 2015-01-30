@@ -256,6 +256,7 @@
     <Compile Include="LogicaDeNegocio\LN_Notificacion.cs" />
     <Compile Include="LogicaDeNegocio\LN_Publicacion.cs" />
     <Compile Include="LogicaDeNegocio\LN_Usuario.cs" />
+    <Compile Include="LogicaDeNegocio\LN_Ventas.cs" />
     <Compile Include="LogicaDeNegocio\Validaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
