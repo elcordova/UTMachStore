@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="MisPublicaciones.aspx.cs" Inherits="Proyecto.interfaces.MisPublicaciones" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+<%@ Register TagPrefix="uc" TagName="Spinner" 
+    Src="ControlMisPublicaciones.ascx" %>
 <asp:Content ID="Content10" ContentPlaceHolderID="misPublicaciones" runat="server">
     <br />
     <br />
@@ -8,7 +8,12 @@
     <br />
 
     <h1 class="centrado_titulo">Mis publicaciones</h1>
-    <div class="pr grid_12 clearfix">&nbsp;</div>
+     <uc:Spinner id="Spinner1" 
+        runat="server" 
+         />
+
+   <%-- mis publicaciones
+   <%-- <div class="pr grid_12 clearfix">&nbsp;</div>
     <h5>&nbsp;&nbsp;&nbsp;&nbsp;Vendo zapatos converse totalmente nuevos</h5>
     <br />
     <a href="#" class="button float right">Eliminar publicacion</a>&nbsp;&nbsp;
@@ -75,7 +80,7 @@
 
         </a>
 
-    </div>
+    </div>--%>
 
     <br />
     <br />
