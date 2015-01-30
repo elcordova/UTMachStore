@@ -12,7 +12,8 @@ namespace Proyecto.interfaces
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
-        List<dataBase.buscarNicknameResult> datosUsuario = new List<dataBase.buscarNicknameResult>();
+        List<dataBase.buscarNicknameResult> datosUsuarioNick = new List<dataBase.buscarNicknameResult>();
+        List<dataBase.buscarCedulaResult> datosUsuarioCedula = new List<dataBase.buscarCedulaResult>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,30 +41,41 @@ namespace Proyecto.interfaces
             }
             else
             {
-
-                if (!datosUsuario.Count.Equals(0))
+                datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
+                datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
+                if (!datosUsuarioNick.Count.Equals(0))
                 {
-                    if (!datosUsuario.ElementAt(0).nic_Usu.Equals(""))
+                    if (!datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
                     {
-                        
-                        if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+                        if (!datosUsuarioCedula.Count.Equals(0))
                         {
-                            usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
-                            lnUsuario.insertarUsuario(usuario);
-                            enviarCorreo();     //envio de mensaje de verificacion a email
-                            limpiarCampos();
-                        }
-                        else
-                        {
-                            //validacion en caso de que las contraseñas no coincidan
+                            if (!datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+                            {
+                                if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+                                {
+                                    usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
+                                    lnUsuario.insertarUsuario(usuario);
+                                    enviarCorreo();     //envio de mensaje de verificacion a email
+                                    limpiarCampos();
+                                }
+                                else
+                                {
+                                    //validacion en caso de que las contraseñas no coincidan
+                                }
+                            }
+                            else
+                            {
+                                //validacion de cedula existente
+                                Response.Redirect("index.aspx");
+                            }
                         }
                     }
-                    else 
+                    else
                     {
                         ////validacion de que el nickname ya existe
                     }
 
-                    
+
                 }
 
             }
