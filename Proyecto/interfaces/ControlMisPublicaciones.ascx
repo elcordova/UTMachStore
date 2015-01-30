@@ -16,10 +16,8 @@
          &nbsp;&nbsp;&nbsp;&nbsp;    <sup style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: text-top; box-sizing: border-box; font-size: 0.5em; line-height: 1.5em;">00</sup></strong></h4>
           <p class="parrafo">
               &nbsp;&nbsp;&nbsp;&nbsp;    <asp:Label ID="Label3" runat="server" Text=" Zapatos converese nuevos en buen estado, color negro con franjas rojas y zuela blanca
-                interesados comunicarse  de inmediato, para relizar la compra."></asp:Label>
-               
+                interesados comunicarse  de inmediato, para relizar la compra."></asp:Label>            
             </p>
-
         </a>
 
     </div>
