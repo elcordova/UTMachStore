@@ -45,12 +45,22 @@ namespace Proyecto.interfaces
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
                 if (!datosUsuarioNick.Count.Equals(0))
                 {
+                    ////validacion de que el nickname ya existe
+                }
+                else
+                {
                     if (!datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
                     {
                         if (!datosUsuarioCedula.Count.Equals(0))
                         {
                             if (!datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
                             {
+                                //validacion de cedula existente
+                                Response.Redirect("index.aspx");
+                            }
+                            else
+                            {
+
                                 if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
                                 {
                                     usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
@@ -63,21 +73,9 @@ namespace Proyecto.interfaces
                                     //validacion en caso de que las contraseñas no coincidan
                                 }
                             }
-                            else
-                            {
-                                //validacion de cedula existente
-                                Response.Redirect("index.aspx");
-                            }
                         }
                     }
-                    else
-                    {
-                        ////validacion de que el nickname ya existe
-                    }
-
-
                 }
-
             }
         }
 
