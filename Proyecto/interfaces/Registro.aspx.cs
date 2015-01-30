@@ -28,12 +28,7 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            usuario.Nombre_usu = TextBoxNombre.Text;
-            usuario.Nic_usu = TextBoxNickname.Text;
-            usuario.Direccion_usu = TextBoxDireccion.Text;
-            usuario.Email_usu = TextBoxEmail.Text;
-            usuario.Cedula_usu = TextBoxCedula.Text;
-            usuario.Estado_usu = false;
+            capturaDeCampos();
 
             if (camposVacios())
             {
@@ -51,6 +46,16 @@ namespace Proyecto.interfaces
                     registroUsuario();
                 }
             }
+        }
+
+        private void capturaDeCampos()
+        {
+            usuario.Nombre_usu = TextBoxNombre.Text;
+            usuario.Nic_usu = TextBoxNickname.Text;
+            usuario.Direccion_usu = TextBoxDireccion.Text;
+            usuario.Email_usu = TextBoxEmail.Text;
+            usuario.Cedula_usu = TextBoxCedula.Text;
+            usuario.Estado_usu = false;
         }
 
         private bool camposVacios()

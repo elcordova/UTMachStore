@@ -45,12 +45,13 @@ namespace Proyecto.interfaces
                     else
                     {
                         //USUARIO INACTIVO
+                        Response.Write("<script language=javascript>alert('Aún no has activado tu cuenta');</script>");
                     }
 
                 }
                 else
                 {
-                    //CONTRASEÑA INCORRECTA
+                    Response.Write("<script language=javascript>alert('La ');</script>");
                 }
             }
             else
