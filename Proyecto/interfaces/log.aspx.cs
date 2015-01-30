@@ -48,7 +48,7 @@ namespace Proyecto.interfaces
                     {
                         //USUARIO INACTIVO
                         Response.Write("<script language=javascript>alert('Aún no has activado tu cuenta');</script>");
-                        Response.Redirect("/interfaces/verificarCuenta.aspx");
+                        enviarCorreo2(datosUsuario.ElementAt(0).email_Usu,datosUsuario.ElementAt(0).nic_Usu,datosUsuario.ElementAt(0).password_Usu);
                     }
 
                 }
@@ -106,6 +106,29 @@ namespace Proyecto.interfaces
                 }
             }
             
+
+        }
+        public void enviarCorreo2(string correo, string nick, string pass)
+        {
+            string from = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlAEAAZwBtAGEAaQBsAC4AYwBvAG0A");
+            string passwd = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlADIAMAAxADUA");
+            string to = correo;
+            string asunto = "¡Bienvenido!, " + nick + " Solo te falta confirmar tu cuenta‏";
+            string message = "Hola!, " + nick + "\n \n"
+                + "Muchas gracias por registrarte en UTMachStore. A continuación te damos los datos de acceso a la zona de usuarios: \n \n"
+                + "Usuario: " + nick + "\n Clave: " + TextBox5.Text + "\n \n"
+                + "En estos momentos tu usuario aun no está validado. Cuando lo valides tendrás las ventajas de usuarios registrados de UTMachStore, como promocionar tus productos y realizar compras. \n \n"
+                + "Verás un formulario donde colocar esta clave: \n"
+                + pass + "\n \n"
+                + "Un cordial saludo y bienvenido a la comunidad de UTMachStore!";
+            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, nick, asunto))
+            {
+                Response.Redirect("verificarCuenta.aspx");
+            }
+            else
+            {
+                //validacion de no poder haber enviado el correo
+            }
 
         }
 

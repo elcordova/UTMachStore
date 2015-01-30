@@ -68,6 +68,7 @@ namespace Proyecto.interfaces
 
         protected void ButtonActualizar_Click(object sender, EventArgs e)
         {
+            usuario = new Entidades.Ent_Usuario();
             if (cambio)
             {
                 if (!camposVacios() || TextBoxContrasena.Text.Equals("") || TextBoxNuevaContra.Text.Equals("")
@@ -84,6 +85,7 @@ namespace Proyecto.interfaces
                             usuario.Direccion_usu = TextBoxDireccion.Text;
                             usuario.Email_usu = TextBoxEmail.Text;
                             usuario.Passwd_usu = encrip.Encriptar(TextBoxNuevaContra.Text);
+                            usuario.Estado_usu = true;
 
                             lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
 
@@ -116,8 +118,11 @@ namespace Proyecto.interfaces
                     usuario.Direccion_usu = TextBoxDireccion.Text;
                     usuario.Email_usu = TextBoxEmail.Text;
                     usuario.Passwd_usu = encrip.Encriptar(contrasenaTemp);
+                    usuario.Estado_usu = true;
 
                     lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+
+                    Response.Redirect("/interfaces/usuario.aspx");
                 }
                 else
                 {
