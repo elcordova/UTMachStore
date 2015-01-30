@@ -81,6 +81,7 @@
     <Content Include="interfaces\Documentation\assets\styles.css" />
     <Content Include="interfaces\Documentation\assets\text.css" />
     <Content Include="interfaces\Documentation\README.html" />
+    <Content Include="interfaces\EdicionPublicacion.aspx" />
     <Content Include="interfaces\images\223x112.gif" />
     <Content Include="interfaces\images\600x300.gif" />
     <Content Include="interfaces\images\610x150.gif" />
@@ -143,6 +144,7 @@
     <Content Include="interfaces\js\jquery.roundabout-1.0.min.js" />
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
     <Content Include="interfaces\log.aspx" />
+    <Content Include="interfaces\MisPublicaciones.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
     <Content Include="interfaces\notificaciones.aspx" />
     <Content Include="interfaces\producto.aspx" />
@@ -189,6 +191,12 @@
     <Compile Include="interfaces\ControlComentarios.ascx.designer.cs">
       <DependentUpon>ControlComentarios.ascx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
+      <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\EdicionPublicacion.aspx.designer.cs">
+      <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,6 +210,12 @@
     </Compile>
     <Compile Include="interfaces\log.aspx.designer.cs">
       <DependentUpon>log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\MisPublicaciones.aspx.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\MisPublicaciones.aspx.designer.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\negociacion.aspx.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
