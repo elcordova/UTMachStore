@@ -16,13 +16,21 @@ namespace Proyecto.interfaces
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            llenarDatos();
-            lblError.Text = "";
-            cambio = false;
-            contrasenaTemp = "";
-            TextBoxContrasena.Enabled = false;
-            TextBoxNuevaContra.Enabled = false;
-            TextBoxConfirContra.Enabled = false;
+            if (Session["usuario"] != null)
+            {
+                Response.Redirect("/interfaces/restriccion.aspx");
+            }
+            else
+            {
+                llenarDatos();
+                lblError.Text = "";
+                cambio = false;
+                contrasenaTemp = "";
+                TextBoxContrasena.Enabled = false;
+                TextBoxNuevaContra.Enabled = false;
+                TextBoxConfirContra.Enabled = false;
+            }
+            
         }
 
         string contrasenaTemp = "";

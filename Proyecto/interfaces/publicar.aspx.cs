@@ -9,8 +9,19 @@ namespace Proyecto.interfaces
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        protected void Page_Load2(object sender, EventArgs e)
+        {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("/interfaces/restriccion.aspx");
+            }
+
+        }
         Entidades.Ent_Publicaciones entidadPublicacion = new Entidades.Ent_Publicaciones();
         LogicaDeNegocio.LN_Publicacion ingresoPublicacion = new LogicaDeNegocio.LN_Publicacion();
+        
+        
+
         protected void Button2_Click(object sender, EventArgs e)
         {
             entidadPublicacion.Codigo_Categoria = 1;

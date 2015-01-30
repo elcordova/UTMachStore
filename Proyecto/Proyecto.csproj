@@ -147,6 +147,7 @@
     <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\publicar.aspx" />
     <Content Include="interfaces\Registro.aspx" />
+    <Content Include="interfaces\restriccion.aspx" />
     <Content Include="interfaces\usuario.aspx" />
     <Content Include="procesos almacenados MIguelKerly\ProcesosAlmacenadosMiguelKerly.txt" />
     <Content Include="Web.config" />
@@ -233,6 +234,12 @@
     </Compile>
     <Compile Include="interfaces\Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\restriccion.aspx.cs">
+      <DependentUpon>restriccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\restriccion.aspx.designer.cs">
+      <DependentUpon>restriccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\usuario.aspx.cs">
       <DependentUpon>usuario.aspx</DependentUpon>

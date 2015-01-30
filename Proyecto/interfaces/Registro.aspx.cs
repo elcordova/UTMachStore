@@ -12,11 +12,15 @@ namespace Proyecto.interfaces
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
-        List<dataBase.buscarNicknameResult> datosUsuario = new List<dataBase.buscarNicknameResult>();
+        List<dataBase.buscarNicknameResult> datosUsuarioNick = new List<dataBase.buscarNicknameResult>();
+        List<dataBase.buscarCedulaResult> datosUsuarioCedula = new List<dataBase.buscarCedulaResult>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["usuario"] != null)
+            {
+                Response.Redirect("/interfaces/restriccion.aspx");
+            }
         }
 
 
@@ -37,32 +41,42 @@ namespace Proyecto.interfaces
             }
             else
             {
-
-                if (!datosUsuario.Count.Equals(0))
+                datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
+                datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
+                if (!datosUsuarioNick.Count.Equals(0))
                 {
-                    if (!datosUsuario.ElementAt(0).nic_Usu.Equals(""))
-                    {
-                        
-                        if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
-                        {
-                            usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
-                            lnUsuario.insertarUsuario(usuario);
-                            enviarCorreo();     //envio de mensaje de verificacion a email
-                            limpiarCampos();
-                        }
-                        else
-                        {
-                            //validacion en caso de que las contraseñas no coincidan
-                        }
-                    }
-                    else 
-                    {
-                        ////validacion de que el nickname ya existe
-                    }
-
-                    
+                    ////validacion de que el nickname ya existe
+                    Response.Write("<script language=javascript>alert('Este NickName ya existe');</script>");
                 }
+                else
+                {
+                    if (!datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
+                    {
+                        if (!datosUsuarioCedula.Count.Equals(0))
+                        {
+                            if (!datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+                            {
+                                //validacion de cedula existente
+                                Response.Redirect("index.aspx");
+                            }
+                            else
+                            {
 
+                                if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+                                {
+                                    usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
+                                    lnUsuario.insertarUsuario(usuario);
+                                    enviarCorreo();     //envio de mensaje de verificacion a email
+                                    limpiarCampos();
+                                }
+                                else
+                                {
+                                    //validacion en caso de que las contraseñas no coincidan
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 

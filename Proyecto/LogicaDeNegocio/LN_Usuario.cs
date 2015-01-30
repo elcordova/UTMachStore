@@ -39,9 +39,9 @@ namespace Proyecto.LogicaDeNegocio
             DB.validarCuenta(nickUsu);
         }
 
-        public List<dataBase.buscarNickResult> filtarNick(string nick) 
+        public List<dataBase.buscarCedulaResult> buscarCedula(string ced)
         {
-            return DB.buscarNick(nick).ToList();
+            return DB.buscarCedula(ced).ToList();
         }
         
     }

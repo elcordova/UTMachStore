@@ -61,7 +61,13 @@ namespace Proyecto.interfaces
             else 
             {
                 //NO EXISTE
+                Response.Write("<script language=javascript>alert('Este NickName no existe');</script>");
             }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
