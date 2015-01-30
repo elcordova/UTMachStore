@@ -43,35 +43,27 @@ namespace Proyecto.interfaces
             {
                 datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
+                int caseSwitch =0;
                 if (!datosUsuarioNick.Count.Equals(0))
                 {
-                    
-                    if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
-                    {
-                        ////validacion de que el nickname ya existe
-                        Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
-                    }
-                    else 
-                    {
-                        if (!datosUsuarioCedula.Count.Equals(0))
-                        {
-                            if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
-                            {
-                                //validacion de cedula existente
-                                Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
-                            }
-                            else
-                            {
-                                registroUsuario();
-                            }
-                        }
-                        
-                    }
-                    
+                    caseSwitch = 1;
                 }
-                else
+                
+                switch (caseSwitch)
                 {
-                    registroUsuario();
+                    case 1:
+                        if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
+                        {
+                            ////validacion de que el nickname ya existe
+                            Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine("Case 2");
+                        break;
+                    default:
+                        Console.WriteLine("Default case");
+                        break;
                 }
                 
             }
