@@ -327,6 +327,13 @@ namespace Proyecto.dataBase
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ced_Usu);
 			return ((ISingleResult<buscarCedulaResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarCorreo")]
+		public ISingleResult<buscarCorreoResult> buscarCorreo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string email_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email_Usu);
+			return ((ISingleResult<buscarCorreoResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categorias")]
@@ -4499,6 +4506,158 @@ namespace Proyecto.dataBase
 		private string _cedula_Usu;
 		
 		public buscarCedulaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt NOT NULL")]
+		public long codigo_Usu
+		{
+			get
+			{
+				return this._codigo_Usu;
+			}
+			set
+			{
+				if ((this._codigo_Usu != value))
+				{
+					this._codigo_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombreComp_Usu
+		{
+			get
+			{
+				return this._nombreComp_Usu;
+			}
+			set
+			{
+				if ((this._nombreComp_Usu != value))
+				{
+					this._nombreComp_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nic_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string nic_Usu
+		{
+			get
+			{
+				return this._nic_Usu;
+			}
+			set
+			{
+				if ((this._nic_Usu != value))
+				{
+					this._nic_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string direccion_Usu
+		{
+			get
+			{
+				return this._direccion_Usu;
+			}
+			set
+			{
+				if ((this._direccion_Usu != value))
+				{
+					this._direccion_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string password_Usu
+		{
+			get
+			{
+				return this._password_Usu;
+			}
+			set
+			{
+				if ((this._password_Usu != value))
+				{
+					this._password_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string email_Usu
+		{
+			get
+			{
+				return this._email_Usu;
+			}
+			set
+			{
+				if ((this._email_Usu != value))
+				{
+					this._email_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_Usu", DbType="Bit NOT NULL")]
+		public bool estado_Usu
+		{
+			get
+			{
+				return this._estado_Usu;
+			}
+			set
+			{
+				if ((this._estado_Usu != value))
+				{
+					this._estado_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula_Usu", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string cedula_Usu
+		{
+			get
+			{
+				return this._cedula_Usu;
+			}
+			set
+			{
+				if ((this._cedula_Usu != value))
+				{
+					this._cedula_Usu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarCorreoResult
+	{
+		
+		private long _codigo_Usu;
+		
+		private string _nombreComp_Usu;
+		
+		private string _nic_Usu;
+		
+		private string _direccion_Usu;
+		
+		private string _password_Usu;
+		
+		private string _email_Usu;
+		
+		private bool _estado_Usu;
+		
+		private string _cedula_Usu;
+		
+		public buscarCorreoResult()
 		{
 		}
 		

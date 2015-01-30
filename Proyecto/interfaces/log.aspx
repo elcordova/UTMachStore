@@ -1,7 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="log.aspx.cs" Inherits="Proyecto.interfaces.log" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content6" ContentPlaceHolderID="loguin" runat="server">
+
+   
+
+
     <br /><br /><br /><br />
 
     
@@ -79,12 +84,21 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 ¿Olvidaste tu contraseña?</asp:LinkButton><br />
                 <br />
+                <asp:Panel ID="Panel1" runat="server" Height="71px" Visible="False">
+                    <br />
+                    Ingrese su Correo:
+                    <asp:TextBox ID="TextBoxCorreo" runat="server" TextMode="Email"></asp:TextBox>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="ButtonEnviar" runat="server" OnClick="ButtonEnviar_Click" Text="Enviar" />
+                    <br />
+                    <br />
+                    Si su correo es el correcto, se le enviarán sus datos</asp:Panel>
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button2" runat="server" Text="Iniciar sesion" OnClick="Button2_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button1" runat="server" Text="Registrarse" />
+                <asp:Button ID="Button1" runat="server" Text="Registrarse" OnClick="Button1_Click" />
             </div>
         </div>
     <br />
