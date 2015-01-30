@@ -21,8 +21,7 @@ namespace Proyecto.Entidades
             Ruta = "";
            
         }
-
-        public Ent_Fotos(int codigoPub, string nombre,string ruta)
+        public Ent_Fotos(int codigoPub, string nombre, string ruta)
         {
             Codigo_Pub = codigoPub;
             Nombre = nombre;

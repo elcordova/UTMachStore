@@ -14,19 +14,14 @@ namespace Proyecto.LogicaDeNegocio
         {
             try
             {
-               DB.cp_insertarFoto(fotos.Codigo_Publicacion,fotos.Nombre_Foto,fotos.Ruta_Foto);
+                DB.cp_insertarFoto(fotos.Codigo_Publicacion, fotos.Nombre_Foto, fotos.Ruta_Foto);
 
                 DB.SubmitChanges();
             }
-            catch(Exception)
+            catch (Exception)
             {
+            }
 
-
-
-                            }
-
-                
         }
-
     }
 }
