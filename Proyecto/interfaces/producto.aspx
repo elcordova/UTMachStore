@@ -105,7 +105,7 @@
 					
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <label for="message">Comentario</label> 
-                        <asp:TextBox ID="TextBox2" runat="server" TextMode="MultiLine" Height="58px" Width="535px"></asp:TextBox>
+                        <asp:TextBox ID="txtComentario" runat="server" TextMode="MultiLine" Height="58px" Width="535px"></asp:TextBox>
                         <br /><br />
 					
 						<!-- Add Comment Button -->
@@ -113,7 +113,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button1" runat="server" Text="Comentar" />
+                        <asp:Button ID="btnComentar" runat="server" Text="Comentar" OnClick="Button1_Click" />
 					
 			</form> 
 
