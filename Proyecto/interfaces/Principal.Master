@@ -65,7 +65,7 @@
                     <li align="left" id="li01"><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
                     <li align="left" id="li02"><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
                     <li align="left" ><a href="productos.aspx"><span class="meta">Productos</span><br />Publicaciones</a></li>
-                    <li align="left" ><a href="usuario.aspx"><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
+                    <li align="left" ><a href=""><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
                     <li align="left"><a href="index.aspx"><span class="meta">Pagina inicial</span><br />Inicio</a></li>
                 </ul>
 
