@@ -149,6 +149,7 @@
     <Content Include="interfaces\Registro.aspx" />
     <Content Include="interfaces\restriccion.aspx" />
     <Content Include="interfaces\usuario.aspx" />
+    <Content Include="interfaces\verificarCuenta.aspx" />
     <Content Include="procesos almacenados MIguelKerly\ProcesosAlmacenadosMiguelKerly.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -248,6 +249,12 @@
     </Compile>
     <Compile Include="interfaces\usuario.aspx.designer.cs">
       <DependentUpon>usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\verificarCuenta.aspx.cs">
+      <DependentUpon>verificarCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\verificarCuenta.aspx.designer.cs">
+      <DependentUpon>verificarCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogicaDeNegocio\Email.cs" />
     <Compile Include="LogicaDeNegocio\EncriptacionDeDatos.cs" />
