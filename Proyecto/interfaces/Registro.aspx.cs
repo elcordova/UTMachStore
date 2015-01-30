@@ -14,6 +14,8 @@ namespace Proyecto.interfaces
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
         List<dataBase.buscarNicknameResult> datosUsuarioNick = new List<dataBase.buscarNicknameResult>();
         List<dataBase.buscarCedulaResult> datosUsuarioCedula = new List<dataBase.buscarCedulaResult>();
+        bool banderaNick = true;
+        bool banderaCedula = true;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,41 +35,69 @@ namespace Proyecto.interfaces
             usuario.Cedula_usu = TextBoxCedula.Text;
             usuario.Estado_usu = false;
 
-            if (usuario.Nombre_usu.Equals("") || usuario.Nic_usu.Equals("") || usuario.Direccion_usu.Equals("")
-                || usuario.Email_usu.Equals("") || usuario.Cedula_usu.Equals("") || TextBoxPasswd.Text.Equals("")
-                || TextBoxConfPasswd.Text.Equals(""))
+            if (camposVacios())
             {
-                //Validacion de campos vacios
+                Response.Write("<script language=javascript>alert('Porfavor rellene todos los campos correctamente');</script>");
             }
             else
             {
                 datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
-                bool banderaNick = false;
-                bool banderaCedula = false;
+                validarNickname();
+                validarCedula();
 
-                if (!datosUsuarioNick.Count.Equals(0))
+                if (banderaNick.Equals(true) && banderaCedula.Equals(true))
+                {
+                    registroUsuario();
+                }
+            }
+        }
+
+        private bool camposVacios()
+        {
+            if (usuario.Nombre_usu.Equals("") || usuario.Nic_usu.Equals("") || usuario.Direccion_usu.Equals("")
+                            || usuario.Email_usu.Equals("") || usuario.Cedula_usu.Equals("") || TextBoxPasswd.Text.Equals("")
+                            || TextBoxConfPasswd.Text.Equals(""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void validarCedula()
+        {
+            if (!datosUsuarioCedula.Count.Equals(0))
+            {
+                if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+                {
+                    Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
+                    banderaCedula = false;
+                }
+                else
+                {
+                    banderaCedula = true;
+                }
+
+            }
+        }
+
+        private void validarNickname()
+        {
+            if (!datosUsuarioNick.Count.Equals(0))
+            {
+                if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
+                {
+                    Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
+                    banderaNick = false;
+                }
+                else
                 {
                     banderaNick = true;
                 }
 
-                if (!datosUsuarioCedula.Count.Equals(0))
-                {
-                    banderaCedula = true;
-                }
-                
-                if(banderaNick)
-                {
-                    if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
-                    {
-                        ////validacion de que el nickname ya existe
-                        Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
-                    }
-                    else
-                    {
-
-                    }
-                }
             }
         }
 
@@ -77,12 +107,11 @@ namespace Proyecto.interfaces
             {
                 usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
                 lnUsuario.insertarUsuario(usuario);
-                enviarCorreo();     //envio de mensaje de verificacion a email
+                enviarCorreo();
                 limpiarCampos();
             }
             else
             {
-                //validacion en caso de que las contraseñas no coincidan
                 Response.Write("<script language=javascript>alert('Las contrseñas no coinciden');</script>");
             }
         }
@@ -108,7 +137,7 @@ namespace Proyecto.interfaces
                 + "Muchas gracias por registrarte en UTMachStore. A continuación te damos los datos de acceso a la zona de usuarios: \n \n"
                 + "Usuario: " + usuario.Nic_usu + "\n Clave: " + TextBoxPasswd.Text + "\n \n"
                 + "En estos momentos tu usuario aun no está validado. Cuando lo valides tendrás las ventajas de usuarios registrados de UTMachStore, como promocionar tus productos y realizar compras. \n \n"
-                + "Verás un formulario donde colocar esta clave: \n"
+                + "Verás un campo donde colocar esta clave: \n"
                 + usuario.Passwd_usu + "\n \n"
                 + "Un cordial saludo y bienvenido a la comunidad de UTMachStore!";
             if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, usuario.Nic_usu, asunto))
