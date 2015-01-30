@@ -205,20 +205,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarUsuario")]
-		public int actualizarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuario")]
-		public int insertarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarComentario")]
 		public int cp_insertarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string contenido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha)
 		{
@@ -322,6 +308,20 @@ namespace Proyecto.dataBase
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email_Usu);
 			return ((ISingleResult<buscarCorreoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarUsuario")]
+		public int actualizarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuario")]
+		public int insertarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
