@@ -13,7 +13,7 @@ namespace Proyecto.interfaces
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos encrip = new LogicaDeNegocio.EncriptacionDeDatos();
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
-
+        static bool cambio = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["usuario"] == null)
@@ -23,7 +23,7 @@ namespace Proyecto.interfaces
             else
             {
                
-                cambio = false;
+                //cambio = false;
                 contrasenaTemp = "";
                 TextBoxContrasena.Enabled = false;
                 TextBoxNuevaContra.Enabled = false;
@@ -48,7 +48,7 @@ namespace Proyecto.interfaces
          
         }
 
-        bool cambio = false;
+        
 
         protected void ButtonSi_Click(object sender, EventArgs e)
         {
@@ -71,8 +71,8 @@ namespace Proyecto.interfaces
             usuario = new Entidades.Ent_Usuario();
             if (cambio)
             {
-                if (!camposVacios() || TextBoxContrasena.Text.Equals("") || TextBoxNuevaContra.Text.Equals("")
-                    || TextBoxConfirContra.Text.Equals(""))
+                if (!camposVacios() || !TextBoxContrasena.Text.Equals("") || !TextBoxNuevaContra.Text.Equals("")
+                    || !TextBoxConfirContra.Text.Equals(""))
                 {
                     if (contraActual())
                     {
