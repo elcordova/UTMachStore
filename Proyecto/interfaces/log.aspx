@@ -74,10 +74,10 @@
                 </div>
             </div>
             <div class="form-actions">
-                <a href="OlvidarClave.aspx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                ¿Olvidaste tu contraseña?</a><br />
+                ¿Olvidaste tu contraseña?</asp:LinkButton><br />
                 <br />
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
