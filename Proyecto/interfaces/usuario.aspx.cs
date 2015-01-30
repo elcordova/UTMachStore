@@ -13,27 +13,18 @@ namespace Proyecto.interfaces
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos encrip = new LogicaDeNegocio.EncriptacionDeDatos();
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
-        bool cambio = false;
+        string contrasenaTemp = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["usuario"] == null)
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
-            else
-            {
-
-                //cambio = false;
-                contrasenaTemp = "";
-                TextBoxContrasena.Enabled = false;
-                TextBoxNuevaContra.Enabled = false;
-                TextBoxConfirContra.Enabled = false;
-                llenarDatos();
-            }
+           
 
         }
 
-        string contrasenaTemp = "";
 
         public void llenarDatos()
         {
@@ -48,108 +39,102 @@ namespace Proyecto.interfaces
         }
 
 
-
-        protected void ButtonSi_Click(object sender, EventArgs e)
-        {
-            cambio = true;
-            TextBoxContrasena.Enabled = true;
-            TextBoxNuevaContra.Enabled = true;
-            TextBoxConfirContra.Enabled = true;
-        }
-
-        protected void ButtonNo_Click(object sender, EventArgs e)
-        {
-            cambio = false;
-            TextBoxContrasena.Enabled = false;
-            TextBoxNuevaContra.Enabled = false;
-            TextBoxConfirContra.Enabled = false;
-        }
-
         protected void ButtonActualizar_Click(object sender, EventArgs e)
         {
-            if (cambio)
-            {
-                if (!camposVacios() || !TextBoxContrasena.Text.Equals("") || !TextBoxNuevaContra.Text.Equals("")
-                    || !TextBoxConfirContra.Text.Equals(""))
-                {
-                    if (contraActual())
-                    {
-                        if (contraConciden())
-                        {
-                            //ACTUALIZO
-                            usuario.Nombre_usu = TextBoxNombre.Text;
-                            usuario.Nic_usu = TextBoxNick.Text;
-                            usuario.Cedula_usu = TextBoxCedula.Text;
-                            usuario.Direccion_usu = TextBoxDireccion.Text;
-                            usuario.Email_usu = TextBoxEmail.Text;
-                            usuario.Passwd_usu = encrip.Encriptar(TextBoxNuevaContra.Text);
-                            usuario.Estado_usu = true;
+            //if (cambio)
+            //{
+            //    if (!camposVacios() || !TextBoxContrasena.Text.Equals("") || !TextBoxNuevaContra.Text.Equals("")
+            //        || !TextBoxConfirContra.Text.Equals(""))
+            //    {
+            //        if (contraActual())
+            //        {
+            //            if (contraConciden())
+            //            {
+            //                //ACTUALIZO
+            //                usuario.Nombre_usu = TextBoxNombre.Text;
+            //                usuario.Nic_usu = TextBoxNick.Text;
+            //                usuario.Cedula_usu = TextBoxCedula.Text;
+            //                usuario.Direccion_usu = TextBoxDireccion.Text;
+            //                usuario.Email_usu = TextBoxEmail.Text;
+            //                usuario.Passwd_usu = encrip.Encriptar(TextBoxNuevaContra.Text);
+            //                usuario.Estado_usu = true;
 
-                            lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+            //                lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
 
-                            Response.Redirect("/interfaces/usuario.aspx");
-                        }
-                        else
-                        {
-                            Response.Write("<script language=javascript>alert('Las contraseñas no coinciden');</script>");
-                        }
-                    }
-                    else
-                    {
-                        Response.Write("<script language=javascript>alert('La contraseña actual no es correcta');</script>");
-                    }
+            //                Response.Redirect("/interfaces/usuario.aspx");
+            //            }
+            //            else
+            //            {
+            //                Response.Write("<script language=javascript>alert('Las contraseñas no coinciden');</script>");
+            //            }
+            //        }
+            //        else
+            //        {
+            //            Response.Write("<script language=javascript>alert('La contraseña actual no es correcta');</script>");
+            //        }
 
-                }
-                else
-                {
-                    Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
-                }
-            }
-            else
-            {
-                capturarDatos();
-                if (!camposVacios())
-                {
+            //    }
+            //    else
+            //    {
+            //        Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
+            //    }
+            //}
+            //else
+            //{
+                
+            //    if (!camposVacios())
+            //    {
 
 
-                    //ACTUALIZO
+            //        //ACTUALIZO
+            //        usuario.Nombre_usu = TextBoxNombre.Text;
+            //        usuario.Nic_usu = TextBoxNick.Text;
+            //        usuario.Cedula_usu = TextBoxCedula.Text;
+            //        usuario.Direccion_usu = TextBoxDireccion.Text;
+            //        usuario.Email_usu = TextBoxEmail.Text;
+            //        usuario.Estado_usu = true;
+            //        usuario.Passwd_usu = encrip.Encriptar(contrasenaTemp);
 
-                    usuario.Estado_usu = true;
-                    usuario.Passwd_usu = encrip.Encriptar(contrasenaTemp);
+            //        lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
 
-                    lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+            //        Response.Redirect("/interfaces/usuario.aspx");
+            //    }
+            //    else
+            //    {
+            //        Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
 
-                    Response.Redirect("/interfaces/usuario.aspx");
-                }
-                else
-                {
-                    Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
+            //    }
+            //}
 
-                }
-            }
+             if (!camposVacios())
+             {
+                 //ACTUALIZO
+                 usuario.Nombre_usu = TextBoxNombre.Text;
+                 usuario.Nic_usu = TextBoxNick.Text;
+                 usuario.Cedula_usu = TextBoxCedula.Text;
+                 usuario.Direccion_usu = TextBoxDireccion.Text;
+                 usuario.Email_usu = TextBoxEmail.Text;
+                 usuario.Estado_usu = true;
+                 usuario.Passwd_usu = encrip.Encriptar(contrasenaTemp);
+
+                 lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+
+                 Response.Redirect("/interfaces/usuario.aspx");
+             }
+             else
+             {
+                 Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
+
+             }
         }
 
-        private void capturarDatos()
-        {
-            usuario.Nombre_usu = TextBoxNombre.Text;
-            usuario.Nic_usu = TextBoxNick.Text;
-            usuario.Cedula_usu = TextBoxCedula.Text;
-            usuario.Direccion_usu = TextBoxDireccion.Text;
-            usuario.Email_usu = TextBoxEmail.Text;
-        }
 
         public bool camposVacios()
         {
-            if (usuario.Nombre_usu.Equals("") || usuario.Nic_usu.Equals("") || usuario.Cedula_usu.Equals("")
-                || usuario.Direccion_usu.Equals("") || usuario.Email_usu.Equals(""))
-            {
+            if (TextBoxNombre.Text.Equals("") || TextBoxNick.Text.Equals("") || TextBoxCedula.Text.Equals("")
+                || TextBoxDireccion.Text.Equals("") || TextBoxEmail.Text.Equals(""))
                 return true;
-            }
-            else { return false; }
-            //if (TextBoxNombre.Text.Equals("") || TextBoxNick.Text.Equals("") || TextBoxCedula.Text.Equals("")
-            //    || TextBoxDireccion.Text.Equals("") || TextBoxEmail.Text.Equals(""))
-            //    return true;
-            //else return false;
+            else return false;
         }
 
         public bool contraActual()
@@ -163,6 +148,60 @@ namespace Proyecto.interfaces
             if (TextBoxNuevaContra.Text.Equals(TextBoxConfirContra.Text)) return true;
             else return false;
         }
+
+        protected void LinkButtonVerMisDatos_Click(object sender, EventArgs e)
+        {
+            contrasenaTemp = "";
+            llenarDatos();
+
+            PanelDatos.Visible = true;
+        }
+
+        protected void LinkButtonCambiarContra_Click(object sender, EventArgs e)
+        {
+            PanelContra.Visible = true;
+        }
+
+        protected void ButtonCambiarContra_Click(object sender, EventArgs e)
+        {
+            if (!camposVacios() || !TextBoxContrasena.Text.Equals("") || !TextBoxNuevaContra.Text.Equals("")
+                    || !TextBoxConfirContra.Text.Equals(""))
+            {
+                if (contraActual())
+                {
+                    if (contraConciden())
+                    {
+                        //ACTUALIZO
+                        usuario.Nombre_usu = TextBoxNombre.Text;
+                        usuario.Nic_usu = TextBoxNick.Text;
+                        usuario.Cedula_usu = TextBoxCedula.Text;
+                        usuario.Direccion_usu = TextBoxDireccion.Text;
+                        usuario.Email_usu = TextBoxEmail.Text;
+                        usuario.Passwd_usu = encrip.Encriptar(TextBoxNuevaContra.Text);
+                        usuario.Estado_usu = true;
+
+                        lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+
+                        Response.Redirect("/interfaces/usuario.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>alert('Las contraseñas no coinciden');</script>");
+                    }
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>alert('La contraseña actual no es correcta');</script>");
+                }
+
+            }
+            else
+            {
+                Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
+            }
+        }
+
+        
 
 
     }
