@@ -45,30 +45,35 @@ namespace Proyecto.interfaces
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
                 if (!datosUsuarioNick.Count.Equals(0))
                 {
+                    
                     if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
                     {
                         ////validacion de que el nickname ya existe
                         Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
                     }
+                    else 
+                    {
+                        if (!datosUsuarioCedula.Count.Equals(0))
+                        {
+                            if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+                            {
+                                //validacion de cedula existente
+                                Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
+                            }
+                            else
+                            {
+                                registroUsuario();
+                            }
+                        }
+                        
+                    }
+                    
                 }
                 else
                 {
-
-                    if (!datosUsuarioCedula.Count.Equals(0))
-                    {
-                        if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
-                        {
-                            //validacion de cedula existente
-                            Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
-                        }
-                        else
-                        {
-                            registroUsuario();
-
-                        }
-                    }
+                    registroUsuario();
                 }
-                registroUsuario();
+                
             }
         }
 
