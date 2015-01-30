@@ -48,7 +48,7 @@ namespace Proyecto.interfaces
                     if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
                     {
                         ////validacion de que el nickname ya existe
-                        Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya exsta ocupado');</script>");
+                        Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
                     }
                 }
                 else
@@ -59,7 +59,7 @@ namespace Proyecto.interfaces
                         if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
                         {
                             //validacion de cedula existente
-                            Response.Write("<script language=javascript>alert('Esta Cédula:" + usuario.Cedula_usu + " ya esta registrada');</script>");
+                            Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
                         }
                         else
                         {
