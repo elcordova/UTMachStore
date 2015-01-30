@@ -252,6 +252,10 @@
     </Compile>
     <Compile Include="interfaces\verificarCuenta.aspx.cs">
       <DependentUpon>verificarCuenta.aspx</DependentUpon>
+<<<<<<< HEAD
+=======
+      <SubType>ASPXCodeBehind</SubType>
+>>>>>>> origin/master
     </Compile>
     <Compile Include="interfaces\verificarCuenta.aspx.designer.cs">
       <DependentUpon>verificarCuenta.aspx</DependentUpon>

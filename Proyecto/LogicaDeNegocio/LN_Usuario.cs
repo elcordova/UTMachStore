@@ -43,6 +43,11 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.buscarCedula(ced).ToList();
         }
+
+        public List<dataBase.buscarCorreoResult> buscarCorreo(string correo)
+        {
+            return DB.buscarCorreo(correo).ToList();
+        }
         
     }
 }

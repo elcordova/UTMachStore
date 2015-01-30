@@ -47,27 +47,84 @@ namespace Proyecto.interfaces
                     else
                     {
                         //USUARIO INACTIVO
+                        Response.Write("<script language=javascript>alert('Aún no has activado tu cuenta');</script>");
+                        Response.Redirect("/interfaces/verificarCuenta.aspx");
                     }
 
                 }
                 else
                 {
                     //CONTRASEÑA INCORRECTA
+                    Response.Write("<script language=javascript>alert('NickName o contraseña incorrectos');</script>");
                 }
-
-                
-
             }
             else 
             {
                 //NO EXISTE
-                Response.Write("<script language=javascript>alert('Este NickName no existe');</script>");
+                Response.Write("<script language=javascript>alert('NickName o contraseña incorrectos');</script>");
             }
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
+            Panel1.Visible = true;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/interfaces/Registro.aspx");
+        }
+
+        protected void ButtonEnviar_Click(object sender, EventArgs e)
+        {
+            //Enviar datos al correo
+
+            if (TextBoxCorreo.Text.Trim().Equals(""))
+            {
+                Response.Write("<script language=javascript>alert('Correo necesario');</script>");
+            }
+            else
+            {
+                List<dataBase.buscarCorreoResult> user = lnusuario.buscarCorreo(TextBoxCorreo.Text);
+
+                if (!user.Count.Equals(0))
+                {
+
+
+                    if (enviarCorreo(user.ElementAt(0).nic_Usu, user.ElementAt(0).password_Usu, TextBoxCorreo.Text))
+                    {
+                        Response.Write("<script language=javascript>alert('Mensaje enviado. Revise su correo para ver sus datos');</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>alert('Ha surgido problemas al enviar el mensaje');</script>");
+                    }
+                }
+                else
+                {
+                    Response.Write("<script language=javascript>alert('Este correo no está registrado');</script>");
+                }
+            }
             
+
+        }
+
+        public bool enviarCorreo(string user, string pass, string correo)
+        {
+            string from = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlAEAAZwBtAGEAaQBsAC4AYwBvAG0A");
+            string passwd = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlADIAMAAxADUA");
+            string to = correo;
+            string asunto = "Recuperación de tus Datos -  UTMachStore";
+            string message = "Hola!, " + user + "\n \n"
+                + "Esperamos que te gusten nuestros servicios. Aquí tienes tus datos: \n \n"
+                + "Usuario: " + user + "\n Clave: " + pass + "\n \n"
+                + "Un saludo de la comunidad de UTMachStore!";
+            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, user, asunto))
+                return true;
+            else
+                return false;
+            
+
         }
     }
 }
