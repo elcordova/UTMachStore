@@ -39,7 +39,7 @@
                 </label>
                 &nbsp;
                     <div class="controls input">
-                        &nbsp;<asp:TextBox ID="TextBoxNombre" runat="server" Width="322px"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="TextBoxNombre" runat="server" Width="322px" MaxLength="30"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <br />
                     </div>
@@ -58,9 +58,9 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                 Email</label>
                 <div class="controls input">
-                    &nbsp;<asp:TextBox ID="TextBoxDireccion" runat="server"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="TextBoxDireccion" runat="server" MaxLength="30"></asp:TextBox>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" MaxLength="20"></asp:TextBox>
                 </div>
                 &nbsp;<div class="controls input">
                     &nbsp;<br />
@@ -74,9 +74,9 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cedula</label>&nbsp;
                     <div class="controls input">
-                        &nbsp;<asp:TextBox ID="TextBoxNickname" runat="server" AutoPostBack="True"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="TextBoxNickname" runat="server" AutoPostBack="True" MaxLength="15"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxCedula" runat="server" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxCedula" runat="server" MaxLength="10"></asp:TextBox>
                         <br />
                     </div>
             </div>
@@ -90,9 +90,9 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Verificar Contraseña</label>&nbsp;
                     <div class="controls input">
-                        &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server" TextMode="Password"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxConfPasswd" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxConfPasswd" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
                         <br />
                     </div>
             </div>
