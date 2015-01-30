@@ -43,29 +43,31 @@ namespace Proyecto.interfaces
             {
                 datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
-                int caseSwitch =0;
+                bool banderaNick = false;
+                bool banderaCedula = false;
+
                 if (!datosUsuarioNick.Count.Equals(0))
                 {
-                    caseSwitch = 1;
+                    banderaNick = true;
                 }
-                
-                switch (caseSwitch)
+
+                if (!datosUsuarioCedula.Count.Equals(0))
                 {
-                    case 1:
-                        if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
-                        {
-                            ////validacion de que el nickname ya existe
-                            Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
-                        }
-                        break;
-                    case 2:
-                        Console.WriteLine("Case 2");
-                        break;
-                    default:
-                        Console.WriteLine("Default case");
-                        break;
+                    banderaCedula = true;
                 }
                 
+                if(banderaNick)
+                {
+                    if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
+                    {
+                        ////validacion de que el nickname ya existe
+                        Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
+                    }
+                    else
+                    {
+
+                    }
+                }
             }
         }
 
