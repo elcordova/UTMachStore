@@ -7,13 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto.interfaces
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page 
     {
 
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos encrip = new LogicaDeNegocio.EncriptacionDeDatos();
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
-        static bool cambio = false;
+        bool cambio = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["usuario"] == null)
@@ -22,7 +22,7 @@ namespace Proyecto.interfaces
             }
             else
             {
-               
+
                 //cambio = false;
                 contrasenaTemp = "";
                 TextBoxContrasena.Enabled = false;
@@ -31,7 +31,7 @@ namespace Proyecto.interfaces
 
                 llenarDatos();
             }
-            
+
         }
 
         string contrasenaTemp = "";
@@ -42,13 +42,13 @@ namespace Proyecto.interfaces
             TextBoxNombre.Text = datosUsuario.ElementAt(0).nombreComp_Usu;
             TextBoxNick.Text = datosUsuario.ElementAt(0).nic_Usu;
             TextBoxCedula.Text = datosUsuario.ElementAt(0).cedula_Usu;
-            contrasenaTemp = ""+encrip.DesEncriptar(datosUsuario.ElementAt(0).password_Usu);
+            contrasenaTemp = "" + encrip.DesEncriptar(datosUsuario.ElementAt(0).password_Usu);
             TextBoxDireccion.Text = datosUsuario.ElementAt(0).direccion_Usu;
             TextBoxEmail.Text = datosUsuario.ElementAt(0).email_Usu;
-         
+
         }
 
-        
+
 
         protected void ButtonSi_Click(object sender, EventArgs e)
         {
@@ -68,7 +68,6 @@ namespace Proyecto.interfaces
 
         protected void ButtonActualizar_Click(object sender, EventArgs e)
         {
-            usuario = new Entidades.Ent_Usuario();
             if (cambio)
             {
                 if (!camposVacios() || !TextBoxContrasena.Text.Equals("") || !TextBoxNuevaContra.Text.Equals("")
@@ -109,18 +108,15 @@ namespace Proyecto.interfaces
             }
             else
             {
+                capturarDatos();
                 if (!camposVacios())
                 {
 
 
                     //ACTUALIZO
-                    usuario.Nombre_usu = TextBoxNombre.Text;
-                    usuario.Nic_usu = TextBoxNick.Text;
-                    usuario.Cedula_usu = TextBoxCedula.Text;
-                    usuario.Direccion_usu = TextBoxDireccion.Text;
-                    usuario.Email_usu = TextBoxEmail.Text;
-                    usuario.Passwd_usu = encrip.Encriptar(contrasenaTemp);
+
                     usuario.Estado_usu = true;
+                    usuario.Passwd_usu = encrip.Encriptar(contrasenaTemp);
 
                     lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
 
@@ -129,20 +125,35 @@ namespace Proyecto.interfaces
                 else
                 {
                     Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
-                    
+
                 }
             }
         }
 
-        public bool camposVacios()
+        private void capturarDatos()
         {
-            if (TextBoxNombre.Text.Trim().Equals("") || TextBoxNick.Text.Trim().Equals("") || TextBoxCedula.Text.Trim().Equals("")
-                || TextBoxDireccion.Text.Trim().Equals("") || TextBoxEmail.Text.Trim().Equals(""))
-                return true;
-            else return false;
+            usuario.Nombre_usu = TextBoxNombre.Text;
+            usuario.Nic_usu = TextBoxNick.Text;
+            usuario.Cedula_usu = TextBoxCedula.Text;
+            usuario.Direccion_usu = TextBoxDireccion.Text;
+            usuario.Email_usu = TextBoxEmail.Text;
         }
 
-        public bool contraActual() 
+        public bool camposVacios()
+        {
+            if (usuario.Nombre_usu.Equals("") || usuario.Nic_usu.Equals("") || usuario.Cedula_usu.Equals("")
+                || usuario.Direccion_usu.Equals("") || usuario.Email_usu.Equals(""))
+            {
+                return true;
+            }
+            else { return false; }
+            //if (TextBoxNombre.Text.Equals("") || TextBoxNick.Text.Equals("") || TextBoxCedula.Text.Equals("")
+            //    || TextBoxDireccion.Text.Equals("") || TextBoxEmail.Text.Equals(""))
+            //    return true;
+            //else return false;
+        }
+
+        public bool contraActual()
         {
             if (TextBoxContrasena.Text.Equals(contrasenaTemp)) return true;
             else return false;
@@ -154,6 +165,6 @@ namespace Proyecto.interfaces
             else return false;
         }
 
-        
+
     }
 }
