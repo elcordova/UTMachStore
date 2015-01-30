@@ -184,6 +184,7 @@
     </Compile>
     <Compile Include="interfaces\ControlComentarios.ascx.cs">
       <DependentUpon>ControlComentarios.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\ControlComentarios.ascx.designer.cs">
       <DependentUpon>ControlComentarios.ascx</DependentUpon>
@@ -211,6 +212,7 @@
     </Compile>
     <Compile Include="interfaces\notificaciones.aspx.cs">
       <DependentUpon>notificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\notificaciones.aspx.designer.cs">
       <DependentUpon>notificaciones.aspx</DependentUpon>
