@@ -91,7 +91,7 @@ namespace Proyecto.interfaces
                 {
 
 
-                    if (enviarCorreo(user.ElementAt(0).nic_Usu, user.ElementAt(0).password_Usu, TextBoxCorreo.Text))
+                    if (enviarCorreo(user.ElementAt(0).nic_Usu, seguridad.DesEncriptar(user.ElementAt(0).password_Usu), TextBoxCorreo.Text))
                     {
                         Response.Write("<script language=javascript>alert('Mensaje enviado. Revise su correo para ver sus datos');</script>");
                     }
