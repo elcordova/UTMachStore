@@ -17,7 +17,10 @@ namespace Proyecto.interfaces
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["usuario"] != null)
+            {
+                Response.Redirect("/interfaces/restriccion.aspx");
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)

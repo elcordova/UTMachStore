@@ -28,7 +28,6 @@ namespace Proyecto.interfaces
                 TextBoxContrasena.Enabled = false;
                 TextBoxNuevaContra.Enabled = false;
                 TextBoxConfirContra.Enabled = false;
-
                 llenarDatos();
             }
 
