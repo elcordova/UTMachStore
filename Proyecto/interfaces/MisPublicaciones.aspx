@@ -7,13 +7,13 @@
     <br />
     <br />
 
-    <h1 class="centrado_titulo">Mis publicaciones</h1>
+    <%--<h1 class="centrado_titulo">Mis publicaciones</h1>
      <uc:Spinner id="Spinner1" 
         runat="server" 
-         />
+         />--%>
 
-   <%-- mis publicaciones
-   <%-- <div class="pr grid_12 clearfix">&nbsp;</div>
+   
+    <%--<div class="pr grid_12 clearfix">&nbsp;</div>
     <h5>&nbsp;&nbsp;&nbsp;&nbsp;Vendo zapatos converse totalmente nuevos</h5>
     <br />
     <a href="#" class="button float right">Eliminar publicacion</a>&nbsp;&nbsp;
