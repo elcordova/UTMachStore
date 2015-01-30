@@ -237,6 +237,7 @@
     </Compile>
     <Compile Include="interfaces\restriccion.aspx.cs">
       <DependentUpon>restriccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\restriccion.aspx.designer.cs">
       <DependentUpon>restriccion.aspx</DependentUpon>
