@@ -40,6 +40,7 @@ namespace Proyecto.interfaces
             txtNumeroContacto.Text = "";
             txtPrecioProducto.Text = "";
             txtStockProductos.Text = "";
+            Response.Redirect("/interfaces/MisPublicaciones.aspx");
         }
     }
 }

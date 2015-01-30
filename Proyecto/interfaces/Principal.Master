@@ -94,6 +94,10 @@
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="notificaciones" runat="server"> 
             </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="misPublicaciones" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="editarPublicaciones" runat="server"> 
+            </asp:ContentPlaceHolder>
         </div>
         <div id="pie">
             <p class="grid_12 footer clearfix">

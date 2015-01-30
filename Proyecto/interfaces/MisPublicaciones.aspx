@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="MisPublicaciones.aspx.cs" Inherits="Proyecto.interfaces.MisPublicaciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content12" ContentPlaceHolderID="mis_publicaciones" runat="server">
+<asp:Content ID="Content10" ContentPlaceHolderID="misPublicaciones" runat="server">
     <br />
     <br />
     <br />

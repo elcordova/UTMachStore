@@ -72,18 +72,15 @@
 		<!-- Client pickup line -->
 		<br /><br /><br /><br />
 
-        <h3>Comentarios</h3>
+        
 			<div class="hr dotted clearfix">&nbsp;</div>
 			
 			<ol class="commentlist">
-
+                <h3>Comentarios</h3>
             <div>
             <asp:PlaceHolder runat=server ID="PlaceHolder1" />
             <br />
       
-            <br />
-            <br />
-
             </div>
 
                  <%@ Reference Control="ControlComentarios.ascx" %>

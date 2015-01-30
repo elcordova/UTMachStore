@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
-<asp:Content ID="Content13" ContentPlaceHolderID="edicion_publicacion" runat="server">
+<asp:Content ID="Content11" ContentPlaceHolderID="editarPublicaciones" runat="server">
     <br />
     <br />
     <br />
