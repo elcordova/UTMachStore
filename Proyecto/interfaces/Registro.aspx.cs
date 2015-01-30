@@ -45,35 +45,37 @@ namespace Proyecto.interfaces
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
                 if (!datosUsuarioNick.Count.Equals(0))
                 {
-                    ////validacion de que el nickname ya existe
-                    Response.Write("<script language=javascript>alert('Este NickName ya existe');</script>");
+                    if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
+                    {
+                        ////validacion de que el nickname ya existe
+                        Response.Write("<script language=javascript>alert('Este NickName ya existe');</script>");
+                    }
                 }
                 else
                 {
-                    if (!datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
+                    
+                    if (!datosUsuarioCedula.Count.Equals(0))
                     {
-                        if (!datosUsuarioCedula.Count.Equals(0))
+                        if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
                         {
-                            if (!datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+                            //validacion de cedula existente
+                            Response.Write("<script language=javascript>alert('Esta Cédula ya esta registrada');</script>");
+                        }
+                        else
+                        {
+                            if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
                             {
-                                //validacion de cedula existente
-                                Response.Redirect("index.aspx");
+                                usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
+                                lnUsuario.insertarUsuario(usuario);
+                                enviarCorreo();     //envio de mensaje de verificacion a email
+                                limpiarCampos();
                             }
                             else
                             {
-
-                                if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
-                                {
-                                    usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
-                                    lnUsuario.insertarUsuario(usuario);
-                                    enviarCorreo();     //envio de mensaje de verificacion a email
-                                    limpiarCampos();
-                                }
-                                else
-                                {
-                                    //validacion en caso de que las contraseñas no coincidan
-                                }
+                                //validacion en caso de que las contraseñas no coincidan
+                                Response.Write("<script language=javascript>alert('Las contrseñas no coinciden');</script>");
                             }
+                           
                         }
                     }
                 }
