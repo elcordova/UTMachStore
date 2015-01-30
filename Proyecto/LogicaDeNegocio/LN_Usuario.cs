@@ -38,6 +38,11 @@ namespace Proyecto.LogicaDeNegocio
         {
             DB.validarCuenta(nickUsu);
         }
+
+        public List<dataBase.buscarNickResult> filtarNick(string nick) 
+        {
+            return DB.buscarNick(nick).ToList();
+        }
         
     }
 }

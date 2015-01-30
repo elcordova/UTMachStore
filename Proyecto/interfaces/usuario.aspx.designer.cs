@@ -67,13 +67,22 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.TextBox TextBoxConfirContra;
         
         /// <summary>
-        /// Control CheckBoxSi.
+        /// Control ButtonSi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBoxSi;
+        protected global::System.Web.UI.WebControls.Button ButtonSi;
+        
+        /// <summary>
+        /// Control ButtonNo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonNo;
         
         /// <summary>
         /// Control TextBoxDireccion.
@@ -101,5 +110,14 @@ namespace Proyecto.interfaces {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonActualizar;
+        
+        /// <summary>
+        /// Control lblError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

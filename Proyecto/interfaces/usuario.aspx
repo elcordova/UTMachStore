@@ -24,7 +24,7 @@
     <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cédula</h3>
 		<div class="hr dotted clearfix">&nbsp;</div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;<asp:TextBox ID="TextBoxCedula" runat="server" Width="149px" MaxLength="10" TextMode="Number"></asp:TextBox>
+        &nbsp;<asp:TextBox ID="TextBoxCedula" runat="server" Width="149px" MaxLength="10" TextMode="Number" Enabled="False"></asp:TextBox>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <br />
     <br />
@@ -44,9 +44,11 @@
                 <td><asp:TextBox ID="TextBoxContrasena" runat="server" Width="145px" MaxLength="8" TextMode="Password" Enabled="False"></asp:TextBox></td>
                 <td><asp:TextBox ID="TextBoxNuevaContra" runat="server" Width="145px" MaxLength="8" TextMode="Password" Enabled="False"></asp:TextBox></td>
                 <td><asp:TextBox ID="TextBoxConfirContra" runat="server" Width="145px" MaxLength="8" TextMode="Password" Enabled="False"></asp:TextBox></td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:CheckBox ID="CheckBoxSi" runat="server" OnCheckedChanged="CheckBoxSi_CheckedChanged" Text="Si" />
-                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="ButtonSi" runat="server" OnClick="ButtonSi_Click" Text="SI" Width="32px" />
+&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="ButtonNo" runat="server" OnClick="ButtonNo_Click" Text="NO" />
+&nbsp;</td>
             </tr>
 
             <tr>
@@ -77,6 +79,8 @@
         <br /><br /><br /><br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="ButtonActualizar" runat="server" Text="Actualizar mis datos" />
+        <asp:Button ID="ButtonActualizar" runat="server" Text="Actualizar mis datos" OnClick="ButtonActualizar_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Label ID="lblError" runat="server" ForeColor="#CC0000"></asp:Label>
         <br /><br />
 </asp:Content>

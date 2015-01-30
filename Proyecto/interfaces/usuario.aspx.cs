@@ -17,6 +17,12 @@ namespace Proyecto.interfaces
         protected void Page_Load(object sender, EventArgs e)
         {
             llenarDatos();
+            lblError.Text = "";
+            cambio = false;
+            contrasenaTemp = "";
+            TextBoxContrasena.Enabled = false;
+            TextBoxNuevaContra.Enabled = false;
+            TextBoxConfirContra.Enabled = false;
         }
 
         string contrasenaTemp = "";
@@ -27,36 +33,106 @@ namespace Proyecto.interfaces
             TextBoxNombre.Text = datosUsuario.ElementAt(0).nombreComp_Usu;
             TextBoxNick.Text = datosUsuario.ElementAt(0).nic_Usu;
             TextBoxCedula.Text = datosUsuario.ElementAt(0).cedula_Usu;
-            TextBoxContrasena.Text = ""+encrip.DesEncriptar(datosUsuario.ElementAt(0).password_Usu);
+            contrasenaTemp = ""+encrip.DesEncriptar(datosUsuario.ElementAt(0).password_Usu);
             TextBoxDireccion.Text = datosUsuario.ElementAt(0).direccion_Usu;
             TextBoxEmail.Text = datosUsuario.ElementAt(0).email_Usu;
-
-            contrasenaTemp = TextBoxContrasena.Text;
-            Console.WriteLine(contrasenaTemp);
-            Console.Read();
          
         }
 
-        protected void CheckBoxSi_CheckedChanged(object sender, EventArgs e)
-        {
+        bool cambio = false;
 
-            if (CheckBoxSi.Checked.Equals(true))
+        protected void ButtonSi_Click(object sender, EventArgs e)
+        {
+            cambio = true;
+            TextBoxContrasena.Enabled = true;
+            TextBoxNuevaContra.Enabled = true;
+            TextBoxConfirContra.Enabled = true;
+        }
+
+        protected void ButtonNo_Click(object sender, EventArgs e)
+        {
+            cambio = false;
+            TextBoxContrasena.Enabled = false;
+            TextBoxNuevaContra.Enabled = false;
+            TextBoxConfirContra.Enabled = false;
+        }
+
+        protected void ButtonActualizar_Click(object sender, EventArgs e)
+        {
+            if (cambio)
             {
-                TextBoxContrasena.Text = "";
-                TextBoxContrasena.Enabled = true;
-                TextBoxNuevaContra.Enabled = true;
-                TextBoxConfirContra.Enabled = true;
+                if (!camposVacios() || TextBoxContrasena.Text.Equals("") || TextBoxNuevaContra.Text.Equals("")
+                    || TextBoxConfirContra.Text.Equals(""))
+                {
+                    if (contraActual())
+                    {
+                        if (contraConciden())
+                        {
+                            //ACTUALIZO
+                            usuario.Nombre_usu = TextBoxNombre.Text;
+                            usuario.Nic_usu = TextBoxNick.Text;
+                            usuario.Cedula_usu = TextBoxCedula.Text;
+                            usuario.Direccion_usu = TextBoxDireccion.Text;
+                            usuario.Email_usu = TextBoxEmail.Text;
+                            usuario.Passwd_usu = TextBoxNuevaContra.Text;
+
+                            lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+                        }
+                        else
+                        {
+                            lblError.Text = "Las contraseñas no coinciden";
+                        }
+                    }
+                    else
+                    {
+                        lblError.Text = "La contraseña actual no es correcta";
+                    }
+
+                }
+                else
+                {
+                    lblError.Text = "Porfavor, los campos son obligatorios";
+                }
             }
             else
             {
-                
-                TextBoxContrasena.Text = contrasenaTemp;
-                TextBoxNuevaContra.Text = "";
-                TextBoxConfirContra.Text = "";
-                TextBoxContrasena.Enabled = false;
-                TextBoxNuevaContra.Enabled = false;
-                TextBoxConfirContra.Enabled = false;
+                if (!camposVacios())
+                {
+                    //ACTUALIZO
+                    usuario.Nombre_usu = TextBoxNombre.Text;
+                    usuario.Nic_usu = TextBoxNick.Text;
+                    usuario.Cedula_usu = TextBoxCedula.Text;
+                    usuario.Direccion_usu = TextBoxDireccion.Text;
+                    usuario.Email_usu = TextBoxEmail.Text;
+                    usuario.Passwd_usu = contrasenaTemp;
+
+                    lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+                }
+                else
+                {
+                    lblError.Text = "Porfavor, los campos son obligatorios";
+                }
             }
+        }
+
+        public bool camposVacios()
+        {
+            if (TextBoxNombre.Text.Trim().Equals("") || TextBoxNick.Text.Trim().Equals("") || TextBoxCedula.Text.Trim().Equals("")
+                || TextBoxDireccion.Text.Trim().Equals("") || TextBoxEmail.Text.Trim().Equals(""))
+                return true;
+            else return false;
+        }
+
+        public bool contraActual() 
+        {
+            if (TextBoxContrasena.Text.Equals(contrasenaTemp)) return true;
+            else return false;
+        }
+
+        public bool contraConciden()
+        {
+            if (TextBoxNuevaContra.Text.Equals(TextBoxConfirContra.Text)) return true;
+            else return false;
         }
 
         

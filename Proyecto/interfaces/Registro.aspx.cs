@@ -12,6 +12,7 @@ namespace Proyecto.interfaces
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
+        List<dataBase.buscarNicknameResult> datosUsuario = new List<dataBase.buscarNicknameResult>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,17 +37,32 @@ namespace Proyecto.interfaces
             }
             else
             {
-                if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+
+                if (!datosUsuario.Count.Equals(0))
                 {
-                    usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
-                    lnUsuario.insertarUsuario(usuario);
-                    enviarCorreo();     //envio de mensaje de verificacion a email
-                    limpiarCampos();
+                    if (!datosUsuario.ElementAt(0).nic_Usu.Equals(""))
+                    {
+                        
+                        if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+                        {
+                            usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
+                            lnUsuario.insertarUsuario(usuario);
+                            enviarCorreo();     //envio de mensaje de verificacion a email
+                            limpiarCampos();
+                        }
+                        else
+                        {
+                            //validacion en caso de que las contraseñas no coincidan
+                        }
+                    }
+                    else 
+                    {
+                        ////validacion de que el nickname ya existe
+                    }
+
+                    
                 }
-                else
-                {
-                    //validacion en caso de que las contraseñas no coincidan
-                }
+
             }
         }
 
@@ -71,7 +87,7 @@ namespace Proyecto.interfaces
                 + "Usuario: " + usuario.Nic_usu + "\n Clave: " + TextBoxPasswd.Text + "\n \n"
                 + "En estos momentos tu usuario aun no está validado. Cuando lo valides tendrás las ventajas de usuarios registrados de UTMachStore, como promocionar tus productos y realizar compras. \n \n"
                 + "Verás un formulario donde colocar esta clave: \n"
-                + usuario.Passwd_usu +"\n \n"
+                + usuario.Passwd_usu + "\n \n"
                 + "Un cordial saludo y bienvenido a la comunidad de UTMachStore!";
             if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, usuario.Nic_usu))
             {
@@ -79,10 +95,14 @@ namespace Proyecto.interfaces
             }
             else
             {
-                Console.WriteLine("Correo no enviado");
+                //validacion de no poder haber enviado el correo
             }
 
         }
+
+
+
+
 
     }
 }
