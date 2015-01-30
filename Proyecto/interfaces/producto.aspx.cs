@@ -26,7 +26,6 @@ namespace Proyecto.interfaces
             lncomentario.insertarUsuario(ent_comentario);
 
             txtComentario.Text = "";
-
         }
 
        
