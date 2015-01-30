@@ -46,6 +46,7 @@ namespace Proyecto.interfaces
                 if (!datosUsuarioNick.Count.Equals(0))
                 {
                     ////validacion de que el nickname ya existe
+                    Response.Write("<script language=javascript>alert('Este NickName ya existe');</script>");
                 }
                 else
                 {
