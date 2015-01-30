@@ -16,19 +16,20 @@ namespace Proyecto.interfaces
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] != null)
+            if (Session["usuario"] == null)
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
             else
             {
-                llenarDatos();
-                lblError.Text = "";
+               
                 cambio = false;
                 contrasenaTemp = "";
                 TextBoxContrasena.Enabled = false;
                 TextBoxNuevaContra.Enabled = false;
                 TextBoxConfirContra.Enabled = false;
+
+                llenarDatos();
             }
             
         }
@@ -67,6 +68,7 @@ namespace Proyecto.interfaces
 
         protected void ButtonActualizar_Click(object sender, EventArgs e)
         {
+            usuario = new Entidades.Ent_Usuario();
             if (cambio)
             {
                 if (!camposVacios() || TextBoxContrasena.Text.Equals("") || TextBoxNuevaContra.Text.Equals("")
@@ -82,24 +84,27 @@ namespace Proyecto.interfaces
                             usuario.Cedula_usu = TextBoxCedula.Text;
                             usuario.Direccion_usu = TextBoxDireccion.Text;
                             usuario.Email_usu = TextBoxEmail.Text;
-                            usuario.Passwd_usu = TextBoxNuevaContra.Text;
+                            usuario.Passwd_usu = encrip.Encriptar(TextBoxNuevaContra.Text);
+                            usuario.Estado_usu = true;
 
                             lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+
+                            Response.Redirect("/interfaces/usuario.aspx");
                         }
                         else
                         {
-                            lblError.Text = "Las contraseñas no coinciden";
+                            Response.Write("<script language=javascript>alert('Las contraseñas no coinciden');</script>");
                         }
                     }
                     else
                     {
-                        lblError.Text = "La contraseña actual no es correcta";
+                        Response.Write("<script language=javascript>alert('La contraseña actual no es correcta');</script>");
                     }
 
                 }
                 else
                 {
-                    lblError.Text = "Porfavor, los campos son obligatorios";
+                    Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
                 }
             }
             else
@@ -112,13 +117,17 @@ namespace Proyecto.interfaces
                     usuario.Cedula_usu = TextBoxCedula.Text;
                     usuario.Direccion_usu = TextBoxDireccion.Text;
                     usuario.Email_usu = TextBoxEmail.Text;
-                    usuario.Passwd_usu = contrasenaTemp;
+                    usuario.Passwd_usu = encrip.Encriptar(contrasenaTemp);
+                    usuario.Estado_usu = true;
 
                     lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
+
+                    Response.Redirect("/interfaces/usuario.aspx");
                 }
                 else
                 {
-                    lblError.Text = "Porfavor, los campos son obligatorios";
+                    Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
+                    
                 }
             }
         }

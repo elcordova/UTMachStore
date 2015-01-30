@@ -69,9 +69,6 @@ namespace Proyecto.dataBase
     partial void InsertUsuario(Usuario instance);
     partial void UpdateUsuario(Usuario instance);
     partial void DeleteUsuario(Usuario instance);
-    partial void InsertLista_deseos1(Lista_deseos1 instance);
-    partial void UpdateLista_deseos1(Lista_deseos1 instance);
-    partial void DeleteLista_deseos1(Lista_deseos1 instance);
     #endregion
 		
 		public DatosDataContext() : 
@@ -208,28 +205,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		public System.Data.Linq.Table<Lista_deseos1> Lista_deseos1
-		{
-			get
-			{
-				return this.GetTable<Lista_deseos1>();
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarUsuario")]
-		public int actualizarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuario")]
-		public int insertarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarComentario")]
 		public int cp_insertarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string contenido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha)
 		{
@@ -326,6 +301,27 @@ namespace Proyecto.dataBase
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ced_Usu);
 			return ((ISingleResult<buscarCedulaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarCorreo")]
+		public ISingleResult<buscarCorreoResult> buscarCorreo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string email_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email_Usu);
+			return ((ISingleResult<buscarCorreoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarUsuario")]
+		public int actualizarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuario")]
+		public int insertarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -2613,8 +2609,6 @@ namespace Proyecto.dataBase
 		
 		private EntitySet<PagoPulicacion> _PagoPulicacion;
 		
-		private EntitySet<Lista_deseos1> _Lista_deseos1;
-		
 		private EntityRef<Categorias> _Categorias;
 		
 		private EntityRef<Usuario> _Usuario;
@@ -2653,7 +2647,6 @@ namespace Proyecto.dataBase
 			this._Lista_deseos = new EntitySet<Lista_deseos>(new Action<Lista_deseos>(this.attach_Lista_deseos), new Action<Lista_deseos>(this.detach_Lista_deseos));
 			this._Negociacion = new EntitySet<Negociacion>(new Action<Negociacion>(this.attach_Negociacion), new Action<Negociacion>(this.detach_Negociacion));
 			this._PagoPulicacion = new EntitySet<PagoPulicacion>(new Action<PagoPulicacion>(this.attach_PagoPulicacion), new Action<PagoPulicacion>(this.detach_PagoPulicacion));
-			this._Lista_deseos1 = new EntitySet<Lista_deseos1>(new Action<Lista_deseos1>(this.attach_Lista_deseos1), new Action<Lista_deseos1>(this.detach_Lista_deseos1));
 			this._Categorias = default(EntityRef<Categorias>);
 			this._Usuario = default(EntityRef<Usuario>);
 			OnCreated();
@@ -2945,19 +2938,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Lista_deseos1", Storage="_Lista_deseos1", ThisKey="codigo_Pub", OtherKey="codigo_Pub")]
-		public EntitySet<Lista_deseos1> Lista_deseos1
-		{
-			get
-			{
-				return this._Lista_deseos1;
-			}
-			set
-			{
-				this._Lista_deseos1.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categorias_Publicaciones", Storage="_Categorias", ThisKey="codigo_Cat", OtherKey="codigo_Cat", IsForeignKey=true)]
 		public Categorias Categorias
 		{
@@ -3117,18 +3097,6 @@ namespace Proyecto.dataBase
 			this.SendPropertyChanging();
 			entity.Publicaciones = null;
 		}
-		
-		private void attach_Lista_deseos1(Lista_deseos1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = this;
-		}
-		
-		private void detach_Lista_deseos1(Lista_deseos1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Usuario")]
@@ -3161,8 +3129,6 @@ namespace Proyecto.dataBase
 		
 		private EntitySet<Publicaciones> _Publicaciones;
 		
-		private EntitySet<Lista_deseos1> _Lista_deseos1;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3191,7 +3157,6 @@ namespace Proyecto.dataBase
 			this._Comentarios = new EntitySet<Comentarios>(new Action<Comentarios>(this.attach_Comentarios), new Action<Comentarios>(this.detach_Comentarios));
 			this._Lista_deseos = new EntitySet<Lista_deseos>(new Action<Lista_deseos>(this.attach_Lista_deseos), new Action<Lista_deseos>(this.detach_Lista_deseos));
 			this._Publicaciones = new EntitySet<Publicaciones>(new Action<Publicaciones>(this.attach_Publicaciones), new Action<Publicaciones>(this.detach_Publicaciones));
-			this._Lista_deseos1 = new EntitySet<Lista_deseos1>(new Action<Lista_deseos1>(this.attach_Lista_deseos1), new Action<Lista_deseos1>(this.detach_Lista_deseos1));
 			OnCreated();
 		}
 		
@@ -3275,7 +3240,7 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string password_Usu
 		{
 			get
@@ -3295,7 +3260,7 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string email_Usu
 		{
 			get
@@ -3407,19 +3372,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Lista_deseos1", Storage="_Lista_deseos1", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
-		public EntitySet<Lista_deseos1> Lista_deseos1
-		{
-			get
-			{
-				return this._Lista_deseos1;
-			}
-			set
-			{
-				this._Lista_deseos1.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3486,210 +3438,6 @@ namespace Proyecto.dataBase
 		{
 			this.SendPropertyChanging();
 			entity.Usuario = null;
-		}
-		
-		private void attach_Lista_deseos1(Lista_deseos1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
-		}
-		
-		private void detach_Lista_deseos1(Lista_deseos1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Lista_deseos")]
-	public partial class Lista_deseos1 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _codigo_Lis_Des;
-		
-		private System.Nullable<long> _codigo_Usu;
-		
-		private System.Nullable<long> _codigo_Pub;
-		
-		private EntityRef<Usuario> _Usuario;
-		
-		private EntityRef<Publicaciones> _Publicaciones;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncodigo_Lis_DesChanging(long value);
-    partial void Oncodigo_Lis_DesChanged();
-    partial void Oncodigo_UsuChanging(System.Nullable<long> value);
-    partial void Oncodigo_UsuChanged();
-    partial void Oncodigo_PubChanging(System.Nullable<long> value);
-    partial void Oncodigo_PubChanged();
-    #endregion
-		
-		public Lista_deseos1()
-		{
-			this._Usuario = default(EntityRef<Usuario>);
-			this._Publicaciones = default(EntityRef<Publicaciones>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Lis_Des", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long codigo_Lis_Des
-		{
-			get
-			{
-				return this._codigo_Lis_Des;
-			}
-			set
-			{
-				if ((this._codigo_Lis_Des != value))
-				{
-					this.Oncodigo_Lis_DesChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Lis_Des = value;
-					this.SendPropertyChanged("codigo_Lis_Des");
-					this.Oncodigo_Lis_DesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt")]
-		public System.Nullable<long> codigo_Usu
-		{
-			get
-			{
-				return this._codigo_Usu;
-			}
-			set
-			{
-				if ((this._codigo_Usu != value))
-				{
-					if (this._Usuario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_UsuChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Usu = value;
-					this.SendPropertyChanged("codigo_Usu");
-					this.Oncodigo_UsuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pub", DbType="BigInt")]
-		public System.Nullable<long> codigo_Pub
-		{
-			get
-			{
-				return this._codigo_Pub;
-			}
-			set
-			{
-				if ((this._codigo_Pub != value))
-				{
-					if (this._Publicaciones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_PubChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Pub = value;
-					this.SendPropertyChanged("codigo_Pub");
-					this.Oncodigo_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Lista_deseos1", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true)]
-		public Usuario Usuario
-		{
-			get
-			{
-				return this._Usuario.Entity;
-			}
-			set
-			{
-				Usuario previousValue = this._Usuario.Entity;
-				if (((previousValue != value) 
-							|| (this._Usuario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Usuario.Entity = null;
-						previousValue.Lista_deseos1.Remove(this);
-					}
-					this._Usuario.Entity = value;
-					if ((value != null))
-					{
-						value.Lista_deseos1.Add(this);
-						this._codigo_Usu = value.codigo_Usu;
-					}
-					else
-					{
-						this._codigo_Usu = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Usuario");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Lista_deseos1", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.Lista_deseos1.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.Lista_deseos1.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -4499,6 +4247,158 @@ namespace Proyecto.dataBase
 		private string _cedula_Usu;
 		
 		public buscarCedulaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt NOT NULL")]
+		public long codigo_Usu
+		{
+			get
+			{
+				return this._codigo_Usu;
+			}
+			set
+			{
+				if ((this._codigo_Usu != value))
+				{
+					this._codigo_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombreComp_Usu
+		{
+			get
+			{
+				return this._nombreComp_Usu;
+			}
+			set
+			{
+				if ((this._nombreComp_Usu != value))
+				{
+					this._nombreComp_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nic_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string nic_Usu
+		{
+			get
+			{
+				return this._nic_Usu;
+			}
+			set
+			{
+				if ((this._nic_Usu != value))
+				{
+					this._nic_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string direccion_Usu
+		{
+			get
+			{
+				return this._direccion_Usu;
+			}
+			set
+			{
+				if ((this._direccion_Usu != value))
+				{
+					this._direccion_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string password_Usu
+		{
+			get
+			{
+				return this._password_Usu;
+			}
+			set
+			{
+				if ((this._password_Usu != value))
+				{
+					this._password_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string email_Usu
+		{
+			get
+			{
+				return this._email_Usu;
+			}
+			set
+			{
+				if ((this._email_Usu != value))
+				{
+					this._email_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_Usu", DbType="Bit NOT NULL")]
+		public bool estado_Usu
+		{
+			get
+			{
+				return this._estado_Usu;
+			}
+			set
+			{
+				if ((this._estado_Usu != value))
+				{
+					this._estado_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula_Usu", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string cedula_Usu
+		{
+			get
+			{
+				return this._cedula_Usu;
+			}
+			set
+			{
+				if ((this._cedula_Usu != value))
+				{
+					this._cedula_Usu = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarCorreoResult
+	{
+		
+		private long _codigo_Usu;
+		
+		private string _nombreComp_Usu;
+		
+		private string _nic_Usu;
+		
+		private string _direccion_Usu;
+		
+		private string _password_Usu;
+		
+		private string _email_Usu;
+		
+		private bool _estado_Usu;
+		
+		private string _cedula_Usu;
+		
+		public buscarCorreoResult()
 		{
 		}
 		

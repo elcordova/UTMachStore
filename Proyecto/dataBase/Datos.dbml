@@ -125,7 +125,6 @@
       <Association Name="Publicaciones_Lista_deseos" Member="Lista_deseos" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Lista_deseos" />
       <Association Name="Publicaciones_Negociacion" Member="Negociacion" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Negociacion" />
       <Association Name="Publicaciones_PagoPulicacion" Member="PagoPulicacion" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="PagoPulicacion" />
-      <Association Name="Publicaciones_Lista_deseos1" Member="Lista_deseos1" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Lista_deseos1" />
       <Association Name="Categorias_Publicaciones" Member="Categorias" ThisKey="codigo_Cat" OtherKey="codigo_Cat" Type="Categorias" IsForeignKey="true" />
       <Association Name="Usuario_Publicaciones" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
     </Type>
@@ -136,46 +135,16 @@
       <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="password_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="email_Usu" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="password_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Association Name="Usuario_UsuarioNegociacion" Member="UsuarioNegociacion" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="UsuarioNegociacion" />
       <Association Name="Usuario_Comentarios" Member="Comentarios" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Comentarios" />
       <Association Name="Usuario_Lista_deseos" Member="Lista_deseos" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Lista_deseos" />
       <Association Name="Usuario_Publicaciones" Member="Publicaciones" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Publicaciones" />
-      <Association Name="Usuario_Lista_deseos1" Member="Lista_deseos1" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Lista_deseos1" />
     </Type>
   </Table>
-  <Table Name="dbo.Lista_deseos" Member="Lista_deseos1">
-    <Type Name="Lista_deseos1">
-      <Column Name="codigo_Lis_Des" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Association Name="Usuario_Lista_deseos1" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
-      <Association Name="Publicaciones_Lista_deseos1" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Function Name="dbo.actualizarUsuario" Method="actualizarUsuario">
-    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.insertarUsuario" Method="insertarUsuario">
-    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.cp_insertarComentario" Method="cp_insertarComentario">
     <Parameter Name="codigoUsu" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
@@ -302,5 +271,38 @@
       <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.buscarCorreo" Method="buscarCorreo">
+    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="buscarCorreoResult">
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="password_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="email_Usu" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.actualizarUsuario" Method="actualizarUsuario">
+    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarUsuario" Method="insertarUsuario">
+    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

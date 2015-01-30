@@ -43,39 +43,45 @@ namespace Proyecto.interfaces
             {
                 datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
+                int caseSwitch =0;
                 if (!datosUsuarioNick.Count.Equals(0))
                 {
-                    ////validacion de que el nickname ya existe
+                    caseSwitch = 1;
                 }
-                else
+                
+                switch (caseSwitch)
                 {
-                    if (!datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
-                    {
-                        if (!datosUsuarioCedula.Count.Equals(0))
+                    case 1:
+                        if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNickname.Text))
                         {
-                            if (!datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
-                            {
-                                //validacion de cedula existente
-                                Response.Redirect("index.aspx");
-                            }
-                            else
-                            {
-
-                                if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
-                                {
-                                    usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
-                                    lnUsuario.insertarUsuario(usuario);
-                                    enviarCorreo();     //envio de mensaje de verificacion a email
-                                    limpiarCampos();
-                                }
-                                else
-                                {
-                                    //validacion en caso de que las contraseñas no coincidan
-                                }
-                            }
+                            ////validacion de que el nickname ya existe
+                            Response.Write("<script language=javascript>alert('Este NickName: " + usuario.Nic_usu + " ya está ocupado');</script>");
                         }
-                    }
+                        break;
+                    case 2:
+                        Console.WriteLine("Case 2");
+                        break;
+                    default:
+                        Console.WriteLine("Default case");
+                        break;
                 }
+                
+            }
+        }
+
+        private void registroUsuario()
+        {
+            if (TextBoxPasswd.Text.Equals(TextBoxConfPasswd.Text))
+            {
+                usuario.Passwd_usu = seguridad.Encriptar(TextBoxPasswd.Text);
+                lnUsuario.insertarUsuario(usuario);
+                enviarCorreo();     //envio de mensaje de verificacion a email
+                limpiarCampos();
+            }
+            else
+            {
+                //validacion en caso de que las contraseñas no coincidan
+                Response.Write("<script language=javascript>alert('Las contrseñas no coinciden');</script>");
             }
         }
 
@@ -95,6 +101,7 @@ namespace Proyecto.interfaces
             string from = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlAEAAZwBtAGEAaQBsAC4AYwBvAG0A");
             string passwd = seguridad.DesEncriptar("dQB0AG0AYQBjAGgAcwB0AG8AcgBlADIAMAAxADUA");
             string to = usuario.Email_usu;
+            string asunto = "¡Bienvenido!, " + usuario.Nic_usu + " Solo te falta confirmar tu cuenta‏";
             string message = "Hola!, " + usuario.Nic_usu + "\n \n"
                 + "Muchas gracias por registrarte en UTMachStore. A continuación te damos los datos de acceso a la zona de usuarios: \n \n"
                 + "Usuario: " + usuario.Nic_usu + "\n Clave: " + TextBoxPasswd.Text + "\n \n"
@@ -102,7 +109,7 @@ namespace Proyecto.interfaces
                 + "Verás un formulario donde colocar esta clave: \n"
                 + usuario.Passwd_usu + "\n \n"
                 + "Un cordial saludo y bienvenido a la comunidad de UTMachStore!";
-            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, usuario.Nic_usu))
+            if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, usuario.Nic_usu, asunto))
             {
                 Response.Redirect("verificarCuenta.aspx");
             }

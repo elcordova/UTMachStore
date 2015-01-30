@@ -65,6 +65,7 @@
   <ItemGroup>
     <Content Include="interfaces\cerrarSesion.aspx" />
     <Content Include="interfaces\compra.aspx" />
+    <Content Include="interfaces\ControlComentarios.ascx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
@@ -143,12 +144,14 @@
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
     <Content Include="interfaces\log.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
+    <Content Include="interfaces\notificaciones.aspx" />
     <Content Include="interfaces\producto.aspx" />
     <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\publicar.aspx" />
     <Content Include="interfaces\Registro.aspx" />
     <Content Include="interfaces\restriccion.aspx" />
     <Content Include="interfaces\usuario.aspx" />
+    <Content Include="interfaces\verificarCuenta.aspx" />
     <Content Include="procesos almacenados MIguelKerly\ProcesosAlmacenadosMiguelKerly.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -179,6 +182,13 @@
     <Compile Include="interfaces\compra.aspx.designer.cs">
       <DependentUpon>compra.aspx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\ControlComentarios.ascx.cs">
+      <DependentUpon>ControlComentarios.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ControlComentarios.ascx.designer.cs">
+      <DependentUpon>ControlComentarios.ascx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,6 +209,13 @@
     </Compile>
     <Compile Include="interfaces\negociacion.aspx.designer.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\notificaciones.aspx.cs">
+      <DependentUpon>notificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\notificaciones.aspx.designer.cs">
+      <DependentUpon>notificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -237,6 +254,7 @@
     </Compile>
     <Compile Include="interfaces\restriccion.aspx.cs">
       <DependentUpon>restriccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\restriccion.aspx.designer.cs">
       <DependentUpon>restriccion.aspx</DependentUpon>
@@ -247,6 +265,13 @@
     </Compile>
     <Compile Include="interfaces\usuario.aspx.designer.cs">
       <DependentUpon>usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\verificarCuenta.aspx.cs">
+      <DependentUpon>verificarCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\verificarCuenta.aspx.designer.cs">
+      <DependentUpon>verificarCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogicaDeNegocio\Email.cs" />
     <Compile Include="LogicaDeNegocio\EncriptacionDeDatos.cs" />
