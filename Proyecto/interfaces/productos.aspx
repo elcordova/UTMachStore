@@ -88,7 +88,7 @@
 			</div>
 				<a class="portfolio_item float alpha" href="producto.aspx">
 					<span>Computación</span>
-					<img class="" src="images/computadora.jpg"  alt=""/>
+					<img class="" src="images/computadora.jpg"  alt="" onclick="Button1_Click"/>
 				</a>
 				<a class="portfolio_item float " href="producto.aspx">
 					<span>Moda-Belleza</span>
@@ -128,6 +128,7 @@
 		
 		<div class="catagory_1 clearfix">
 			<!-- Row 1 -->
+		    
 		</div>
 		<div class="pr clearfix grid_12">&nbsp;</div>
 		
