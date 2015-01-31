@@ -5,6 +5,9 @@
             height: 77px;
             width: 429px;
         }
+        #TextAreaDatos {
+            width: 364px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content9" ContentPlaceHolderID="negociacion" runat="server">
@@ -12,21 +15,23 @@
 
         &nbsp;<br /><br />
     
-    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Computador core i3</h1>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="labelTitulo" runat="server" Text="Label"></asp:Label>
+    </h1>
         <div class="hr dotted clearfix">&nbsp;</div>
     <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forma de pago</h4>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; datos de Vendedor</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <textarea id="TextArea1" name="S1"></textarea><p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox3" runat="server" Height="29px"  TextMode="MultiLine" Width="181px"></asp:TextBox>
+    <br />
+&nbsp;<p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cantidad a comprar:
-            <asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="45px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; productos en stock:<asp:TextBox ID="TextBox2" runat="server" Height="16px" Width="45px"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="45px" ToolTip="por defecto 1 unidad"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; productos en stock:<asp:TextBox ID="TextBox2" runat="server" Height="16px" Width="45px" ReadOnly="True"></asp:TextBox>
         </p>
     <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Porfavor seleccione una de las formas de pago establecidas por el vendedor<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownListPago" runat="server" Height="27px" Width="200px">
+            <asp:DropDownList ID="DropDownListPago" runat="server" Height="35px" Width="200px">
             </asp:DropDownList>
         </p>
         <div class="hr dotted clearfix">&nbsp;</div>
@@ -34,7 +39,7 @@
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Por favor seleccione una de las formas de Envio establecidas por el vendedor<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownListEnvio" runat="server" Height="16px" Width="208px">
+            <asp:DropDownList ID="DropDownListEnvio" runat="server" Height="35px" Width="200px">
             </asp:DropDownList>
         </p>
         <div class="hr dotted clearfix">&nbsp;</div>

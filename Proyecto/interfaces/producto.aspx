@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="producto.aspx.cs" Inherits="Proyecto.interfaces.WebForm1" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="producto.aspx.cs" Inherits="Proyecto.interfaces.WebForm1" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
@@ -52,7 +52,8 @@
             <p class="MsoNormal">
                 Teclado mouse y parlantes<o:p></o:p></p>
             <p class="clearfix">
-				&nbsp;<a href="negociacion.aspx" class="button float right">Comprar</a>
+				&nbsp;
+                <asp:Button ID="ButtonComprar" runat="server" Text="Comprar" OnClick="ButtonComprar_Click"/>
 			</p>
 		</div>
 		

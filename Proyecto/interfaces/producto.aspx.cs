@@ -32,6 +32,12 @@ namespace Proyecto.interfaces
             txtComentario.Text = "";
         }
 
+        protected void ButtonComprar_Click(object sender, EventArgs e)
+        {
+          Session["codigo_publicacion"] = "5";
+          Response.Redirect("/interfaces/negociacion.aspx");
+        }
+
        
     }
 }
