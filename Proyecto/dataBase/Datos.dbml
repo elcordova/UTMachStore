@@ -315,4 +315,13 @@
     <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.cp_listarComentario" Method="cp_listarComentario">
+    <Parameter Name="valor" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="cp_listarComentarioResult">
+      <Column Name="codigo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nick" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
