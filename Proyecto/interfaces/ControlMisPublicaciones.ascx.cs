@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto.interfaces
 {
-    public partial class ControlComentarios : System.Web.UI.UserControl
+    public partial class ControlMisPublicaciones : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

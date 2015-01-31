@@ -7,19 +7,18 @@ namespace Proyecto.Entidades
 {
     public class Ent_Fotos
     {
-         
-      
+
+
         private int Codigo_Pub;
         private string Nombre;
         private string Ruta;
-        
 
-        public Ent_Fotos() 
+
+        public Ent_Fotos()
         {
             Codigo_Pub = 0;
             Nombre = "";
             Ruta = "";
-           
         }
         public Ent_Fotos(int codigoPub, string nombre, string ruta)
         {
@@ -27,7 +26,7 @@ namespace Proyecto.Entidades
             Nombre = nombre;
             Ruta = ruta;
         }
-     
+
         public int Codigo_Publicacion
         {
             get { return Codigo_Pub; }
@@ -46,6 +45,6 @@ namespace Proyecto.Entidades
             get { return Ruta; }
             set { Ruta = value; }
         }
-       
+
     }
 }

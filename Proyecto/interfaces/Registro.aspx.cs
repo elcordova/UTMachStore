@@ -14,8 +14,10 @@ namespace Proyecto.interfaces
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
         List<dataBase.buscarNicknameResult> datosUsuarioNick = new List<dataBase.buscarNicknameResult>();
         List<dataBase.buscarCedulaResult> datosUsuarioCedula = new List<dataBase.buscarCedulaResult>();
+        List<dataBase.buscarCorreoResult> datosUsuarioCorreo = new List<dataBase.buscarCorreoResult>();
         bool banderaNick = true;
         bool banderaCedula = true;
+        bool banderaCorreo = true;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,10 +40,12 @@ namespace Proyecto.interfaces
             {
                 datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
+                datosUsuarioCorreo = lnUsuario.buscarCorreo(TextBoxEmail.Text);
+                validarCorreo();
                 validarNickname();
                 validarCedula();
 
-                if (banderaNick.Equals(true) && banderaCedula.Equals(true))
+                if (banderaNick.Equals(true) && banderaCedula.Equals(true) && banderaCorreo.Equals(true))
                 {
                     registroUsuario();
                 }
@@ -69,6 +73,23 @@ namespace Proyecto.interfaces
             else
             {
                 return false;
+            }
+        }
+
+        private void validarCorreo()
+        {
+            if (!datosUsuarioCorreo.Count.Equals(0))
+            {
+                if (datosUsuarioCorreo.ElementAt(0).email_Usu.Equals(TextBoxEmail.Text))
+                {
+                    Response.Write("<script language=javascript>alert('Este Correo: " + usuario.Email_usu + " ya está registrado');</script>");
+                    banderaCorreo = false;
+                }
+                else
+                {
+                    banderaCorreo = true;
+                }
+
             }
         }
 
@@ -151,7 +172,7 @@ namespace Proyecto.interfaces
             }
             else
             {
-                //validacion de no poder haber enviado el correo
+                Response.Write("<script language=javascript>alert('No se pudo enviar el correo de verificación, por favor vuelva a intentarlo');</script>");
             }
 
         }

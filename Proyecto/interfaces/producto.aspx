@@ -74,25 +74,35 @@
 		<!-- Client pickup line -->
 		<br /><br /><br /><br />
 
-        <h3>Comentarios</h3>
+        
 			<div class="hr dotted clearfix">&nbsp;</div>
 			
 			<ol class="commentlist">
-				<li class="comment"> 
-				<div class="gravatar"> 
-					<img alt="" src='images/gravatar.png' height='48' width='48' />
-					<a class="comment-reply-link" href=''>Reply</a>     
-				</div> 
-				<div class="comment_content"> 
-					<div class="clearfix">
-						<cite class="author_name"><a href="">Usuario anonimo</a></cite>       
-						<div class="comment-meta commentmetadata">January 6, 2010 at 6:26 am</div> 
-					</div>
-					<div class="comment_text"> 
-						<p>Buen producto gracias por publicarlo estaba buscando esto precisamente, ahora podre tener lo que quiero.</p> 
-					</div> 
-				</div> 
-				</li> 
+                <h3>Comentarios</h3>
+            <div>
+            <asp:PlaceHolder runat=server ID="PlaceHolder1" />
+            <br />
+      
+            </div>
+
+                 <%@ Reference Control="ControlComentarios.ascx" %>
+            <script runat="server" Language="C#">
+            protected void Page_Load(object sender, EventArgs e)
+            {
+                  ASP.interfaces_controlcomentarios_ascx[] Spinner1;
+                  Spinner1 = new ASP.interfaces_controlcomentarios_ascx[10];
+                for (int p = 0; p < 10;p++ )
+                {
+                   
+                    Spinner1[p] = (ASP.interfaces_controlcomentarios_ascx)LoadControl("ControlComentarios.ascx");
+                    Label lb = new Label();
+                    lb = (Label)Spinner1[0].Controls[1];
+                    lb.Text = "funciona";
+                    PlaceHolder1.Controls.Add(Spinner1[p]);
+                }
+            }
+            </script>
+				 
 			</ol> 
 			
 			<div class="hr clearfix">&nbsp;</div>

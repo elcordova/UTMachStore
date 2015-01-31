@@ -66,6 +66,7 @@
     <Content Include="interfaces\cerrarSesion.aspx" />
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\ControlComentarios.ascx" />
+    <Content Include="interfaces\ControlMisPublicaciones.ascx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
@@ -81,6 +82,7 @@
     <Content Include="interfaces\Documentation\assets\styles.css" />
     <Content Include="interfaces\Documentation\assets\text.css" />
     <Content Include="interfaces\Documentation\README.html" />
+    <Content Include="interfaces\EdicionPublicacion.aspx" />
     <Content Include="interfaces\images\223x112.gif" />
     <Content Include="interfaces\images\600x300.gif" />
     <Content Include="interfaces\images\610x150.gif" />
@@ -144,6 +146,7 @@
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
     <Content Include="interfaces\ListaDeseos.aspx" />
     <Content Include="interfaces\log.aspx" />
+    <Content Include="interfaces\MisPublicaciones.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
     <Content Include="interfaces\notificaciones.aspx" />
     <Content Include="interfaces\producto.aspx" />
@@ -190,6 +193,18 @@
     <Compile Include="interfaces\ControlComentarios.ascx.designer.cs">
       <DependentUpon>ControlComentarios.ascx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\ControlMisPublicaciones.ascx.cs">
+      <DependentUpon>ControlMisPublicaciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlMisPublicaciones.ascx.designer.cs">
+      <DependentUpon>ControlMisPublicaciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
+      <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\EdicionPublicacion.aspx.designer.cs">
+      <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,6 +225,12 @@
     </Compile>
     <Compile Include="interfaces\log.aspx.designer.cs">
       <DependentUpon>log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\MisPublicaciones.aspx.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\MisPublicaciones.aspx.designer.cs">
+      <DependentUpon>MisPublicaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\negociacion.aspx.cs">
       <DependentUpon>negociacion.aspx</DependentUpon>
@@ -319,6 +340,9 @@
     <None Include="dataBase\Datos.dbml.layout">
       <DependentUpon>Datos.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="imagenesPublicaciones\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

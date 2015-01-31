@@ -5,7 +5,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="Productos" runat="server">
     <!-- Catch Line and Link -->
 			<h2 class="grid_12 caption clearfix"><span>Compra y venta: </span>En la siguiente sección nos encontraremos con los productos más destacados en ventas por los usuarios</h2>
-		    <a href="publicar.aspx" class="button float right">Crear publicacion</a>
+		    <a href="MisPublicaciones.aspx" class="button float right">Mis publicaciones</a>
+            <a href="publicar.aspx" class="button float right">Crear publicacion</a>
 		<div class="pr grid_12 clearfix">&nbsp;</div>
 		
 		<!-- Portfolio Items -->
@@ -87,7 +88,7 @@
 			</div>
 				<a class="portfolio_item float alpha" href="producto.aspx">
 					<span>Computación</span>
-					<img class="" src="images/computadora.jpg"  alt=""/>
+					<img class="" src="images/computadora.jpg"  alt="" onclick="Button1_Click"/>
 				</a>
 				<a class="portfolio_item float " href="producto.aspx">
 					<span>Moda-Belleza</span>
@@ -127,6 +128,7 @@
 		
 		<div class="catagory_1 clearfix">
 			<!-- Row 1 -->
+		    
 		</div>
 		<div class="pr clearfix grid_12">&nbsp;</div>
 		

@@ -2,12 +2,8 @@
 <%@ Register TagPrefix="uc" TagName="Spinner" 
     Src="ControlComentarios.ascx" %>
 <asp:Content ID="Content11" ContentPlaceHolderID="notificaciones" runat="server">
-         <uc:Spinner id="Spinner1" 
-        runat="server" 
-        MinValue="1" 
-        MaxValue="10" />
-
-
+         &nbsp;&nbsp;&nbsp;
+    
     <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click1" 
         />
 
