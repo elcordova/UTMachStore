@@ -28,7 +28,22 @@ namespace Proyecto.interfaces
         Entidades.Ent_Fotos entfoto = new Entidades.Ent_Fotos();
         LogicaDeNegocio.LNFoto lnfoto = new LogicaDeNegocio.LNFoto();
 
-
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (FileUploadSubir.HasFile)
+            {
+                string nombrearchivo = FileUploadSubir.FileName;
+                string ruta = Server.MapPath("~/imagenesPublicaciones/");
+                DirectoryInfo directory = new DirectoryInfo(ruta);
+                DirectoryInfo[] directories = directory.GetDirectories();
+                string[] directorio = new string[directories.Length];
+                for (int i = 0; i < directories.Length; i++)
+                {
+                    directorio[i] = ((DirectoryInfo)directories[i]).Name;
+                }
+                guardarImagenenCarpeta(nombrearchivo, directorio);
+            }
+        }
         protected void Button2_Click(object sender, EventArgs e)
         {
             entidadPublicacion.Codigo_Categoria = 1;
@@ -47,34 +62,19 @@ namespace Proyecto.interfaces
             txtNumeroContacto.Text = "";
             txtPrecioProducto.Text = "";
             txtStockProductos.Text = "";
+            
+
             Response.Redirect("/interfaces/MisPublicaciones.aspx");
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            if (FileUploadSubir.HasFile)
-            {
-                string nombrearchivo = FileUploadSubir.FileName;
-                string ruta = Server.MapPath("~/imagenesPublicaciones/");
-                DirectoryInfo directory = new DirectoryInfo(ruta);
-                DirectoryInfo[] directories = directory.GetDirectories();
-                string[] directorio = new string[directories.Length];
-                for (int i = 0; i < directories.Length; i++)
-                {
-                    directorio[i] = ((DirectoryInfo)directories[i]).Name;
-                }
-                guardarImagenenCarpeta(nombrearchivo, directorio);
-            }
-        }
+      
 
         private void guardarImagenenCarpeta(string nombrearchivo, string[] directorio)
         {
             if (existeCarpeta(txtTituloPublicacion.Text, directorio) == 1)
             {
                 FileUploadSubir.PostedFile.SaveAs(Server.MapPath("~/imagenesPublicaciones/" + cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text + "/" + nombrearchivo));
-                
-                 
-           
+                       
             }
             else if (existeCarpeta(txtTituloPublicacion.Text, directorio) == 0)
             {
@@ -87,7 +87,7 @@ namespace Proyecto.interfaces
 
             lnfoto.insertarFoto(nombrearchivo, ruta);
            
-            eliminar();
+          //  eliminar();
             mostrarImagen();
         }
 
@@ -125,17 +125,19 @@ namespace Proyecto.interfaces
                 PnlMostrarImagen.Controls.Add(imgButton);
             }
         }
+
         private void imgButton_Click(object sender, ImageClickEventArgs e)
         {
             try
             {
                 System.IO.File.Delete(Server.MapPath(((ImageButton)sender).ImageUrl));
-                eliminar();
+                //eliminar();
                 mostrarImagen();
             }
             catch (Exception)
             {
             }
-        }
+        }     
+        
     }
 }
