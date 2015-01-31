@@ -94,10 +94,12 @@
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="notificaciones" runat="server"> 
             </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="listadeseos" runat="server"> 
+            </asp:ContentPlaceHolder>
         </div>
         <div id="pie">
             <p class="grid_12 footer clearfix">
-			<span class="float"><b>&copy; Copyright</b> <a href="">UTMACH STORE</a> - todos los derechos reservados.     .</span>
+			<span class="float"><b>&copy; Copyright</b> <a href="#">UTMACH STORE</a> - todos los derechos reservados.     .</span>
 			<a class="float right" href="#">ir al inicio</a>
 		</p>
         </div>
