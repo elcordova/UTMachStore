@@ -12,15 +12,16 @@ namespace Proyecto.interfaces
     {
         protected void Page_Load2(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("/interfaces/restriccion.aspx");
+            }
             try
             {
                 mostrarImagen();
             }
             catch { }
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("/interfaces/restriccion.aspx");
-            }
+           
 
         }
         Entidades.Ent_Publicaciones entidadPublicacion = new Entidades.Ent_Publicaciones();
