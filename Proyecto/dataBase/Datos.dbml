@@ -314,8 +314,8 @@
       <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-<<<<<<< HEAD
-=======
+
+
   <Function Name="dbo.ListaPublicaciones" Method="ListaPublicaciones">
     <ElementType Name="ListaPublicacionesResult">
       <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -324,5 +324,5 @@
       <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
->>>>>>> origin/master
+
 </Database>
