@@ -15,22 +15,49 @@
             </div>
     <%@ Reference Control="ControlMisPublicaciones.ascx" %>
             <script runat="server" Language="C#">
+                
             protected void Page_Load(object sender, EventArgs e)
             {
-                
-                
-                
+                int contadorPublicaciones = 0;
+                int contadorPosicionPublicaciones = 0;
+                Proyecto.LogicaDeNegocio.LN_Publicacion lnPublicacion=new Proyecto.LogicaDeNegocio.LN_Publicacion();
+              
                   ASP.interfaces_controlmispublicaciones_ascx[] Spinner1;
-                  Spinner1 = new ASP.interfaces_controlmispublicaciones_ascx[10];
-                for (int p = 0; p < 10;p++ )
-                {
+                    try
+                    {
+                        var sql1 = from camp in lnPublicacion.ListaPublicaciones()
+                                  select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
+                        foreach (var extraer in sql1)
+                        {
+                            extraer.nom_publicacion.ToString();
+                            contadorPublicaciones++; }
 
-                    Spinner1[p] = (ASP.interfaces_controlmispublicaciones_ascx)LoadControl("ControlComentarios.ascx");
-                    Label lb = new Label();
-                    lb = (Label)Spinner1[0].Controls[1];
-                    lb.Text = "funciona";
-                    PlaceHolder1.Controls.Add(Spinner1[p]);
-                }
+                        Spinner1 = new ASP.interfaces_controlmispublicaciones_ascx[contadorPublicaciones]; 
+                    var sql = from camp in lnPublicacion.ListaPublicaciones()
+                            select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
+                    foreach (var extraer in sql)
+                    {
+                        Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmispublicaciones_ascx)LoadControl("ControlComentarios.ascx");
+                        Label nombrePublicacion = new Label();
+                        nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
+                        nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+
+                        //Label precioPublicacion = new Label();
+                        //precioPublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[4];
+                        //precioPublicacion.Text = extraer.pre_publicacion.ToString();
+
+                        //Label datosPubliacion = new Label();
+                        //datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[5];
+                        //datosPubliacion.Text = extraer.dat_piblicacion.ToString();
+                        
+                        PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
+                        contadorPosicionPublicaciones++;
+                    
+                    
+                    }
+                 }
+                    catch (Exception)
+                    {}
             }
             </script>
 
