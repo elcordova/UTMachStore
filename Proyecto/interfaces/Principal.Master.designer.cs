@@ -166,21 +166,12 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder notificaciones;
         
         /// <summary>
-        /// Control misPublicaciones.
+        /// Control listadeseos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder misPublicaciones;
-        
-        /// <summary>
-        /// Control editarPublicaciones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder editarPublicaciones;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder listadeseos;
     }
 }

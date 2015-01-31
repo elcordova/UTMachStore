@@ -51,10 +51,11 @@
                 Monitor led de 20 lg<o:p></o:p></p>
             <p class="MsoNormal">
                 Teclado mouse y parlantes<o:p></o:p></p>
-            <p class="clearfix">
-				&nbsp;
-                <asp:Button ID="ButtonComprar" runat="server" Text="Comprar" OnClick="ButtonComprar_Click"/>
-			</p>
+            <div class="areglob">
+
+                <asp:Button CssClass="boton_color_s" ID="Button1" runat="server" Text="Agregar a la lista" />
+                <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" OnClick="ButtonComprar_Click" />
+            </div>
 		</div>
 		
 		<!-- Column 2 / Image Carosuel -->

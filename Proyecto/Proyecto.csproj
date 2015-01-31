@@ -144,6 +144,7 @@
     <Content Include="interfaces\js\jquery.easing.1.3.js" />
     <Content Include="interfaces\js\jquery.roundabout-1.0.min.js" />
     <Content Include="interfaces\js\jquery.roundabout-shapes-1.1.js" />
+    <Content Include="interfaces\ListaDeseos.aspx" />
     <Content Include="interfaces\log.aspx" />
     <Content Include="interfaces\MisPublicaciones.aspx" />
     <Content Include="interfaces\negociacion.aspx" />
@@ -194,12 +195,14 @@
     </Compile>
     <Compile Include="interfaces\ControlMisPublicaciones.ascx.cs">
       <DependentUpon>ControlMisPublicaciones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\ControlMisPublicaciones.ascx.designer.cs">
       <DependentUpon>ControlMisPublicaciones.ascx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
       <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\EdicionPublicacion.aspx.designer.cs">
       <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
@@ -211,6 +214,13 @@
     <Compile Include="interfaces\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\ListaDeseos.aspx.cs">
+      <DependentUpon>ListaDeseos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ListaDeseos.aspx.designer.cs">
+      <DependentUpon>ListaDeseos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\log.aspx.cs">
       <DependentUpon>log.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,6 +230,7 @@
     </Compile>
     <Compile Include="interfaces\MisPublicaciones.aspx.cs">
       <DependentUpon>MisPublicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\MisPublicaciones.aspx.designer.cs">
       <DependentUpon>MisPublicaciones.aspx</DependentUpon>
