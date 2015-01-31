@@ -40,6 +40,15 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNombre;
         
         /// <summary>
+        /// Control TextBoxNombre1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNombre1;
+        
+        /// <summary>
         /// Control TextBoxNick.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace Proyecto.interfaces {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxNick;
+        
+        /// <summary>
+        /// Control TextBoxNick1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNick1;
         
         /// <summary>
         /// Control TextBoxCedula.
@@ -58,6 +76,15 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.TextBox TextBoxCedula;
         
         /// <summary>
+        /// Control TextBoxCedula1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCedula1;
+        
+        /// <summary>
         /// Control TextBoxDireccion.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,15 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.TextBox TextBoxDireccion;
         
         /// <summary>
+        /// Control TextBoxDireccion1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDireccion1;
+        
+        /// <summary>
         /// Control TextBoxEmail.
         /// </summary>
         /// <remarks>
@@ -74,6 +110,15 @@ namespace Proyecto.interfaces {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
+        
+        /// <summary>
+        /// Control TextBoxEmail1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail1;
         
         /// <summary>
         /// Control ButtonActualizar.
@@ -101,6 +146,15 @@ namespace Proyecto.interfaces {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelContra;
+        
+        /// <summary>
+        /// Control TextBoxTemporal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxTemporal;
         
         /// <summary>
         /// Control TextBoxContrasena.
