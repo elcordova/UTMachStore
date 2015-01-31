@@ -37,17 +37,17 @@
                             select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
                     foreach (var extraer in sql)
                     {
-                        Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmispublicaciones_ascx)LoadControl("ControlComentarios.ascx");
+                        Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmispublicaciones_ascx)LoadControl("ControlMisPublicaciones.ascx");
                         Label nombrePublicacion = new Label();
                         nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
                         nombrePublicacion.Text = extraer.nom_publicacion.ToString();
 
                         //Label precioPublicacion = new Label();
-                        //precioPublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[4];
+                        //precioPublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[2];
                         //precioPublicacion.Text = extraer.pre_publicacion.ToString();
 
                         //Label datosPubliacion = new Label();
-                        //datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[5];
+                        //datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[3];
                         //datosPubliacion.Text = extraer.dat_piblicacion.ToString();
                         
                         PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
@@ -56,8 +56,13 @@
                     
                     }
                  }
-                    catch (Exception)
-                    {}
+                    catch (Exception ex)
+                    {
+                        
+                        Label p = new Label();
+                        p.Text = ex.Message.ToString();
+                        PlaceHolder1.Controls.Add(p);
+                    }
             }
             </script>
 
