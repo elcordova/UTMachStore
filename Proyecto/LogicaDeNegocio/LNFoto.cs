@@ -10,11 +10,11 @@ namespace Proyecto.LogicaDeNegocio
 
         dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
 
-        public void insertarFoto(Entidades.Ent_Fotos fotos)
+        public void insertarFoto(string nombre, string ruta)
         {
             try
             {
-                DB.cp_insertarFoto(fotos.Codigo_Publicacion, fotos.Nombre_Foto, fotos.Ruta_Foto);
+                DB.cp_insertarFoto(nombre, ruta);
 
                 DB.SubmitChanges();
             }

@@ -25,7 +25,8 @@ namespace Proyecto.interfaces
         }
         Entidades.Ent_Publicaciones entidadPublicacion = new Entidades.Ent_Publicaciones();
         LogicaDeNegocio.LN_Publicacion ingresoPublicacion = new LogicaDeNegocio.LN_Publicacion();
-
+        Entidades.Ent_Fotos entfoto = new Entidades.Ent_Fotos();
+        LogicaDeNegocio.LNFoto lnfoto = new LogicaDeNegocio.LNFoto();
 
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -71,13 +72,21 @@ namespace Proyecto.interfaces
             if (existeCarpeta(txtTituloPublicacion.Text, directorio) == 1)
             {
                 FileUploadSubir.PostedFile.SaveAs(Server.MapPath("~/imagenesPublicaciones/" + cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text + "/" + nombrearchivo));
+                
+                 
+           
             }
             else if (existeCarpeta(txtTituloPublicacion.Text, directorio) == 0)
             {
                 string path = Path.Combine(Server.MapPath("~/imagenesPublicaciones/"), cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text);
                 Directory.CreateDirectory(path);
                 FileUploadSubir.PostedFile.SaveAs(Server.MapPath("~/imagenesPublicaciones/" + cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text + "/" + nombrearchivo));
+            
             }
+            string ruta = "~/imagenesPublicaciones/" + cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text + "/" + nombrearchivo;
+
+            lnfoto.insertarFoto(nombrearchivo, ruta);
+           
             eliminar();
             mostrarImagen();
         }
