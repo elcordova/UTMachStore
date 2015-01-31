@@ -13,13 +13,13 @@ namespace Proyecto.interfaces {
     public partial class WebForm2 {
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control cmbCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList cmbCategoria;
         
         /// <summary>
         /// Control txtTituloPublicacion.
@@ -67,13 +67,31 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.TextBox txtPrecioProducto;
         
         /// <summary>
-        /// Control FileUpload1.
+        /// Control FileUploadSubir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadSubir;
+        
+        /// <summary>
+        /// Control btnSubir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubir;
+        
+        /// <summary>
+        /// Control PnlMostrarImagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PnlMostrarImagen;
         
         /// <summary>
         /// Control Button2.

@@ -15,6 +15,7 @@ namespace Proyecto.interfaces
         LogicaDeNegocio.LN_Usuario lnusuario = new LogicaDeNegocio.LN_Usuario();
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
+        List<dataBase.buscarNicknameResult> datosUsuarioNick = new List<dataBase.buscarNicknameResult>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,37 +27,38 @@ namespace Proyecto.interfaces
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            usuario.Nic_usu = TextBoxNombre.Text;
-            List<dataBase.buscarNicknameResult> datosUsuario = lnusuario.buscarNick(usuario.Nic_usu);
-            if (!datosUsuario.Count.Equals(0))
+            datosUsuarioNick = lnusuario.buscarNick(TextBoxNombre.Text);
+
+            if (!datosUsuarioNick.Count.Equals(0))
             {
-                //EXISTE
-
-                if (datosUsuario.ElementAt(0).password_Usu.Equals(seguridad.Encriptar(TextBoxPasswd.Text)))
+                if (datosUsuarioNick.ElementAt(0).nic_Usu.Equals(TextBoxNombre.Text))
                 {
-                    //ACCESO
-
-                    if (datosUsuario.ElementAt(0).password_Usu.Equals(TextBoxCod.Text))
+                    if (datosUsuarioNick.ElementAt(0).password_Usu.Equals(seguridad.Encriptar(TextBoxPasswd.Text)))
                     {
-                        lnusuario.validarCuenta(usuario.Nic_usu);
-                        Session["usuario"] = usuario.Nic_usu;
-                        Response.Redirect("/interfaces/index.aspx");
+                        if (datosUsuarioNick.ElementAt(0).password_Usu.Equals(TextBoxCod.Text))
+                        {
+                            lnusuario.validarCuenta(datosUsuarioNick.ElementAt(0).nic_Usu);
+                            Session["usuario"] = TextBoxNombre.Text;
+                            Response.Redirect("/interfaces/index.aspx");
+                        }
+                        else 
+                        {
+                            Response.Write("<script language=javascript>alert('Codigo de Verificación incorrecto');</script>");
+                        }
                     }
-                    else
+                    else 
                     {
-                        //USUARIO INACTIVO
-                        Response.Write("<script language=javascript>alert('Aún no has activado tu cuenta');</script>");
+                        Response.Write("<script language=javascript>alert('Contraseña incorreta');</script>");
                     }
-
                 }
-                else
+                else 
                 {
-                    Response.Write("<script language=javascript>alert('La ');</script>");
+                    Response.Write("<script language=javascript>alert('Nickname incorreto');</script>");
                 }
             }
-            else
+            else 
             {
-                //NO EXISTE
+                Response.Write("<script language=javascript>alert('Este Usuario: " + usuario.Nic_usu + " no existe');</script>");
             }
             
         }
