@@ -37,6 +37,7 @@ namespace Proyecto.LogicaDeNegocio
         public void validarCuenta(string nickUsu) 
         {
             DB.validarCuenta(nickUsu);
+            DB.SubmitChanges();
         }
 
         public List<dataBase.buscarCedulaResult> buscarCedula(string ced)
