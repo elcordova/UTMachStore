@@ -42,13 +42,13 @@
                         nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
                         nombrePublicacion.Text = extraer.nom_publicacion.ToString();
 
-                        //Label precioPublicacion = new Label();
-                        //precioPublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[2];
-                        //precioPublicacion.Text = extraer.pre_publicacion.ToString();
+                        Label precioPublicacion = new Label();
+                        precioPublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[9];
+                        precioPublicacion.Text = extraer.pre_publicacion.ToString();
 
-                        //Label datosPubliacion = new Label();
-                        //datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[3];
-                        //datosPubliacion.Text = extraer.dat_piblicacion.ToString();
+                        Label datosPubliacion = new Label();
+                        datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[11];
+                        datosPubliacion.Text = extraer.dat_piblicacion.ToString();
                         
                         PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
                         contadorPosicionPublicaciones++;
