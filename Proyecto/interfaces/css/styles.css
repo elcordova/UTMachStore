@@ -380,6 +380,12 @@ DESCRIPTION: A premium business and portfolio theme.
     margin-bottom:15%;
     min-height:25px;
 }
+
+.imagen_centrar {
+    margin-left:50%;
+    margin-bottom:50%;
+    min-height:25px;
+}
 .boton_color_s {
     color:white;
     background:#000000;

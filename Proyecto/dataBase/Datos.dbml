@@ -251,12 +251,6 @@
     <Parameter Name="fecha" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.cp_insertardeseo" Method="cp_insertardeseo">
-    <Parameter Name="codigo_lisde" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigo_usu" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigo_publ" Type="System.Int64" DbType="BigInt" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.cp_listardeseosFiltro" Method="cp_listardeseosFiltro">
     <Parameter Name="codigo" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="cp_listardeseosFiltroResult">
@@ -313,6 +307,22 @@
   <Function Name="dbo.cp_insertarFoto" Method="cp_insertarFoto">
     <Parameter Name="nombre" Type="System.String" DbType="VarChar(25)" />
     <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_Listarusuariofiltro" Method="cp_Listarusuariofiltro">
+    <Parameter Name="nick" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="cp_ListarusuariofiltroResult">
+      <Column Name="nick" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_contarlistadeseos" Method="cp_contarlistadeseos">
+    <ElementType Name="cp_contarlistadeseosResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_insertardeseooriginal" Method="cp_insertardeseooriginal">
+    <Parameter Name="usu" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pub" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
