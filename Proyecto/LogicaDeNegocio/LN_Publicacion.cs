@@ -17,5 +17,9 @@ namespace Proyecto.LogicaDeNegocio
          
             DB.SubmitChanges();
         }
+        public List<dataBase.ListaPublicacionesResult> ListaPublicaciones()
+        {
+            return DB.ListaPublicaciones().ToList();
+        }
     }
 }

@@ -17,6 +17,9 @@
             <script runat="server" Language="C#">
             protected void Page_Load(object sender, EventArgs e)
             {
+                
+                
+                
                   ASP.interfaces_controlmispublicaciones_ascx[] Spinner1;
                   Spinner1 = new ASP.interfaces_controlmispublicaciones_ascx[10];
                 for (int p = 0; p < 10;p++ )

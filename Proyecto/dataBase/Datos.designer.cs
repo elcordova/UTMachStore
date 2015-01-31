@@ -318,9 +318,9 @@ namespace Proyecto.dataBase
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListaPublicaciones")]
-		public ISingleResult<ListaPublicacionesResult> ListaPublicaciones([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string valor)
+		public ISingleResult<ListaPublicacionesResult> ListaPublicaciones()
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<ListaPublicacionesResult>)(result.ReturnValue));
 		}
 		
