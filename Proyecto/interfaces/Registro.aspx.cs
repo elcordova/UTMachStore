@@ -40,9 +40,10 @@ namespace Proyecto.interfaces
             {
                 datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
+                datosUsuarioCorreo = lnUsuario.buscarCorreo(TextBoxEmail.Text);
+                validarCorreo();
                 validarNickname();
                 validarCedula();
-                validarCorreo();
 
                 if (banderaNick.Equals(true) && banderaCedula.Equals(true) && banderaCorreo.Equals(true))
                 {
