@@ -195,12 +195,14 @@
     </Compile>
     <Compile Include="interfaces\ControlMisPublicaciones.ascx.cs">
       <DependentUpon>ControlMisPublicaciones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\ControlMisPublicaciones.ascx.designer.cs">
       <DependentUpon>ControlMisPublicaciones.ascx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
       <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\EdicionPublicacion.aspx.designer.cs">
       <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
@@ -228,6 +230,7 @@
     </Compile>
     <Compile Include="interfaces\MisPublicaciones.aspx.cs">
       <DependentUpon>MisPublicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="interfaces\MisPublicaciones.aspx.designer.cs">
       <DependentUpon>MisPublicaciones.aspx</DependentUpon>
