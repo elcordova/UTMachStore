@@ -306,7 +306,6 @@
     </ElementType>
   </Function>
   <Function Name="dbo.ListaPublicaciones" Method="ListaPublicaciones">
-    <Parameter Name="valor" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="ListaPublicacionesResult">
       <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
