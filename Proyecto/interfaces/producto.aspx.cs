@@ -14,6 +14,10 @@ namespace Proyecto.interfaces
         public DateTime fechaHoy;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("/interfaces/restriccion.aspx");
+            }
              fechaHoy = DateTime.Now;
         }
 

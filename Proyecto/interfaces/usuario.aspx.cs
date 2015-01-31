@@ -60,6 +60,7 @@ namespace Proyecto.interfaces
 
                  lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
 
+                 Response.Write("<script language=javascript>alert('Datos Actualizados');</script>");
                  Response.Redirect("/interfaces/usuario.aspx");
              }
              else
@@ -122,7 +123,8 @@ namespace Proyecto.interfaces
                         usuario.Estado_usu = true;
 
                         lnUsuario.actualizarUsuario(usuario, TextBoxCedula.Text);
-
+                        
+                        Response.Write("<script language=javascript>alert('Cambio de contraseña exitoso');</script>");
                         Response.Redirect("/interfaces/usuario.aspx");
                     }
                     else
@@ -141,6 +143,14 @@ namespace Proyecto.interfaces
                 Response.Write("<script language=javascript>alert('Porfavor, los campos son obligatorio');</script>");
             }
         }
+
+        protected void LinkButtonEliminar_Click(object sender, EventArgs e)
+        {
+            llenarDatos();
+            lnUsuario.eliminarUsuario(TextBoxCedula1.Text);
+            Response.Redirect("/interfaces/cerrarSesion.aspx");
+        }
+
 
         
 
