@@ -7,24 +7,24 @@ namespace Proyecto.Entidades
 {
     public class Ent_Listadeseos
     {
-        private int codigo_Usu;
-        private int codigo_Pub;
-        private int codigo_Lisdes;
+        public int codigo_Usu;
+        public int codigo_Pub;
 
         public Ent_Listadeseos()
         {
 
             codigo_Usu = 0;
             codigo_Pub = 0;
-            codigo_Lisdes = 0;
-
+        
         }
 
-        public Ent_Listadeseos(int codusu, int codpub, int listdes)
+        public Ent_Listadeseos(int codusu, int codpub)
         {
+          
             codigo_Usu = codusu;
             codigo_Pub = codpub;
-            codigo_Lisdes = listdes;
+           
+          
 
 
         }
@@ -40,10 +40,6 @@ namespace Proyecto.Entidades
             set { codigo_Usu = value; }
         }
 
-        public int Codigo_Listadeseo
-        {
-            get { return codigo_Lisdes; }
-            set { codigo_Lisdes = value; }
-        }
+
     }
 }

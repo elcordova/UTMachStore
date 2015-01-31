@@ -9,6 +9,9 @@
 
 
     <legend class="centrado_legend">Registra una nueva Cuenta</legend>
+    <div class="areglob">
+        <asp:ValidationSummary ID="ValidationSummary2" runat="server" ForeColor="Red" />
+    </div>
 
     <br />
     <br />
@@ -40,7 +43,9 @@
                 &nbsp;
                     <div class="controls input">
                         &nbsp;<asp:TextBox ID="TextBoxNombre" runat="server" Width="322px" MaxLength="30"></asp:TextBox>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Ingrese solo Letras" ForeColor="Red" ToolTip="Ingrese solo Letras">*</asp:RequiredFieldValidator>
+                        &nbsp;<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Ingrese solo Letras" ForeColor="Red" MaximumValue="Z" MinimumValue="A">*</asp:RangeValidator>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <br />
                     </div>
             </div>
@@ -77,6 +82,8 @@
                         &nbsp;<asp:TextBox ID="TextBoxNickname" runat="server" AutoPostBack="True" MaxLength="15"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TextBoxCedula" runat="server" MaxLength="10"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="Ingrese solo Números" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="Ingrese solo Números" ForeColor="Red" MaximumValue="9" MinimumValue="0">*</asp:RangeValidator>
                         <br />
                     </div>
             </div>
