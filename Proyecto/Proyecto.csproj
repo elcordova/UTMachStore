@@ -67,6 +67,7 @@
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\ControlComentarios.ascx" />
     <Content Include="interfaces\ControlMisPublicaciones.ascx" />
+    <Content Include="interfaces\ControlMostrarPublicacion.ascx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
@@ -199,6 +200,13 @@
     </Compile>
     <Compile Include="interfaces\ControlMisPublicaciones.ascx.designer.cs">
       <DependentUpon>ControlMisPublicaciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion.ascx.cs">
+      <DependentUpon>ControlMostrarPublicacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion.ascx.designer.cs">
+      <DependentUpon>ControlMostrarPublicacion.ascx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
       <DependentUpon>EdicionPublicacion.aspx</DependentUpon>

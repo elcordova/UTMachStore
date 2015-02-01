@@ -19,19 +19,9 @@ namespace Proyecto.interfaces
             }
             else
             {
-                cargarProductos();
+              
             }
             
-        }
-
-        private void cargarProductos()
-        {
-            
-        }
-
-        protected void Button1_Click()
-        {
-           
         }
 
     }
