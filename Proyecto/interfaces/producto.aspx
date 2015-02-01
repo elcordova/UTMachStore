@@ -164,7 +164,6 @@
 
         <br />
     <br />
-                        <asp:Button ID="btnComentar0" runat="server" Text="Comentar" OnClick="Button2_Click" />
 					
 			<br /><br /><br />
 		
