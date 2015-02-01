@@ -93,7 +93,7 @@
                 int contadorComentario = 0;
                 int contadorPosicionComentario = 0;
                 Proyecto.LogicaDeNegocio.LNComentario lnComentario=new Proyecto.LogicaDeNegocio.LNComentario();
-                  ASP.interfaces_ControlComentarios_ascx[] Spinner1;
+                  ASP.interfaces_controlcomentarios_ascx[] Spinner1;
                   try
                   {
                       var sql = from camp in lnComentario.listarComentario(5)
