@@ -365,6 +365,20 @@ namespace Proyecto.dataBase
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPub);
 			return ((ISingleResult<buscarFormasPagoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuarioNegociacion")]
+		public int insertarUsuarioNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha, cod_usu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarNegociacion")]
+		public int insertarNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cod_forma_pago, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cod_forma_envio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_public)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cod_forma_pago, cod_forma_envio, cod_public);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categorias")]

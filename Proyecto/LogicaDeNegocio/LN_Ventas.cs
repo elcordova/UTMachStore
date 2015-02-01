@@ -8,10 +8,7 @@ namespace Proyecto.LogicaDeNegocio
     public class LN_Ventas
     {
         dataBase.DatosDataContext BD = new dataBase.DatosDataContext();
-        public void insertarVenta(Entidades.Ent_Venta venta)
-        {
-
-        }
+       
         public List<dataBase.buscarDatosdeVendedorResult> buscarDatosVenta(int cod_pub)
         {
             return BD.buscarDatosdeVendedor(cod_pub).ToList();
@@ -23,6 +20,15 @@ namespace Proyecto.LogicaDeNegocio
         public List<dataBase.buscarFormasEnvioResult> cargarFormasEnvio(int cod_pub)
         {
             return BD.buscarFormasEnvio(cod_pub).ToList();
+        }
+        public void guardarVenta(Entidades.Ent_Venta nuevaVenta)
+        {
+
+            BD.insertarNegociacion(nuevaVenta.codigo_pago+"", nuevaVenta.codigo_envio+"",
+                nuevaVenta.codigo_publicacion);
+            BD.SubmitChanges();
+            BD.insertarUsuarioNegociacion(DateTime.Parse(nuevaVenta.fecha_negociacion.ToString()), int.Parse(nuevaVenta.codigo_usuario.ToString()));
+            BD.SubmitChanges();
         }
     }
 }

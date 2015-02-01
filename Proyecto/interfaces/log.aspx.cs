@@ -41,7 +41,7 @@ namespace Proyecto.interfaces
                     if (datosUsuario.ElementAt(0).estado_Usu.Equals(true))
                     {
                         //USUARIO ACTIVO
-
+                        Session["id_activo"]=datosUsuario.ElementAt(0).codigo_Usu.ToString();//guarda ID del usuario en variable de session
                         Session["usuario"] = TextBox1.Text;
                         Response.Redirect("/interfaces/index.aspx");
                         

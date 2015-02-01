@@ -341,4 +341,15 @@
       <Column Name="nombre_FormPago" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.insertarUsuarioNegociacion" Method="insertarUsuarioNegociacion">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cod_usu" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarNegociacion" Method="insertarNegociacion">
+    <Parameter Name="cod_forma_pago" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cod_forma_envio" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cod_public" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
