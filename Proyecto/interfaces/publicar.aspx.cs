@@ -88,12 +88,13 @@ namespace Proyecto.interfaces
         private void guardarIdPublicacion()
         {
             var sql = from camp in lnfoto.listarFotos()
-                      select new { nombre = camp.nombre, ruta = camp.ruta };
+                      select new {codigo=camp.Codigo, nombre = camp.nombre, ruta = camp.ruta };
             foreach (var extraer in sql)
             {
+                entfoto.Codigo_Publicacion=numeropublicacion();
                 entfoto.Nombre_Foto = extraer.nombre;
                 entfoto.Ruta_Foto = extraer.ruta;
-                lnfoto.ActualizarFoto(entfoto, numeropublicacion());
+                lnfoto.ActualizarFoto(entfoto,(int)extraer.codigo );
 
             }
         }
