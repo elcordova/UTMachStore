@@ -435,6 +435,13 @@ namespace Proyecto.dataBase
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
 			return ((ISingleResult<extraerRutaFotoMisPublicacionesResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TodasPublicaciones")]
+		public ISingleResult<TodasPublicacionesResult> TodasPublicaciones()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<TodasPublicacionesResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categorias")]
@@ -5114,6 +5121,194 @@ namespace Proyecto.dataBase
 				if ((this._ruta_Fot != value))
 				{
 					this._ruta_Fot = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TodasPublicacionesResult
+	{
+		
+		private long _codigo_Pub;
+		
+		private long _codigo_Cat;
+		
+		private long _codigo_Usu;
+		
+		private string _nombre_Pub;
+		
+		private string _datos_Pub;
+		
+		private string _fecha_Pub;
+		
+		private string _numero_con_Pub;
+		
+		private decimal _precio_Pub;
+		
+		private System.Nullable<bool> _estado_Pub;
+		
+		private int _stock_Pub;
+		
+		public TodasPublicacionesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pub", DbType="BigInt NOT NULL")]
+		public long codigo_Pub
+		{
+			get
+			{
+				return this._codigo_Pub;
+			}
+			set
+			{
+				if ((this._codigo_Pub != value))
+				{
+					this._codigo_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Cat", DbType="BigInt NOT NULL")]
+		public long codigo_Cat
+		{
+			get
+			{
+				return this._codigo_Cat;
+			}
+			set
+			{
+				if ((this._codigo_Cat != value))
+				{
+					this._codigo_Cat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt NOT NULL")]
+		public long codigo_Usu
+		{
+			get
+			{
+				return this._codigo_Usu;
+			}
+			set
+			{
+				if ((this._codigo_Usu != value))
+				{
+					this._codigo_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nombre_Pub
+		{
+			get
+			{
+				return this._nombre_Pub;
+			}
+			set
+			{
+				if ((this._nombre_Pub != value))
+				{
+					this._nombre_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datos_Pub", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string datos_Pub
+		{
+			get
+			{
+				return this._datos_Pub;
+			}
+			set
+			{
+				if ((this._datos_Pub != value))
+				{
+					this._datos_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string fecha_Pub
+		{
+			get
+			{
+				return this._fecha_Pub;
+			}
+			set
+			{
+				if ((this._fecha_Pub != value))
+				{
+					this._fecha_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numero_con_Pub", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string numero_con_Pub
+		{
+			get
+			{
+				return this._numero_con_Pub;
+			}
+			set
+			{
+				if ((this._numero_con_Pub != value))
+				{
+					this._numero_con_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_Pub", DbType="Decimal(18,2) NOT NULL")]
+		public decimal precio_Pub
+		{
+			get
+			{
+				return this._precio_Pub;
+			}
+			set
+			{
+				if ((this._precio_Pub != value))
+				{
+					this._precio_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_Pub", DbType="Bit")]
+		public System.Nullable<bool> estado_Pub
+		{
+			get
+			{
+				return this._estado_Pub;
+			}
+			set
+			{
+				if ((this._estado_Pub != value))
+				{
+					this._estado_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_Pub", DbType="Int NOT NULL")]
+		public int stock_Pub
+		{
+			get
+			{
+				return this._stock_Pub;
+			}
+			set
+			{
+				if ((this._stock_Pub != value))
+				{
+					this._stock_Pub = value;
 				}
 			}
 		}

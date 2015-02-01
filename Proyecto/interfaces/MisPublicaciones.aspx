@@ -9,7 +9,7 @@
     <ol class="commentlist">
     <h1 class="centrado_titulo">Mis publicaciones</h1>
      <div>
-            <asp:PlaceHolder runat=server ID="PlaceHolder1" />
+            <asp:PlaceHolder runat="server" ID="PlaceHolder1" />
             <br />
       
             </div>
