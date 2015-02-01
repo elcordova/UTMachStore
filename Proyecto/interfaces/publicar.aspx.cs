@@ -68,7 +68,7 @@ namespace Proyecto.interfaces
             txtStockProductos.Text = "";
 
 
-            Response.Redirect("/interfaces/MisPublicaciones.aspx");
+            Response.Redirect("/interfaces/MisPublicaciones.aspx");//
             
         }
         //noooooooooooooooooooooooo borraras kerly q esto si vale
