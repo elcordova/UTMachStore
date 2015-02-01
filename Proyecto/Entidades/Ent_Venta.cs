@@ -9,7 +9,7 @@ namespace Proyecto.Entidades
     {
         private string codigo_usu;
         private int codigo_pub;
-        private string fecha_nego;
+        private DateTime fecha_nego;
         private int cod_tipo_envio;
         private int cod_tipo_pago;
         private int cantidad;
@@ -18,7 +18,7 @@ namespace Proyecto.Entidades
         {
             codigo_pub = 0;
             codigo_usu = "";
-            fecha_nego = "";
+            fecha_nego=Convert.ToDateTime("01/01/0001");
             cod_tipo_envio = 0;
             cod_tipo_pago = 0;
             cantidad = 0;
@@ -28,7 +28,7 @@ namespace Proyecto.Entidades
         {
             codigo_pub = cod_publica;
             codigo_usu = cod_usuario;
-            fecha_nego = fecha;
+            fecha_nego = Convert.ToDateTime(fecha);
             cod_tipo_pago = tipo_pago;
             cod_tipo_envio = tipo_envio;
             cantidad = cant;
@@ -44,7 +44,7 @@ namespace Proyecto.Entidades
             get { return codigo_usu;}
             set { codigo_usu = value;}
         }
-        public string fecha_negociacion
+        public DateTime fecha_negociacion
         {
             get { return fecha_nego;}
             set { fecha_nego = value; }

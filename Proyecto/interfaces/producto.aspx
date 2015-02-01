@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="producto.aspx.cs" Inherits="Proyecto.interfaces.WebForm1" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="producto.aspx.cs" Inherits="Proyecto.interfaces.WebForm1" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
@@ -54,7 +54,7 @@
             <div class="areglob">
 
                 <asp:Button CssClass="boton_color_s" ID="Button1" runat="server" Text="Agregar a la lista" OnClick="Button1_Click1" />
-                <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" />
+                <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" OnClick="Button2_Click" />
             </div>
 		</div>
 		

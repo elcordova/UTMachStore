@@ -205,13 +205,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizarStock")]
-		public int actualizarStock()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.validarCuenta")]
 		public int validarCuenta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nick)
 		{
@@ -338,20 +331,6 @@ namespace Proyecto.dataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarComentario")]
-		public ISingleResult<cp_listarComentarioResult> cp_listarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<cp_listarComentarioResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarDatosdeVendedor")]
-		public ISingleResult<buscarDatosdeVendedorResult> buscarDatosdeVendedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_Publicacion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_Publicacion);
-			return ((ISingleResult<buscarDatosdeVendedorResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarFormasEnvio")]
 		public ISingleResult<buscarFormasEnvioResult> buscarFormasEnvio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub)
 		{
@@ -371,6 +350,21 @@ namespace Proyecto.dataBase
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<cp_listarFotoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_numeroFinalPublicacion")]
+		public ISingleResult<cp_numeroFinalPublicacionResult> cp_numeroFinalPublicacion()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<cp_numeroFinalPublicacionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_actualizarFoto")]
+		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
+			return ((int)(result.ReturnValue));
+		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuarioNegociacion")]
 		public int insertarUsuarioNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_usu)
@@ -385,20 +379,26 @@ namespace Proyecto.dataBase
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cod_forma_pago, cod_forma_envio, cod_public);
 			return ((int)(result.ReturnValue));
 		}
-	}
-	
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_numeroFinalPublicacion")]
-		public ISingleResult<cp_numeroFinalPublicacionResult> cp_numeroFinalPublicacion()
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarComentario")]
+		public ISingleResult<cp_listarComentarioResult> cp_listarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> valor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<cp_numeroFinalPublicacionResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<cp_listarComentarioResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_actualizarFoto")]
-		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizar_Stock")]
+		public int actualizar_Stock([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cantidadProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idpub)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cantidadProducto, idpub);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarDatosdeVendedor")]
+		public ISingleResult<buscarDatosdeVendedorResult> buscarDatosdeVendedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_Publicacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_Publicacion);
+			return ((ISingleResult<buscarDatosdeVendedorResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -4536,220 +4536,6 @@ namespace Proyecto.dataBase
 		}
 	}
 	
-	public partial class cp_listarComentarioResult
-	{
-		
-		private long _codigo;
-		
-		private string _nick;
-		
-		private string _comentario;
-		
-		private System.DateTime _fecha;
-		
-		public cp_listarComentarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="BigInt NOT NULL")]
-		public long codigo
-		{
-			get
-			{
-				return this._codigo;
-			}
-			set
-			{
-				if ((this._codigo != value))
-				{
-					this._codigo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nick", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string nick
-		{
-			get
-			{
-				return this._nick;
-			}
-			set
-			{
-				if ((this._nick != value))
-				{
-					this._nick = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comentario", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string comentario
-		{
-			get
-			{
-				return this._comentario;
-			}
-			set
-			{
-				if ((this._comentario != value))
-				{
-					this._comentario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date NOT NULL")]
-		public System.DateTime fecha
-		{
-			get
-			{
-				return this._fecha;
-			}
-			set
-			{
-				if ((this._fecha != value))
-				{
-					this._fecha = value;
-				}
-			}
-		}
-	}
-	
-	public partial class buscarDatosdeVendedorResult
-	{
-		
-		private string _nombreComp_Usu;
-		
-		private string _direccion_Usu;
-		
-		private string _email_Usu;
-		
-		private decimal _precio_Pub;
-		
-		private string _nombre_Pub;
-		
-		private int _stock_Pub;
-		
-		private string _datos_Pub;
-		
-		public buscarDatosdeVendedorResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string nombreComp_Usu
-		{
-			get
-			{
-				return this._nombreComp_Usu;
-			}
-			set
-			{
-				if ((this._nombreComp_Usu != value))
-				{
-					this._nombreComp_Usu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string direccion_Usu
-		{
-			get
-			{
-				return this._direccion_Usu;
-			}
-			set
-			{
-				if ((this._direccion_Usu != value))
-				{
-					this._direccion_Usu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string email_Usu
-		{
-			get
-			{
-				return this._email_Usu;
-			}
-			set
-			{
-				if ((this._email_Usu != value))
-				{
-					this._email_Usu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_Pub", DbType="Decimal(18,2) NOT NULL")]
-		public decimal precio_Pub
-		{
-			get
-			{
-				return this._precio_Pub;
-			}
-			set
-			{
-				if ((this._precio_Pub != value))
-				{
-					this._precio_Pub = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nombre_Pub
-		{
-			get
-			{
-				return this._nombre_Pub;
-			}
-			set
-			{
-				if ((this._nombre_Pub != value))
-				{
-					this._nombre_Pub = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_Pub", DbType="Int NOT NULL")]
-		public int stock_Pub
-		{
-			get
-			{
-				return this._stock_Pub;
-			}
-			set
-			{
-				if ((this._stock_Pub != value))
-				{
-					this._stock_Pub = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datos_Pub", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string datos_Pub
-		{
-			get
-			{
-				return this._datos_Pub;
-			}
-			set
-			{
-				if ((this._datos_Pub != value))
-				{
-					this._datos_Pub = value;
-				}
-			}
-		}
-	}
-	
 	public partial class buscarFormasEnvioResult
 	{
 		
@@ -4939,6 +4725,238 @@ namespace Proyecto.dataBase
 				if ((this._codigo_Pub != value))
 				{
 					this._codigo_Pub = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cp_listarComentarioResult
+	{
+		
+		private long _codigo;
+		
+		private string _nick;
+		
+		private string _comentario;
+		
+		private System.DateTime _fecha;
+		
+		public cp_listarComentarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="BigInt NOT NULL")]
+		public long codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nick", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string nick
+		{
+			get
+			{
+				return this._nick;
+			}
+			set
+			{
+				if ((this._nick != value))
+				{
+					this._nick = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comentario", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string comentario
+		{
+			get
+			{
+				return this._comentario;
+			}
+			set
+			{
+				if ((this._comentario != value))
+				{
+					this._comentario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date NOT NULL")]
+		public System.DateTime fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this._fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarDatosdeVendedorResult
+	{
+		
+		private string _nombreComp_Usu;
+		
+		private string _nic_Usu;
+		
+		private string _direccion_Usu;
+		
+		private string _email_Usu;
+		
+		private decimal _precio_Pub;
+		
+		private string _nombre_Pub;
+		
+		private int _stock_Pub;
+		
+		private string _datos_Pub;
+		
+		public buscarDatosdeVendedorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombreComp_Usu
+		{
+			get
+			{
+				return this._nombreComp_Usu;
+			}
+			set
+			{
+				if ((this._nombreComp_Usu != value))
+				{
+					this._nombreComp_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nic_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string nic_Usu
+		{
+			get
+			{
+				return this._nic_Usu;
+			}
+			set
+			{
+				if ((this._nic_Usu != value))
+				{
+					this._nic_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string direccion_Usu
+		{
+			get
+			{
+				return this._direccion_Usu;
+			}
+			set
+			{
+				if ((this._direccion_Usu != value))
+				{
+					this._direccion_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string email_Usu
+		{
+			get
+			{
+				return this._email_Usu;
+			}
+			set
+			{
+				if ((this._email_Usu != value))
+				{
+					this._email_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_Pub", DbType="Decimal(18,2) NOT NULL")]
+		public decimal precio_Pub
+		{
+			get
+			{
+				return this._precio_Pub;
+			}
+			set
+			{
+				if ((this._precio_Pub != value))
+				{
+					this._precio_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nombre_Pub
+		{
+			get
+			{
+				return this._nombre_Pub;
+			}
+			set
+			{
+				if ((this._nombre_Pub != value))
+				{
+					this._nombre_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_Pub", DbType="Int NOT NULL")]
+		public int stock_Pub
+		{
+			get
+			{
+				return this._stock_Pub;
+			}
+			set
+			{
+				if ((this._stock_Pub != value))
+				{
+					this._stock_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datos_Pub", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string datos_Pub
+		{
+			get
+			{
+				return this._datos_Pub;
+			}
+			set
+			{
+				if ((this._datos_Pub != value))
+				{
+					this._datos_Pub = value;
 				}
 			}
 		}

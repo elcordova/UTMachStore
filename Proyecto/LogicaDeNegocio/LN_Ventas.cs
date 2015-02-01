@@ -23,12 +23,14 @@ namespace Proyecto.LogicaDeNegocio
         }
         public void guardarVenta(Entidades.Ent_Venta nuevaVenta)
         {
-
+            BD.actualizar_Stock(nuevaVenta.cantidad_pub,nuevaVenta.codigo_publicacion);
             BD.insertarNegociacion(nuevaVenta.codigo_pago+"", nuevaVenta.codigo_envio+"",
                 nuevaVenta.codigo_publicacion);
             BD.SubmitChanges();
-            BD.insertarUsuarioNegociacion(DateTime.Parse(nuevaVenta.fecha_negociacion.ToString()), int.Parse(nuevaVenta.codigo_usuario.ToString()));
+            BD.insertarUsuarioNegociacion(nuevaVenta.fecha_negociacion, int.Parse(nuevaVenta.codigo_usuario.ToString()));
             BD.SubmitChanges();
+           // BD.Refresh(0,0);
+
         }
     }
 }
