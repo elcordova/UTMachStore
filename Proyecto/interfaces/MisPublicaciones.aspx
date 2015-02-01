@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="MisPublicaciones.aspx.cs" Inherits="Proyecto.interfaces.MisPublicaciones" %>
 <%@ Register TagPrefix="uc" TagName="Spinner" 
     Src="ControlMisPublicaciones.ascx" %>
-<asp:Content ID="Content10" ContentPlaceHolderID="misPublicaciones" runat="server">
+<asp:Content ID="Content11" ContentPlaceHolderID="misPublicaciones" runat="server">
     <br />
     <br />
     <br />
