@@ -30,5 +30,9 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.extraerRutaFotoMisPublicaciones(codigoPubliacion).ToList();
         }
+        public List<dataBase.TodasPublicacionesResult> TodasPublicaciones()
+        {
+            return DB.TodasPublicaciones().ToList();
+        }
     }
 }

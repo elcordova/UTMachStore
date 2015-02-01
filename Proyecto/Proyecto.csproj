@@ -68,6 +68,8 @@
     <Content Include="interfaces\ControlComentarios.ascx" />
     <Content Include="interfaces\ControlMisPublicaciones.ascx" />
     <Content Include="interfaces\ControlMostrarPublicacion.ascx" />
+    <Content Include="interfaces\ControlMostrarPublicacion1.ascx" />
+    <Content Include="interfaces\ControlMostrarPublicacion2.ascx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
@@ -208,6 +210,20 @@
     </Compile>
     <Compile Include="interfaces\ControlMostrarPublicacion.ascx.designer.cs">
       <DependentUpon>ControlMostrarPublicacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion1.ascx.cs">
+      <DependentUpon>ControlMostrarPublicacion1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion1.ascx.designer.cs">
+      <DependentUpon>ControlMostrarPublicacion1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion2.ascx.cs">
+      <DependentUpon>ControlMostrarPublicacion2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion2.ascx.designer.cs">
+      <DependentUpon>ControlMostrarPublicacion2.ascx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
       <DependentUpon>EdicionPublicacion.aspx</DependentUpon>

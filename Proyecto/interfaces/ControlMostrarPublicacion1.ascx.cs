@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto.interfaces
 {
-    public partial class ControlMostrarPublicacion : System.Web.UI.UserControl
+    public partial class ControlMostrarPublicacion1 : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
 
         }

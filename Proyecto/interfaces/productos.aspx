@@ -90,8 +90,10 @@
                     <asp:PlaceHolder runat="server" ID="PlaceHolder1" />
                     <br />     
                     </div>
-
-                     <%@ Reference Control="ControlMostrarPublicacion.ascx" %>
+            
+            <%@ Reference Control="ControlMostrarPublicacion.ascx" %>
+            <%@ Reference Control="ControlMostrarPublicacion1.ascx" %>
+            <%@ Reference Control="ControlMostrarPublicacion2.ascx" %>
             <script runat="server" Language="C#">
                 
             protected void Page_Load(object sender, EventArgs e)
@@ -102,74 +104,72 @@
                 }
                 int contadorPublicaciones = 0;
                 int contadorPosicionPublicaciones = 0;
+                int controlTipo=0;
                 Proyecto.LogicaDeNegocio.LN_Publicacion lnPublicacion=new Proyecto.LogicaDeNegocio.LN_Publicacion();
-              
-                  ASP.interfaces_controlmostrarpublicacion_ascx Spinner1;
-                    try
-                    {
-                        string nickname = Session["usuario"].ToString();
-                        int codigoUsuraio = 0;
-                        var sql2 = from camp in lnPublicacion.codigoUsuario(nickname)
-                                   select new { codigoUS = camp.codigo_Usu };
-                        foreach (var extraer in sql2)
-                        {
-                            codigoUsuraio = Convert.ToInt32(extraer.codigoUS.ToString());
-                        }
-                        var sql1 = from camp in lnPublicacion.ListaPublicaciones(codigoUsuraio)
-                                  select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
-                        foreach (var extraer in sql1)
-                        {
-                            extraer.nom_publicacion.ToString();
-                            contadorPublicaciones++; }
+                ASP.interfaces_controlmostrarpublicacion_ascx[] Spinner1;
+                
 
-                        Spinner1 = new ASP.interfaces_controlmispublicaciones_ascx[contadorPublicaciones];
-                        var sql = from camp in lnPublicacion.ListaPublicaciones(codigoUsuraio)
-                            select new { codigPubli=camp.codigo_Pub, nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
-                    foreach (var extraer in sql)
-                    {
+                  if(controlTipo==0)
+                  {
+                      controlTipo++;
+                      
+                      try
+                      {
 
-                        Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmispublicaciones_ascx)LoadControl("ControlMostrarPublicacion.ascx");
-                        Label nombrePublicacion = new Label();
-                        nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
-                        nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+                          var sql1 = from camp in lnPublicacion.TodasPublicaciones()
+                                     select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
+                          foreach (var extraer in sql1)
+                          {
+                              extraer.nom_publicacion.ToString();
+                              contadorPublicaciones++;
+                          }
 
-                        Label precioPublicacion = new Label();
-                        precioPublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[9];
-                        precioPublicacion.Text = extraer.pre_publicacion.ToString();
+                          Spinner1 = new ASP.interfaces_controlmostrarpublicacion_ascx[contadorPublicaciones];
+                          var sql = from camp in lnPublicacion.TodasPublicaciones()
+                                    select new { codigPubli = camp.codigo_Pub, nom_publicacion = camp.nombre_Pub };
+                          foreach (var extraer in sql)
+                          {
 
-                        Label datosPubliacion = new Label();
-                        datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[11];
-                        datosPubliacion.Text = extraer.dat_piblicacion.ToString();
-                        String ruta = "";
-                        var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
-                                   select new { rutaImagen= camp.ruta_Fot };
-                        foreach (var extraerRuta in sql5)
-                        {
-                            ruta= extraerRuta.rutaImagen.ToString();
-                         
-                        }
-                        
-                        Image imagen = new Image();
-                        imagen = (Image)Spinner1[contadorPosicionPublicaciones].Controls[7];
-                        imagen.ImageUrl = ruta;
-                        
-                        Button editarPubli = new Button();
-                        editarPubli = (Button)Spinner1[contadorPosicionPublicaciones].Controls[5];
-                        editarPubli.ID = extraer.codigPubli.ToString();
-                        
-                        PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
-                        contadorPosicionPublicaciones++;
-                    
-                    
-                    }
-                 }
-                    catch (Exception ex)
-                    {
-                        
-                        Label p = new Label();
-                        p.Text = ex.Message.ToString();
-                        PlaceHolder1.Controls.Add(p);
-                    }
+                              Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmostrarpublicacion_ascx)LoadControl("ControlMostrarPublicacion.ascx");
+                              Label nombrePublicacion = new Label();
+                              nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
+                              nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+
+                              String ruta = "";
+                              var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
+                                         select new { rutaImagen = camp.ruta_Fot };
+                              foreach (var extraerRuta in sql5)
+                              {
+                                  ruta = extraerRuta.rutaImagen.ToString();
+
+                              }
+
+                              ImageButton imagenBoton = new ImageButton();
+                              imagenBoton = (ImageButton)Spinner1[contadorPosicionPublicaciones].Controls[3];
+                              imagenBoton.ImageUrl = ruta;
+
+                              PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
+                              contadorPosicionPublicaciones++;
+
+
+                          }
+                      }
+                      catch (Exception ex)
+                      {
+
+                          Label p = new Label();
+                          p.Text = ex.Message.ToString();
+                          PlaceHolder1.Controls.Add(p);
+                      }
+                  }
+                if(controlTipo==1)
+                {
+                    controlTipo++;
+                }
+                if(controlTipo==2)
+                {
+                    controlTipo = 0;
+                }
             }
             </script>
 
