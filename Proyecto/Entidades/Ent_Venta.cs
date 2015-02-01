@@ -12,7 +12,7 @@ namespace Proyecto.Entidades
         private string fecha_nego;
         private int cod_tipo_envio;
         private int cod_tipo_pago;
-
+        private int cantidad;
 
         public Ent_Venta()
         {
@@ -21,15 +21,17 @@ namespace Proyecto.Entidades
             fecha_nego = "";
             cod_tipo_envio = 0;
             cod_tipo_pago = 0;
+            cantidad = 0;
         }
         public Ent_Venta(int cod_publica, string cod_usuario, string fecha,
-            int tipo_envio, int tipo_pago)
+            int tipo_envio, int tipo_pago, int cant)
         {
             codigo_pub = cod_publica;
             codigo_usu = cod_usuario;
             fecha_nego = fecha;
             cod_tipo_pago = tipo_pago;
             cod_tipo_envio = tipo_envio;
+            cantidad = cant;
         }
 
         public int codigo_publicacion
@@ -56,6 +58,11 @@ namespace Proyecto.Entidades
         {
             get { return cod_tipo_envio;}
             set { cod_tipo_envio = value; }
+        }
+        public int cantidad_pub
+        {
+            get { return cantidad; }
+            set { cantidad = value; }
         }
 
 
