@@ -331,13 +331,6 @@ namespace Proyecto.dataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarComentario")]
-		public ISingleResult<cp_listarComentarioResult> cp_listarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<cp_listarComentarioResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarDatosdeVendedor")]
 		public ISingleResult<buscarDatosdeVendedorResult> buscarDatosdeVendedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_Publicacion)
 		{
@@ -373,6 +366,13 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<cp_numeroFinalPublicacionResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_actualizarFoto")]
+		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarComentario")]
 		public int cp_insertarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string contenido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha)
 		{
@@ -380,10 +380,24 @@ namespace Proyecto.dataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_actualizarFoto")]
-		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarComentario")]
+		public ISingleResult<cp_listarComentarioResult> cp_listarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> valor)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<cp_listarComentarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuarioNegociacion")]
+		public int insertarUsuarioNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha, cod_usu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarNegociacion")]
+		public int insertarNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cod_forma_pago, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cod_forma_envio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_public)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cod_forma_pago, cod_forma_envio, cod_public);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -4522,86 +4536,6 @@ namespace Proyecto.dataBase
 		}
 	}
 	
-	public partial class cp_listarComentarioResult
-	{
-		
-		private long _codigo;
-		
-		private string _nick;
-		
-		private string _comentario;
-		
-		private System.DateTime _fecha;
-		
-		public cp_listarComentarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="BigInt NOT NULL")]
-		public long codigo
-		{
-			get
-			{
-				return this._codigo;
-			}
-			set
-			{
-				if ((this._codigo != value))
-				{
-					this._codigo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nick", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string nick
-		{
-			get
-			{
-				return this._nick;
-			}
-			set
-			{
-				if ((this._nick != value))
-				{
-					this._nick = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comentario", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string comentario
-		{
-			get
-			{
-				return this._comentario;
-			}
-			set
-			{
-				if ((this._comentario != value))
-				{
-					this._comentario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date NOT NULL")]
-		public System.DateTime fecha
-		{
-			get
-			{
-				return this._fecha;
-			}
-			set
-			{
-				if ((this._fecha != value))
-				{
-					this._fecha = value;
-				}
-			}
-		}
-	}
-	
 	public partial class buscarDatosdeVendedorResult
 	{
 		
@@ -4925,6 +4859,86 @@ namespace Proyecto.dataBase
 				if ((this._codigo_Pub != value))
 				{
 					this._codigo_Pub = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cp_listarComentarioResult
+	{
+		
+		private long _codigo;
+		
+		private string _nick;
+		
+		private string _comentario;
+		
+		private System.DateTime _fecha;
+		
+		public cp_listarComentarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="BigInt NOT NULL")]
+		public long codigo
+		{
+			get
+			{
+				return this._codigo;
+			}
+			set
+			{
+				if ((this._codigo != value))
+				{
+					this._codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nick", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string nick
+		{
+			get
+			{
+				return this._nick;
+			}
+			set
+			{
+				if ((this._nick != value))
+				{
+					this._nick = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comentario", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string comentario
+		{
+			get
+			{
+				return this._comentario;
+			}
+			set
+			{
+				if ((this._comentario != value))
+				{
+					this._comentario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date NOT NULL")]
+		public System.DateTime fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this._fecha = value;
 				}
 			}
 		}

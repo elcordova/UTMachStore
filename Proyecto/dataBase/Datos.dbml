@@ -299,15 +299,6 @@
     <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.cp_listarComentario" Method="cp_listarComentario">
-    <Parameter Name="valor" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="cp_listarComentarioResult">
-      <Column Name="codigo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nick" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.buscarDatosdeVendedor" Method="buscarDatosdeVendedor">
     <Parameter Name="codigo_Publicacion" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="buscarDatosdeVendedorResult">
@@ -347,6 +338,13 @@
       <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.cp_actualizarFoto" Method="cp_actualizarFoto">
+    <Parameter Name="codigo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.cp_insertarComentario" Method="cp_insertarComentario">
     <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
@@ -354,11 +352,24 @@
     <Parameter Name="fecha" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.cp_actualizarFoto" Method="cp_actualizarFoto">
-    <Parameter Name="codigo" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="nombre" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
+  <Function Name="dbo.cp_listarComentario" Method="cp_listarComentario">
+    <Parameter Name="valor" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="cp_listarComentarioResult">
+      <Column Name="codigo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nick" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertarUsuarioNegociacion" Method="insertarUsuarioNegociacion">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cod_usu" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarNegociacion" Method="insertarNegociacion">
+    <Parameter Name="cod_forma_pago" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cod_forma_envio" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cod_public" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
