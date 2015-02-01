@@ -26,7 +26,7 @@ namespace Proyecto.LogicaDeNegocio
         {
             try
             {
-                DB.cp_actualizarFoto(codigo, foto.Codigo_Publicacion, foto.Nombre_Foto, foto.Ruta_Foto);
+                   DB.cp_actualizarFoto(codigo, foto.Codigo_Publicacion, foto.Nombre_Foto, foto.Ruta_Foto);
 
                 DB.SubmitChanges();
             }
