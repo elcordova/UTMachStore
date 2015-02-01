@@ -43,6 +43,7 @@ namespace Proyecto.interfaces
                         //USUARIO ACTIVO
                         Session["id_activo"]=datosUsuario.ElementAt(0).codigo_Usu.ToString();//guarda ID del usuario en variable de session
                         Session["usuario"] = TextBox1.Text;
+                        Session["iduser"] = datosUsuario.ElementAt(0).codigo_Usu.ToString();
                         Response.Redirect("/interfaces/index.aspx");
                         
                     
