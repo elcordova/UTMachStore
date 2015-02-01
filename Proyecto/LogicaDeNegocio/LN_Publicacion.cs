@@ -21,5 +21,9 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.ListaPublicaciones().ToList();
         }
+        public List<dataBase.extraerCodigoUsuarioResult> codigoUsuario(string nick)
+        {
+            return DB.extraerCodigoUsuario(nick).ToList();
+        }
     }
 }

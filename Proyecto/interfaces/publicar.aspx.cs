@@ -50,10 +50,19 @@ namespace Proyecto.interfaces
         protected void Button2_Click(object sender, EventArgs e)
         {
             entidadPublicacion.Codigo_Categoria = 1;
-            entidadPublicacion.Codigo_usuario = 10010;
+            string nickname = Session["usuario"].ToString();
+            int codigoUsuraio = 0;
+            var sql1 = from camp in ingresoPublicacion.codigoUsuario(nickname)
+                      select new { codigoUS =camp.codigo_Usu };
+            foreach (var extraer in sql1)
+            {
+                codigoUsuraio = Convert.ToInt32(extraer.codigoUS.ToString());
+            }
+            entidadPublicacion.Codigo_usuario = codigoUsuraio;
             entidadPublicacion.Nombre_Publicacion = txtTituloPublicacion.Text;
-            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;//
-            entidadPublicacion.Fecha_Publicacion = "2015-11-12";
+            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;
+            DateTime thisDay = DateTime.Today;
+            entidadPublicacion.Fecha_Publicacion = thisDay.ToString("D");
             entidadPublicacion.Numero_ContactoPublicacion = txtNumeroContacto.Text;
             entidadPublicacion.Precio_ProductoPublicacion = Convert.ToDecimal(txtPrecioProducto.Text);
             entidadPublicacion.Estado_Publicacion = true;
