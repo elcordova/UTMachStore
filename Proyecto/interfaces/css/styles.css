@@ -376,8 +376,8 @@ DESCRIPTION: A premium business and portfolio theme.
     margin-left:5%;
 }
 .boton2_centrar {
-    margin-left:30%;
-    margin-bottom:15%;
+    margin-left:43%;
+    margin-bottom:3%;
     min-height:25px;
 }
 
@@ -395,4 +395,13 @@ DESCRIPTION: A premium business and portfolio theme.
 }
 .areglob {
     margin-left:20%;
+}
+.img_deseos 
+{
+    margin-left:40%;
+    min-height:25px;
+}
+.tabla {
+    margin-left:15%;
+    border:1px solid;
 }

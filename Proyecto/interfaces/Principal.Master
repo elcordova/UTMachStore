@@ -60,6 +60,7 @@
             <asp:ContentPlaceHolder ID="lista1" runat="server"> 
 
                 <ul id="navigation" class="grid_8" align="left">
+                    <li align="right" id="li4" style="display:none"><a href="ListaDeseos.aspx"><span class="meta">Listadeseos</span></a></li>
                     <li align="right" id="li03" style="display:none"><a href="notificaciones.aspx"><span class="meta">Notificaciones</span><br />
                         <img src="images/notificacion.png" /></a></li>
                     <li align="left" id="li01"><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>

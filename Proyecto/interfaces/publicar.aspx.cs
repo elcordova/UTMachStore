@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Windows.Forms;
+using Proyecto.LogicaDeNegocio;
 
 namespace Proyecto.interfaces
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        Validaciones validar = new Validaciones();
         public DateTime fechaHoy;
         protected void Page_Load2(object sender, EventArgs e)
         {
@@ -176,6 +179,11 @@ namespace Proyecto.interfaces
             catch (Exception)
             {
             }
+        }
+
+        protected void txtNumeroContacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.numeros(e);
         }
 
     }
