@@ -26,5 +26,9 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.extraerCodigoUsuario(nick).ToList();
         }
+        public List<dataBase.extraerRutaFotoMisPublicacionesResult> rutaImagen(string codigoPubliacion)
+        {
+            return DB.extraerRutaFotoMisPublicaciones(codigoPubliacion).ToList();
+        }
     }
 }

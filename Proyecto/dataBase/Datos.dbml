@@ -399,4 +399,10 @@
       <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.extraerRutaFotoMisPublicaciones" Method="extraerRutaFotoMisPublicaciones">
+    <Parameter Name="valor" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="extraerRutaFotoMisPublicacionesResult">
+      <Column Name="ruta_Fot" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

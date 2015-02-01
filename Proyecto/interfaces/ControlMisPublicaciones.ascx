@@ -8,7 +8,7 @@
     <div class="publicacion">
         
         <a class="etiq" href="#">
-           &nbsp;&nbsp;&nbsp;&nbsp; <asp:Image ID="Image1" runat="server" class="imgpeq" ImageUrl="images/converse.jpg" />
+           &nbsp;&nbsp;&nbsp;&nbsp; <asp:Image ID="Image1" runat="server" Width="180"  class="imgpeq" ImageUrl="images/converse.jpg" />
 
             <br />
             <h4 class="title">&nbsp;
