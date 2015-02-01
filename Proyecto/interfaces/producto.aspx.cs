@@ -29,13 +29,21 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
-            ent_comentario.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
-            ent_comentario.Codigo_Publicacion=5;
-            ent_comentario.Comentario = txtComentario.Text;
-            ent_comentario.Fecha = fechaHoy.ToString();
-            lncomentario.insertarComentario(ent_comentario);
+            if (txtComentario.Text != "")
+            {
+                ent_comentario.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
+                ent_comentario.Codigo_Publicacion = 5;
+                ent_comentario.Comentario = txtComentario.Text;
+                ent_comentario.Fecha = fechaHoy.ToString();
+                lncomentario.insertarComentario(ent_comentario);
 
+               
+            }
+            else
+            {
+                
+                Response.Write("<script language=javascript>alert('No puede dejar el campo vacio');</script>");
+            }
             txtComentario.Text = "";
             Response.Redirect("/interfaces/producto.aspx");
         }
@@ -58,6 +66,11 @@ namespace Proyecto.interfaces
        public void obtenercodpubli()
        {
 
+       }
+
+       protected void Button2_Click(object sender, EventArgs e)
+       {
+           btnComentar0.Text = fechaHoy.ToString("d");
        }
     }
 }

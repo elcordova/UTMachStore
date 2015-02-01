@@ -53,7 +53,7 @@ namespace Proyecto.interfaces
             string nickname = Session["usuario"].ToString();
             int codigoUsuraio = 0;
             var sql1 = from camp in ingresoPublicacion.codigoUsuario(nickname)
-                      select new { codigoUS =camp.codigo_Usu };
+                       select new { codigoUS = camp.codigo_Usu };
             foreach (var extraer in sql1)
             {
                 codigoUsuraio = Convert.ToInt32(extraer.codigoUS.ToString());
@@ -69,7 +69,7 @@ namespace Proyecto.interfaces
             entidadPublicacion.Stock_ProductoPublicacion = Convert.ToInt32(txtStockProductos.Text);
             ingresoPublicacion.insertarUsuario(entidadPublicacion);
             guardarIdPublicacion();
-            
+
             txtTituloPublicacion.Text = "";
             txtDatosPublicacion.Text = "";
             txtNumeroContacto.Text = "";
@@ -78,33 +78,36 @@ namespace Proyecto.interfaces
 
 
             Response.Redirect("/interfaces/MisPublicaciones.aspx");//
-            
+
         }
         //noooooooooooooooooooooooo borraras kerly q esto si vale
         //
         private void guardarIdPublicacion()
         {
             var sql = from camp in lnfoto.listarFotos()
-
                       select new { nombre = camp.nombre, ruta = camp.ruta };
             foreach (var extraer in sql)
             {
-                var sqlid = from camp in lnfoto.numeroPublicacionFinal()
+                entfoto.Nombre_Foto = extraer.nombre;
+                entfoto.Ruta_Foto = extraer.ruta;
+                lnfoto.ActualizarFoto(entfoto, numeropublicacion());
 
-                            select new { id = camp.codigo_Pub };
-
-                foreach (var extraerid in sqlid)
-                {
-
-                    entfoto.Nombre_Foto = extraer.nombre;
-                    entfoto.Ruta_Foto = extraer.ruta;
-
-                    lnfoto.ActualizarFoto(entfoto, (int)extraerid.id);
-                }
             }
         }
 
+        public int numeropublicacion()
+        {
+            int id = 0;
+            var sqlid = from camp in lnfoto.numeroPublicacionFinal()
 
+                        select new { id = camp.codigo_Pub };
+
+            foreach (var extraerid in sqlid)
+            {
+                id = (int)extraerid.id;
+            }
+            return id;
+        }
         private void guardarImagenenCarpeta(string nombrearchivo, string[] directorio)
         {
             if (existeCarpeta(txtTituloPublicacion.Text, directorio) == 1)

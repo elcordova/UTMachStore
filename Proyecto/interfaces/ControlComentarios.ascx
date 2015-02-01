@@ -9,7 +9,7 @@
 				</div> 
 				<div class="comment_content"> 
 					<div class="clearfix">
-						<cite class="author_name"><a href="#">Usuario anonimo</a></cite>       
+						<cite class="author_name"> <asp:Label ID="lblusuario" runat="server" Text="usuario"></asp:Label></cite>       
 						<div class="comment-meta commentmetadata">
                             <asp:Label ID="LBFecha" runat="server" Text="January 6, 2010 at 6:26 am"></asp:Label></div> 
 					</div>

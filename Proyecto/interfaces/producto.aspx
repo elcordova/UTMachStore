@@ -89,6 +89,7 @@
             <script runat="server" Language="C#">
             protected void Page_Load(object sender, EventArgs e)
             {
+                
                 int contadorComentario = 0;
                 int contadorPosicionComentario = 0;
                 Proyecto.LogicaDeNegocio.LNComentario lnComentario=new Proyecto.LogicaDeNegocio.LNComentario();
@@ -109,12 +110,17 @@
                      {
                          Spinner1[contadorPosicionComentario] = (ASP.interfaces_controlcomentarios_ascx)LoadControl("ControlComentarios.ascx");
                          Label mensaje = new Label();
-                         mensaje=(Label)Spinner1[contadorPosicionComentario].Controls[3];
+                         mensaje=(Label)Spinner1[contadorPosicionComentario].Controls[5];
                          mensaje.Text=extraer.comentario.ToString();
                          
                          Label fecha = new Label();
-                         fecha=(Label)Spinner1[contadorPosicionComentario].Controls[1];
-                         fecha.Text=extraer.fecha.ToString();
+                         fecha=(Label)Spinner1[contadorPosicionComentario].Controls[3];
+                         fecha.Text=extraer.fecha.ToString("d");
+
+                         Label usuario = new Label();
+                         usuario = (Label)Spinner1[contadorPosicionComentario].Controls[1];
+                         usuario.Text = extraer.nick.ToString();
+                        
                          PlaceHolder1.Controls.Add(Spinner1[contadorPosicionComentario]);
                          contadorPosicionComentario ++;
                      }
@@ -155,7 +161,11 @@
 			</form> 
 
 
-        <br /><br /><br /><br />
+        <br />
+    <br />
+                        <asp:Button ID="btnComentar0" runat="server" Text="Comentar" OnClick="Button2_Click" />
+					
+			<br /><br /><br />
 		
 		<div class="hr grid_12 clearfix">&nbsp;</div>
 </asp:Content>
