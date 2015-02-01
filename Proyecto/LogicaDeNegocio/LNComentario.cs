@@ -18,5 +18,33 @@ namespace Proyecto.LogicaDeNegocio
         {
             return"";
         }
+        public List<dataBase.cp_listarComentarioResult> listarComentario(int codigo)
+        {
+            return DB.cp_listarComentario(codigo).ToList();
+        }
+
+
+        public List<dataBase.Comentarios> imagencomentatio()
+        {
+            return DB.Comentarios.ToList();
+        }
+
+
+
+        public String ContComentario(int codigo)
+        {
+            string pax = "";
+
+            var sql = from lp in imagencomentatio()
+                      where lp.codigo_Pub ==(int)codigo
+                      group lp by lp.codigo_Pub == (int)codigo into c
+                      select new { j = c.Count(p => p.codigo_Pub == (int)codigo) };
+
+            foreach (var ex in sql)
+            {
+                pax = (ex.j).ToString();
+            }
+            return pax;
+        }
     }
 }

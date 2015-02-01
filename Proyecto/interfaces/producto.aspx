@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="producto.aspx.cs" Inherits="Proyecto.interfaces.WebForm1" EnableEventValidation="false" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="producto.aspx.cs" Inherits="Proyecto.interfaces.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
@@ -53,8 +53,8 @@
                 Teclado mouse y parlantes<o:p></o:p></p>
             <div class="areglob">
 
-                <asp:Button CssClass="boton_color_s" ID="Button1" runat="server" Text="Agregar a la lista" />
-                <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" OnClick="ButtonComprar_Click" />
+                <asp:Button CssClass="boton_color_s" ID="Button1" runat="server" Text="Agregar a la lista" OnClick="Button1_Click1" />
+                <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" />
             </div>
 		</div>
 		
@@ -89,17 +89,42 @@
             <script runat="server" Language="C#">
             protected void Page_Load(object sender, EventArgs e)
             {
+                int contadorComentario = 0;
+                int contadorPosicionComentario = 0;
+                Proyecto.LogicaDeNegocio.LNComentario lnComentario=new Proyecto.LogicaDeNegocio.LNComentario();
                   ASP.interfaces_controlcomentarios_ascx[] Spinner1;
-                  Spinner1 = new ASP.interfaces_controlcomentarios_ascx[10];
-                for (int p = 0; p < 10;p++ )
-                {
-                   
-                    Spinner1[p] = (ASP.interfaces_controlcomentarios_ascx)LoadControl("ControlComentarios.ascx");
-                    Label lb = new Label();
-                    lb = (Label)Spinner1[0].Controls[1];
-                    lb.Text = "funciona";
-                    PlaceHolder1.Controls.Add(Spinner1[p]);
-                }
+                  try
+                  {
+                      var sql = from camp in lnComentario.listarComentario(5)
+                                select new { nick = camp.nick, comentario = camp.comentario, fecha = camp.fecha };
+                      foreach (var extraer in sql)
+                      {
+                            extraer.fecha.ToString();
+                          contadorComentario++;
+                      }
+                   Spinner1 = new ASP.interfaces_controlcomentarios_ascx[contadorComentario];
+                     var sql1 = from camp in lnComentario.listarComentario(5)
+                                select new { nick = camp.nick, comentario = camp.comentario, fecha = camp.fecha };
+                     foreach (var extraer in sql1)
+                     {
+                         Spinner1[contadorPosicionComentario] = (ASP.interfaces_controlcomentarios_ascx)LoadControl("ControlComentarios.ascx");
+                         Label mensaje = new Label();
+                         mensaje=(Label)Spinner1[contadorPosicionComentario].Controls[3];
+                         mensaje.Text=extraer.comentario.ToString();
+                         
+                         Label fecha = new Label();
+                         fecha=(Label)Spinner1[contadorPosicionComentario].Controls[1];
+                         fecha.Text=extraer.fecha.ToString();
+                         PlaceHolder1.Controls.Add(Spinner1[contadorPosicionComentario]);
+                         contadorPosicionComentario ++;
+                     }
+                  }
+                  catch(Exception ex)
+                  {
+                      Label error = new Label();
+                      error.Text=ex.Message.ToString();
+                      PlaceHolder1.Controls.Add(error);
+                  }
             }
             </script>
 				 

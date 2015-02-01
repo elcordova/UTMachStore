@@ -11,7 +11,8 @@ namespace Proyecto.LogicaDeNegocio
 
         public void insertardeseo(Entidades.Ent_Listadeseos listadeseos)
         {
-            DB.cp_insertardeseo(listadeseos.Codigo_Listadeseo, listadeseos.Codigo_usuario, listadeseos.Codigo_publicacion);
+            
+       //     DB.cp_insertardeseooriginal(listadeseos.Codigo_usuario, listadeseos.Codigo_publicacion);
             DB.SubmitChanges();
         }
 
