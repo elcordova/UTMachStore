@@ -15,6 +15,7 @@ namespace Proyecto.interfaces
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
+            TextBox1.Text = Session["CodigoPublicacionEdicion"].ToString();
         }
     }
 }

@@ -46,7 +46,7 @@
 
                         Spinner1 = new ASP.interfaces_controlmispublicaciones_ascx[contadorPublicaciones];
                         var sql = from camp in lnPublicacion.ListaPublicaciones(codigoUsuraio)
-                            select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
+                            select new { codigPubli=camp.codigo_Pub, nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
                     foreach (var extraer in sql)
                     {
                         
@@ -62,6 +62,10 @@
                         Label datosPubliacion = new Label();
                         datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[11];
                         datosPubliacion.Text = extraer.dat_piblicacion.ToString();
+
+                        Button editarPubli = new Button();
+                        editarPubli = (Button)Spinner1[contadorPosicionPublicaciones].Controls[5];
+                        editarPubli.ID = extraer.codigPubli.ToString();
                         
                         PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
                         contadorPosicionPublicaciones++;
