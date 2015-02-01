@@ -7,7 +7,7 @@ namespace Proyecto.Entidades
 {
     public class Ent_Comentario
     {
-        private string Codigo_Usu;
+        private int Codigo_Usu;
         private int Codigo_Pub;
         private string Contenido_Com;
         private string Fecha_com;
@@ -16,14 +16,14 @@ namespace Proyecto.Entidades
         public Ent_Comentario()
         {
 
-            Codigo_Usu = "";
+            Codigo_Usu = 0;
             Codigo_Pub = 0;
             Contenido_Com = "";
             Fecha_com = "";
 
         }
 
-        public Ent_Comentario(string codigoUsu, int codigoPub, string contenido, string fecha)
+        public Ent_Comentario(int codigoUsu, int codigoPub, string contenido, string fecha)
         {
             Codigo_Usu = codigoUsu;
             Codigo_Pub = codigoPub;
@@ -32,7 +32,7 @@ namespace Proyecto.Entidades
 
         }
 
-        public string Codigo_Usuario
+        public int Codigo_Usuario
         {
             get { return Codigo_Usu; }
             set { Codigo_Usu = value; }

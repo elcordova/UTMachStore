@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto.interfaces
 {
-    public partial class MisPublicaciones : System.Web.UI.Page
+    public partial class ControlMostrarPublicacion : System.Web.UI.UserControl
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-           
+
         }
     }
 }

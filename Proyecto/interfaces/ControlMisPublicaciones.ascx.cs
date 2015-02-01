@@ -16,5 +16,12 @@ namespace Proyecto.interfaces
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session["CodigoPublicacionEdicion"] = Button1.ID.ToString();
+            Response.Redirect("/interfaces/EdicionPublicacion.aspx");
+            
+        }
     }
 }

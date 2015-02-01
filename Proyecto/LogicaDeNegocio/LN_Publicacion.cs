@@ -17,9 +17,14 @@ namespace Proyecto.LogicaDeNegocio
          
             DB.SubmitChanges();
         }
-        public List<dataBase.ListaPublicacionesResult> ListaPublicaciones()
+        public List<dataBase.ListaPublicacionesResult> ListaPublicaciones(int codigo)
         {
-            return DB.ListaPublicaciones().ToList();
+
+            return DB.ListaPublicaciones(codigo).ToList();
+        }
+        public List<dataBase.extraerCodigoUsuarioResult> codigoUsuario(string nick)
+        {
+            return DB.extraerCodigoUsuario(nick).ToList();
         }
     }
 }

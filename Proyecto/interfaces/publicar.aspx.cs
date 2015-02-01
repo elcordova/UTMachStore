@@ -50,17 +50,26 @@ namespace Proyecto.interfaces
         protected void Button2_Click(object sender, EventArgs e)
         {
             entidadPublicacion.Codigo_Categoria = 1;
-            entidadPublicacion.Codigo_usuario = 10010;
+            string nickname = Session["usuario"].ToString();
+            int codigoUsuraio = 0;
+            var sql1 = from camp in ingresoPublicacion.codigoUsuario(nickname)
+                       select new { codigoUS = camp.codigo_Usu };
+            foreach (var extraer in sql1)
+            {
+                codigoUsuraio = Convert.ToInt32(extraer.codigoUS.ToString());
+            }
+            entidadPublicacion.Codigo_usuario = codigoUsuraio;
             entidadPublicacion.Nombre_Publicacion = txtTituloPublicacion.Text;
-            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;//
-            entidadPublicacion.Fecha_Publicacion = fechaHoy.ToString();
+            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;
+            DateTime thisDay = DateTime.Today;
+            entidadPublicacion.Fecha_Publicacion = thisDay.ToString("D");
             entidadPublicacion.Numero_ContactoPublicacion = txtNumeroContacto.Text;
             entidadPublicacion.Precio_ProductoPublicacion = Convert.ToDecimal(txtPrecioProducto.Text);
             entidadPublicacion.Estado_Publicacion = true;
             entidadPublicacion.Stock_ProductoPublicacion = Convert.ToInt32(txtStockProductos.Text);
             ingresoPublicacion.insertarUsuario(entidadPublicacion);
-            //guardarIdPublicacion();
-            
+            guardarIdPublicacion();
+
             txtTituloPublicacion.Text = "";
             txtDatosPublicacion.Text = "";
             txtNumeroContacto.Text = "";
@@ -68,32 +77,37 @@ namespace Proyecto.interfaces
             txtStockProductos.Text = "";
 
 
-            Response.Redirect("/interfaces/MisPublicaciones.aspx");
-            
+            Response.Redirect("/interfaces/MisPublicaciones.aspx");//
+
         }
-        //private void guardarIdPublicacion()
-        //{
-        //    var sql = from camp in lnfoto.listarFotos()
+        //noooooooooooooooooooooooo borraras kerly q esto si vale
+        //
+        private void guardarIdPublicacion()
+        {
+            var sql = from camp in lnfoto.listarFotos()
+                      select new { nombre = camp.nombre, ruta = camp.ruta };
+            foreach (var extraer in sql)
+            {
+                entfoto.Nombre_Foto = extraer.nombre;
+                entfoto.Ruta_Foto = extraer.ruta;
+                lnfoto.ActualizarFoto(entfoto, numeropublicacion());
 
-        //              select new { nombre = camp.nombre, ruta = camp.ruta };
-        //    foreach (var extraer in sql)
-        //    {
-        //        var sqlid = from camp in lnfoto.numeroPublicacionFinal()
+            }
+        }
 
-        //                    select new { id = camp.codigo_Pub };
+        public int numeropublicacion()
+        {
+            int id = 0;
+            var sqlid = from camp in lnfoto.numeroPublicacionFinal()
 
-        //        foreach (var extraerid in sqlid)
-        //        {
+                        select new { id = camp.codigo_Pub };
 
-        //            entfoto.Nombre_Foto = extraer.nombre;
-        //            entfoto.Ruta_Foto = extraer.ruta;
-
-        //            lnfoto.ActualizarFoto(entfoto, (int)extraerid.id);
-        //        }
-        //    }
-        //}
-
-
+            foreach (var extraerid in sqlid)
+            {
+                id = (int)extraerid.id;
+            }
+            return id;
+        }
         private void guardarImagenenCarpeta(string nombrearchivo, string[] directorio)
         {
             if (existeCarpeta(txtTituloPublicacion.Text, directorio) == 1)
