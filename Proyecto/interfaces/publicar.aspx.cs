@@ -59,7 +59,7 @@ namespace Proyecto.interfaces
             entidadPublicacion.Estado_Publicacion = true;
             entidadPublicacion.Stock_ProductoPublicacion = Convert.ToInt32(txtStockProductos.Text);
             ingresoPublicacion.insertarUsuario(entidadPublicacion);
-            //guardarIdPublicacion();
+            guardarIdPublicacion();
             
             txtTituloPublicacion.Text = "";
             txtDatosPublicacion.Text = "";
@@ -73,27 +73,27 @@ namespace Proyecto.interfaces
         }
         //noooooooooooooooooooooooo borraras kerly q esto si vale
         //
-        //private void guardarIdPublicacion()
-        //{
-        //    var sql = from camp in lnfoto.listarFotos()
+        private void guardarIdPublicacion()
+        {
+            var sql = from camp in lnfoto.listarFotos()
 
-        //              select new { nombre = camp.nombre, ruta = camp.ruta };
-        //    foreach (var extraer in sql)
-        //    {
-        //        var sqlid = from camp in lnfoto.numeroPublicacionFinal()
+                      select new { nombre = camp.nombre, ruta = camp.ruta };
+            foreach (var extraer in sql)
+            {
+                var sqlid = from camp in lnfoto.numeroPublicacionFinal()
 
-        //                    select new { id = camp.codigo_Pub };
+                            select new { id = camp.codigo_Pub };
 
-        //        foreach (var extraerid in sqlid)
-        //        {
+                foreach (var extraerid in sqlid)
+                {
 
-        //            entfoto.Nombre_Foto = extraer.nombre;
-        //            entfoto.Ruta_Foto = extraer.ruta;
+                    entfoto.Nombre_Foto = extraer.nombre;
+                    entfoto.Ruta_Foto = extraer.ruta;
 
-        //            lnfoto.ActualizarFoto(entfoto, (int)extraerid.id);
-        //        }
-        //    }
-        //}
+                    lnfoto.ActualizarFoto(entfoto, (int)extraerid.id);
+                }
+            }
+        }
 
 
         private void guardarImagenenCarpeta(string nombrearchivo, string[] directorio)
