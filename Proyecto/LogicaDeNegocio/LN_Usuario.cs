@@ -49,6 +49,24 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.buscarCorreo(correo).ToList();
         }
+
+        public List<dataBase.Usuario> allUsuario()
+        {
+            return DB.Usuario.ToList();
+        }
         
+
+         public int idUsuario(string nick)
+        {
+            int id=0;
+            var sql = from camp in allUsuario()
+                      where camp.nic_Usu == nick
+                      select new { id = camp.codigo_Usu };
+            foreach (var extraer in sql)
+            {
+                id = (int)extraer.id;
+            }
+            return id;
+        }
     }
 }

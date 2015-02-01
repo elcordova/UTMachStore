@@ -275,13 +275,6 @@ namespace Proyecto.dataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarComentario")]
-		public int cp_insertarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string contenido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoUsu, codigoPub, contenido, fecha);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertardeseo")]
 		public int cp_insertardeseo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_lisde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_publ)
 		{
@@ -384,6 +377,13 @@ namespace Proyecto.dataBase
 		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarComentario")]
+		public int cp_insertarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string contenido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoUsu, codigoPub, contenido, fecha);
 			return ((int)(result.ReturnValue));
 		}
 	}

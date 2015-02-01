@@ -53,7 +53,7 @@ namespace Proyecto.interfaces
             entidadPublicacion.Codigo_usuario = 10010;
             entidadPublicacion.Nombre_Publicacion = txtTituloPublicacion.Text;
             entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;//
-            entidadPublicacion.Fecha_Publicacion = fechaHoy.ToString();
+            entidadPublicacion.Fecha_Publicacion = "2015-11-12";
             entidadPublicacion.Numero_ContactoPublicacion = txtNumeroContacto.Text;
             entidadPublicacion.Precio_ProductoPublicacion = Convert.ToDecimal(txtPrecioProducto.Text);
             entidadPublicacion.Estado_Publicacion = true;
@@ -71,6 +71,8 @@ namespace Proyecto.interfaces
             Response.Redirect("/interfaces/MisPublicaciones.aspx");
             
         }
+        //noooooooooooooooooooooooo borraras kerly q esto si vale
+        //
         //private void guardarIdPublicacion()
         //{
         //    var sql = from camp in lnfoto.listarFotos()

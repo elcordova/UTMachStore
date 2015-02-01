@@ -14,6 +14,7 @@ namespace Proyecto.interfaces
     {
         Ent_Listadeseos ld = new Ent_Listadeseos();
         LN_Listadeseos lisdes = new LN_Listadeseos();
+        LN_Usuario lnUsuario = new LN_Usuario();
         Entidades.Ent_Comentario ent_comentario = new Entidades.Ent_Comentario();
         LogicaDeNegocio.LNComentario lncomentario = new LogicaDeNegocio.LNComentario();
         public DateTime fechaHoy;
@@ -28,13 +29,15 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ent_comentario.Codigo_Usuario = "10010";
+            
+            ent_comentario.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
             ent_comentario.Codigo_Publicacion=5;
             ent_comentario.Comentario = txtComentario.Text;
             ent_comentario.Fecha = fechaHoy.ToString();
-            lncomentario.insertarUsuario(ent_comentario);
+            lncomentario.insertarComentario(ent_comentario);
 
             txtComentario.Text = "";
+            Response.Redirect("/interfaces/producto.aspx");
         }
 
         public void Button1_Click1(object sender, EventArgs e)

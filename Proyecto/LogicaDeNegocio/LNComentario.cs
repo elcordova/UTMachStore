@@ -9,7 +9,7 @@ namespace Proyecto.LogicaDeNegocio
     {
         dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
 
-        public void insertarUsuario(Entidades.Ent_Comentario comentario)
+        public void insertarComentario(Entidades.Ent_Comentario comentario)
         {
             DB.cp_insertarComentario(comentario.Codigo_Usuario, comentario.Codigo_Publicacion, comentario.Comentario, comentario.Fecha);
             DB.SubmitChanges();
@@ -29,7 +29,7 @@ namespace Proyecto.LogicaDeNegocio
             return DB.Comentarios.ToList();
         }
 
-
+        
 
         public String ContComentario(int codigo)
         {
