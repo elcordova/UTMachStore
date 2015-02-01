@@ -68,10 +68,7 @@ namespace Proyecto.interfaces
 
        }
 
-       protected void Button2_Click(object sender, EventArgs e)
-       {
-           btnComentar0.Text = fechaHoy.ToString("d");
-       }
+      
 
        protected void Button2_Click(object sender, EventArgs e)
        {
