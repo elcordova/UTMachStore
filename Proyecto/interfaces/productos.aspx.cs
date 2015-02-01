@@ -13,14 +13,14 @@ namespace Proyecto.interfaces
         List<productos> lista_productos = new List<productos>(); 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("/interfaces/restriccion.aspx");
-            }
-            else
-            {
+            //if (Session["usuario"] == null)
+            //{
+            //    Response.Redirect("/interfaces/restriccion.aspx");
+            //}
+            //else
+            //{
               
-            }
+            //}
             
         }
 
