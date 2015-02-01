@@ -45,13 +45,13 @@ namespace Proyecto.interfaces
             
         }
 
-       public int contar()
-        {
-           dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
-            List<dataBase.cp_contarlistadeseosResult> li = DB.cp_contarlistadeseos().ToList();
-            int num = li.Count();
-            return num;
-        }
+       //public int contar()
+       // {
+       //    dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
+       //     List<dataBase.cp_contarlistadeseosResult> li = DB.cp_contarlistadeseos().ToList();
+       //     int num = li.Count();
+       //     return num;
+       // }
        public void obtenercodpubli()
        {
 

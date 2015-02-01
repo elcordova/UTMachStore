@@ -10,8 +10,10 @@ namespace Proyecto.interfaces
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        public DateTime fechaHoy;
         protected void Page_Load2(object sender, EventArgs e)
         {
+            fechaHoy = DateTime.Now;
             if (Session["usuario"] == null)
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
@@ -21,7 +23,7 @@ namespace Proyecto.interfaces
                 mostrarImagen();
             }
             catch { }
-           
+
 
         }
         Entidades.Ent_Publicaciones entidadPublicacion = new Entidades.Ent_Publicaciones();
@@ -51,44 +53,66 @@ namespace Proyecto.interfaces
             entidadPublicacion.Codigo_usuario = 10010;
             entidadPublicacion.Nombre_Publicacion = txtTituloPublicacion.Text;
             entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;//
-            entidadPublicacion.Fecha_Publicacion = "2015-11-12";
+            entidadPublicacion.Fecha_Publicacion = fechaHoy.ToString();
             entidadPublicacion.Numero_ContactoPublicacion = txtNumeroContacto.Text;
             entidadPublicacion.Precio_ProductoPublicacion = Convert.ToDecimal(txtPrecioProducto.Text);
             entidadPublicacion.Estado_Publicacion = true;
             entidadPublicacion.Stock_ProductoPublicacion = Convert.ToInt32(txtStockProductos.Text);
             ingresoPublicacion.insertarUsuario(entidadPublicacion);
-
+            //guardarIdPublicacion();
+            
             txtTituloPublicacion.Text = "";
             txtDatosPublicacion.Text = "";
             txtNumeroContacto.Text = "";
             txtPrecioProducto.Text = "";
             txtStockProductos.Text = "";
-            
+
 
             Response.Redirect("/interfaces/MisPublicaciones.aspx");
+            
         }
+        //private void guardarIdPublicacion()
+        //{
+        //    var sql = from camp in lnfoto.listarFotos()
 
-      
+        //              select new { nombre = camp.nombre, ruta = camp.ruta };
+        //    foreach (var extraer in sql)
+        //    {
+        //        var sqlid = from camp in lnfoto.numeroPublicacionFinal()
+
+        //                    select new { id = camp.codigo_Pub };
+
+        //        foreach (var extraerid in sqlid)
+        //        {
+
+        //            entfoto.Nombre_Foto = extraer.nombre;
+        //            entfoto.Ruta_Foto = extraer.ruta;
+
+        //            lnfoto.ActualizarFoto(entfoto, (int)extraerid.id);
+        //        }
+        //    }
+        //}
+
 
         private void guardarImagenenCarpeta(string nombrearchivo, string[] directorio)
         {
             if (existeCarpeta(txtTituloPublicacion.Text, directorio) == 1)
             {
                 FileUploadSubir.PostedFile.SaveAs(Server.MapPath("~/imagenesPublicaciones/" + cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text + "/" + nombrearchivo));
-                       
+
             }
             else if (existeCarpeta(txtTituloPublicacion.Text, directorio) == 0)
             {
                 string path = Path.Combine(Server.MapPath("~/imagenesPublicaciones/"), cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text);
                 Directory.CreateDirectory(path);
                 FileUploadSubir.PostedFile.SaveAs(Server.MapPath("~/imagenesPublicaciones/" + cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text + "/" + nombrearchivo));
-            
+
             }
             string ruta = "~/imagenesPublicaciones/" + cmbCategoria.SelectedItem.ToString() + "/" + txtTituloPublicacion.Text + "/" + nombrearchivo;
 
             lnfoto.insertarFoto(nombrearchivo, ruta);
-           
-          //  eliminar();
+
+            //  eliminar();
             mostrarImagen();
         }
 
@@ -138,7 +162,7 @@ namespace Proyecto.interfaces
             catch (Exception)
             {
             }
-        }     
-        
+        }
+
     }
 }

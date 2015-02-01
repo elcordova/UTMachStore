@@ -296,13 +296,6 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<cp_listardeseosFiltroResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarFoto")]
-		public ISingleResult<cp_listarFotoResult> cp_listarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<cp_listarFotoResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminarStock")]
 		public int eliminarStock([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codpub)
 		{
@@ -350,6 +343,48 @@ namespace Proyecto.dataBase
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
 			return ((ISingleResult<cp_listarComentarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarDatosdeVendedor")]
+		public ISingleResult<buscarDatosdeVendedorResult> buscarDatosdeVendedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_Publicacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_Publicacion);
+			return ((ISingleResult<buscarDatosdeVendedorResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarFormasEnvio")]
+		public ISingleResult<buscarFormasEnvioResult> buscarFormasEnvio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPub);
+			return ((ISingleResult<buscarFormasEnvioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarFormasPago")]
+		public ISingleResult<buscarFormasPagoResult> buscarFormasPago([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPub);
+			return ((ISingleResult<buscarFormasPagoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarFoto")]
+		public ISingleResult<cp_listarFotoResult> cp_listarFoto()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<cp_listarFotoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_numeroFinalPublicacion")]
+		public ISingleResult<cp_numeroFinalPublicacionResult> cp_numeroFinalPublicacion()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<cp_numeroFinalPublicacionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_actualizarFoto")]
+		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -4407,86 +4442,6 @@ namespace Proyecto.dataBase
 		}
 	}
 	
-	public partial class cp_listarFotoResult
-	{
-		
-		private string _Codigo;
-		
-		private System.Nullable<long> _publicacion;
-		
-		private string _nombre;
-		
-		private string _ruta;
-		
-		public cp_listarFotoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string Codigo
-		{
-			get
-			{
-				return this._Codigo;
-			}
-			set
-			{
-				if ((this._Codigo != value))
-				{
-					this._Codigo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_publicacion", DbType="BigInt")]
-		public System.Nullable<long> publicacion
-		{
-			get
-			{
-				return this._publicacion;
-			}
-			set
-			{
-				if ((this._publicacion != value))
-				{
-					this._publicacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string nombre
-		{
-			get
-			{
-				return this._nombre;
-			}
-			set
-			{
-				if ((this._nombre != value))
-				{
-					this._nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ruta", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string ruta
-		{
-			get
-			{
-				return this._ruta;
-			}
-			set
-			{
-				if ((this._ruta != value))
-				{
-					this._ruta = value;
-				}
-			}
-		}
-	}
-	
 	public partial class ListaPublicacionesResult
 	{
 		
@@ -4642,6 +4597,334 @@ namespace Proyecto.dataBase
 				if ((this._fecha != value))
 				{
 					this._fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarDatosdeVendedorResult
+	{
+		
+		private string _nombreComp_Usu;
+		
+		private string _direccion_Usu;
+		
+		private string _email_Usu;
+		
+		private decimal _precio_Pub;
+		
+		private string _nombre_Pub;
+		
+		private int _stock_Pub;
+		
+		private string _datos_Pub;
+		
+		public buscarDatosdeVendedorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombreComp_Usu
+		{
+			get
+			{
+				return this._nombreComp_Usu;
+			}
+			set
+			{
+				if ((this._nombreComp_Usu != value))
+				{
+					this._nombreComp_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string direccion_Usu
+		{
+			get
+			{
+				return this._direccion_Usu;
+			}
+			set
+			{
+				if ((this._direccion_Usu != value))
+				{
+					this._direccion_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string email_Usu
+		{
+			get
+			{
+				return this._email_Usu;
+			}
+			set
+			{
+				if ((this._email_Usu != value))
+				{
+					this._email_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_Pub", DbType="Decimal(18,2) NOT NULL")]
+		public decimal precio_Pub
+		{
+			get
+			{
+				return this._precio_Pub;
+			}
+			set
+			{
+				if ((this._precio_Pub != value))
+				{
+					this._precio_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nombre_Pub
+		{
+			get
+			{
+				return this._nombre_Pub;
+			}
+			set
+			{
+				if ((this._nombre_Pub != value))
+				{
+					this._nombre_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_Pub", DbType="Int NOT NULL")]
+		public int stock_Pub
+		{
+			get
+			{
+				return this._stock_Pub;
+			}
+			set
+			{
+				if ((this._stock_Pub != value))
+				{
+					this._stock_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datos_Pub", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string datos_Pub
+		{
+			get
+			{
+				return this._datos_Pub;
+			}
+			set
+			{
+				if ((this._datos_Pub != value))
+				{
+					this._datos_Pub = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarFormasEnvioResult
+	{
+		
+		private string _codigo_FormEnvio;
+		
+		private string _nombre_FormEnvio;
+		
+		public buscarFormasEnvioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_FormEnvio", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string codigo_FormEnvio
+		{
+			get
+			{
+				return this._codigo_FormEnvio;
+			}
+			set
+			{
+				if ((this._codigo_FormEnvio != value))
+				{
+					this._codigo_FormEnvio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_FormEnvio", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombre_FormEnvio
+		{
+			get
+			{
+				return this._nombre_FormEnvio;
+			}
+			set
+			{
+				if ((this._nombre_FormEnvio != value))
+				{
+					this._nombre_FormEnvio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarFormasPagoResult
+	{
+		
+		private string _codigo_FormPago;
+		
+		private string _nombre_FormPago;
+		
+		public buscarFormasPagoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_FormPago", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string codigo_FormPago
+		{
+			get
+			{
+				return this._codigo_FormPago;
+			}
+			set
+			{
+				if ((this._codigo_FormPago != value))
+				{
+					this._codigo_FormPago = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_FormPago", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombre_FormPago
+		{
+			get
+			{
+				return this._nombre_FormPago;
+			}
+			set
+			{
+				if ((this._nombre_FormPago != value))
+				{
+					this._nombre_FormPago = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cp_listarFotoResult
+	{
+		
+		private long _Codigo;
+		
+		private System.Nullable<long> _publicacion;
+		
+		private string _nombre;
+		
+		private string _ruta;
+		
+		public cp_listarFotoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="BigInt NOT NULL")]
+		public long Codigo
+		{
+			get
+			{
+				return this._Codigo;
+			}
+			set
+			{
+				if ((this._Codigo != value))
+				{
+					this._Codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_publicacion", DbType="BigInt")]
+		public System.Nullable<long> publicacion
+		{
+			get
+			{
+				return this._publicacion;
+			}
+			set
+			{
+				if ((this._publicacion != value))
+				{
+					this._publicacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this._nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ruta", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ruta
+		{
+			get
+			{
+				return this._ruta;
+			}
+			set
+			{
+				if ((this._ruta != value))
+				{
+					this._ruta = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cp_numeroFinalPublicacionResult
+	{
+		
+		private long _codigo_Pub;
+		
+		public cp_numeroFinalPublicacionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pub", DbType="BigInt NOT NULL")]
+		public long codigo_Pub
+		{
+			get
+			{
+				return this._codigo_Pub;
+			}
+			set
+			{
+				if ((this._codigo_Pub != value))
+				{
+					this._codigo_Pub = value;
 				}
 			}
 		}
