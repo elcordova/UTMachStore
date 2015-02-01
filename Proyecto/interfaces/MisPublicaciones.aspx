@@ -25,15 +25,23 @@
                   ASP.interfaces_controlmispublicaciones_ascx[] Spinner1;
                     try
                     {
-                        var sql1 = from camp in lnPublicacion.ListaPublicaciones()
+                        string nickname = Session["usuario"].ToString();
+                        int codigoUsuraio = 0;
+                        var sql2 = from camp in lnPublicacion.codigoUsuario(nickname)
+                                   select new { codigoUS = camp.codigo_Usu };
+                        foreach (var extraer in sql2)
+                        {
+                            codigoUsuraio = Convert.ToInt32(extraer.codigoUS.ToString());
+                        }
+                        var sql1 = from camp in lnPublicacion.ListaPublicaciones(codigoUsuraio)
                                   select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
                         foreach (var extraer in sql1)
                         {
                             extraer.nom_publicacion.ToString();
                             contadorPublicaciones++; }
 
-                        Spinner1 = new ASP.interfaces_controlmispublicaciones_ascx[contadorPublicaciones]; 
-                    var sql = from camp in lnPublicacion.ListaPublicaciones()
+                        Spinner1 = new ASP.interfaces_controlmispublicaciones_ascx[contadorPublicaciones];
+                        var sql = from camp in lnPublicacion.ListaPublicaciones(codigoUsuraio)
                             select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
                     foreach (var extraer in sql)
                     {

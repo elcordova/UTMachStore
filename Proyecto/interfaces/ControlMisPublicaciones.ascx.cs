@@ -16,5 +16,10 @@ namespace Proyecto.interfaces
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/interfaces/EdicionPublicacion.aspx");
+        }
     }
 }
