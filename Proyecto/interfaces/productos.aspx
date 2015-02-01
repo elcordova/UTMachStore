@@ -86,7 +86,8 @@
                     <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Zaruma</h6>
                 </a></li>  
 			</div>
-				<a class="portfolio_item float alpha" href="producto.aspx">
+
+				<%--<a class="portfolio_item float alpha">
 					<span>Computación</span>
 					<img class="" src="images/computadora.jpg"  alt="" onclick="Button1_Click"/>
 				</a>
@@ -121,7 +122,7 @@
 				<a class="portfolio_item float omega" href="producto.aspx">
 					<span>Animales</span>
 					<img class="" src="images/perro.jpg"  alt=""/>
-				</a>
+				</a>--%>
 		</div>
 			
 		<div class="pr clearfix grid_12">&nbsp;</div>
