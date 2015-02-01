@@ -13,5 +13,11 @@ namespace Proyecto.interfaces
         {
 
         }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["CodigoPublicacionVista"] = Label1.ID.ToString();
+            Response.Redirect("/interfaces/producto.aspx");
+        }
     }
 }

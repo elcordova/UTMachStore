@@ -146,6 +146,7 @@
                             Label nombrePublicacion = new Label();
                             nombrePublicacion = (Label)Spinner3[contadorPosicionPublicaciones2].Controls[1];
                             nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+                            nombrePublicacion.ID = extraer.codigPubli.ToString();
 
                             String ruta = "";
                             var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
@@ -172,6 +173,7 @@
                             Label nombrePublicacion = new Label();
                             nombrePublicacion = (Label)Spinner2[contadorPosicionPublicaciones1].Controls[1];
                             nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+                            nombrePublicacion.ID = extraer.codigPubli.ToString();
 
                             String ruta = "";
                             var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
@@ -198,6 +200,7 @@
                             Label nombrePublicacion = new Label();
                             nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
                             nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+                            nombrePublicacion.ID = extraer.codigPubli.ToString();
 
                             String ruta = "";
                             var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
