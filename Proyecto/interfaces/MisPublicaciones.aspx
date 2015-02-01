@@ -37,6 +37,7 @@
                             select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
                     foreach (var extraer in sql)
                     {
+                        
                         Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmispublicaciones_ascx)LoadControl("ControlMisPublicaciones.ascx");
                         Label nombrePublicacion = new Label();
                         nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];

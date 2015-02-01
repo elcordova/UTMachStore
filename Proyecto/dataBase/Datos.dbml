@@ -372,4 +372,10 @@
     <Parameter Name="cod_public" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.extraerCodigoUsuario" Method="extraerCodigoUsuario">
+    <Parameter Name="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="extraerCodigoUsuarioResult">
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
