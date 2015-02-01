@@ -264,18 +264,6 @@
     <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.insertarPublicacion" Method="insertarPublicacion">
-    <Parameter Name="codigo_categoria" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigo_usuario" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="nombre_publicacion" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="datos_publicacion" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="fecha_publicacion" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="numero_contacto" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
-    <Parameter Name="estado_logico_publicacion" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="stock_produc" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.insertarUsuario" Method="insertarUsuario">
     <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
@@ -285,14 +273,6 @@
     <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.ListaPublicaciones" Method="ListaPublicaciones">
-    <ElementType Name="ListaPublicacionesResult">
-      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="dbo.cp_insertarFoto" Method="cp_insertarFoto">
     <Parameter Name="nombre" Type="System.String" DbType="VarChar(25)" />
@@ -377,5 +357,27 @@
     <ElementType Name="extraerCodigoUsuarioResult">
       <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.ListaPublicaciones" Method="ListaPublicaciones">
+    <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="ListaPublicacionesResult">
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertarPublicacion" Method="insertarPublicacion">
+    <Parameter Name="codigo_categoria" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigo_usuario" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="nombre_publicacion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="datos_publicacion" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="fecha_publicacion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="numero_contacto" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="estado_logico_publicacion" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="stock_produc" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
