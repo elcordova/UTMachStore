@@ -18,6 +18,10 @@
                 
             protected void Page_Load(object sender, EventArgs e)
             {
+                if (Session["usuario"] == null)
+                {
+                    Response.Redirect("/interfaces/restriccion.aspx");
+                }
                 int contadorPublicaciones = 0;
                 int contadorPosicionPublicaciones = 0;
                 Proyecto.LogicaDeNegocio.LN_Publicacion lnPublicacion=new Proyecto.LogicaDeNegocio.LN_Publicacion();
