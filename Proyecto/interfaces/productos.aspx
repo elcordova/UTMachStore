@@ -135,9 +135,8 @@
                     foreach (var extraer in sql)
                     {
                         if (controlTipo == 3)
-                        { controlTipo = 0;
-
-                        }//
+                        {
+                            controlTipo = 0; }
 
                         if (controlTipo == 2)
                         {
@@ -146,8 +145,7 @@
                             Label nombrePublicacion = new Label();
                             nombrePublicacion = (Label)Spinner3[contadorPosicionPublicaciones2].Controls[1];
                             nombrePublicacion.Text = extraer.nom_publicacion.ToString();
-                            nombrePublicacion.ID = extraer.codigPubli.ToString();
-
+                            
                             String ruta = "";
                             var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
                                        select new { rutaImagen = camp.ruta_Fot };
@@ -160,7 +158,8 @@
                             ImageButton imagenBoton = new ImageButton();
                             imagenBoton = (ImageButton)Spinner3[contadorPosicionPublicaciones2].Controls[3];
                             imagenBoton.ImageUrl = ruta;
-
+                            imagenBoton.ID = extraer.codigPubli.ToString();
+                            
                             PlaceHolder1.Controls.Add(Spinner3[contadorPosicionPublicaciones2]);
                             contadorPosicionPublicaciones2++;
                         }
@@ -173,7 +172,6 @@
                             Label nombrePublicacion = new Label();
                             nombrePublicacion = (Label)Spinner2[contadorPosicionPublicaciones1].Controls[1];
                             nombrePublicacion.Text = extraer.nom_publicacion.ToString();
-                            nombrePublicacion.ID = extraer.codigPubli.ToString();
 
                             String ruta = "";
                             var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
@@ -187,6 +185,7 @@
                             ImageButton imagenBoton = new ImageButton();
                             imagenBoton = (ImageButton)Spinner2[contadorPosicionPublicaciones1].Controls[3];
                             imagenBoton.ImageUrl = ruta;
+                            imagenBoton.ID = extraer.codigPubli.ToString();
 
                             PlaceHolder1.Controls.Add(Spinner2[contadorPosicionPublicaciones1]);
                             contadorPosicionPublicaciones1++;
@@ -200,7 +199,6 @@
                             Label nombrePublicacion = new Label();
                             nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
                             nombrePublicacion.Text = extraer.nom_publicacion.ToString();
-                            nombrePublicacion.ID = extraer.codigPubli.ToString();
 
                             String ruta = "";
                             var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
@@ -214,6 +212,7 @@
                             ImageButton imagenBoton = new ImageButton();
                             imagenBoton = (ImageButton)Spinner1[contadorPosicionPublicaciones].Controls[3];
                             imagenBoton.ImageUrl = ruta;
+                            imagenBoton.ID = extraer.codigPubli.ToString();
 
                             PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
                             contadorPosicionPublicaciones++;
