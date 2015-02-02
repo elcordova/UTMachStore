@@ -189,12 +189,12 @@ DESCRIPTION: A premium business and portfolio theme.
 	
 /* Portfolio Styles */
 	
-	.portfolio_item						{width:223px; position:relative; margin:0 14px 28px 14px; padding:0;}
+	.portfolio_item						{width:300px; position:relative; margin:0 14px 28px 14px; padding:0;}
 	/*.portfolio_item img					{padding:5px; border: 1px solid #aaaaaa; width:209px; 
 -webkit-border-radius: 5px; -moz-border-radius: 5px; background:#f9f9f9; margin-bottom:0px;
     height: 300px;
 }*/
-    .portfolio_item 					{padding:5px; border: 1px solid #aaaaaa; width:209px; 
+    .portfolio_item 					{padding:5px; border: 1px solid #aaaaaa; width:300px; 
 -webkit-border-radius: 5px; -moz-border-radius: 5px; background:#f9f9f9; margin-bottom:0px;
     height: 300px;
 }
@@ -272,7 +272,7 @@ DESCRIPTION: A premium business and portfolio theme.
 
 .imgn
 {
-    margin-left:20%;
+    margin-left:40%;
     float:left;
 }
 .text1
