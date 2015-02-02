@@ -41,5 +41,9 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.TodasPublicaciones().ToList();
         }
+        public List<dataBase.datosPublicacionEditarResult> datosPublicacion(int codigoPublicacion)
+        {
+            return DB.datosPublicacionEditar(codigoPublicacion).ToList();
+        }
     }
 }
