@@ -4,7 +4,7 @@
         <br />
     <br />
     <br />
-    <br />
+    <br /> 
 
     <h1 class="centrado_titulo">Lista de deseos</h1>
     <div class="pr grid_12 clearfix">&nbsp;</div>
