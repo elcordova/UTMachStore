@@ -24,6 +24,13 @@ namespace Proyecto.LogicaDeNegocio
 
             DB.SubmitChanges();
         }
+
+        public void eliminarPublicacion(int codigoPublicacion)
+        {
+            DB.eliminarPublicacion(codigoPublicacion);
+
+            DB.SubmitChanges();
+        }
         public List<dataBase.ListaPublicacionesResult> ListaPublicaciones(int codigo)
         {
 
