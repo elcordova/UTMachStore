@@ -9,7 +9,7 @@
             <a href="publicar.aspx" class="button float right">Crear publicacion</a>
 		<div class="pr grid_12 clearfix">&nbsp;</div>
 		
-		<!-- Portfolio Items -->
+		<!-- Portfolioo Items -->
 		
 		<!-- Section 1 -->
 		
