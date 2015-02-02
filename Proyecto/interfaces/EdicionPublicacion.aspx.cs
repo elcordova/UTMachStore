@@ -15,7 +15,6 @@ namespace Proyecto.interfaces
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
-          //  TextBox1.Text = Session["CodigoPublicacionEdicion"].ToString();
         }
         Entidades.Ent_Publicaciones entidadPublicacion = new Entidades.Ent_Publicaciones();
         LogicaDeNegocio.LN_Publicacion ingresoPublicacion = new LogicaDeNegocio.LN_Publicacion();
@@ -24,7 +23,23 @@ namespace Proyecto.interfaces
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            entidadPublicacion.Codigo_Categoria = 1;
+            entidadPublicacion.Nombre_Publicacion = txtTituloPublicacion.Text;
+            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;
+            entidadPublicacion.Numero_ContactoPublicacion = txtNumeroContacto.Text;
+            entidadPublicacion.Precio_ProductoPublicacion = Convert.ToDecimal(txtPrecioProducto.Text);
+            entidadPublicacion.Stock_ProductoPublicacion = Convert.ToInt32(txtStockProductos.Text);
+            ingresoPublicacion.editarPublicacion(entidadPublicacion,Convert.ToInt32(Session["CodigoPublicacionEdicion"].ToString()));
 
+
+            txtTituloPublicacion.Text = "";
+            txtDatosPublicacion.Text = "";
+            txtNumeroContacto.Text = "";
+            txtPrecioProducto.Text = "";
+            txtStockProductos.Text = "";
+
+
+            Response.Redirect("/interfaces/MisPublicaciones.aspx");//
         }
     }
 }
