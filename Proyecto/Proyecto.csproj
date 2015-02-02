@@ -358,7 +358,6 @@
     <Content Include="interfaces\psd\Thumbs.db" />
     <Content Include="dataBase\Datos.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Datos.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Web.Debug.config">

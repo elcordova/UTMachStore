@@ -24,6 +24,8 @@ namespace Proyecto.interfaces
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
+           
+      
             fechaHoy = DateTime.Today;
         }
 
