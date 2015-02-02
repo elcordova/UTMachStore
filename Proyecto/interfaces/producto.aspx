@@ -25,7 +25,9 @@
     <!-- Column 1 / Project Information -->
     <div class="grid_4">
         <a class="meta" href="#">Características</a>
-        <h4 class="title">Computadora Intel Core i3</h4>
+        <%--<h4 class="title">Computadora Intel Core i3</h4>--%>
+        <h4 class="title"><asp:Label ID="Label1" runat="server" Text="ola"></asp:Label></h4>
+        
         <h4 class="title">&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; box-sizing: border-box; line-height: 1em; position: relative; top: -5px; color: rgb(153, 0, 0); font-family: Arial, Helvetica, 'Nimbus Sans L', sans-serif; font-size: 36px; font-style: normal; font-variant: normal; letter-spacing: -1px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 244, 244);">$510<sup style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: text-top; box-sizing: border-box; font-size: 0.5em; line-height: 1.5em;">00</sup></strong></h4>
         <div class="hr dotted clearfix">&nbsp;</div>
         <p class="MsoNormal">
@@ -103,6 +105,7 @@
         <script runat="server" language="C#">
             protected void Page_Load(object sender, EventArgs e)
             {
+            
                 int contadorComentario = 0;
                 int contadorPosicionComentario = 0;
                 Proyecto.LogicaDeNegocio.LNComentario lnComentario = new Proyecto.LogicaDeNegocio.LNComentario();
