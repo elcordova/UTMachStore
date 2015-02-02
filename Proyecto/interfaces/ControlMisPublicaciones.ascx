@@ -2,7 +2,7 @@
 <div class="pr grid_12 clearfix">&nbsp;</div>
 <h5>&nbsp;&nbsp;&nbsp;&nbsp;Vendo <asp:Label ID="Label1" runat="server" Text="zapatos converse totalmente nuevos"></asp:Label></h5>
  <br />
-    <asp:Button ID="Button2" class="button float right" runat="server" Text="Eliminar publicacion" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="Button2" class="button float right" runat="server" Text="Eliminar publicacion" OnClick="Button2_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Button1" class="button float right" runat="server" Text="Editar publicacion" OnClick="Button1_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <div class="publicacion">
