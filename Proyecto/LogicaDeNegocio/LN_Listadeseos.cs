@@ -12,7 +12,7 @@ namespace Proyecto.LogicaDeNegocio
         public void insertardeseo(Entidades.Ent_Listadeseos listadeseos)
         {
             
-       //     DB.cp_insertardeseooriginal(listadeseos.Codigo_usuario, listadeseos.Codigo_publicacion);
+            DB.cp_insertardeseooriginal(listadeseos.Codigo_usuario, listadeseos.Codigo_publicacion);
             DB.SubmitChanges();
         }
 
@@ -29,6 +29,16 @@ namespace Proyecto.LogicaDeNegocio
         {
           return DB.cp_listardeseosFiltro(val).ToList();
 
+        }
+
+        public List<dataBase.cp_ListarusuariofiltroResult> listarusuario(string val)
+        {
+            return DB.cp_Listarusuariofiltro(val).ToList();
+
+        }
+        public List<dataBase.extraerCodigoUsuarioResult> codigoUsuario(string nick)
+        {
+            return DB.extraerCodigoUsuario(nick).ToList();
         }
     }
 }
