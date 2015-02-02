@@ -29,8 +29,8 @@ namespace Proyecto.interfaces
 
         public void mostrardeseo()
         {
-            int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
-            tabladeseo.DataSource = ld.listardeseoFiltro(codigo);
+            //int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
+            //tabladeseo.DataSource = ld.listardeseoFiltro(codigo);
             
         }
 
