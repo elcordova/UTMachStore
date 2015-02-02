@@ -13,6 +13,7 @@ namespace Proyecto.interfaces
     {
         LN_Listadeseos ld = new LN_Listadeseos();
         Ent_Listadeseos eld = new Ent_Listadeseos();
+        LN_Usuario lnUsuario = new LN_Usuario();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,14 +22,15 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //int codigo = tabladeseo.CurrentRow.Cells["codigo_Lis_Des"].Value;
+            
             ld.eliminardeseo(2);
         }
 
 
         public void mostrardeseo()
         {
-            tabladeseo.DataSource = ld.listardeseoFiltro(Convert.ToInt16(Session["usuario"]));
+            //int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
+            //tabladeseo.DataSource = ld.listardeseoFiltro(codigo);
             
         }
 
