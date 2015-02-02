@@ -137,7 +137,7 @@
                         if (controlTipo == 3)
                         { controlTipo = 0;
 
-                        }
+                        }//
 
                         if (controlTipo == 2)
                         {
