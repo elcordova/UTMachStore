@@ -83,7 +83,7 @@ namespace Proyecto.interfaces
             Response.Redirect("/interfaces/MisPublicaciones.aspx");//
 
         }
-        //noooooooooooooooooooooooo borraras kerly q esto si vale
+        //noooooooooooooooooooooooo borraras kerly q esto si vale//////  :p  jajajjaaja att: kerly
         //
         private void guardarIdPublicacion()
         {
