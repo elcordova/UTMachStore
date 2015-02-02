@@ -24,7 +24,7 @@ namespace Proyecto.interfaces
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
-             fechaHoy = DateTime.Today;
+             fechaHoy = DateTime.Now;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace Proyecto.interfaces
                 ent_comentario.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
                 ent_comentario.Codigo_Publicacion = 5;
             ent_comentario.Comentario = txtComentario.Text;
-            ent_comentario.Fecha = fechaHoy.ToString("D");
+            ent_comentario.Fecha = fechaHoy.ToString();
                 lncomentario.insertarComentario(ent_comentario);
 
                
@@ -68,8 +68,7 @@ namespace Proyecto.interfaces
 
        }
 
-      
-
+     
        protected void Button2_Click(object sender, EventArgs e)
        {
            Session["codigo_publicacion"] = 5;
