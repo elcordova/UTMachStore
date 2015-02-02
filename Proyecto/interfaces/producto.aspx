@@ -109,7 +109,7 @@
                 ASP.interfaces_controlcomentarios_ascx[] Spinner1;
                 try
                 {
-                    var sql = from camp in lnComentario.listarComentario(5)
+                    var sql = from camp in lnComentario.listarComentario(int.Parse(Session["CodigoPublicacionVista"].ToString()))
                               select new { nick = camp.nick, comentario = camp.comentario, fecha = camp.fecha };
                     foreach (var extraer in sql)
                     {
@@ -117,7 +117,7 @@
                         contadorComentario++;
                     }
                     Spinner1 = new ASP.interfaces_controlcomentarios_ascx[contadorComentario];
-                    var sql1 = from camp in lnComentario.listarComentario(5)
+                    var sql1 = from camp in lnComentario.listarComentario(int.Parse(Session["CodigoPublicacionVista"].ToString()))
                                select new { nick = camp.nick, comentario = camp.comentario, fecha = camp.fecha };
                     foreach (var extraer in sql1)
                     {
@@ -128,7 +128,7 @@
 
                         Label fecha = new Label();
                         fecha = (Label)Spinner1[contadorPosicionComentario].Controls[3];
-                        fecha.Text = extraer.fecha.ToString("d");
+                        fecha.Text = extraer.fecha.ToString();
 
                         Label usuario = new Label();
                         usuario = (Label)Spinner1[contadorPosicionComentario].Controls[1];
@@ -177,7 +177,6 @@
 
     <br />
     <br />
-    <asp:Button ID="btnComentar0" runat="server" Text="Comentar" OnClick="Button2_Click" />
 
     <br />
     <br />

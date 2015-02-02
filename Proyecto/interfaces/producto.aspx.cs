@@ -24,7 +24,7 @@ namespace Proyecto.interfaces
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
-             fechaHoy = DateTime.Now;
+            fechaHoy = DateTime.Today;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -33,11 +33,11 @@ namespace Proyecto.interfaces
             {
                 ent_comentario.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
                 ent_comentario.Codigo_Publicacion = 5;
-            ent_comentario.Comentario = txtComentario.Text;
-            ent_comentario.Fecha = fechaHoy.ToString();
+                ent_comentario.Comentario = txtComentario.Text;
+                ent_comentario.Fecha = fechaHoy.ToString("D");
                 lncomentario.insertarComentario(ent_comentario);
 
-               
+
             }
             else
             {
@@ -50,30 +50,30 @@ namespace Proyecto.interfaces
 
         public void Button1_Click1(object sender, EventArgs e)
         {
-            ld.codigo_Usu = 10010;
-            ld.codigo_Pub = 5;
+            ld.codigo_Usu = int.Parse(Session["usuario"].ToString());
+            ld.codigo_Pub = int.Parse(Session["CodigoPublicacionVista"].ToString());
             lisdes.insertardeseo(ld);
-            
+
         }
 
-       //public int contar()
-       // {
-       //    dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
-       //     List<dataBase.cp_contarlistadeseosResult> li = DB.cp_contarlistadeseos().ToList();
-       //     int num = li.Count();
-       //     return num;
-       // }
-       public void obtenercodpubli()
-       {
+        //public int contar()
+        // {
+        //    dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
+        //     List<dataBase.cp_contarlistadeseosResult> li = DB.cp_contarlistadeseos().ToList();
+        //     int num = li.Count();
+        //     return num;
+        // }
+        public void obtenercodpubli()
+        {
 
-       }
+        }
 
-     
-       protected void Button2_Click(object sender, EventArgs e)
-       {
-           Session["codigo_publicacion"] = 5;
-           Response.Redirect("/interfaces/negociacion.aspx");
-           
-       }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["codigo_publicacion"] = 5;
+            Response.Redirect("/interfaces/negociacion.aspx");
+
+        }
     }
 }
