@@ -32,7 +32,7 @@ namespace Proyecto.interfaces
             if (txtComentario.Text != "")
             {
                 ent_comentario.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
-                ent_comentario.Codigo_Publicacion = 5;
+                ent_comentario.Codigo_Publicacion = int.Parse(Session["CodigoPublicacionVista"].ToString());
                 ent_comentario.Comentario = txtComentario.Text;
                 ent_comentario.Fecha = fechaHoy.ToString("D");
                 lncomentario.insertarComentario(ent_comentario);
