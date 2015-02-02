@@ -442,6 +442,13 @@ namespace Proyecto.dataBase
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<TodasPublicacionesResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editarPublicacion")]
+		public int editarPublicacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string datos_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string numero_contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stock_produc)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPublicacion, codigo_categoria, nombre_publicacion, datos_publicacion, numero_contacto, precio, stock_produc);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categorias")]

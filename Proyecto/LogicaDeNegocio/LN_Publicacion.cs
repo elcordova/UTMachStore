@@ -17,6 +17,13 @@ namespace Proyecto.LogicaDeNegocio
          
             DB.SubmitChanges();
         }
+        public void editarUsuario(Entidades.Ent_Publicaciones publicacion, int codigoPublicacion)
+        {
+            DB.editarPublicacion(codigoPublicacion, publicacion.Codigo_Categoria, publicacion.Nombre_Publicacion, publicacion.Datos_Publicacion,
+                publicacion.Numero_ContactoPublicacion, publicacion.Precio_ProductoPublicacion, publicacion.Stock_ProductoPublicacion);
+
+            DB.SubmitChanges();
+        }
         public List<dataBase.ListaPublicacionesResult> ListaPublicaciones(int codigo)
         {
 
