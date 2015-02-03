@@ -43,7 +43,7 @@ namespace Proyecto.interfaces
             entidadPublicacion.Numero_ContactoPublicacion = txtNumeroContacto.Text;
             entidadPublicacion.Precio_ProductoPublicacion = Convert.ToDecimal(txtPrecioProducto.Text);
             entidadPublicacion.Stock_ProductoPublicacion = Convert.ToInt32(txtStockProductos.Text);
-            ingresoPublicacion.editarPublicacion(entidadPublicacion,Convert.ToInt32(Session["CodigoPublicacionEdicion"].ToString()));
+            ingresoPublicacion.editarPublicaciones(entidadPublicacion,Convert.ToInt32(Session["CodigoPublicacionEdicion"].ToString()));
 
 
             txtTituloPublicacion.Text = "";
