@@ -20,10 +20,7 @@ namespace Proyecto.LogicaDeNegocio
                 }
 
         }
-
-
-
-
+        
         //clase  de Verification de Ingreso de valores numericos
         /**************************************************************/
         public void numeros(KeyPressEventArgs e)
@@ -36,6 +33,7 @@ namespace Proyecto.LogicaDeNegocio
                 }
 
         }
+
         //clase  de Verification de Ingreso de letras
         /**************************************************************/
         public void Letras(KeyPressEventArgs e)
