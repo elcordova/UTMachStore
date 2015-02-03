@@ -65,6 +65,7 @@
   <ItemGroup>
     <Content Include="interfaces\cerrarSesion.aspx" />
     <Content Include="interfaces\compra.aspx" />
+    <Content Include="interfaces\CondicionesDeUso.aspx" />
     <Content Include="interfaces\ControlComentarios.ascx" />
     <Content Include="interfaces\ControlMisPublicaciones.ascx" />
     <Content Include="interfaces\ControlMostrarPublicacion.ascx" />
@@ -190,6 +191,13 @@
     </Compile>
     <Compile Include="interfaces\compra.aspx.designer.cs">
       <DependentUpon>compra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\CondicionesDeUso.aspx.cs">
+      <DependentUpon>CondicionesDeUso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\CondicionesDeUso.aspx.designer.cs">
+      <DependentUpon>CondicionesDeUso.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\ControlComentarios.ascx.cs">
       <DependentUpon>ControlComentarios.ascx</DependentUpon>

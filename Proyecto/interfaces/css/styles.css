@@ -410,3 +410,9 @@ DESCRIPTION: A premium business and portfolio theme.
     margin-left:15%;
     border:1px solid;
 }
+/* para las condiciones de uso */
+.parrafoCondiciones
+{
+    margin-left:5%;
+    margin-right:5%;
+}
