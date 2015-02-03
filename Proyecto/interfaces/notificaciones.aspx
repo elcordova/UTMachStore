@@ -10,7 +10,7 @@
        <br />
 
    </div>
-    <%@ Reference Control="ControlMisPublicaciones.ascx" %>
+    <%@ Reference Control="ControlNotificacion.ascx" %>
     <script runat="server" language="C#">
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,43 +24,69 @@
             Proyecto.LogicaDeNegocio.LN_Notificacion lnNotificacion = new Proyecto.LogicaDeNegocio.LN_Notificacion();
             Proyecto.LogicaDeNegocio.LN_Usuario lnUsuario = new Proyecto.LogicaDeNegocio.LN_Usuario();
 
-            ASP.interfaces_notificaciones_aspx[] Spinner1;
+            ASP.interfaces_controlnotificacion_ascx[] Spinner1;
             try
             {
-                var sql = from camp in lnNotificacion.listarNotificacion(lnUsuario.idUsuario(Session["usuario"].ToString()))
-                          select new { idUsuario=camp.idusuario, nick=camp.nick,nombrePublicacio=camp.publicacion, comentario=camp.comentario, fecha=camp.fecha };
+                var sql = from camp in lnNotificacion.allNotificacion()
+                          where camp.codigo_Usu_Puc == lnUsuario.idUsuario(Session["usuario"].ToString())
+                          select new { idUsuario = camp.codigo_Usu };
                 foreach (var extraer in sql)
                 {
-                    extraer.nick.ToString();
+                    extraer.idUsuario.ToString();
                     contadorNotificaciones++;
                 }
-                Spinner1 = new ASP.interfaces_notificaciones_aspx[contadorNotificaciones];
-                var sql1 = from camp in lnNotificacion.listarNotificacion(lnUsuario.idUsuario(Session["usuario"].ToString()))
-                           select new { idUsuario = camp.idusuario, nick = camp.nick, nombrePublicacio = camp.publicacion, comentario = camp.comentario, fecha=camp.fecha };
+                Spinner1 = new ASP.interfaces_controlnotificacion_ascx[contadorNotificaciones];
+
+                var sql1 = from camp in lnNotificacion.allNotificacion()
+                           where camp.codigo_Usu_Puc == lnUsuario.idUsuario(Session["usuario"].ToString())
+                           select new { idUsuario = camp.codigo_Usu, idPublicacion = camp.codigo_Pub, MensajeComentario = camp.codigo_Com };
                 foreach (var extraer in sql1)
                 {
-                    Spinner1[contadorPosicionNotificacion] = (ASP.interfaces_notificaciones_aspx)LoadControl("ControlNotificacion.ascx");
-                    Label mensaje = new Label();
-                    mensaje = (Label)Spinner1[contadorPosicionNotificacion].Controls[5];
-                    mensaje.Text = extraer.comentario.ToString();
-
-                    Label fecha = new Label();
-                    fecha = (Label)Spinner1[contadorPosicionNotificacion].Controls[3];
-                    fecha.Text = extraer.fecha.ToString();
-
-                    Label usuario = new Label();
-                    usuario = (Label)Spinner1[contadorPosicionNotificacion].Controls[1];
-                    usuario.Text = extraer.nick.ToString();
-                    
-                    Label titulo = new Label();
-                    titulo = (Label)Spinner1[contadorPosicionNotificacion].Controls[6];
-                    titulo.Text = extraer.nick.ToString();
-
+                    Spinner1[contadorPosicionNotificacion] = (ASP.interfaces_controlnotificacion_ascx)LoadControl("ControlNotificacion.ascx");
+                    //obtener nick
+                    var nick = from camp in lnUsuario.allUsuario()
+                               where camp.codigo_Usu == extraer.idUsuario
+                               select new { NickUsuario = camp.nic_Usu };
+                    foreach (var extraerNik in nick)
+                    {
+                        Label usuario = new Label();
+                        usuario = (Label)Spinner1[contadorPosicionNotificacion].Controls[3];
+                        usuario.Text = extraerNik.NickUsuario.ToString();
+                    }
+                    //obtener publicacion
+                    var Titulopublicacion = from camp in lnComentario.allPublicaciones()
+                                            where camp.codigo_Pub == extraer.idPublicacion
+                                            select new { titulo = camp.nombre_Pub };
+                    foreach (var extraerTitulo in Titulopublicacion)
+                    {
+                        Label titulo = new Label();
+                        titulo = (Label)Spinner1[contadorPosicionNotificacion].Controls[3];
+                        titulo.Text = extraerTitulo.titulo.ToString();
+                    }
+                    //obtener fecha
+                    var Fechapublicacion = from camp in lnComentario.allPublicaciones()
+                                           where camp.codigo_Pub == extraer.idPublicacion
+                                           select new { fecha = camp.fecha_Pub };
+                    foreach (var extraerfecha in Fechapublicacion)
+                    {
+                        Label fecha = new Label();
+                        fecha = (Label)Spinner1[contadorPosicionNotificacion].Controls[5];
+                        fecha.Text = extraerfecha.fecha.ToString();
+                    }
+                    //obtener comentario
+                    var comentario = from camp in lnComentario.imagencomentatio()
+                                           where camp.codigo_Com == extraer.MensajeComentario
+                                           select new { mensaje = camp.contenido_Com };
+                    foreach (var extraermensaje in comentario)
+                    {
+                        Label mensaje = new Label();
+                        mensaje = (Label)Spinner1[contadorPosicionNotificacion].Controls[7];
+                        mensaje.Text = extraermensaje.mensaje.ToString();
+                    }
                     PlaceHolder1.Controls.Add(Spinner1[contadorPosicionNotificacion]);
                     contadorPosicionNotificacion++;
                 }
             }
-
             catch (Exception ex)
             {
 

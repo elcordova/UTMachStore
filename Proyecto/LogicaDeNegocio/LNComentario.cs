@@ -45,12 +45,30 @@ namespace Proyecto.LogicaDeNegocio
             return id;
         }
 
+        public List<dataBase.Publicaciones> allPublicaciones()
+        {
+            return DB.Publicaciones.ToList();
+        }
+        public int IDUsuarioPublicacion(int numeroPublicacion)
+        {
+            int id = 0;
+            var sqlid = from camp in allPublicaciones()
+                        where camp.codigo_Pub == numeroPublicacion
+                        select new { idusuario = camp.codigo_Usu };
+
+            foreach (var extraerid in sqlid)
+            {
+                id = (int)extraerid.idusuario;
+            }
+            return id;
+        }
+
         public String ContComentario(int codigo)
         {
             string pax = "";
 
             var sql = from lp in imagencomentatio()
-                      where lp.codigo_Pub ==(int)codigo
+                      where lp.codigo_Pub == (int)codigo
                       group lp by lp.codigo_Pub == (int)codigo into c
                       select new { j = c.Count(p => p.codigo_Pub == (int)codigo) };
 
