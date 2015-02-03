@@ -21,70 +21,40 @@
 				<h4 class="title ">Categorias</h4>
 				<div class="hr clearfix dotted">&nbsp;</div>
                 <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Teléfonos - Tables</h6>
+                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
+                        <asp:Button ID="Button1" runat="server" Text="Teléfonos - Tables" Width="183px" />
+                    </h6>
                 </a></li>
                 <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Computación - Electrónica</h6>
+                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
+                        <asp:Button ID="Button2" runat="server" Text="Computación - Electrónica" Width="180px" />
+                    </h6>
                 </a></li>
                 <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Casa - Muebles</h6>
+                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
+                        <asp:Button ID="Button3" runat="server" Text="Casa - Muebles" Width="179px" />
+                    </h6>
                 </a></li>
                 <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Moda - Belleza</h6>
+                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
+                        <asp:Button ID="Button4" runat="server" Text="Moda - Belleza" Width="178px" />
+                    </h6>
                 </a></li>
                 <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Vehículos</h6>
+                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
+                        <asp:Button ID="Button5" runat="server" Text="Vehículos" Width="177px" />
+                    </h6>
                 </a></li>
                 <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Animales</h6>
+                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
+                        <asp:Button ID="Button6" runat="server" Text="Animales" Width="175px" />
+                    </h6>
                 </a></li>
                 <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Arte - Deportes</h6>
+                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
+                        <asp:Button ID="Button7" runat="server" Text="Arte - Deportes" Width="174px" />
+                    </h6>
                 </a></li>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Propiedades</h6>
-                </a></li>    
-                <span class="meta">Ubicación- El Oro </span>&nbsp;<h4 class="title ">Ciudades</h4>
-				<div class="hr clearfix dotted">&nbsp;</div>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Machala</h6>
-                </a></li>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Santa Rosa </h6>
-                </a></li>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Pasaje</h6>
-                </a></li>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">El Guabo</h6>
-                </a></li>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Huaquillas</h6>
-                </a></li>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Arenillas</h6>
-                </a></li>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Atahualpa</h6>
-                </a></li>
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Chilla</h6>
-                </a></li>    
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Balsas</h6>
-                </a></li>    
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Las Lajas</h6>
-                </a></li>    
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Marcabelí</h6>
-                </a></li>  
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Portovelo</h6>
-                </a></li>  
-                <li><a href="#" class="current">
-                    <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">Zaruma</h6>
-                </a></li>  
 			</div>
                     <div>
                     <asp:PlaceHolder runat="server" ID="PlaceHolder1" />
