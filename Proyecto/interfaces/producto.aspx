@@ -40,41 +40,7 @@
             <o:p></o:p>
         </p>
       
-       <%-- <p class="MsoNormal">
-            Computador de escritorio ideal para cyber casa oficina<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Procesador intel core i3 3220 3.4 ghz cuarta generacion 1155<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Maimboard h61 chip intel soporta i3,i5,i7<span>&nbsp; </span>video integrado 256 mb ideal para juegos
-            <o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Disco duro de 750 gb sata expandible<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Puertos pci xpress3.0 para tarjetas de video ddr 5<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Memoria ddr3 4 gb kinstom expandible con<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Dvd writer 22 xl lg o samsung<span>&nbsp; </span>a su eleccion<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Lector de tarjetas sd 7-1 kinstom o niutek<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            7 puertos usb<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Monitor led de 20 lg<o:p></o:p>
-        </p>
-        <p class="MsoNormal">
-            Teclado mouse y parlantes<o:p></o:p>
-        </p>--%>
-        <div class="areglob">
+       <div class="areglob">
 
             <asp:Button CssClass="boton_color_s" ID="Button1" runat="server" Text="Agregar a la lista" OnClick="Button1_Click1" />
             <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" OnClick="Button2_Click1" />
@@ -91,11 +57,7 @@
             <li><span>Imagen 4</span> <asp:Image ID="Image4" runat="server" /></li>
             <li><span>Imagen 5</span> <asp:Image ID="Image5" runat="server" /></li>
 
-           <%-- <li><span>view 1</span>  <asp:Image ID="Image1" runat="server" /> <a href="#"><img alt="" src="images/computadora.jpg" /></a>  </li>
-            <li><span>view 2</span><a href="#"><img alt="" src="images/computadora1.jpg" /></a></li>
-            <li><span>view 3</span><a href="#"><img alt="" src="images/computadora2.jpg" /></a></li>
-            <li><span>view 4</span><a href="#"><img alt="" src="images/computadora3.jpg" /></a></li>
-            <li><span>view 5</span><a href="#"><img alt="" src="images/computadora4.jpg" /></a></li>--%>
+        
         </ul>
     </div>
 
@@ -141,7 +103,7 @@
                         char letra; // letra vale 'u' 
                         for (int i = 0; i < dato.Length; i++){
                             letra=dato[i];
-                            if (letra.ToString().Equals("-"))
+                            if (letra.ToString().Equals("-")) 
                             {
                                 Label3.Text = Label3.Text + "<html><br/> </html>" + letra.ToString();
                         //        Label3.Text = Label3.Text + letra.ToString();

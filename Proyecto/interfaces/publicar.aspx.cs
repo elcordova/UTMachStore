@@ -52,7 +52,7 @@ namespace Proyecto.interfaces
         }
         protected void Button2_Click(object sender, EventArgs e)
         {
-            entidadPublicacion.Codigo_Categoria = 1;
+            entidadPublicacion.Codigo_Categoria = cmbCategoria.SelectedIndex+1;
             string nickname = Session["usuario"].ToString();
             int codigoUsuraio = 0;
             var sql1 = from camp in ingresoPublicacion.codigoUsuario(nickname)

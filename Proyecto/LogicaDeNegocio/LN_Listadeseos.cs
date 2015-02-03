@@ -47,5 +47,10 @@ namespace Proyecto.LogicaDeNegocio
             int num = li.Count();
             return num;
         }
+
+        public List<dataBase.cp_obtenercodigodeseoResult> codigodeseo(int codu, int codp)
+        {
+            return DB.cp_obtenercodigodeseo(codu,codp).ToList();
+        }
     }
 }

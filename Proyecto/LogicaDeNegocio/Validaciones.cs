@@ -53,8 +53,10 @@ namespace Proyecto.LogicaDeNegocio
             if (e.KeyChar == 13)
                 txtcuadro.Focus();
         }
+
         public bool esCedulaValida(String cedula)
         {
+            
             //verifica que tenga 10 dígitos 
             if (!(cedula.Length == 10))
             {
@@ -93,9 +95,8 @@ namespace Proyecto.LogicaDeNegocio
             //Si es diez el décimo dígito es cero        
             d10 = (d10 == 10) ? 0 : d10;
             //si el décimo dígito calculado es igual al digitado la cédula es correcta
-            return d10 == d[9];
-        }
- 
-
+            MessageBox.Show("cedula no valida registrada " + d10);
+            return d10 == d[9];}
+            
     }
 }

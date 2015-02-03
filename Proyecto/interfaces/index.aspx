@@ -5,14 +5,13 @@
 	 <div class="clear"></div>
     <!-- Featured Image Slider -->
 		<div id="featured" class="clearfix grid_12">  
-        <h2 class="grid_12 caption clearfix"> 
+        <h2 class="parrafos-c caption clearfix"> 
         Bienvenido! Esto es <span>UTMACH STORE</span>, un sitio, donde podras 
         <u>Negociar</u> &amp; <u>Promocionar</u> los productos que desses.
         Aqui te ofrecemos la oprtunidad de dar a conocer tus productos o servicios mediante publicaciones  
         las cuales seran accedidas por muchos ususarios registradoos o no registrados que podran 
         negociar con tigo acorde a tus exigencias.
-        </h2> 
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />  
+        </h2>
 			<ul>  
 				<li>
 
@@ -24,7 +23,7 @@
 				<li>
 					<a href="productos.aspx">
 						<span>UTMACH STORE</span>
-						<img src="images/card2.jpg" alt="" />
+						<img src="images/card2.jpg" alt="" /> 
 					</a>	
 				</li>  
 				<li>
@@ -48,7 +47,7 @@
 			</ul> 
 		</div>
 		<div class="hr grid_12 clearfix">&nbsp;</div>
-           <h2 class="grid_12 caption clearfix">
+           <h2 class="parrafos-c caption clearfix">
                 Para conocer mas acerca de UTMACH STORE, sus politicas y condiciones puedes verlas en el siguiente enlace.
                 <a href="CondicionesDeUso.aspx"><u>Politicas y condiciones de uso</u></a>
            </h2> 
