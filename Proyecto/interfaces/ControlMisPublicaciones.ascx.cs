@@ -20,6 +20,7 @@ namespace Proyecto.interfaces
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session["CodigoPublicacionEdicion"] = Button1.ID.ToString();
+            Session["controlDatosEdicionPublicacion"] = "true";
             Response.Redirect("/interfaces/EdicionPublicacion.aspx");
             
         }

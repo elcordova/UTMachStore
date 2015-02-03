@@ -101,7 +101,7 @@
         <classShapeMoniker Id="9a70248b-a358-426f-9d68-679d5d4c5494" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.94314697265625); (3.29166666666667 : 7.94314697265625 : JumpStart); (3.45833333333333 : 7.94314697265625 : JumpEnd); (3.5 : 7.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 7.94314697265625); (3.5 : 7.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DatosDataContext/Usuario/Usuario_Lista_deseos" />
       <nodes>
         <classShapeMoniker Id="4a8b7f2c-36f4-4297-a395-3a0daf912bfe" />
@@ -122,7 +122,7 @@
         <classShapeMoniker Id="73582c42-abb4-43c2-b8b9-86c8f3e87cc1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (5.79166666666667 : 4.88544840494792 : JumpStart); (5.95833333333333 : 4.88544840494792 : JumpEnd); (6.25 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (6.25 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DatosDataContext/Comentarios/Comentarios_Notificaciones" />
       <nodes>
         <classShapeMoniker Id="7132fb00-1daf-4948-8f00-c32245332940" />
@@ -150,7 +150,7 @@
         <classShapeMoniker Id="9a70248b-a358-426f-9d68-679d5d4c5494" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 12.1708645098157); (6.0625 : 12.7333645098157); (6.0625 : 15.1642976888021); (6.25 : 15.1642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 12.1708645098157); (5.81607443490112 : 12.4869389447168 : JumpStart); (5.93392556509888 : 12.6047900749146 : JumpEnd); (6.0625 : 12.7333645098157); (6.0625 : 15.1642976888021); (6.25 : 15.1642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DatosDataContext/Publicaciones/Publicaciones_Fotos" />
       <nodes>
         <classShapeMoniker Id="fafb4302-9066-46ff-8920-0770009ef477" />
@@ -199,7 +199,7 @@
         <classShapeMoniker Id="d143d8d2-dac1-4dd7-8d2b-d99f781c4b49" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.83627529527244); (3.29166666666667 : 8.83627529527244 : JumpStart); (3.45833333333333 : 8.83627529527244 : JumpEnd); (4.4486878974359 : 8.83627529527244 : JumpStart); (4.61535456410256 : 8.83627529527244 : JumpEnd); (10.1666666666667 : 8.83627529527244 : JumpStart); (10.3333333333333 : 8.83627529527244 : JumpEnd); (12 : 8.83627529527244)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 8.83627529527244); (4.4486878974359 : 8.83627529527244 : JumpStart); (4.61535456410256 : 8.83627529527244 : JumpEnd); (12 : 8.83627529527244)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DatosDataContext/Usuario/Usuario_UsuarioNegociacion" />
       <nodes>
         <classShapeMoniker Id="4a8b7f2c-36f4-4297-a395-3a0daf912bfe" />
