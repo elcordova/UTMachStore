@@ -35,8 +35,8 @@ namespace Proyecto.interfaces
                 TextBox3.Text = (datosVent.ElementAt(0).datos_Pub.ToString() + " \n correo: " 
                     + datosVent.ElementAt(0).email_Usu +" \n la informacion completa de la negociacion sera enviada a su correo una vez realizada la negociacion");
                 TextBox2.Text = datosVent.ElementAt(0).stock_Pub + "";
-                if (TextBox2.Text.Trim() == "0" || 
-                    datosCom.ElementAt(0).codigo_Usu.Equals(datosCom.ElementAt(0).codigo_Usu))
+                if (datosVent.ElementAt(0).stock_Pub == 0 || 
+                    datosCom.ElementAt(0).nic_Usu.Equals(datosVent.ElementAt(0).nic_Usu))
                 {
                     Button1.Enabled = false;
                 }

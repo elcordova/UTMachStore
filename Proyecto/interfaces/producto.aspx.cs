@@ -54,27 +54,27 @@ namespace Proyecto.interfaces
         public void Button1_Click1(object sender, EventArgs e)
         {
             int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
-            int codpub=  Convert.ToInt16(Session["CodigoPublicacionVista"]);
-            int total=lisdes.contar(codigo, codpub);
-            if (total != 0)
-            {
-                Response.Write("<script language=javascript>alert('EL PRODUCTO YA ESTA EN SU LISTA DE DESEOS');</script>");
-            }
-            else
-            {
+            //int codpub=  Convert.ToInt16(Session["CodigoPublicacionVista"].ToString());
+            //int total=lisdes.contar(codigo, codpub);
+            //if (total != 0)
+            //{
+            //    Response.Write("<script language=javascript>alert('EL PRODUCTO YA ESTA EN SU LISTA DE DESEOS');</script>");
+            //}
+            //else
+            //{
            
                 ld.codigo_Usu = codigo;
                 ld.codigo_Pub = Convert.ToInt16(Session["CodigoPublicacionVista"]);
                 lisdes.insertardeseo(ld);
                 Response.Write("<script language=javascript>alert('EL PRODUCTO A SIDO AÑADIDO A SU LISTA DE DESEOS');</script>");
-            }
+            //}
         }
       
 
         protected void Button2_Click1(object sender, EventArgs e)
         {
-            Session["codigo_publicacion"] = 5;
+            Session["codigo_publicacion"] = Session["CodigoPublicacionVista"];
             Response.Redirect("/interfaces/negociacion.aspx");
-        }
+        }   
     }
 }

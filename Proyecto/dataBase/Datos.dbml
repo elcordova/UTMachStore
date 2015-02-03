@@ -203,13 +203,6 @@
       <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.buscarFormasEnvio" Method="buscarFormasEnvio">
-    <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="buscarFormasEnvioResult">
-      <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="nombre_FormEnvio" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.buscarFormasPago" Method="buscarFormasPago">
     <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="buscarFormasPagoResult">
@@ -487,10 +480,23 @@
   <Function Name="dbo.cp_listardeseosFiltro" Method="cp_listardeseosFiltro">
     <Parameter Name="valor" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="cp_listardeseosFiltroResult">
+      <Column Name="CODIGO" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="STOCK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="FECHA" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.buscarFormasEnvio" Method="buscarFormasEnvio">
+    <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="buscarFormasEnvioResult">
+      <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_FormEnvio" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ingresarFormaPago" Method="ingresarFormaPago">
+    <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoFormaPago" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
