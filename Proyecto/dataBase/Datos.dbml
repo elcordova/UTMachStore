@@ -487,6 +487,7 @@
   <Function Name="dbo.cp_listardeseosFiltro" Method="cp_listardeseosFiltro">
     <Parameter Name="valor" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="cp_listardeseosFiltroResult">
+      <Column Name="CODIGO" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="STOCK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
