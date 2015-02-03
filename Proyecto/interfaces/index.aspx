@@ -12,7 +12,7 @@
         las cuales seran accedidas por muchos ususarios registradoos o no registrados que podran 
         negociar con tigo acorde a tus exigencias.
         </h2> 
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> 
 			<ul> 
 				<li>
 
