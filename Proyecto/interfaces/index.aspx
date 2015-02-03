@@ -8,11 +8,11 @@
         <h2 class="grid_12 caption clearfix">
         Bienvenido! Esto es <span>UTMACH STORE</span>, un sitio, donde podras 
         <u>Negociar</u> &amp; <u>Promocionar</u> los productos que desses.
-        Aqui te ofrecemos la oprtunidad de dar a conocer tus productos o servicios mediante publicaciones 
+        Aqui te ofrecemos la oprtunidad de dar a conocer tus productos o servicios mediante publicaciones  
         las cuales seran accedidas por muchos ususarios registradoos o no registrados que podran 
         negociar con tigo acorde a tus exigencias.
         </h2> 
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> 
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />  
 			<ul> 
 				<li>
 
@@ -48,7 +48,12 @@
 			</ul> 
 		</div>
 		<div class="hr grid_12 clearfix">&nbsp;</div>
-        
+           <h2 class="grid_12 caption clearfix">
+                Para conocer mas acerca de UTMACH STORE, sus politicas y condiciones puedes verlas en el siguiente enlace.
+                <a href="CondicionesDeUso.aspx"><u>Politicas y condiciones de uso</u></a>
+           </h2> 
+            
+        <div class="hr grid_12 clearfix">&nbsp;</div>
 </asp:Content>
 
 <%--<asp:Content ID="Content1" ContentPlaceHolderID="ContentNick" runat="server">

@@ -19,18 +19,11 @@ namespace Proyecto.interfaces
         Entidades.Ent_Notificacion ent_notificacion = new Entidades.Ent_Notificacion();
         LogicaDeNegocio.LNComentario lncomentario = new LogicaDeNegocio.LNComentario();
         LogicaDeNegocio.LN_Notificacion lnNotificacion = new LogicaDeNegocio.LN_Notificacion();
-
-
+        
         public DateTime fechaHoy;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("/interfaces/restriccion.aspx");
-            }
            
-      
-            fechaHoy = DateTime.Today;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
