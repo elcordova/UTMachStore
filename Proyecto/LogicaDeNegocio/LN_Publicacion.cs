@@ -17,9 +17,9 @@ namespace Proyecto.LogicaDeNegocio
          
             DB.SubmitChanges();
         }
-        public void editarPublicacion(Entidades.Ent_Publicaciones publicacion, int codigoPublicacion)
+        public void editarPublicaciones(Entidades.Ent_Publicaciones publicacion, int codigoPublicacion)
         {
-            DB.editarPublicacion(codigoPublicacion, publicacion.Codigo_Categoria, publicacion.Nombre_Publicacion, publicacion.Datos_Publicacion,
+            DB.editarPublicaciones(codigoPublicacion, publicacion.Codigo_Categoria, publicacion.Nombre_Publicacion, publicacion.Datos_Publicacion,
                 publicacion.Numero_ContactoPublicacion, publicacion.Precio_ProductoPublicacion, publicacion.Stock_ProductoPublicacion);
 
             DB.SubmitChanges();
@@ -51,6 +51,10 @@ namespace Proyecto.LogicaDeNegocio
         public List<dataBase.datosPublicacionEditarResult> datosPublicacion(int codigoPublicacion)
         {
             return DB.datosPublicacionEditar(codigoPublicacion).ToList();
+        }
+        public List<dataBase.ListaFotosPublicacionResult>fotosPublicacion(int codigoPublicacion)
+        {
+            return DB.ListaFotosPublicacion(codigoPublicacion).ToList();
         }
     }
 }

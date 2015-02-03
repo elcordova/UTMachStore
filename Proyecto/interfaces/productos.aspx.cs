@@ -26,7 +26,7 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click()
         {
-            Session["codigo_publicacion"] = 5;
+            Session["codigo_publicacion"] = 10026;
             Response.Redirect("/interfaces/producto.aspx");
         }
 

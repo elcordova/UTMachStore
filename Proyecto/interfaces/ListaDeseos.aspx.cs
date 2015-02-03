@@ -27,6 +27,7 @@ namespace Proyecto.interfaces
         protected void Button1_Click(object sender, EventArgs e)
         {
             
+            
             ld.eliminardeseo(2);
         }
 
@@ -35,6 +36,7 @@ namespace Proyecto.interfaces
         {
             int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
             tabladeseo.DataSource = ld.listardeseoFiltro(codigo);
+            tabladeseo.DataBind();
             
         }
 
