@@ -394,13 +394,6 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<datosPublicacionEditarResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editarPublicaciones")]
-		public int editarPublicaciones([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string datos_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string numero_contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stock_produc)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPublicacion, codigo_categoria, nombre_publicacion, datos_publicacion, numero_contacto, precio, stock_produc);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminarPublicacion")]
 		public int eliminarPublicacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> valor)
 		{
@@ -518,6 +511,14 @@ namespace Proyecto.dataBase
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPublicacion, codigoFormaPago);
 			return ((int)(result.ReturnValue));
+		}
+	}
+	
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_obtenercodigodeseo")]
+		public ISingleResult<cp_obtenercodigodeseoResult> cp_obtenercodigodeseo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigousu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigopub)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigousu, codigopub);
+			return ((ISingleResult<cp_obtenercodigodeseoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -5840,76 +5841,6 @@ namespace Proyecto.dataBase
 				if ((this._FECHA != value))
 				{
 					this._FECHA = value;
-				}
-			}
-		}
-	}
-	
-	public partial class buscarFormasEnvioResult
-	{
-		
-		private string _codigo_FormEnvio;
-		
-		private string _nombre_FormEnvio;
-		
-		public buscarFormasEnvioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_FormEnvio", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string codigo_FormEnvio
-		{
-			get
-			{
-				return this._codigo_FormEnvio;
-			}
-			set
-			{
-				if ((this._codigo_FormEnvio != value))
-				{
-					this._codigo_FormEnvio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_FormEnvio", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string nombre_FormEnvio
-		{
-			get
-			{
-				return this._nombre_FormEnvio;
-			}
-			set
-			{
-				if ((this._nombre_FormEnvio != value))
-				{
-					this._nombre_FormEnvio = value;
-				}
-			}
-		}
-	}
-	
-	public partial class cp_obtenercodigodeseoResult
-	{
-		
-		private long _codigo_Lis_Des;
-		
-		public cp_obtenercodigodeseoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Lis_Des", DbType="BigInt NOT NULL")]
-		public long codigo_Lis_Des
-		{
-			get
-			{
-				return this._codigo_Lis_Des;
-			}
-			set
-			{
-				if ((this._codigo_Lis_Des != value))
-				{
-					this._codigo_Lis_Des = value;
 				}
 			}
 		}
