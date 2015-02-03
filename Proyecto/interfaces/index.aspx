@@ -5,7 +5,7 @@
 	 <div class="clear"></div>
     <!-- Featured Image Slider -->
 		<div id="featured" class="clearfix grid_12">
-        <h2 class="grid_12 caption clearfix">
+        <h2 class="grid_12 caption clearfix"> 
         Bienvenido! Esto es <span>UTMACH STORE</span>, un sitio, donde podras 
         <u>Negociar</u> &amp; <u>Promocionar</u> los productos que desses.
         Aqui te ofrecemos la oprtunidad de dar a conocer tus productos o servicios mediante publicaciones  
