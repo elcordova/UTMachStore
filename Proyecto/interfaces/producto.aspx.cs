@@ -73,8 +73,8 @@ namespace Proyecto.interfaces
 
         protected void Button2_Click1(object sender, EventArgs e)
         {
-            Session["codigo_publicacion"] = 5;
+            Session["codigo_publicacion"] = Session["CodigoPublicacionVista"];
             Response.Redirect("/interfaces/negociacion.aspx");
-        }
+        }   
     }
 }
