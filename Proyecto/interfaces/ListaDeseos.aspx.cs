@@ -16,7 +16,7 @@ namespace Proyecto.interfaces
         Ent_Listadeseos eld = new Ent_Listadeseos();
         LN_Usuario lnUsuario = new LN_Usuario();
         int coddes;
-        //int valor;
+        int valor;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["usuario"] == null)
@@ -37,7 +37,7 @@ namespace Proyecto.interfaces
         protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
-             valor= Convert.ToInt32(tabladeseo.Rows[index].Cells[0].Text);
+            // valor= Convert.ToInt32(tabladeseo.Rows[index].Cells[0].Text);
            
         }
 
@@ -53,8 +53,8 @@ namespace Proyecto.interfaces
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            GridViewRow row = tabladeseo.SelectedRow;
-            int valor = Convert.ToInt32(row.Cells[1].Text);
+           // GridViewRow row = tabladeseo.SelectedRow;
+          //  int valor = Convert.ToInt32(row.Cells[1].Text);
             Session["CodigoPublicacionVista"] = valor;
             Response.Redirect("/interfaces/producto.aspx");
         }
