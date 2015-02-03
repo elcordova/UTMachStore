@@ -7,8 +7,8 @@ namespace Proyecto.Entidades
 {
     public class Ent_Notificacion
     {
-        private int cod_Plubicacion;
-        private string ruta;
+      private int cod_Plubicacion;
+        private int codigo_Usu_Pub;
         private int cod_usuario;
         private int cod_comentario;
 
@@ -16,15 +16,15 @@ namespace Proyecto.Entidades
         public Ent_Notificacion() 
         {
             cod_Plubicacion = 0;
-            ruta = "";
+            codigo_Usu_Pub = 0;
             cod_usuario =0;
             cod_comentario = 0;
         }
 
-        public Ent_Notificacion(int codigoPublicacion, string rutaPublic, int codigoUsuario, int codigoComentario)
+        public Ent_Notificacion(int codigoPublicacion, int codigousupub, int codigoUsuario, int codigoComentario)
         {
             cod_Plubicacion = codigoPublicacion;
-            ruta = rutaPublic;
+            codigo_Usu_Pub = codigousupub;
             cod_usuario = codigoUsuario;
             cod_comentario = codigoComentario;
         }
@@ -35,10 +35,10 @@ namespace Proyecto.Entidades
             set { cod_Plubicacion = value; }
         }
 
-        public string Ruta_Publicacion
+        public int Codigo_Usu_Pub
         {
-            get { return ruta; }
-            set { ruta = value; }
+            get { return codigo_Usu_Pub; }
+            set { codigo_Usu_Pub = value; }
         }
         public int Codigo_Usuario
         {

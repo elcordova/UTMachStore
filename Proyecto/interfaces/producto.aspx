@@ -103,7 +103,7 @@
                         char letra; // letra vale 'u' 
                         for (int i = 0; i < dato.Length; i++){
                             letra=dato[i];
-                            if (letra.ToString().Equals("-"))
+                            if (letra.ToString().Equals("-")) 
                             {
                                 Label3.Text = Label3.Text + "<html><br/> </html>" + letra.ToString();
                         //        Label3.Text = Label3.Text + letra.ToString();
