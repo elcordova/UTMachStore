@@ -170,11 +170,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Datos.dbml</DependentUpon>
     </Compile>
-    <Compile Include="dataBase\Datos1.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Datos.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Entidades\Ent_Comentario.cs" />
     <Compile Include="Entidades\Ent_Fotos.cs" />
     <Compile Include="Entidades\Ent_Listadeseos.cs" />
@@ -371,8 +366,8 @@
     <Content Include="interfaces\psd\Thumbs.db" />
     <Content Include="dataBase\Datos.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Datos.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-      <LastGenOutput>Datos1.designer.cs</LastGenOutput>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
