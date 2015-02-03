@@ -4,7 +4,7 @@
     <div class="hr grid_12">&nbsp;</div>
 	 <div class="clear"></div>
     <!-- Featured Image Slider -->
-		<div id="featured" class="clearfix grid_12">
+		<div id="featured" class="clearfix grid_12"> 
         <h2 class="grid_12 caption clearfix"> 
         Bienvenido! Esto es <span>UTMACH STORE</span>, un sitio, donde podras 
         <u>Negociar</u> &amp; <u>Promocionar</u> los productos que desses.
