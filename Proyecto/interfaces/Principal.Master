@@ -66,7 +66,7 @@
                     <li align="left" id="li01"><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
                     <li align="left" id="li02"><a href="Registro.aspx"><span class="meta">Registrate¡</span><br />Registro</a></li>
                     <li align="left" ><a href="productos.aspx"><span class="meta">Productos</span><br />Publicaciones</a></li>
-                    <li align="left" ><a href=""><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
+                    <li align="left" ><a href="QuienesSomos.aspx"><span class="meta">Quienes somos?</span><br />Acerca de</a></li>
                     <li align="left"><a href="index.aspx"><span class="meta">Pagina inicial</span><br />Inicio</a></li>
                 </ul>
 
@@ -102,6 +102,8 @@
             <asp:ContentPlaceHolder ID="editarPublicaciones" runat="server"> 
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="condiciones_de_uso" runat="server"> 
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="quienes_somos" runat="server"> 
             </asp:ContentPlaceHolder>
         </div>
         <div id="pie">

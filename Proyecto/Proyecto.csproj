@@ -157,6 +157,7 @@
     <Content Include="interfaces\producto.aspx" />
     <Content Include="interfaces\productos.aspx" />
     <Content Include="interfaces\publicar.aspx" />
+    <Content Include="interfaces\QuienesSomos.aspx" />
     <Content Include="interfaces\Registro.aspx" />
     <Content Include="interfaces\restriccion.aspx" />
     <Content Include="interfaces\userCompraVenta.aspx" />
@@ -317,6 +318,13 @@
     </Compile>
     <Compile Include="interfaces\publicar.aspx.designer.cs">
       <DependentUpon>publicar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\QuienesSomos.aspx.cs">
+      <DependentUpon>QuienesSomos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\QuienesSomos.aspx.designer.cs">
+      <DependentUpon>QuienesSomos.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>

@@ -411,8 +411,20 @@ DESCRIPTION: A premium business and portfolio theme.
     border:1px solid;
 }
 /* para las condiciones de uso */
+h2.caption_editado{
+    color:#000;
+    text-shadow:1px 1px 1px #cfcfcf;
+    font-size:23px;
+    line-height:30px;
+    font-weight:normal;
+    margin-left:35%;
+}
 .parrafoCondiciones
 {
-    margin-left:5%;
-    margin-right:5%;
+    color:#191919;
+    margin-left:15%;
+    margin-right:15%;
+    text-shadow:1px 1px 1px #cfcfcf;
+    font-size:15px;
+    text-align:justify;
 }
