@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto.interfaces
 {
-    public partial class ControlMostrarPublicacion : System.Web.UI.UserControl
+    public partial class ControlMostrarPublicacion1 : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,6 +19,5 @@ namespace Proyecto.interfaces
             Session["CodigoPublicacionVista"] = ImageButton1.ID.ToString();
             Response.Redirect("/interfaces/producto.aspx");
         }
-
     }
 }

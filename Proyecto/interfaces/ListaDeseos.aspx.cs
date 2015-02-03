@@ -12,14 +12,32 @@ namespace Proyecto.interfaces
     public partial class ListaDeseos : System.Web.UI.Page
     {
         LN_Listadeseos ld = new LN_Listadeseos();
+        Ent_Listadeseos eld = new Ent_Listadeseos();
+        LN_Usuario lnUsuario = new LN_Usuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ld.eliminardeseo(2);
+            mostrardeseo();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            
+            ld.eliminardeseo(2);
+        }
+
+
+        public void mostrardeseo()
+        {
+            int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
+            tabladeseo.DataSource = ld.listardeseoFiltro(codigo);
+            
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
 
         }
+
     }
 }

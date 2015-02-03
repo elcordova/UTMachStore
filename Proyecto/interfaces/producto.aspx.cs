@@ -24,7 +24,9 @@ namespace Proyecto.interfaces
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
-             fechaHoy = DateTime.Now;
+           
+      
+            fechaHoy = DateTime.Today;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -32,12 +34,12 @@ namespace Proyecto.interfaces
             if (txtComentario.Text != "")
             {
                 ent_comentario.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
-                ent_comentario.Codigo_Publicacion = 5;
-            ent_comentario.Comentario = txtComentario.Text;
-            ent_comentario.Fecha = fechaHoy.ToString();
+                ent_comentario.Codigo_Publicacion = int.Parse(Session["CodigoPublicacionVista"].ToString());
+                ent_comentario.Comentario = txtComentario.Text;
+                ent_comentario.Fecha = fechaHoy.ToString("D");
                 lncomentario.insertarComentario(ent_comentario);
 
-               
+
             }
             else
             {
@@ -50,31 +52,29 @@ namespace Proyecto.interfaces
 
         public void Button1_Click1(object sender, EventArgs e)
         {
-            ld.codigo_Usu = 10010;
-            ld.codigo_Pub = 5;
-            lisdes.insertardeseo(ld);
-            
+            int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
+            int codpub=  Convert.ToInt16(Session["CodigoPublicacionVista"]);
+            int total=lisdes.contar(codigo, codpub);
+            if (total == 0)
+            {
+
+                ld.codigo_Usu = codigo;
+                ld.codigo_Pub = Convert.ToInt16(Session["CodigoPublicacionVista"]);
+                lisdes.insertardeseo(ld);
+                Response.Write("<script language=javascript>alert('EL PRODUCTO A SIDO AÑADIDO A SU LISTA DE DESEOS');</script>");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>alert('EL PRODUCTO YA ESTA EN SU LISTA DE DESEOS');</script>");
+            }
         }
+      
 
-       //public int contar()
-       // {
-       //    dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
-       //     List<dataBase.cp_contarlistadeseosResult> li = DB.cp_contarlistadeseos().ToList();
-       //     int num = li.Count();
-       //     return num;
-       // }
-       public void obtenercodpubli()
-       {
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["codigo_publicacion"] = 5;
+            Response.Redirect("/interfaces/negociacion.aspx");
 
-       }
-
-       protected void Button2_Click(object sender, EventArgs e)
-       {
-           btnComentar0.Text = fechaHoy.ToString("d");
-           Session["codigo_publicacion"] = 5;
-           Response.Redirect("/interfaces/negociacion.aspx");
-       }
-
-       
+        }
     }
 }

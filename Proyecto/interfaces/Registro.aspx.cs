@@ -4,13 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Proyecto.interfaces
 {
     public partial class Registro : System.Web.UI.Page
     {
+
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
+        LogicaDeNegocio.Validaciones validar = new LogicaDeNegocio.Validaciones();
         LogicaDeNegocio.EncriptacionDeDatos seguridad = new LogicaDeNegocio.EncriptacionDeDatos();
         List<dataBase.buscarNicknameResult> datosUsuarioNick = new List<dataBase.buscarNicknameResult>();
         List<dataBase.buscarCedulaResult> datosUsuarioCedula = new List<dataBase.buscarCedulaResult>();
@@ -177,8 +180,20 @@ namespace Proyecto.interfaces
 
         }
 
+        protected void TextBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Letras(e);
+            
+        }
+
+        protected void TextBoxCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.numeros(e);
+            validar.esCedulaValida(TextBoxCedula.Text);
+        }
 
 
+       
 
 
     }

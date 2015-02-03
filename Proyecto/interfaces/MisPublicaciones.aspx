@@ -6,10 +6,10 @@
     <br />
     <br />
     <br />
-<%--    <ol class="commentlist">--%>
+    <ol class="commentlist">
     <h1 class="centrado_titulo">Mis publicaciones</h1>
      <div>
-            <asp:PlaceHolder runat=server ID="PlaceHolder1" />
+            <asp:PlaceHolder runat="server" ID="PlaceHolder1" />
             <br />
       
             </div>
@@ -62,7 +62,19 @@
                         Label datosPubliacion = new Label();
                         datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[11];
                         datosPubliacion.Text = extraer.dat_piblicacion.ToString();
-
+                        String ruta = "";
+                        var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
+                                   select new { rutaImagen= camp.ruta_Fot };
+                        foreach (var extraerRuta in sql5)
+                        {
+                            ruta= extraerRuta.rutaImagen.ToString();
+                         
+                        }
+                        
+                        Image imagen = new Image();
+                        imagen = (Image)Spinner1[contadorPosicionPublicaciones].Controls[7];
+                        imagen.ImageUrl = ruta;
+                        
                         Button editarPubli = new Button();
                         editarPubli = (Button)Spinner1[contadorPosicionPublicaciones].Controls[5];
                         editarPubli.ID = extraer.codigPubli.ToString();
@@ -83,7 +95,7 @@
             }
             </script>
 
-  <%-- </ol>--%>
+   </ol>
     
 
     <br />

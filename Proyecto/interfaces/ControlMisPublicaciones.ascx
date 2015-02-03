@@ -2,13 +2,13 @@
 <div class="pr grid_12 clearfix">&nbsp;</div>
 <h5>&nbsp;&nbsp;&nbsp;&nbsp;Vendo <asp:Label ID="Label1" runat="server" Text="zapatos converse totalmente nuevos"></asp:Label></h5>
  <br />
-    <asp:Button ID="Button2" class="button float right" runat="server" Text="Eliminar publicacion" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="Button2" class="button float right" runat="server" Text="Eliminar publicacion" OnClick="Button2_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Button1" class="button float right" runat="server" Text="Editar publicacion" OnClick="Button1_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <div class="publicacion">
         
         <a class="etiq" href="#">
-           &nbsp;&nbsp;&nbsp;&nbsp; <asp:Image ID="Image1" runat="server" class="imgpeq" ImageUrl="images/converse.jpg" />
+           &nbsp;&nbsp;&nbsp;&nbsp; <asp:Image ID="Image1" runat="server" Width="180"  class="imgpeq" ImageUrl="images/converse.jpg" />
 
             <br />
             <h4 class="title">&nbsp;

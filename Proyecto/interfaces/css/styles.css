@@ -189,13 +189,19 @@ DESCRIPTION: A premium business and portfolio theme.
 	
 /* Portfolio Styles */
 	
-	.portfolio_item						{width:223px; position:relative; margin:0 14px 28px 14px; padding:0;}
-	.portfolio_item img					{padding:5px; border: 1px solid #aaaaaa; width:209px; 
+	.portfolio_item						{width:300px; position:relative; margin:0 14px 28px 14px; padding:0;}
+	/*.portfolio_item img					{padding:5px; border: 1px solid #aaaaaa; width:209px; 
+-webkit-border-radius: 5px; -moz-border-radius: 5px; background:#f9f9f9; margin-bottom:0px;
+    height: 300px;
+}*/
+    .portfolio_item 					{padding:5px; border: 1px solid #aaaaaa; width:300px; 
 -webkit-border-radius: 5px; -moz-border-radius: 5px; background:#f9f9f9; margin-bottom:0px;
     height: 300px;
 }
 	.portfolio_item span				{display:none;}
-	.portfolio_item:hover img			{-webkit-box-shadow:0px 0px 20px #787878; -moz-box-shadow:0px 0px 20px #787878; background:#f9f9f9;}
+    .portfolio_item:hover 			{-webkit-box-shadow:0px 0px 20px #787878; -moz-box-shadow:0px 0px 20px #787878; background:#f9f9f9;}
+	
+	/*.portfolio_item:hover img			{-webkit-box-shadow:0px 0px 20px #787878; -moz-box-shadow:0px 0px 20px #787878; background:#f9f9f9;}*/
 	.portfolio_item:hover span			{display:inline; position:absolute; bottom:6px; right:6px; padding:10px 15px; background:#f9f9f9; color:#000000; z-index:999; border-left:1px solid #aaaaaa; border-top:1px solid #aaaaaa; -webkit-border-top-left-radius: 5px; -moz-border-radius-topLeft: 5px;}
 	
 /* Blog Post Styles */
@@ -266,7 +272,7 @@ DESCRIPTION: A premium business and portfolio theme.
 
 .imgn
 {
-    margin-left:20%;
+    margin-left:40%;
     float:left;
 }
 .text1
@@ -376,8 +382,8 @@ DESCRIPTION: A premium business and portfolio theme.
     margin-left:5%;
 }
 .boton2_centrar {
-    margin-left:30%;
-    margin-bottom:15%;
+    margin-left:43%;
+    margin-bottom:3%;
     min-height:25px;
 }
 
@@ -390,9 +396,17 @@ DESCRIPTION: A premium business and portfolio theme.
     color:white;
     background:#000000;
     border-radius:3px 3px 3px 3px;
-    border:1px #000000 ;
-    height:20px;
-}
+    border:1px #000000;
+    }
 .areglob {
     margin-left:20%;
+}
+.img_deseos 
+{
+    margin-left:40%;
+    min-height:25px;
+}
+.tabla {
+    margin-left:15%;
+    border:1px solid;
 }

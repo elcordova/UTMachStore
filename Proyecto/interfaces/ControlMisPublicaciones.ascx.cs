@@ -23,5 +23,13 @@ namespace Proyecto.interfaces
             Response.Redirect("/interfaces/EdicionPublicacion.aspx");
             
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            LogicaDeNegocio.LN_Publicacion ingresoPublicacion = new LogicaDeNegocio.LN_Publicacion();
+            ingresoPublicacion.eliminarPublicacion(Convert.ToInt32(Button1.ID.ToString()));
+            
+            Response.Redirect("/interfaces/MisPublicaciones.aspx");
+        }
     }
 }

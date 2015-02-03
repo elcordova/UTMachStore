@@ -68,6 +68,9 @@
     <Content Include="interfaces\ControlComentarios.ascx" />
     <Content Include="interfaces\ControlMisPublicaciones.ascx" />
     <Content Include="interfaces\ControlMostrarPublicacion.ascx" />
+    <Content Include="interfaces\ControlMostrarPublicacion1.ascx" />
+    <Content Include="interfaces\ControlMostrarPublicacion2.ascx" />
+    <Content Include="interfaces\ControlNotificacion.ascx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
@@ -155,6 +158,7 @@
     <Content Include="interfaces\publicar.aspx" />
     <Content Include="interfaces\Registro.aspx" />
     <Content Include="interfaces\restriccion.aspx" />
+    <Content Include="interfaces\userCompraVenta.aspx" />
     <Content Include="interfaces\usuario.aspx" />
     <Content Include="interfaces\verificarCuenta.aspx" />
     <Content Include="procesos almacenados MIguelKerly\ProcesosAlmacenadosMiguelKerly.txt" />
@@ -207,6 +211,27 @@
     </Compile>
     <Compile Include="interfaces\ControlMostrarPublicacion.ascx.designer.cs">
       <DependentUpon>ControlMostrarPublicacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion1.ascx.cs">
+      <DependentUpon>ControlMostrarPublicacion1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion1.ascx.designer.cs">
+      <DependentUpon>ControlMostrarPublicacion1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion2.ascx.cs">
+      <DependentUpon>ControlMostrarPublicacion2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ControlMostrarPublicacion2.ascx.designer.cs">
+      <DependentUpon>ControlMostrarPublicacion2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\ControlNotificacion.ascx.cs">
+      <DependentUpon>ControlNotificacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ControlNotificacion.ascx.designer.cs">
+      <DependentUpon>ControlNotificacion.ascx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
       <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
@@ -298,6 +323,13 @@
     </Compile>
     <Compile Include="interfaces\restriccion.aspx.designer.cs">
       <DependentUpon>restriccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\userCompraVenta.aspx.cs">
+      <DependentUpon>userCompraVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\userCompraVenta.aspx.designer.cs">
+      <DependentUpon>userCompraVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\usuario.aspx.cs">
       <DependentUpon>usuario.aspx</DependentUpon>

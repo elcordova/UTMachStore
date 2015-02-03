@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Windows.Forms;
+using Proyecto.LogicaDeNegocio;
 
 namespace Proyecto.interfaces
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        Validaciones validar = new Validaciones();
         public DateTime fechaHoy;
         protected void Page_Load2(object sender, EventArgs e)
         {
@@ -80,17 +83,18 @@ namespace Proyecto.interfaces
             Response.Redirect("/interfaces/MisPublicaciones.aspx");//
 
         }
-        //noooooooooooooooooooooooo borraras kerly q esto si vale
+        //noooooooooooooooooooooooo borraras kerly q esto si vale//////  :p  jajajjaaja att: kerly
         //
         private void guardarIdPublicacion()
         {
             var sql = from camp in lnfoto.listarFotos()
-                      select new { nombre = camp.nombre, ruta = camp.ruta };
+                      select new {codigo=camp.Codigo, nombre = camp.nombre, ruta = camp.ruta };
             foreach (var extraer in sql)
             {
+                entfoto.Codigo_Publicacion=numeropublicacion();
                 entfoto.Nombre_Foto = extraer.nombre;
                 entfoto.Ruta_Foto = extraer.ruta;
-                lnfoto.ActualizarFoto(entfoto, numeropublicacion());
+                lnfoto.ActualizarFoto(entfoto,(int)extraer.codigo );
 
             }
         }
@@ -176,6 +180,11 @@ namespace Proyecto.interfaces
             catch (Exception)
             {
             }
+        }
+
+        protected void txtNumeroContacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.numeros(e);
         }
 
     }

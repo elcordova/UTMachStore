@@ -151,6 +151,11 @@ namespace Proyecto.interfaces
             Response.Redirect("/interfaces/cerrarSesion.aspx");
         }
 
+        protected void LinkButtonVenCom_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/interfaces/userCompraVenta.aspx");
+        }
+
 
         
 
