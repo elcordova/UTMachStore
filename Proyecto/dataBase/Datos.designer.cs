@@ -5787,6 +5787,8 @@ namespace Proyecto.dataBase
 	public partial class cp_listardeseosFiltroResult
 	{
 		
+		private long _CODIGO;
+		
 		private string _NOMBRE;
 		
 		private decimal _PRECIO;
@@ -5797,6 +5799,22 @@ namespace Proyecto.dataBase
 		
 		public cp_listardeseosFiltroResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODIGO", DbType="BigInt NOT NULL")]
+		public long CODIGO
+		{
+			get
+			{
+				return this._CODIGO;
+			}
+			set
+			{
+				if ((this._CODIGO != value))
+				{
+					this._CODIGO = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
