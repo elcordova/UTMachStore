@@ -492,13 +492,6 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<cp_listardeseosFiltroResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ingresarFormaPago")]
-		public int ingresarFormaPago([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoFormaPago)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPublicacion, codigoFormaPago);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarFormasEnvio")]
 		public ISingleResult<buscarFormasEnvioResult> buscarFormasEnvio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub)
 		{
@@ -506,6 +499,14 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<buscarFormasEnvioResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ingresarFormaPago")]
+		public int ingresarFormaPago([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoFormaPago)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPublicacion, codigoFormaPago);
+			return ((int)(result.ReturnValue));
+		}
+	}
+	
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editarPublicaciones")]
 		public int editarPublicaciones([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string datos_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string numero_contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stock_produc)
 		{
@@ -4083,8 +4084,8 @@ namespace Proyecto.dataBase
 					this._datos_Pub = value;
 				}
 			}
-		}
-	}
+				}
+			}
 	
 	public partial class buscarFormasPagoResult
 	{
