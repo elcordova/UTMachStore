@@ -42,9 +42,11 @@ namespace Proyecto.interfaces
                 ent_comentario.Comentario = txtComentario.Text;
                 ent_comentario.Fecha = fechaHoy.ToString("D");
                 lncomentario.insertarComentario(ent_comentario);
-
-
-
+                // ingresar notificacion
+                ent_notificacion.Codigo_Publicacion = int.Parse(Session["CodigoPublicacionVista"].ToString());
+                ent_notificacion.Ruta_Publicacion = Session["CodigoPublicacionVista"].ToString();
+                ent_notificacion.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
+                //ent_notificacion.Codigo_Comentario
             }
             else
             {
