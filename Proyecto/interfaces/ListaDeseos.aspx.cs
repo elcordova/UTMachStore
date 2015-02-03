@@ -34,15 +34,18 @@ namespace Proyecto.interfaces
             ld.eliminardeseo(coddes);
         }
 
-       
+        protected void GridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+             valor= Convert.ToInt32(tabladeseo.Rows[index].Cells[0].Text);
+           
+        }
 
       
 
         public void mostrardeseo()
         {
             int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
-            tabladeseo.DataSource = ld.listardeseoFiltro(codigo);
-            tabladeseo.DataBind();
             
             
         }
@@ -67,6 +70,19 @@ namespace Proyecto.interfaces
             //coddes = Convert.ToInt32(ld.codigodeseo(codigo, valor));
             //GridViewRow row = tabladeseo.SelectedRow;
             //valor = Convert.ToInt32(row.Cells[0].Text);
+        }
+
+        protected void tabladeseo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+             
+                
+            
+        }
+
+        protected void BulletedList1_Click(object sender, BulletedListEventArgs e)
+        {
+
         }
 
     }

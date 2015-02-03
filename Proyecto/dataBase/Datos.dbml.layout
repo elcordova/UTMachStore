@@ -115,14 +115,14 @@
         <classShapeMoniker Id="73582c42-abb4-43c2-b8b9-86c8f3e87cc1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 13.8125025); (10.25 : 13.8125025); (10.25 : 11.7035953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 13.8125025); (5.97916666666667 : 13.8125025 : JumpStart); (6.14583333333333 : 13.8125025 : JumpEnd); (10.25 : 13.8125025); (10.25 : 11.7035953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DatosDataContext/FormaEnvio/FormaEnvio_Negociacion" />
       <nodes>
         <classShapeMoniker Id="920165bb-e96f-452b-ba33-0fff5c0d879b" />
         <classShapeMoniker Id="73582c42-abb4-43c2-b8b9-86c8f3e87cc1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (5.79166666666667 : 4.88544840494792 : JumpStart); (5.95833333333333 : 4.88544840494792 : JumpEnd); (6.25 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (6.25 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DatosDataContext/Comentarios/Comentarios_Notificaciones" />
       <nodes>
         <classShapeMoniker Id="7132fb00-1daf-4948-8f00-c32245332940" />
