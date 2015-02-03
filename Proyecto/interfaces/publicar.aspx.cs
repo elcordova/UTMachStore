@@ -71,8 +71,23 @@ namespace Proyecto.interfaces
             entidadPublicacion.Estado_Publicacion = true;
             entidadPublicacion.Stock_ProductoPublicacion = Convert.ToInt32(txtStockProductos.Text);
             ingresoPublicacion.insertarUsuario(entidadPublicacion);
+            int codiFormapago = 0;
+            if(c1.Checked){
+                codiFormapago = 1;
+                ingresoPublicacion.insertarFormaPago(numeropublicacion(), codiFormapago);
+            }
+            if (c2.Checked)
+            {
+                codiFormapago = 2;
+                ingresoPublicacion.insertarFormaPago(numeropublicacion(), codiFormapago);
+            }
+            if (c3.Checked)
+            {
+                codiFormapago = 3;
+                ingresoPublicacion.insertarFormaPago(numeropublicacion(), codiFormapago);
+            }
+            
             guardarIdPublicacion();
-
             txtTituloPublicacion.Text = "";
             txtDatosPublicacion.Text = "";
             txtNumeroContacto.Text = "";

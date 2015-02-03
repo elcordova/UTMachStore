@@ -493,4 +493,9 @@
       <Column Name="FECHA" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.ingresarFormaPago" Method="ingresarFormaPago">
+    <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoFormaPago" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
