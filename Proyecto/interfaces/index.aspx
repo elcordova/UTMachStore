@@ -48,7 +48,12 @@
 			</ul> 
 		</div>
 		<div class="hr grid_12 clearfix">&nbsp;</div>
-        
+           <h2 class="grid_12 caption clearfix">
+                Para conocer mas acerca de UTMACH STORE, sus politicas y condiciones puedes verlas en el siguiente enlace.
+                <a href="CondicionesDeUso.aspx"><u>Politicas y condiciones de uso</u></a>
+           </h2> 
+            
+        <div class="hr grid_12 clearfix">&nbsp;</div>
 </asp:Content>
 
 <%--<asp:Content ID="Content1" ContentPlaceHolderID="ContentNick" runat="server">
