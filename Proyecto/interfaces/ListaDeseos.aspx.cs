@@ -35,6 +35,7 @@ namespace Proyecto.interfaces
         {
             int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
             tabladeseo.DataSource = ld.listardeseoFiltro(codigo);
+            tabladeseo.DataBind();
             
         }
 
