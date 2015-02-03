@@ -118,6 +118,7 @@
     <Content Include="interfaces\images\delicious.png" />
     <Content Include="interfaces\images\facebook.png" />
     <Content Include="interfaces\images\flickr.png" />
+    <Content Include="interfaces\images\iconolista.png" />
     <Content Include="interfaces\images\gravatar.png" />
     <Content Include="interfaces\images\guitar.jpg" />
     <Content Include="interfaces\images\hungry_bird.png" />

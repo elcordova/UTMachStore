@@ -77,7 +77,7 @@
         <div class="areglob">
 
             <asp:Button CssClass="boton_color_s" ID="Button1" runat="server" Text="Agregar a la lista" OnClick="Button1_Click1" />
-            <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" />
+            <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" OnClick="Button2_Click1" />
         </div>
     </div>
 
