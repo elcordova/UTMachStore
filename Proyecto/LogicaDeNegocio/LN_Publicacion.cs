@@ -19,8 +19,7 @@ namespace Proyecto.LogicaDeNegocio
         }
         public void insertarFormaPago(int codigoPub, int codigoPago)
         {
-            DB.ingresarFormaPago(codigoPub, codigoPago);
-
+            DB.ingresarFormaPago(codigoPub, codigoPago);   
             DB.SubmitChanges();
         }
         public void editarPublicaciones(Entidades.Ent_Publicaciones publicacion, int codigoPublicacion)

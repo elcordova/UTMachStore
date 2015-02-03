@@ -487,16 +487,16 @@
       <Column Name="FECHA" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ingresarFormaPago" Method="ingresarFormaPago">
-    <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigoFormaPago" Type="System.Int64" DbType="BigInt" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.buscarFormasEnvio" Method="buscarFormasEnvio">
     <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="buscarFormasEnvioResult">
       <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="nombre_FormEnvio" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.ingresarFormaPago" Method="ingresarFormaPago">
+    <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoFormaPago" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
