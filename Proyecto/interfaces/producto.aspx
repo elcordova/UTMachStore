@@ -11,7 +11,7 @@
                 easing: 'easeOutInCirc',
                 shape: 'waterWheel',
                 duration: 600
-            });
+            }); 
         });
     </script>
 </asp:Content>
@@ -33,10 +33,10 @@
 
                     
         <p class="MsoNormal">
-            <asp:Label ID="Label3" runat="server" Width="400" Text="Label" TextMode="MultiLine"></asp:Label><o:p></o:p>
+            <asp:Label ID="Label3" runat="server" Width="400" Text="Label" TextMode="MultiLine" ></asp:Label><o:p></o:p>
         </p>
         <p class="MsoNormal">
-             <asp:Label ID="Label5" runat="server" Text="Stock:  "></asp:Label> <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+             <asp:Label ID="Label5" runat="server" Text="Stock:  "></asp:Label> <asp:Label ID="Label4" runat="server" Text="jkk"></asp:Label>
             <o:p></o:p>
         </p>
       
@@ -143,7 +143,7 @@
                             letra=dato[i];
                             if (letra.ToString().Equals("-"))
                             {
-                                Label3.Text = Label3.Text +  "\n"+ letra.ToString();
+                                Label3.Text = Label3.Text + "<html><br/> </html>" + letra.ToString();
                         //        Label3.Text = Label3.Text + letra.ToString();
                             }
                             else
