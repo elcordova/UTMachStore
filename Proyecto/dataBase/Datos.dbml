@@ -7,18 +7,7 @@
       <Column Name="detalle_Cat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="FK_codigo_Cat" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Association Name="Categorias_Categorias" Member="Categorias2" ThisKey="codigo_Cat" OtherKey="FK_codigo_Cat" Type="Categorias" />
-      <Association Name="Categorias_Publicaciones" Member="Publicaciones" ThisKey="codigo_Cat" OtherKey="codigo_Cat" Type="Publicaciones" />
       <Association Name="Categorias_Categorias" Member="Categorias1" ThisKey="FK_codigo_Cat" OtherKey="codigo_Cat" Type="Categorias" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.UsuarioNegociacion" Member="UsuarioNegociacion">
-    <Type Name="UsuarioNegociacion">
-      <Column Name="codigo_Usu_Neg" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="fecha_UsuNeg" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="codigo_Neg" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="Negociacion_UsuarioNegociacion" Member="Negociacion" ThisKey="codigo_Neg" OtherKey="codigo_Neg" Type="Negociacion" IsForeignKey="true" />
-      <Association Name="Usuario_UsuarioNegociacion" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Comentarios" Member="Comentarios">
@@ -28,9 +17,7 @@
       <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="contenido_Com" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="fecha_Com" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="Comentarios_Notificaciones" Member="Notificaciones" ThisKey="codigo_Usu,codigo_Pub,codigo_Com" OtherKey="codigo_Usu,codigo_Pub,codigo_Com" Type="Notificaciones" />
-      <Association Name="Publicaciones_Comentarios" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
-      <Association Name="Usuario_Comentarios" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Usuario_Comentarios" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.EnvioPublicacion" Member="EnvioPublicacion">
@@ -39,7 +26,6 @@
       <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="FormaEnvio_EnvioPublicacion" Member="FormaEnvio" ThisKey="codigo_FormEnvio" OtherKey="codigo_FormEnvio" Type="FormaEnvio" IsForeignKey="true" />
-      <Association Name="Publicaciones_EnvioPublicacion" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.FormaEnvio" Member="FormaEnvio">
@@ -47,24 +33,20 @@
       <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="nombre_FormEnvio" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Association Name="FormaEnvio_EnvioPublicacion" Member="EnvioPublicacion" ThisKey="codigo_FormEnvio" OtherKey="codigo_FormEnvio" Type="EnvioPublicacion" />
-      <Association Name="FormaEnvio_Negociacion" Member="Negociacion" ThisKey="codigo_FormEnvio" OtherKey="codigo_FormEnvio" Type="Negociacion" />
     </Type>
   </Table>
   <Table Name="dbo.FormaPago" Member="FormaPago">
     <Type Name="FormaPago">
       <Column Name="codigo_formPago" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="nombre_formPago" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Association Name="FormaPago_Negociacion" Member="Negociacion" ThisKey="codigo_formPago" OtherKey="codigo_formPago" Type="Negociacion" />
-      <Association Name="FormaPago_PagoPulicacion" Member="PagoPulicacion" ThisKey="codigo_formPago" OtherKey="codigo_formPago" Type="PagoPulicacion" />
     </Type>
   </Table>
   <Table Name="dbo.Fotos" Member="Fotos">
     <Type Name="Fotos">
-      <Column Name="codigo_Fot" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codigo_Fot" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="nombre_Fot" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_Fot" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="ruta_Fot" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="Publicaciones_Fotos" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Lista_deseos" Member="Lista_deseos">
@@ -72,61 +54,7 @@
       <Column Name="codigo_Lis_Des" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Association Name="Publicaciones_Lista_deseos" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
-      <Association Name="Usuario_Lista_deseos" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Negociacion" Member="Negociacion">
-    <Type Name="Negociacion">
-      <Column Name="codigo_Neg" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="codigo_formPago" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="codigo_FormEnvio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Association Name="Negociacion_UsuarioNegociacion" Member="UsuarioNegociacion" ThisKey="codigo_Neg" OtherKey="codigo_Neg" Type="UsuarioNegociacion" />
-      <Association Name="FormaPago_Negociacion" Member="FormaPago" ThisKey="codigo_formPago" OtherKey="codigo_formPago" Type="FormaPago" IsForeignKey="true" />
-      <Association Name="FormaEnvio_Negociacion" Member="FormaEnvio" ThisKey="codigo_FormEnvio" OtherKey="codigo_FormEnvio" Type="FormaEnvio" IsForeignKey="true" />
-      <Association Name="Publicaciones_Negociacion" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Notificaciones" Member="Notificaciones">
-    <Type Name="Notificaciones">
-      <Column Name="codigo_not" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="ruta" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="codigo_Com" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Association Name="Comentarios_Notificaciones" Member="Comentarios" ThisKey="codigo_Usu,codigo_Pub,codigo_Com" OtherKey="codigo_Usu,codigo_Pub,codigo_Com" Type="Comentarios" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PagoPulicacion" Member="PagoPulicacion">
-    <Type Name="PagoPulicacion">
-      <Column Name="codigo_Pag_Pub" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="codigo_formPago" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="FormaPago_PagoPulicacion" Member="FormaPago" ThisKey="codigo_formPago" OtherKey="codigo_formPago" Type="FormaPago" IsForeignKey="true" />
-      <Association Name="Publicaciones_PagoPulicacion" Member="Publicaciones" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Publicaciones" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Publicaciones" Member="Publicaciones">
-    <Type Name="Publicaciones">
-      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_Pub" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="numero_con_Pub" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Publicaciones_Comentarios" Member="Comentarios" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Comentarios" />
-      <Association Name="Publicaciones_EnvioPublicacion" Member="EnvioPublicacion" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="EnvioPublicacion" />
-      <Association Name="Publicaciones_Fotos" Member="Fotos" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Fotos" />
-      <Association Name="Publicaciones_Lista_deseos" Member="Lista_deseos" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Lista_deseos" />
-      <Association Name="Publicaciones_Negociacion" Member="Negociacion" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="Negociacion" />
-      <Association Name="Publicaciones_PagoPulicacion" Member="PagoPulicacion" ThisKey="codigo_Pub" OtherKey="codigo_Pub" Type="PagoPulicacion" />
-      <Association Name="Categorias_Publicaciones" Member="Categorias" ThisKey="codigo_Cat" OtherKey="codigo_Cat" Type="Categorias" IsForeignKey="true" />
-      <Association Name="Usuario_Publicaciones" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Usuario_Lista_deseos" Member="Usuario" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Usuario" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.Usuario" Member="Usuario">
@@ -139,14 +67,13 @@
       <Column Name="email_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Usuario_UsuarioNegociacion" Member="UsuarioNegociacion" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="UsuarioNegociacion" />
       <Association Name="Usuario_Comentarios" Member="Comentarios" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Comentarios" />
       <Association Name="Usuario_Lista_deseos" Member="Lista_deseos" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Lista_deseos" />
-      <Association Name="Usuario_Publicaciones" Member="Publicaciones" ThisKey="codigo_Usu" OtherKey="codigo_Usu" Type="Publicaciones" />
     </Type>
   </Table>
-  <Function Name="dbo.validarCuenta" Method="validarCuenta">
-    <Parameter Name="nick" Type="System.String" DbType="VarChar(15)" />
+  <Function Name="dbo.actualizar_Stock" Method="actualizar_Stock">
+    <Parameter Name="cantidadProducto" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="idpub" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.actualizarUsuario" Method="actualizarUsuario">
@@ -185,101 +112,11 @@
       <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.buscarNickname" Method="buscarNickname">
-    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
-    <ElementType Name="buscarNicknameResult">
-      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="password_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="email_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.co_Buscarpornombrefecha" Method="co_Buscarpornombrefecha">
-    <Parameter Name="valor" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="co_BuscarpornombrefechaResult">
-      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_Pub" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="numero_con_Pub" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.co_listarcategoriafiltro" Method="co_listarcategoriafiltro">
-    <Parameter Name="valor" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="co_listarcategoriafiltroResult">
-      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nombre_Cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="detalle_Cat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="FK_codigo_Cat" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.cp_Buscarporcategoria" Method="cp_Buscarporcategoria">
-    <Parameter Name="valor" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="cp_BuscarporcategoriaResult">
-      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_Pub" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="numero_con_Pub" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.cp_eliminardeseo" Method="cp_eliminardeseo">
-    <Parameter Name="codigo" Type="System.Int64" DbType="BigInt" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.cp_insertardeseo" Method="cp_insertardeseo">
-    <Parameter Name="codigo_lisde" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigo_usu" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigo_publ" Type="System.Int64" DbType="BigInt" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.cp_listardeseosFiltro" Method="cp_listardeseosFiltro">
-    <Parameter Name="codigo" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="cp_listardeseosFiltroResult">
-      <Column Name="codigo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.eliminarStock" Method="eliminarStock">
-    <Parameter Name="codpub" Type="System.Int64" DbType="BigInt" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.eliminarUsuario" Method="eliminarUsuario">
-    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.insertarUsuario" Method="insertarUsuario">
-    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.cp_insertarFoto" Method="cp_insertarFoto">
-    <Parameter Name="nombre" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.buscarDatosdeVendedor" Method="buscarDatosdeVendedor">
     <Parameter Name="codigo_Publicacion" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="buscarDatosdeVendedorResult">
       <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="email_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
@@ -302,17 +139,41 @@
       <Column Name="nombre_FormPago" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.cp_listarFoto" Method="cp_listarFoto">
-    <ElementType Name="cp_listarFotoResult">
-      <Column Name="Codigo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="publicacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="ruta" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+  <Function Name="dbo.buscarNickname" Method="buscarNickname">
+    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="buscarNicknameResult">
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="password_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Usu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cedula_Usu" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.cp_numeroFinalPublicacion" Method="cp_numeroFinalPublicacion">
-    <ElementType Name="cp_numeroFinalPublicacionResult">
+  <Function Name="dbo.co_Buscarpornombrefecha" Method="co_Buscarpornombrefecha">
+    <Parameter Name="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="co_BuscarpornombrefechaResult">
       <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numero_con_Pub" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.co_listarcategoriafiltro" Method="co_listarcategoriafiltro">
+    <Parameter Name="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="co_listarcategoriafiltroResult">
+      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_Cat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="detalle_Cat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FK_codigo_Cat" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.cp_actualizarFoto" Method="cp_actualizarFoto">
@@ -322,15 +183,93 @@
     <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.insertarUsuarioNegociacion" Method="insertarUsuarioNegociacion">
-    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="cod_usu" Type="System.Int64" DbType="BigInt" />
+  <Function Name="dbo.cp_Buscarporcategoria" Method="cp_Buscarporcategoria">
+    <Parameter Name="valor" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="cp_BuscarporcategoriaResult">
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="codigo_Cat" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numero_con_Pub" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_contarlistadeseos" Method="cp_contarlistadeseos">
+    <ElementType Name="cp_contarlistadeseosResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_eliminardeseo" Method="cp_eliminardeseo">
+    <Parameter Name="codigo" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.insertarNegociacion" Method="insertarNegociacion">
-    <Parameter Name="cod_forma_pago" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="cod_forma_envio" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="cod_public" Type="System.Int64" DbType="BigInt" />
+  <Function Name="dbo.cp_insertarComentario" Method="cp_insertarComentario">
+    <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="contenido" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="fecha" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_insertardeseo" Method="cp_insertardeseo">
+    <Parameter Name="codigo_lisde" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigo_usu" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigo_publ" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_insertardeseooriginal" Method="cp_insertardeseooriginal">
+    <Parameter Name="usu" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="pub" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_insertarFoto" Method="cp_insertarFoto">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_listarComentario" Method="cp_listarComentario">
+    <Parameter Name="valor" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cp_listarComentarioResult">
+      <Column Name="nick" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Publicacion" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_listardeseosFiltro" Method="cp_listardeseosFiltro">
+    <Parameter Name="codigo" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="cp_listardeseosFiltroResult">
+      <Column Name="codigo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_listarFoto" Method="cp_listarFoto">
+    <ElementType Name="cp_listarFotoResult">
+      <Column Name="Codigo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="publicacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ruta" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_Listarusuariofiltro" Method="cp_Listarusuariofiltro">
+    <Parameter Name="nick" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="cp_ListarusuariofiltroResult">
+      <Column Name="nick" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_numeroFinalPublicacion" Method="cp_numeroFinalPublicacion">
+    <ElementType Name="cp_numeroFinalPublicacionResult">
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.eliminarStock" Method="eliminarStock">
+    <Parameter Name="codpub" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarUsuario" Method="eliminarUsuario">
+    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.extraerCodigoUsuario" Method="extraerCodigoUsuario">
@@ -339,15 +278,11 @@
       <Column Name="codigo_Usu" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ListaPublicaciones" Method="ListaPublicaciones">
-    <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="ListaPublicacionesResult">
-      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
+  <Function Name="dbo.insertarNegociacion" Method="insertarNegociacion">
+    <Parameter Name="cod_forma_pago" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cod_forma_envio" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cod_public" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.insertarPublicacion" Method="insertarPublicacion">
     <Parameter Name="codigo_categoria" Type="System.Int64" DbType="BigInt" />
@@ -361,38 +296,33 @@
     <Parameter Name="stock_produc" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.cp_insertarComentario" Method="cp_insertarComentario">
+  <Function Name="dbo.insertarUsuario" Method="insertarUsuario">
+    <Parameter Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="nic_Usu" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="direccion_Usu" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="password_Usu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="email_Usu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="estado_Usu" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="cedula_Usu" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertarUsuarioNegociacion" Method="insertarUsuarioNegociacion">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cod_usu" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ListaPublicaciones" Method="ListaPublicaciones">
     <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="contenido" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="fecha" Type="System.String" DbType="VarChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.cp_listarComentario" Method="cp_listarComentario">
-    <Parameter Name="valor" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="cp_listarComentarioResult">
-      <Column Name="codigo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="nick" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.actualizar_Stock" Method="actualizar_Stock">
-    <Parameter Name="cantidadProducto" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="idpub" Type="System.Int64" DbType="BigInt" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.buscarDatosdeVendedor" Method="buscarDatosdeVendedor">
-    <Parameter Name="codigo_Publicacion" Type="System.Int64" DbType="BigInt" />
-    <ElementType Name="buscarDatosdeVendedorResult">
-      <Column Name="nombreComp_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="nic_Usu" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="direccion_Usu" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="email_Usu" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+    <ElementType Name="ListaPublicacionesResult">
+      <Column Name="codigo_Pub" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="nombre_Pub" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="datos_Pub" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_Pub" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.validarCuenta" Method="validarCuenta">
+    <Parameter Name="nick" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

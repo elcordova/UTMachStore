@@ -33,9 +33,6 @@ namespace Proyecto.dataBase
     partial void InsertCategorias(Categorias instance);
     partial void UpdateCategorias(Categorias instance);
     partial void DeleteCategorias(Categorias instance);
-    partial void InsertUsuarioNegociacion(UsuarioNegociacion instance);
-    partial void UpdateUsuarioNegociacion(UsuarioNegociacion instance);
-    partial void DeleteUsuarioNegociacion(UsuarioNegociacion instance);
     partial void InsertComentarios(Comentarios instance);
     partial void UpdateComentarios(Comentarios instance);
     partial void DeleteComentarios(Comentarios instance);
@@ -54,18 +51,6 @@ namespace Proyecto.dataBase
     partial void InsertLista_deseos(Lista_deseos instance);
     partial void UpdateLista_deseos(Lista_deseos instance);
     partial void DeleteLista_deseos(Lista_deseos instance);
-    partial void InsertNegociacion(Negociacion instance);
-    partial void UpdateNegociacion(Negociacion instance);
-    partial void DeleteNegociacion(Negociacion instance);
-    partial void InsertNotificaciones(Notificaciones instance);
-    partial void UpdateNotificaciones(Notificaciones instance);
-    partial void DeleteNotificaciones(Notificaciones instance);
-    partial void InsertPagoPulicacion(PagoPulicacion instance);
-    partial void UpdatePagoPulicacion(PagoPulicacion instance);
-    partial void DeletePagoPulicacion(PagoPulicacion instance);
-    partial void InsertPublicaciones(Publicaciones instance);
-    partial void UpdatePublicaciones(Publicaciones instance);
-    partial void DeletePublicaciones(Publicaciones instance);
     partial void InsertUsuario(Usuario instance);
     partial void UpdateUsuario(Usuario instance);
     partial void DeleteUsuario(Usuario instance);
@@ -106,14 +91,6 @@ namespace Proyecto.dataBase
 			get
 			{
 				return this.GetTable<Categorias>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UsuarioNegociacion> UsuarioNegociacion
-		{
-			get
-			{
-				return this.GetTable<UsuarioNegociacion>();
 			}
 		}
 		
@@ -165,38 +142,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		public System.Data.Linq.Table<Negociacion> Negociacion
-		{
-			get
-			{
-				return this.GetTable<Negociacion>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Notificaciones> Notificaciones
-		{
-			get
-			{
-				return this.GetTable<Notificaciones>();
-			}
-		}
-		
-		public System.Data.Linq.Table<PagoPulicacion> PagoPulicacion
-		{
-			get
-			{
-				return this.GetTable<PagoPulicacion>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Publicaciones> Publicaciones
-		{
-			get
-			{
-				return this.GetTable<Publicaciones>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Usuario> Usuario
 		{
 			get
@@ -205,10 +150,10 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.validarCuenta")]
-		public int validarCuenta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nick)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizar_Stock")]
+		public int actualizar_Stock([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cantidadProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idpub)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nick);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cantidadProducto, idpub);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -233,83 +178,6 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<buscarCorreoResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarNickname")]
-		public ISingleResult<buscarNicknameResult> buscarNickname([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nic_Usu);
-			return ((ISingleResult<buscarNicknameResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.co_Buscarpornombrefecha")]
-		public ISingleResult<co_BuscarpornombrefechaResult> co_Buscarpornombrefecha([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<co_BuscarpornombrefechaResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.co_listarcategoriafiltro")]
-		public ISingleResult<co_listarcategoriafiltroResult> co_listarcategoriafiltro([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<co_listarcategoriafiltroResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_Buscarporcategoria")]
-		public ISingleResult<cp_BuscarporcategoriaResult> cp_Buscarporcategoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<cp_BuscarporcategoriaResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_eliminardeseo")]
-		public int cp_eliminardeseo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertardeseo")]
-		public int cp_insertardeseo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_lisde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_publ)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_lisde, codigo_usu, codigo_publ);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listardeseosFiltro")]
-		public ISingleResult<cp_listardeseosFiltroResult> cp_listardeseosFiltro([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo);
-			return ((ISingleResult<cp_listardeseosFiltroResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminarStock")]
-		public int eliminarStock([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codpub)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codpub);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminarUsuario")]
-		public int eliminarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula_Usu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuario")]
-		public int insertarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarFoto")]
-		public int cp_insertarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(25)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, ruta);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarDatosdeVendedor")]
 		public ISingleResult<buscarDatosdeVendedorResult> buscarDatosdeVendedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_Publicacion)
 		{
@@ -331,12 +199,109 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<buscarFormasPagoResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarNickname")]
+		public ISingleResult<buscarNicknameResult> buscarNickname([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nic_Usu);
+			return ((ISingleResult<buscarNicknameResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.co_Buscarpornombrefecha")]
+		public ISingleResult<co_BuscarpornombrefechaResult> co_Buscarpornombrefecha([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string valor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<co_BuscarpornombrefechaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.co_listarcategoriafiltro")]
+		public ISingleResult<co_listarcategoriafiltroResult> co_listarcategoriafiltro([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string valor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<co_listarcategoriafiltroResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_actualizarFoto")]
+		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_Buscarporcategoria")]
+		public ISingleResult<cp_BuscarporcategoriaResult> cp_Buscarporcategoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string valor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<cp_BuscarporcategoriaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_contarlistadeseos")]
+		public ISingleResult<cp_contarlistadeseosResult> cp_contarlistadeseos()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<cp_contarlistadeseosResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_eliminardeseo")]
+		public int cp_eliminardeseo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarComentario")]
+		public int cp_insertarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string contenido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoUsu, codigoPub, contenido, fecha);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertardeseo")]
+		public int cp_insertardeseo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_lisde, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_publ)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_lisde, codigo_usu, codigo_publ);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertardeseooriginal")]
+		public int cp_insertardeseooriginal([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> pub)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usu, pub);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarFoto")]
+		public int cp_insertarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(25)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, ruta);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarComentario")]
+		public ISingleResult<cp_listarComentarioResult> cp_listarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> valor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
+			return ((ISingleResult<cp_listarComentarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listardeseosFiltro")]
+		public ISingleResult<cp_listardeseosFiltroResult> cp_listardeseosFiltro([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo);
+			return ((ISingleResult<cp_listardeseosFiltroResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarFoto")]
 		public ISingleResult<cp_listarFotoResult> cp_listarFoto()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<cp_listarFotoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_Listarusuariofiltro")]
+		public ISingleResult<cp_ListarusuariofiltroResult> cp_Listarusuariofiltro([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nick)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nick);
+			return ((ISingleResult<cp_ListarusuariofiltroResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_numeroFinalPublicacion")]
@@ -346,38 +311,17 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<cp_numeroFinalPublicacionResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_actualizarFoto")]
-		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminarStock")]
+		public int eliminarStock([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codpub)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codpub);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_numeroFinalPublicacion")]
-		public ISingleResult<cp_numeroFinalPublicacionResult> cp_numeroFinalPublicacion()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.eliminarUsuario")]
+		public int eliminarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<cp_numeroFinalPublicacionResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_actualizarFoto")]
-		public int cp_actualizarFoto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo, codigoPublicacion, nombre, ruta);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuarioNegociacion")]
-		public int insertarUsuarioNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_usu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha, cod_usu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarNegociacion")]
-		public int insertarNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cod_forma_pago, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cod_forma_envio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_public)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cod_forma_pago, cod_forma_envio, cod_public);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula_Usu);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -388,46 +332,47 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<extraerCodigoUsuarioResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarNegociacion")]
+		public int insertarNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cod_forma_pago, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cod_forma_envio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_public)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cod_forma_pago, cod_forma_envio, cod_public);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarPublicacion")]
+		public int insertarPublicacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string datos_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fecha_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string numero_contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_logico_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stock_produc)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_categoria, codigo_usuario, nombre_publicacion, datos_publicacion, fecha_publicacion, numero_contacto, precio, estado_logico_publicacion, stock_produc);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuario")]
+		public int insertarUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombreComp_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nic_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string direccion_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_Usu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula_Usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombreComp_Usu, nic_Usu, direccion_Usu, password_Usu, email_Usu, estado_Usu, cedula_Usu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarUsuarioNegociacion")]
+		public int insertarUsuarioNegociacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cod_usu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha, cod_usu);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ListaPublicaciones")]
 		public ISingleResult<ListaPublicacionesResult> ListaPublicaciones([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoUsu)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoUsu);
 			return ((ISingleResult<ListaPublicacionesResult>)(result.ReturnValue));
 		}
-	
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.insertarPublicacion")]
-		public int insertarPublicacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string datos_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fecha_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string numero_contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> estado_logico_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stock_produc)
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarComentario")]
-		public ISingleResult<cp_listarComentarioResult> cp_listarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_categoria, codigo_usuario, nombre_publicacion, datos_publicacion, fecha_publicacion, numero_contacto, precio, estado_logico_publicacion, stock_produc);
-			return ((int)(result.ReturnValue));
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<cp_listarComentarioResult>)(result.ReturnValue));
-		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarComentario")]
-		public int cp_insertarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string contenido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string fecha)
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.actualizar_Stock")]
-		public int actualizar_Stock([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> cantidadProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idpub)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.validarCuenta")]
+		public int validarCuenta([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string nick)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoUsu, codigoPub, contenido, fecha);
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cantidadProducto, idpub);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nick);
 			return ((int)(result.ReturnValue));
 		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_listarComentario")]
-		public ISingleResult<cp_listarComentarioResult> cp_listarComentario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> valor)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
-			return ((ISingleResult<cp_listarComentarioResult>)(result.ReturnValue));
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscarDatosdeVendedor")]
-		public ISingleResult<buscarDatosdeVendedorResult> buscarDatosdeVendedor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_Publicacion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigo_Publicacion);
-			return ((ISingleResult<buscarDatosdeVendedorResult>)(result.ReturnValue));
-	}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categorias")]
@@ -445,8 +390,6 @@ namespace Proyecto.dataBase
 		private System.Nullable<long> _FK_codigo_Cat;
 		
 		private EntitySet<Categorias> _Categorias2;
-		
-		private EntitySet<Publicaciones> _Publicaciones;
 		
 		private EntityRef<Categorias> _Categorias1;
 		
@@ -467,7 +410,6 @@ namespace Proyecto.dataBase
 		public Categorias()
 		{
 			this._Categorias2 = new EntitySet<Categorias>(new Action<Categorias>(this.attach_Categorias2), new Action<Categorias>(this.detach_Categorias2));
-			this._Publicaciones = new EntitySet<Publicaciones>(new Action<Publicaciones>(this.attach_Publicaciones), new Action<Publicaciones>(this.detach_Publicaciones));
 			this._Categorias1 = default(EntityRef<Categorias>);
 			OnCreated();
 		}
@@ -569,19 +511,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categorias_Publicaciones", Storage="_Publicaciones", ThisKey="codigo_Cat", OtherKey="codigo_Cat")]
-		public EntitySet<Publicaciones> Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones;
-			}
-			set
-			{
-				this._Publicaciones.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categorias_Categorias", Storage="_Categorias1", ThisKey="FK_codigo_Cat", OtherKey="codigo_Cat", IsForeignKey=true)]
 		public Categorias Categorias1
 		{
@@ -647,234 +576,6 @@ namespace Proyecto.dataBase
 			this.SendPropertyChanging();
 			entity.Categorias1 = null;
 		}
-		
-		private void attach_Publicaciones(Publicaciones entity)
-		{
-			this.SendPropertyChanging();
-			entity.Categorias = this;
-		}
-		
-		private void detach_Publicaciones(Publicaciones entity)
-		{
-			this.SendPropertyChanging();
-			entity.Categorias = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UsuarioNegociacion")]
-	public partial class UsuarioNegociacion : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _codigo_Usu_Neg;
-		
-		private System.DateTime _fecha_UsuNeg;
-		
-		private System.Nullable<long> _codigo_Usu;
-		
-		private string _codigo_Neg;
-		
-		private EntityRef<Negociacion> _Negociacion;
-		
-		private EntityRef<Usuario> _Usuario;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncodigo_Usu_NegChanging(long value);
-    partial void Oncodigo_Usu_NegChanged();
-    partial void Onfecha_UsuNegChanging(System.DateTime value);
-    partial void Onfecha_UsuNegChanged();
-    partial void Oncodigo_UsuChanging(System.Nullable<long> value);
-    partial void Oncodigo_UsuChanged();
-    partial void Oncodigo_NegChanging(string value);
-    partial void Oncodigo_NegChanged();
-    #endregion
-		
-		public UsuarioNegociacion()
-		{
-			this._Negociacion = default(EntityRef<Negociacion>);
-			this._Usuario = default(EntityRef<Usuario>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu_Neg", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long codigo_Usu_Neg
-		{
-			get
-			{
-				return this._codigo_Usu_Neg;
-			}
-			set
-			{
-				if ((this._codigo_Usu_Neg != value))
-				{
-					this.Oncodigo_Usu_NegChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Usu_Neg = value;
-					this.SendPropertyChanged("codigo_Usu_Neg");
-					this.Oncodigo_Usu_NegChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_UsuNeg", DbType="DateTime NOT NULL")]
-		public System.DateTime fecha_UsuNeg
-		{
-			get
-			{
-				return this._fecha_UsuNeg;
-			}
-			set
-			{
-				if ((this._fecha_UsuNeg != value))
-				{
-					this.Onfecha_UsuNegChanging(value);
-					this.SendPropertyChanging();
-					this._fecha_UsuNeg = value;
-					this.SendPropertyChanged("fecha_UsuNeg");
-					this.Onfecha_UsuNegChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt")]
-		public System.Nullable<long> codigo_Usu
-		{
-			get
-			{
-				return this._codigo_Usu;
-			}
-			set
-			{
-				if ((this._codigo_Usu != value))
-				{
-					if (this._Usuario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_UsuChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Usu = value;
-					this.SendPropertyChanged("codigo_Usu");
-					this.Oncodigo_UsuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Neg", DbType="VarChar(10)")]
-		public string codigo_Neg
-		{
-			get
-			{
-				return this._codigo_Neg;
-			}
-			set
-			{
-				if ((this._codigo_Neg != value))
-				{
-					if (this._Negociacion.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_NegChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Neg = value;
-					this.SendPropertyChanged("codigo_Neg");
-					this.Oncodigo_NegChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Negociacion_UsuarioNegociacion", Storage="_Negociacion", ThisKey="codigo_Neg", OtherKey="codigo_Neg", IsForeignKey=true)]
-		public Negociacion Negociacion
-		{
-			get
-			{
-				return this._Negociacion.Entity;
-			}
-			set
-			{
-				Negociacion previousValue = this._Negociacion.Entity;
-				if (((previousValue != value) 
-							|| (this._Negociacion.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Negociacion.Entity = null;
-						previousValue.UsuarioNegociacion.Remove(this);
-					}
-					this._Negociacion.Entity = value;
-					if ((value != null))
-					{
-						value.UsuarioNegociacion.Add(this);
-						this._codigo_Neg = value.codigo_Neg;
-					}
-					else
-					{
-						this._codigo_Neg = default(string);
-					}
-					this.SendPropertyChanged("Negociacion");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_UsuarioNegociacion", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true)]
-		public Usuario Usuario
-		{
-			get
-			{
-				return this._Usuario.Entity;
-			}
-			set
-			{
-				Usuario previousValue = this._Usuario.Entity;
-				if (((previousValue != value) 
-							|| (this._Usuario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Usuario.Entity = null;
-						previousValue.UsuarioNegociacion.Remove(this);
-					}
-					this._Usuario.Entity = value;
-					if ((value != null))
-					{
-						value.UsuarioNegociacion.Add(this);
-						this._codigo_Usu = value.codigo_Usu;
-					}
-					else
-					{
-						this._codigo_Usu = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Usuario");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Comentarios")]
@@ -892,10 +593,6 @@ namespace Proyecto.dataBase
 		private string _contenido_Com;
 		
 		private System.DateTime _fecha_Com;
-		
-		private EntitySet<Notificaciones> _Notificaciones;
-		
-		private EntityRef<Publicaciones> _Publicaciones;
 		
 		private EntityRef<Usuario> _Usuario;
 		
@@ -917,8 +614,6 @@ namespace Proyecto.dataBase
 		
 		public Comentarios()
 		{
-			this._Notificaciones = new EntitySet<Notificaciones>(new Action<Notificaciones>(this.attach_Notificaciones), new Action<Notificaciones>(this.detach_Notificaciones));
-			this._Publicaciones = default(EntityRef<Publicaciones>);
 			this._Usuario = default(EntityRef<Usuario>);
 			OnCreated();
 		}
@@ -978,10 +673,6 @@ namespace Proyecto.dataBase
 			{
 				if ((this._codigo_Pub != value))
 				{
-					if (this._Publicaciones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncodigo_PubChanging(value);
 					this.SendPropertyChanging();
 					this._codigo_Pub = value;
@@ -1031,54 +722,7 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comentarios_Notificaciones", Storage="_Notificaciones", ThisKey="codigo_Usu,codigo_Pub,codigo_Com", OtherKey="codigo_Usu,codigo_Pub,codigo_Com")]
-		public EntitySet<Notificaciones> Notificaciones
-		{
-			get
-			{
-				return this._Notificaciones;
-			}
-			set
-			{
-				this._Notificaciones.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Comentarios", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.Comentarios.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.Comentarios.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(long);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Comentarios", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Comentarios", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Usuario Usuario
 		{
 			get
@@ -1131,18 +775,6 @@ namespace Proyecto.dataBase
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Notificaciones(Notificaciones entity)
-		{
-			this.SendPropertyChanging();
-			entity.Comentarios = this;
-		}
-		
-		private void detach_Notificaciones(Notificaciones entity)
-		{
-			this.SendPropertyChanging();
-			entity.Comentarios = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EnvioPublicacion")]
@@ -1159,8 +791,6 @@ namespace Proyecto.dataBase
 		
 		private EntityRef<FormaEnvio> _FormaEnvio;
 		
-		private EntityRef<Publicaciones> _Publicaciones;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1176,7 +806,6 @@ namespace Proyecto.dataBase
 		public EnvioPublicacion()
 		{
 			this._FormaEnvio = default(EntityRef<FormaEnvio>);
-			this._Publicaciones = default(EntityRef<Publicaciones>);
 			OnCreated();
 		}
 		
@@ -1211,10 +840,6 @@ namespace Proyecto.dataBase
 			{
 				if ((this._codigo_Pub != value))
 				{
-					if (this._Publicaciones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncodigo_PubChanging(value);
 					this.SendPropertyChanging();
 					this._codigo_Pub = value;
@@ -1282,40 +907,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_EnvioPublicacion", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.EnvioPublicacion.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.EnvioPublicacion.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(long);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1349,8 +940,6 @@ namespace Proyecto.dataBase
 		
 		private EntitySet<EnvioPublicacion> _EnvioPublicacion;
 		
-		private EntitySet<Negociacion> _Negociacion;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1364,7 +953,6 @@ namespace Proyecto.dataBase
 		public FormaEnvio()
 		{
 			this._EnvioPublicacion = new EntitySet<EnvioPublicacion>(new Action<EnvioPublicacion>(this.attach_EnvioPublicacion), new Action<EnvioPublicacion>(this.detach_EnvioPublicacion));
-			this._Negociacion = new EntitySet<Negociacion>(new Action<Negociacion>(this.attach_Negociacion), new Action<Negociacion>(this.detach_Negociacion));
 			OnCreated();
 		}
 		
@@ -1421,19 +1009,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FormaEnvio_Negociacion", Storage="_Negociacion", ThisKey="codigo_FormEnvio", OtherKey="codigo_FormEnvio")]
-		public EntitySet<Negociacion> Negociacion
-		{
-			get
-			{
-				return this._Negociacion;
-			}
-			set
-			{
-				this._Negociacion.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1465,18 +1040,6 @@ namespace Proyecto.dataBase
 			this.SendPropertyChanging();
 			entity.FormaEnvio = null;
 		}
-		
-		private void attach_Negociacion(Negociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.FormaEnvio = this;
-		}
-		
-		private void detach_Negociacion(Negociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.FormaEnvio = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FormaPago")]
@@ -1488,10 +1051,6 @@ namespace Proyecto.dataBase
 		private string _codigo_formPago;
 		
 		private string _nombre_formPago;
-		
-		private EntitySet<Negociacion> _Negociacion;
-		
-		private EntitySet<PagoPulicacion> _PagoPulicacion;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1505,8 +1064,6 @@ namespace Proyecto.dataBase
 		
 		public FormaPago()
 		{
-			this._Negociacion = new EntitySet<Negociacion>(new Action<Negociacion>(this.attach_Negociacion), new Action<Negociacion>(this.detach_Negociacion));
-			this._PagoPulicacion = new EntitySet<PagoPulicacion>(new Action<PagoPulicacion>(this.attach_PagoPulicacion), new Action<PagoPulicacion>(this.detach_PagoPulicacion));
 			OnCreated();
 		}
 		
@@ -1550,32 +1107,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FormaPago_Negociacion", Storage="_Negociacion", ThisKey="codigo_formPago", OtherKey="codigo_formPago")]
-		public EntitySet<Negociacion> Negociacion
-		{
-			get
-			{
-				return this._Negociacion;
-			}
-			set
-			{
-				this._Negociacion.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FormaPago_PagoPulicacion", Storage="_PagoPulicacion", ThisKey="codigo_formPago", OtherKey="codigo_formPago")]
-		public EntitySet<PagoPulicacion> PagoPulicacion
-		{
-			get
-			{
-				return this._PagoPulicacion;
-			}
-			set
-			{
-				this._PagoPulicacion.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1595,30 +1126,6 @@ namespace Proyecto.dataBase
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Negociacion(Negociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.FormaPago = this;
-		}
-		
-		private void detach_Negociacion(Negociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.FormaPago = null;
-		}
-		
-		private void attach_PagoPulicacion(PagoPulicacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.FormaPago = this;
-		}
-		
-		private void detach_PagoPulicacion(PagoPulicacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.FormaPago = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fotos")]
@@ -1627,7 +1134,7 @@ namespace Proyecto.dataBase
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _codigo_Fot;
+		private long _codigo_Fot;
 		
 		private System.Nullable<long> _codigo_Pub;
 		
@@ -1635,13 +1142,11 @@ namespace Proyecto.dataBase
 		
 		private string _ruta_Fot;
 		
-		private EntityRef<Publicaciones> _Publicaciones;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Oncodigo_FotChanging(string value);
+    partial void Oncodigo_FotChanging(long value);
     partial void Oncodigo_FotChanged();
     partial void Oncodigo_PubChanging(System.Nullable<long> value);
     partial void Oncodigo_PubChanged();
@@ -1653,12 +1158,11 @@ namespace Proyecto.dataBase
 		
 		public Fotos()
 		{
-			this._Publicaciones = default(EntityRef<Publicaciones>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Fot", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string codigo_Fot
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Fot", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long codigo_Fot
 		{
 			get
 			{
@@ -1688,10 +1192,6 @@ namespace Proyecto.dataBase
 			{
 				if ((this._codigo_Pub != value))
 				{
-					if (this._Publicaciones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncodigo_PubChanging(value);
 					this.SendPropertyChanging();
 					this._codigo_Pub = value;
@@ -1701,7 +1201,7 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Fot", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Fot", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string nombre_Fot
 		{
 			get
@@ -1741,40 +1241,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Fotos", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.Fotos.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.Fotos.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1808,8 +1274,6 @@ namespace Proyecto.dataBase
 		
 		private System.Nullable<long> _codigo_Pub;
 		
-		private EntityRef<Publicaciones> _Publicaciones;
-		
 		private EntityRef<Usuario> _Usuario;
 		
     #region Definiciones de métodos de extensibilidad
@@ -1826,7 +1290,6 @@ namespace Proyecto.dataBase
 		
 		public Lista_deseos()
 		{
-			this._Publicaciones = default(EntityRef<Publicaciones>);
 			this._Usuario = default(EntityRef<Usuario>);
 			OnCreated();
 		}
@@ -1886,10 +1349,6 @@ namespace Proyecto.dataBase
 			{
 				if ((this._codigo_Pub != value))
 				{
-					if (this._Publicaciones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncodigo_PubChanging(value);
 					this.SendPropertyChanging();
 					this._codigo_Pub = value;
@@ -1899,41 +1358,7 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Lista_deseos", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.Lista_deseos.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.Lista_deseos.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Lista_deseos", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Lista_deseos", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true, DeleteRule="CASCADE")]
 		public Usuario Usuario
 		{
 			get
@@ -1985,1222 +1410,6 @@ namespace Proyecto.dataBase
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Negociacion")]
-	public partial class Negociacion : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _codigo_Neg;
-		
-		private string _codigo_formPago;
-		
-		private string _codigo_FormEnvio;
-		
-		private System.Nullable<long> _codigo_Pub;
-		
-		private EntitySet<UsuarioNegociacion> _UsuarioNegociacion;
-		
-		private EntityRef<FormaPago> _FormaPago;
-		
-		private EntityRef<FormaEnvio> _FormaEnvio;
-		
-		private EntityRef<Publicaciones> _Publicaciones;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncodigo_NegChanging(string value);
-    partial void Oncodigo_NegChanged();
-    partial void Oncodigo_formPagoChanging(string value);
-    partial void Oncodigo_formPagoChanged();
-    partial void Oncodigo_FormEnvioChanging(string value);
-    partial void Oncodigo_FormEnvioChanged();
-    partial void Oncodigo_PubChanging(System.Nullable<long> value);
-    partial void Oncodigo_PubChanged();
-    #endregion
-		
-		public Negociacion()
-		{
-			this._UsuarioNegociacion = new EntitySet<UsuarioNegociacion>(new Action<UsuarioNegociacion>(this.attach_UsuarioNegociacion), new Action<UsuarioNegociacion>(this.detach_UsuarioNegociacion));
-			this._FormaPago = default(EntityRef<FormaPago>);
-			this._FormaEnvio = default(EntityRef<FormaEnvio>);
-			this._Publicaciones = default(EntityRef<Publicaciones>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Neg", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string codigo_Neg
-		{
-			get
-			{
-				return this._codigo_Neg;
-			}
-			set
-			{
-				if ((this._codigo_Neg != value))
-				{
-					this.Oncodigo_NegChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Neg = value;
-					this.SendPropertyChanged("codigo_Neg");
-					this.Oncodigo_NegChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_formPago", DbType="VarChar(10)")]
-		public string codigo_formPago
-		{
-			get
-			{
-				return this._codigo_formPago;
-			}
-			set
-			{
-				if ((this._codigo_formPago != value))
-				{
-					if (this._FormaPago.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_formPagoChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_formPago = value;
-					this.SendPropertyChanged("codigo_formPago");
-					this.Oncodigo_formPagoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_FormEnvio", DbType="VarChar(10)")]
-		public string codigo_FormEnvio
-		{
-			get
-			{
-				return this._codigo_FormEnvio;
-			}
-			set
-			{
-				if ((this._codigo_FormEnvio != value))
-				{
-					if (this._FormaEnvio.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_FormEnvioChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_FormEnvio = value;
-					this.SendPropertyChanged("codigo_FormEnvio");
-					this.Oncodigo_FormEnvioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pub", DbType="BigInt")]
-		public System.Nullable<long> codigo_Pub
-		{
-			get
-			{
-				return this._codigo_Pub;
-			}
-			set
-			{
-				if ((this._codigo_Pub != value))
-				{
-					if (this._Publicaciones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_PubChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Pub = value;
-					this.SendPropertyChanged("codigo_Pub");
-					this.Oncodigo_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Negociacion_UsuarioNegociacion", Storage="_UsuarioNegociacion", ThisKey="codigo_Neg", OtherKey="codigo_Neg")]
-		public EntitySet<UsuarioNegociacion> UsuarioNegociacion
-		{
-			get
-			{
-				return this._UsuarioNegociacion;
-			}
-			set
-			{
-				this._UsuarioNegociacion.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FormaPago_Negociacion", Storage="_FormaPago", ThisKey="codigo_formPago", OtherKey="codigo_formPago", IsForeignKey=true)]
-		public FormaPago FormaPago
-		{
-			get
-			{
-				return this._FormaPago.Entity;
-			}
-			set
-			{
-				FormaPago previousValue = this._FormaPago.Entity;
-				if (((previousValue != value) 
-							|| (this._FormaPago.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._FormaPago.Entity = null;
-						previousValue.Negociacion.Remove(this);
-					}
-					this._FormaPago.Entity = value;
-					if ((value != null))
-					{
-						value.Negociacion.Add(this);
-						this._codigo_formPago = value.codigo_formPago;
-					}
-					else
-					{
-						this._codigo_formPago = default(string);
-					}
-					this.SendPropertyChanged("FormaPago");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FormaEnvio_Negociacion", Storage="_FormaEnvio", ThisKey="codigo_FormEnvio", OtherKey="codigo_FormEnvio", IsForeignKey=true)]
-		public FormaEnvio FormaEnvio
-		{
-			get
-			{
-				return this._FormaEnvio.Entity;
-			}
-			set
-			{
-				FormaEnvio previousValue = this._FormaEnvio.Entity;
-				if (((previousValue != value) 
-							|| (this._FormaEnvio.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._FormaEnvio.Entity = null;
-						previousValue.Negociacion.Remove(this);
-					}
-					this._FormaEnvio.Entity = value;
-					if ((value != null))
-					{
-						value.Negociacion.Add(this);
-						this._codigo_FormEnvio = value.codigo_FormEnvio;
-					}
-					else
-					{
-						this._codigo_FormEnvio = default(string);
-					}
-					this.SendPropertyChanged("FormaEnvio");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Negociacion", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.Negociacion.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.Negociacion.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_UsuarioNegociacion(UsuarioNegociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Negociacion = this;
-		}
-		
-		private void detach_UsuarioNegociacion(UsuarioNegociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Negociacion = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Notificaciones")]
-	public partial class Notificaciones : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _codigo_not;
-		
-		private System.Nullable<long> _codigo_Pub;
-		
-		private string _ruta;
-		
-		private System.Nullable<long> _codigo_Usu;
-		
-		private System.Nullable<long> _codigo_Com;
-		
-		private EntityRef<Comentarios> _Comentarios;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncodigo_notChanging(long value);
-    partial void Oncodigo_notChanged();
-    partial void Oncodigo_PubChanging(System.Nullable<long> value);
-    partial void Oncodigo_PubChanged();
-    partial void OnrutaChanging(string value);
-    partial void OnrutaChanged();
-    partial void Oncodigo_UsuChanging(System.Nullable<long> value);
-    partial void Oncodigo_UsuChanged();
-    partial void Oncodigo_ComChanging(System.Nullable<long> value);
-    partial void Oncodigo_ComChanged();
-    #endregion
-		
-		public Notificaciones()
-		{
-			this._Comentarios = default(EntityRef<Comentarios>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_not", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long codigo_not
-		{
-			get
-			{
-				return this._codigo_not;
-			}
-			set
-			{
-				if ((this._codigo_not != value))
-				{
-					this.Oncodigo_notChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_not = value;
-					this.SendPropertyChanged("codigo_not");
-					this.Oncodigo_notChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pub", DbType="BigInt")]
-		public System.Nullable<long> codigo_Pub
-		{
-			get
-			{
-				return this._codigo_Pub;
-			}
-			set
-			{
-				if ((this._codigo_Pub != value))
-				{
-					if (this._Comentarios.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_PubChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Pub = value;
-					this.SendPropertyChanged("codigo_Pub");
-					this.Oncodigo_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ruta", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string ruta
-		{
-			get
-			{
-				return this._ruta;
-			}
-			set
-			{
-				if ((this._ruta != value))
-				{
-					this.OnrutaChanging(value);
-					this.SendPropertyChanging();
-					this._ruta = value;
-					this.SendPropertyChanged("ruta");
-					this.OnrutaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt")]
-		public System.Nullable<long> codigo_Usu
-		{
-			get
-			{
-				return this._codigo_Usu;
-			}
-			set
-			{
-				if ((this._codigo_Usu != value))
-				{
-					if (this._Comentarios.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_UsuChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Usu = value;
-					this.SendPropertyChanged("codigo_Usu");
-					this.Oncodigo_UsuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Com", DbType="BigInt")]
-		public System.Nullable<long> codigo_Com
-		{
-			get
-			{
-				return this._codigo_Com;
-			}
-			set
-			{
-				if ((this._codigo_Com != value))
-				{
-					if (this._Comentarios.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_ComChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Com = value;
-					this.SendPropertyChanged("codigo_Com");
-					this.Oncodigo_ComChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comentarios_Notificaciones", Storage="_Comentarios", ThisKey="codigo_Usu,codigo_Pub,codigo_Com", OtherKey="codigo_Usu,codigo_Pub,codigo_Com", IsForeignKey=true)]
-		public Comentarios Comentarios
-		{
-			get
-			{
-				return this._Comentarios.Entity;
-			}
-			set
-			{
-				Comentarios previousValue = this._Comentarios.Entity;
-				if (((previousValue != value) 
-							|| (this._Comentarios.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Comentarios.Entity = null;
-						previousValue.Notificaciones.Remove(this);
-					}
-					this._Comentarios.Entity = value;
-					if ((value != null))
-					{
-						value.Notificaciones.Add(this);
-						this._codigo_Usu = value.codigo_Usu;
-						this._codigo_Pub = value.codigo_Pub;
-						this._codigo_Com = value.codigo_Com;
-					}
-					else
-					{
-						this._codigo_Usu = default(Nullable<long>);
-						this._codigo_Pub = default(Nullable<long>);
-						this._codigo_Com = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Comentarios");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PagoPulicacion")]
-	public partial class PagoPulicacion : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _codigo_Pag_Pub;
-		
-		private long _codigo_Pub;
-		
-		private string _codigo_formPago;
-		
-		private EntityRef<FormaPago> _FormaPago;
-		
-		private EntityRef<Publicaciones> _Publicaciones;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncodigo_Pag_PubChanging(long value);
-    partial void Oncodigo_Pag_PubChanged();
-    partial void Oncodigo_PubChanging(long value);
-    partial void Oncodigo_PubChanged();
-    partial void Oncodigo_formPagoChanging(string value);
-    partial void Oncodigo_formPagoChanged();
-    #endregion
-		
-		public PagoPulicacion()
-		{
-			this._FormaPago = default(EntityRef<FormaPago>);
-			this._Publicaciones = default(EntityRef<Publicaciones>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pag_Pub", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long codigo_Pag_Pub
-		{
-			get
-			{
-				return this._codigo_Pag_Pub;
-			}
-			set
-			{
-				if ((this._codigo_Pag_Pub != value))
-				{
-					this.Oncodigo_Pag_PubChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Pag_Pub = value;
-					this.SendPropertyChanged("codigo_Pag_Pub");
-					this.Oncodigo_Pag_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pub", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
-		public long codigo_Pub
-		{
-			get
-			{
-				return this._codigo_Pub;
-			}
-			set
-			{
-				if ((this._codigo_Pub != value))
-				{
-					if (this._Publicaciones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_PubChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Pub = value;
-					this.SendPropertyChanged("codigo_Pub");
-					this.Oncodigo_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_formPago", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string codigo_formPago
-		{
-			get
-			{
-				return this._codigo_formPago;
-			}
-			set
-			{
-				if ((this._codigo_formPago != value))
-				{
-					if (this._FormaPago.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_formPagoChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_formPago = value;
-					this.SendPropertyChanged("codigo_formPago");
-					this.Oncodigo_formPagoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FormaPago_PagoPulicacion", Storage="_FormaPago", ThisKey="codigo_formPago", OtherKey="codigo_formPago", IsForeignKey=true)]
-		public FormaPago FormaPago
-		{
-			get
-			{
-				return this._FormaPago.Entity;
-			}
-			set
-			{
-				FormaPago previousValue = this._FormaPago.Entity;
-				if (((previousValue != value) 
-							|| (this._FormaPago.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._FormaPago.Entity = null;
-						previousValue.PagoPulicacion.Remove(this);
-					}
-					this._FormaPago.Entity = value;
-					if ((value != null))
-					{
-						value.PagoPulicacion.Add(this);
-						this._codigo_formPago = value.codigo_formPago;
-					}
-					else
-					{
-						this._codigo_formPago = default(string);
-					}
-					this.SendPropertyChanged("FormaPago");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_PagoPulicacion", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.PagoPulicacion.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.PagoPulicacion.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(long);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Publicaciones")]
-	public partial class Publicaciones : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _codigo_Pub;
-		
-		private long _codigo_Cat;
-		
-		private long _codigo_Usu;
-		
-		private string _nombre_Pub;
-		
-		private string _datos_Pub;
-		
-		private System.DateTime _fecha_Pub;
-		
-		private string _numero_con_Pub;
-		
-		private decimal _precio_Pub;
-		
-		private System.Nullable<bool> _estado_Pub;
-		
-		private int _stock_Pub;
-		
-		private EntitySet<Comentarios> _Comentarios;
-		
-		private EntitySet<EnvioPublicacion> _EnvioPublicacion;
-		
-		private EntitySet<Fotos> _Fotos;
-		
-		private EntitySet<Lista_deseos> _Lista_deseos;
-		
-		private EntitySet<Negociacion> _Negociacion;
-		
-		private EntitySet<PagoPulicacion> _PagoPulicacion;
-		
-		private EntityRef<Categorias> _Categorias;
-		
-		private EntityRef<Usuario> _Usuario;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncodigo_PubChanging(long value);
-    partial void Oncodigo_PubChanged();
-    partial void Oncodigo_CatChanging(long value);
-    partial void Oncodigo_CatChanged();
-    partial void Oncodigo_UsuChanging(long value);
-    partial void Oncodigo_UsuChanged();
-    partial void Onnombre_PubChanging(string value);
-    partial void Onnombre_PubChanged();
-    partial void Ondatos_PubChanging(string value);
-    partial void Ondatos_PubChanged();
-    partial void Onfecha_PubChanging(System.DateTime value);
-    partial void Onfecha_PubChanged();
-    partial void Onnumero_con_PubChanging(string value);
-    partial void Onnumero_con_PubChanged();
-    partial void Onprecio_PubChanging(decimal value);
-    partial void Onprecio_PubChanged();
-    partial void Onestado_PubChanging(System.Nullable<bool> value);
-    partial void Onestado_PubChanged();
-    partial void Onstock_PubChanging(int value);
-    partial void Onstock_PubChanged();
-    #endregion
-		
-		public Publicaciones()
-		{
-			this._Comentarios = new EntitySet<Comentarios>(new Action<Comentarios>(this.attach_Comentarios), new Action<Comentarios>(this.detach_Comentarios));
-			this._EnvioPublicacion = new EntitySet<EnvioPublicacion>(new Action<EnvioPublicacion>(this.attach_EnvioPublicacion), new Action<EnvioPublicacion>(this.detach_EnvioPublicacion));
-			this._Fotos = new EntitySet<Fotos>(new Action<Fotos>(this.attach_Fotos), new Action<Fotos>(this.detach_Fotos));
-			this._Lista_deseos = new EntitySet<Lista_deseos>(new Action<Lista_deseos>(this.attach_Lista_deseos), new Action<Lista_deseos>(this.detach_Lista_deseos));
-			this._Negociacion = new EntitySet<Negociacion>(new Action<Negociacion>(this.attach_Negociacion), new Action<Negociacion>(this.detach_Negociacion));
-			this._PagoPulicacion = new EntitySet<PagoPulicacion>(new Action<PagoPulicacion>(this.attach_PagoPulicacion), new Action<PagoPulicacion>(this.detach_PagoPulicacion));
-			this._Categorias = default(EntityRef<Categorias>);
-			this._Usuario = default(EntityRef<Usuario>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pub", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long codigo_Pub
-		{
-			get
-			{
-				return this._codigo_Pub;
-			}
-			set
-			{
-				if ((this._codigo_Pub != value))
-				{
-					this.Oncodigo_PubChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Pub = value;
-					this.SendPropertyChanged("codigo_Pub");
-					this.Oncodigo_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Cat", DbType="BigInt NOT NULL")]
-		public long codigo_Cat
-		{
-			get
-			{
-				return this._codigo_Cat;
-			}
-			set
-			{
-				if ((this._codigo_Cat != value))
-				{
-					if (this._Categorias.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_CatChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Cat = value;
-					this.SendPropertyChanged("codigo_Cat");
-					this.Oncodigo_CatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt NOT NULL")]
-		public long codigo_Usu
-		{
-			get
-			{
-				return this._codigo_Usu;
-			}
-			set
-			{
-				if ((this._codigo_Usu != value))
-				{
-					if (this._Usuario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncodigo_UsuChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Usu = value;
-					this.SendPropertyChanged("codigo_Usu");
-					this.Oncodigo_UsuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nombre_Pub
-		{
-			get
-			{
-				return this._nombre_Pub;
-			}
-			set
-			{
-				if ((this._nombre_Pub != value))
-				{
-					this.Onnombre_PubChanging(value);
-					this.SendPropertyChanging();
-					this._nombre_Pub = value;
-					this.SendPropertyChanged("nombre_Pub");
-					this.Onnombre_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datos_Pub", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string datos_Pub
-		{
-			get
-			{
-				return this._datos_Pub;
-			}
-			set
-			{
-				if ((this._datos_Pub != value))
-				{
-					this.Ondatos_PubChanging(value);
-					this.SendPropertyChanging();
-					this._datos_Pub = value;
-					this.SendPropertyChanged("datos_Pub");
-					this.Ondatos_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Pub", DbType="Date NOT NULL")]
-		public System.DateTime fecha_Pub
-		{
-			get
-			{
-				return this._fecha_Pub;
-			}
-			set
-			{
-				if ((this._fecha_Pub != value))
-				{
-					this.Onfecha_PubChanging(value);
-					this.SendPropertyChanging();
-					this._fecha_Pub = value;
-					this.SendPropertyChanged("fecha_Pub");
-					this.Onfecha_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_numero_con_Pub", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string numero_con_Pub
-		{
-			get
-			{
-				return this._numero_con_Pub;
-			}
-			set
-			{
-				if ((this._numero_con_Pub != value))
-				{
-					this.Onnumero_con_PubChanging(value);
-					this.SendPropertyChanging();
-					this._numero_con_Pub = value;
-					this.SendPropertyChanged("numero_con_Pub");
-					this.Onnumero_con_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_Pub", DbType="Decimal(18,2) NOT NULL")]
-		public decimal precio_Pub
-		{
-			get
-			{
-				return this._precio_Pub;
-			}
-			set
-			{
-				if ((this._precio_Pub != value))
-				{
-					this.Onprecio_PubChanging(value);
-					this.SendPropertyChanging();
-					this._precio_Pub = value;
-					this.SendPropertyChanged("precio_Pub");
-					this.Onprecio_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_Pub", DbType="Bit")]
-		public System.Nullable<bool> estado_Pub
-		{
-			get
-			{
-				return this._estado_Pub;
-			}
-			set
-			{
-				if ((this._estado_Pub != value))
-				{
-					this.Onestado_PubChanging(value);
-					this.SendPropertyChanging();
-					this._estado_Pub = value;
-					this.SendPropertyChanged("estado_Pub");
-					this.Onestado_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_Pub", DbType="Int NOT NULL")]
-		public int stock_Pub
-		{
-			get
-			{
-				return this._stock_Pub;
-			}
-			set
-			{
-				if ((this._stock_Pub != value))
-				{
-					this.Onstock_PubChanging(value);
-					this.SendPropertyChanging();
-					this._stock_Pub = value;
-					this.SendPropertyChanged("stock_Pub");
-					this.Onstock_PubChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Comentarios", Storage="_Comentarios", ThisKey="codigo_Pub", OtherKey="codigo_Pub")]
-		public EntitySet<Comentarios> Comentarios
-		{
-			get
-			{
-				return this._Comentarios;
-			}
-			set
-			{
-				this._Comentarios.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_EnvioPublicacion", Storage="_EnvioPublicacion", ThisKey="codigo_Pub", OtherKey="codigo_Pub")]
-		public EntitySet<EnvioPublicacion> EnvioPublicacion
-		{
-			get
-			{
-				return this._EnvioPublicacion;
-			}
-			set
-			{
-				this._EnvioPublicacion.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Fotos", Storage="_Fotos", ThisKey="codigo_Pub", OtherKey="codigo_Pub")]
-		public EntitySet<Fotos> Fotos
-		{
-			get
-			{
-				return this._Fotos;
-			}
-			set
-			{
-				this._Fotos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Lista_deseos", Storage="_Lista_deseos", ThisKey="codigo_Pub", OtherKey="codigo_Pub")]
-		public EntitySet<Lista_deseos> Lista_deseos
-		{
-			get
-			{
-				return this._Lista_deseos;
-			}
-			set
-			{
-				this._Lista_deseos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Negociacion", Storage="_Negociacion", ThisKey="codigo_Pub", OtherKey="codigo_Pub")]
-		public EntitySet<Negociacion> Negociacion
-		{
-			get
-			{
-				return this._Negociacion;
-			}
-			set
-			{
-				this._Negociacion.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_PagoPulicacion", Storage="_PagoPulicacion", ThisKey="codigo_Pub", OtherKey="codigo_Pub")]
-		public EntitySet<PagoPulicacion> PagoPulicacion
-		{
-			get
-			{
-				return this._PagoPulicacion;
-			}
-			set
-			{
-				this._PagoPulicacion.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categorias_Publicaciones", Storage="_Categorias", ThisKey="codigo_Cat", OtherKey="codigo_Cat", IsForeignKey=true)]
-		public Categorias Categorias
-		{
-			get
-			{
-				return this._Categorias.Entity;
-			}
-			set
-			{
-				Categorias previousValue = this._Categorias.Entity;
-				if (((previousValue != value) 
-							|| (this._Categorias.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Categorias.Entity = null;
-						previousValue.Publicaciones.Remove(this);
-					}
-					this._Categorias.Entity = value;
-					if ((value != null))
-					{
-						value.Publicaciones.Add(this);
-						this._codigo_Cat = value.codigo_Cat;
-					}
-					else
-					{
-						this._codigo_Cat = default(long);
-					}
-					this.SendPropertyChanged("Categorias");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Publicaciones", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true)]
-		public Usuario Usuario
-		{
-			get
-			{
-				return this._Usuario.Entity;
-			}
-			set
-			{
-				Usuario previousValue = this._Usuario.Entity;
-				if (((previousValue != value) 
-							|| (this._Usuario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Usuario.Entity = null;
-						previousValue.Publicaciones.Remove(this);
-					}
-					this._Usuario.Entity = value;
-					if ((value != null))
-					{
-						value.Publicaciones.Add(this);
-						this._codigo_Usu = value.codigo_Usu;
-					}
-					else
-					{
-						this._codigo_Usu = default(long);
-					}
-					this.SendPropertyChanged("Usuario");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Comentarios(Comentarios entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = this;
-		}
-		
-		private void detach_Comentarios(Comentarios entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = null;
-		}
-		
-		private void attach_EnvioPublicacion(EnvioPublicacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = this;
-		}
-		
-		private void detach_EnvioPublicacion(EnvioPublicacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = null;
-		}
-		
-		private void attach_Fotos(Fotos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = this;
-		}
-		
-		private void detach_Fotos(Fotos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = null;
-		}
-		
-		private void attach_Lista_deseos(Lista_deseos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = this;
-		}
-		
-		private void detach_Lista_deseos(Lista_deseos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = null;
-		}
-		
-		private void attach_Negociacion(Negociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = this;
-		}
-		
-		private void detach_Negociacion(Negociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = null;
-		}
-		
-		private void attach_PagoPulicacion(PagoPulicacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = this;
-		}
-		
-		private void detach_PagoPulicacion(PagoPulicacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Publicaciones = null;
 		}
 	}
 	
@@ -3226,13 +1435,9 @@ namespace Proyecto.dataBase
 		
 		private string _cedula_Usu;
 		
-		private EntitySet<UsuarioNegociacion> _UsuarioNegociacion;
-		
 		private EntitySet<Comentarios> _Comentarios;
 		
 		private EntitySet<Lista_deseos> _Lista_deseos;
-		
-		private EntitySet<Publicaciones> _Publicaciones;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -3258,10 +1463,8 @@ namespace Proyecto.dataBase
 		
 		public Usuario()
 		{
-			this._UsuarioNegociacion = new EntitySet<UsuarioNegociacion>(new Action<UsuarioNegociacion>(this.attach_UsuarioNegociacion), new Action<UsuarioNegociacion>(this.detach_UsuarioNegociacion));
 			this._Comentarios = new EntitySet<Comentarios>(new Action<Comentarios>(this.attach_Comentarios), new Action<Comentarios>(this.detach_Comentarios));
 			this._Lista_deseos = new EntitySet<Lista_deseos>(new Action<Lista_deseos>(this.attach_Lista_deseos), new Action<Lista_deseos>(this.detach_Lista_deseos));
-			this._Publicaciones = new EntitySet<Publicaciones>(new Action<Publicaciones>(this.attach_Publicaciones), new Action<Publicaciones>(this.detach_Publicaciones));
 			OnCreated();
 		}
 		
@@ -3425,19 +1628,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_UsuarioNegociacion", Storage="_UsuarioNegociacion", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
-		public EntitySet<UsuarioNegociacion> UsuarioNegociacion
-		{
-			get
-			{
-				return this._UsuarioNegociacion;
-			}
-			set
-			{
-				this._UsuarioNegociacion.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Comentarios", Storage="_Comentarios", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
 		public EntitySet<Comentarios> Comentarios
 		{
@@ -3464,19 +1654,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Publicaciones", Storage="_Publicaciones", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
-		public EntitySet<Publicaciones> Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones;
-			}
-			set
-			{
-				this._Publicaciones.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3495,18 +1672,6 @@ namespace Proyecto.dataBase
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_UsuarioNegociacion(UsuarioNegociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
-		}
-		
-		private void detach_UsuarioNegociacion(UsuarioNegociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
 		}
 		
 		private void attach_Comentarios(Comentarios entity)
@@ -3528,18 +1693,6 @@ namespace Proyecto.dataBase
 		}
 		
 		private void detach_Lista_deseos(Lista_deseos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
-		}
-		
-		private void attach_Publicaciones(Publicaciones entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
-		}
-		
-		private void detach_Publicaciones(Publicaciones entity)
 		{
 			this.SendPropertyChanging();
 			entity.Usuario = null;
@@ -3850,6 +2003,246 @@ namespace Proyecto.dataBase
 		}
 	}
 	
+	public partial class buscarDatosdeVendedorResult
+	{
+		
+		private string _nombreComp_Usu;
+		
+		private string _nic_Usu;
+		
+		private string _direccion_Usu;
+		
+		private string _email_Usu;
+		
+		private decimal _precio_Pub;
+		
+		private string _nombre_Pub;
+		
+		private int _stock_Pub;
+		
+		private string _datos_Pub;
+		
+		public buscarDatosdeVendedorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombreComp_Usu
+		{
+			get
+			{
+				return this._nombreComp_Usu;
+			}
+			set
+			{
+				if ((this._nombreComp_Usu != value))
+				{
+					this._nombreComp_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nic_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string nic_Usu
+		{
+			get
+			{
+				return this._nic_Usu;
+			}
+			set
+			{
+				if ((this._nic_Usu != value))
+				{
+					this._nic_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string direccion_Usu
+		{
+			get
+			{
+				return this._direccion_Usu;
+			}
+			set
+			{
+				if ((this._direccion_Usu != value))
+				{
+					this._direccion_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string email_Usu
+		{
+			get
+			{
+				return this._email_Usu;
+			}
+			set
+			{
+				if ((this._email_Usu != value))
+				{
+					this._email_Usu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_Pub", DbType="Decimal(18,2) NOT NULL")]
+		public decimal precio_Pub
+		{
+			get
+			{
+				return this._precio_Pub;
+			}
+			set
+			{
+				if ((this._precio_Pub != value))
+				{
+					this._precio_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nombre_Pub
+		{
+			get
+			{
+				return this._nombre_Pub;
+			}
+			set
+			{
+				if ((this._nombre_Pub != value))
+				{
+					this._nombre_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_Pub", DbType="Int NOT NULL")]
+		public int stock_Pub
+		{
+			get
+			{
+				return this._stock_Pub;
+			}
+			set
+			{
+				if ((this._stock_Pub != value))
+				{
+					this._stock_Pub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datos_Pub", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string datos_Pub
+		{
+			get
+			{
+				return this._datos_Pub;
+			}
+			set
+			{
+				if ((this._datos_Pub != value))
+				{
+					this._datos_Pub = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarFormasEnvioResult
+	{
+		
+		private string _codigo_FormEnvio;
+		
+		private string _nombre_FormEnvio;
+		
+		public buscarFormasEnvioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_FormEnvio", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string codigo_FormEnvio
+		{
+			get
+			{
+				return this._codigo_FormEnvio;
+			}
+			set
+			{
+				if ((this._codigo_FormEnvio != value))
+				{
+					this._codigo_FormEnvio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_FormEnvio", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombre_FormEnvio
+		{
+			get
+			{
+				return this._nombre_FormEnvio;
+			}
+			set
+			{
+				if ((this._nombre_FormEnvio != value))
+				{
+					this._nombre_FormEnvio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscarFormasPagoResult
+	{
+		
+		private string _codigo_FormPago;
+		
+		private string _nombre_FormPago;
+		
+		public buscarFormasPagoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_FormPago", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string codigo_FormPago
+		{
+			get
+			{
+				return this._codigo_FormPago;
+			}
+			set
+			{
+				if ((this._codigo_FormPago != value))
+				{
+					this._codigo_FormPago = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_FormPago", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombre_FormPago
+		{
+			get
+			{
+				return this._nombre_FormPago;
+			}
+			set
+			{
+				if ((this._nombre_FormPago != value))
+				{
+					this._nombre_FormPago = value;
+				}
+			}
+		}
+	}
+	
 	public partial class buscarNicknameResult
 	{
 		
@@ -4015,7 +2408,7 @@ namespace Proyecto.dataBase
 		
 		private string _datos_Pub;
 		
-		private System.DateTime _fecha_Pub;
+		private string _fecha_Pub;
 		
 		private string _numero_con_Pub;
 		
@@ -4109,8 +2502,8 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Pub", DbType="Date NOT NULL")]
-		public System.DateTime fecha_Pub
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string fecha_Pub
 		{
 			get
 			{
@@ -4283,7 +2676,7 @@ namespace Proyecto.dataBase
 		
 		private string _datos_Pub;
 		
-		private System.DateTime _fecha_Pub;
+		private string _fecha_Pub;
 		
 		private string _numero_con_Pub;
 		
@@ -4377,8 +2770,8 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Pub", DbType="Date NOT NULL")]
-		public System.DateTime fecha_Pub
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string fecha_Pub
 		{
 			get
 			{
@@ -4458,6 +2851,112 @@ namespace Proyecto.dataBase
 		}
 	}
 	
+	public partial class cp_contarlistadeseosResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public cp_contarlistadeseosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cp_listarComentarioResult
+	{
+		
+		private string _nick;
+		
+		private string _comentario;
+		
+		private System.DateTime _fecha;
+		
+		private long _Publicacion;
+		
+		public cp_listarComentarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nick", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string nick
+		{
+			get
+			{
+				return this._nick;
+			}
+			set
+			{
+				if ((this._nick != value))
+				{
+					this._nick = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comentario", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string comentario
+		{
+			get
+			{
+				return this._comentario;
+			}
+			set
+			{
+				if ((this._comentario != value))
+				{
+					this._comentario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date NOT NULL")]
+		public System.DateTime fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this._fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publicacion", DbType="BigInt NOT NULL")]
+		public long Publicacion
+		{
+			get
+			{
+				return this._Publicacion;
+			}
+			set
+			{
+				if ((this._Publicacion != value))
+				{
+					this._Publicacion = value;
+				}
+			}
+		}
+	}
+	
 	public partial class cp_listardeseosFiltroResult
 	{
 		
@@ -4479,174 +2978,6 @@ namespace Proyecto.dataBase
 				if ((this._codigo != value))
 				{
 					this._codigo = value;
-				}
-			}
-		}
-	}
-	
-	public partial class ListaPublicacionesResult
-	{
-		
-		private string _nombre_Pub;
-		
-		private string _datos_Pub;
-		
-		private decimal _precio_Pub;
-		
-		private System.Nullable<bool> _estado_Pub;
-		
-		public ListaPublicacionesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nombre_Pub
-		{
-			get
-			{
-				return this._nombre_Pub;
-			}
-			set
-			{
-				if ((this._nombre_Pub != value))
-				{
-					this._nombre_Pub = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datos_Pub", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string datos_Pub
-		{
-			get
-			{
-				return this._datos_Pub;
-			}
-			set
-			{
-				if ((this._datos_Pub != value))
-				{
-					this._datos_Pub = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_Pub", DbType="Decimal(18,2) NOT NULL")]
-		public decimal precio_Pub
-		{
-			get
-			{
-				return this._precio_Pub;
-			}
-			set
-			{
-				if ((this._precio_Pub != value))
-				{
-					this._precio_Pub = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_Pub", DbType="Bit")]
-		public System.Nullable<bool> estado_Pub
-		{
-			get
-			{
-				return this._estado_Pub;
-			}
-			set
-			{
-				if ((this._estado_Pub != value))
-				{
-					this._estado_Pub = value;
-				}
-			}
-		}
-	}
-	
-	public partial class buscarFormasEnvioResult
-	{
-		
-		private string _codigo_FormEnvio;
-		
-		private string _nombre_FormEnvio;
-		
-		public buscarFormasEnvioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_FormEnvio", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string codigo_FormEnvio
-		{
-			get
-			{
-				return this._codigo_FormEnvio;
-			}
-			set
-			{
-				if ((this._codigo_FormEnvio != value))
-				{
-					this._codigo_FormEnvio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_FormEnvio", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string nombre_FormEnvio
-		{
-			get
-			{
-				return this._nombre_FormEnvio;
-			}
-			set
-			{
-				if ((this._nombre_FormEnvio != value))
-				{
-					this._nombre_FormEnvio = value;
-				}
-			}
-		}
-	}
-	
-	public partial class buscarFormasPagoResult
-	{
-		
-		private string _codigo_FormPago;
-		
-		private string _nombre_FormPago;
-		
-		public buscarFormasPagoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_FormPago", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string codigo_FormPago
-		{
-			get
-			{
-				return this._codigo_FormPago;
-			}
-			set
-			{
-				if ((this._codigo_FormPago != value))
-				{
-					this._codigo_FormPago = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_FormPago", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string nombre_FormPago
-		{
-			get
-			{
-				return this._nombre_FormPago;
-			}
-			set
-			{
-				if ((this._nombre_FormPago != value))
-				{
-					this._nombre_FormPago = value;
 				}
 			}
 		}
@@ -4731,9 +3062,35 @@ namespace Proyecto.dataBase
 			}
 		}
 	}
+	
+	public partial class cp_ListarusuariofiltroResult
+	{
 		
-	public partial class cp_numeroFinalPublicacionResult
+		private string _nick;
+		
+		public cp_ListarusuariofiltroResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nick", DbType="VarChar(16)")]
+		public string nick
+		{
+			get
+			{
+				return this._nick;
+			}
+			set
+			{
+				if ((this._nick != value))
+				{
+					this._nick = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cp_numeroFinalPublicacionResult
+	{
 		
 		private long _codigo_Pub;
 		
@@ -4753,238 +3110,6 @@ namespace Proyecto.dataBase
 				if ((this._codigo_Pub != value))
 				{
 					this._codigo_Pub = value;
-				}
-			}
-				}
-			}
-	
-	public partial class cp_listarComentarioResult
-	{
-		
-		private long _codigo;
-		
-		private string _nick;
-		
-		private string _comentario;
-		
-		private System.DateTime _fecha;
-		
-		public cp_listarComentarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo", DbType="BigInt NOT NULL")]
-		public long codigo
-		{
-			get
-			{
-				return this._codigo;
-			}
-			set
-			{
-				if ((this._codigo != value))
-				{
-					this._codigo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nick", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string nick
-		{
-			get
-			{
-				return this._nick;
-			}
-			set
-			{
-				if ((this._nick != value))
-				{
-					this._nick = value;
-		}
-	}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comentario", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string comentario
-		{
-			get
-			{
-				return this._comentario;
-			}
-			set
-			{
-				if ((this._comentario != value))
-				{
-					this._comentario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date NOT NULL")]
-		public System.DateTime fecha
-		{
-			get
-			{
-				return this._fecha;
-			}
-			set
-			{
-				if ((this._fecha != value))
-				{
-					this._fecha = value;
-				}
-			}
-		}
-	}
-	
-	public partial class buscarDatosdeVendedorResult
-	{
-		
-		private string _nombreComp_Usu;
-		
-		private string _nic_Usu;
-		
-		private string _direccion_Usu;
-		
-		private string _email_Usu;
-		
-		private decimal _precio_Pub;
-		
-		private string _nombre_Pub;
-		
-		private int _stock_Pub;
-		
-		private string _datos_Pub;
-		
-		public buscarDatosdeVendedorResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string nombreComp_Usu
-		{
-			get
-			{
-				return this._nombreComp_Usu;
-			}
-			set
-			{
-				if ((this._nombreComp_Usu != value))
-				{
-					this._nombreComp_Usu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nic_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string nic_Usu
-		{
-			get
-			{
-				return this._nic_Usu;
-			}
-			set
-			{
-				if ((this._nic_Usu != value))
-				{
-					this._nic_Usu = value;
-		}
-	}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string direccion_Usu
-		{
-			get
-			{
-				return this._direccion_Usu;
-			}
-			set
-			{
-				if ((this._direccion_Usu != value))
-				{
-					this._direccion_Usu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string email_Usu
-		{
-			get
-			{
-				return this._email_Usu;
-			}
-			set
-			{
-				if ((this._email_Usu != value))
-				{
-					this._email_Usu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_Pub", DbType="Decimal(18,2) NOT NULL")]
-		public decimal precio_Pub
-		{
-			get
-			{
-				return this._precio_Pub;
-			}
-			set
-			{
-				if ((this._precio_Pub != value))
-				{
-					this._precio_Pub = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre_Pub", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nombre_Pub
-		{
-			get
-			{
-				return this._nombre_Pub;
-			}
-			set
-			{
-				if ((this._nombre_Pub != value))
-				{
-					this._nombre_Pub = value;
-			}
-		}
-	}
-	
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_Pub", DbType="Int NOT NULL")]
-		public int stock_Pub
-		{
-			get
-			{
-				return this._stock_Pub;
-			}
-			set
-	{
-				if ((this._stock_Pub != value))
-		{
-					this._stock_Pub = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datos_Pub", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string datos_Pub
-		{
-			get
-			{
-				return this._datos_Pub;
-			}
-			set
-			{
-				if ((this._datos_Pub != value))
-				{
-					this._datos_Pub = value;
 				}
 			}
 		}
@@ -5109,86 +3234,6 @@ namespace Proyecto.dataBase
 				if ((this._estado_Pub != value))
 				{
 					this._estado_Pub = value;
-				}
-			}
-		}
-	}
-	
-	public partial class cp_listarComentarioResult
-	{
-		
-		private string _nick;
-		
-		private string _comentario;
-		
-		private System.DateTime _fecha;
-		
-		private long _Publicacion;
-		
-		public cp_listarComentarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nick", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string nick
-		{
-			get
-			{
-				return this._nick;
-			}
-			set
-			{
-				if ((this._nick != value))
-				{
-					this._nick = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comentario", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string comentario
-		{
-			get
-			{
-				return this._comentario;
-			}
-			set
-			{
-				if ((this._comentario != value))
-				{
-					this._comentario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date NOT NULL")]
-		public System.DateTime fecha
-		{
-			get
-			{
-				return this._fecha;
-			}
-			set
-			{
-				if ((this._fecha != value))
-				{
-					this._fecha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publicacion", DbType="BigInt NOT NULL")]
-		public long Publicacion
-		{
-			get
-			{
-				return this._Publicacion;
-			}
-			set
-			{
-				if ((this._Publicacion != value))
-				{
-					this._Publicacion = value;
 				}
 			}
 		}

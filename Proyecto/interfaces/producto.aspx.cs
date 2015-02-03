@@ -71,13 +71,10 @@ namespace Proyecto.interfaces
        protected void Button2_Click(object sender, EventArgs e)
        {
            btnComentar0.Text = fechaHoy.ToString("d");
-       }
-
-       protected void Button2_Click(object sender, EventArgs e)
-       {
            Session["codigo_publicacion"] = 5;
            Response.Redirect("/interfaces/negociacion.aspx");
-           
        }
+
+       
     }
 }

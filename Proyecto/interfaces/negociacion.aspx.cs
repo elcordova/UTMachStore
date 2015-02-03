@@ -86,7 +86,14 @@ namespace Proyecto.interfaces
             string message = "Hecho!, " + datosCom.ElementAt(0).nic_Usu + "\n \n"
                 + "Los datos que te mostramos a continuacion facilitaran tu negociacion \n \n"
                 + "Usuario: " + datosVent.ElementAt(0).nombreComp_Usu + "\n Direccion: " + datosVent.ElementAt(0).direccion_Usu + "\n" +
-                "Correo Electronico: " + datosVent.ElementAt(0).email_Usu
+                "Correo Electronico: " + datosVent.ElementAt(0).email_Usu+
+                "\n Publicacion: " + datosVent.ElementAt(0).nombre_Pub +
+                    "\n Precio Propuesto: " + datosVent.ElementAt(0).precio_Pub +
+                    "\n Cantidad: " + nueva_vent.cantidad_pub +
+                    "\n Precio Final : " + (Double.Parse(datosVent.ElementAt(0).precio_Pub + "")) * (Double.Parse(nueva_vent.cantidad_pub + "")) +
+                "\n \n Datos de la Negociacion \n El usuario requiere:\n" +
+                "Tipo de Envio: " + DropDownListEnvio.SelectedItem.ToString() +
+                "Tipo de Pago: " + DropDownListPago.SelectedItem.ToString()
                 + "Los datos de tu negociacion tambien fueron enviados al dueño del anuncion\n \n"
                 + "recuerda,  que en utmachStore podras realizar tus publicaciones totalmente gratis y nosotros gestionaremos tus anuncios"
                 
@@ -98,17 +105,19 @@ namespace Proyecto.interfaces
                 message = "Hecho!, " + datosVent.ElementAt(0).nic_Usu + "\n \n"
                 + "Los datos que te mostramos a continuacion facilitaran tu negociacion \n \n"
                 + "Usuario: " + datosCom.ElementAt(0).nombreComp_Usu + "\n Direccion: " + datosCom.ElementAt(0).direccion_Usu + "\n" +
-                "Correo Electronico: " + datosCom.ElementAt(0).email_Usu+
-                    "\n Publicacion: "+datosVent.ElementAt(0).nombre_Pub+
-                    "\n Cantidad:"+nueva_vent.cantidad_pub+
-                    "\n \n Datos de la Negociacion \n El usuario requiere:\n"+
-                    "Tipo de Envio: " + DropDownListEnvio.SelectedItem.ToString()+
-                    "Tipo de Pago: "+ DropDownListPago.SelectedItem.ToString()
+                "Correo Electronico: " + datosCom.ElementAt(0).email_Usu +
+                    "\n Publicacion: " + datosVent.ElementAt(0).nombre_Pub +
+                    "\n Precio Propuesto: " + datosVent.ElementAt(0).precio_Pub +
+                    "\n Cantidad: " + nueva_vent.cantidad_pub +
+                    "\n Precio Final : " + (Double.Parse(datosVent.ElementAt(0).precio_Pub + "")) * (Double.Parse(nueva_vent.cantidad_pub + ""))+
+                "\n \n Datos de la Negociacion \n El usuario requiere:\n" +
+                "Tipo de Envio: " + DropDownListEnvio.SelectedItem.ToString() +
+                "Tipo de Pago: " + DropDownListPago.SelectedItem.ToString()
 
-                + "\n Los datos de tu negociacion tambien fueron enviados al comprador del anuncion\n \n"
-                + "recuerda,  que en utmachStore podras realizar tus publicaciones totalmente gratis y nosotros gestionaremos tus anuncios"
+            + "\n Los datos de tu negociacion tambien fueron enviados al comprador del anuncion\n \n"
+            + "recuerda,  que en utmachStore podras realizar tus publicaciones totalmente gratis y nosotros gestionaremos tus anuncios";
                 
-                + "UTMachStore";
+               
             if (new LogicaDeNegocio.Email().correoVerificacion(from, passwd, to, message, datosCom.ElementAt(0).nic_Usu, asunto))
             {
                 Response.Write("<script language=javascript>alert('Compra Exitosa....los datos relevantes fueron enviados a su correo');</script>");             
