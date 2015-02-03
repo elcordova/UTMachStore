@@ -98,10 +98,10 @@
                
             protected void Page_Load(object sender, EventArgs e)
             {
-                //if (Session["usuario"] == null)
-                //{
-                //    Response.Redirect("/interfaces/restriccion.aspx");
-                //}
+                if (Session["usuario"] == null)
+                {
+                    Response.Redirect("/interfaces/restriccion.aspx");
+                }
                     int contadorPublicaciones = 0;
                     int contadorPosicionPublicaciones = 0;
                     int contadorPosicionPublicaciones1 = 0;
