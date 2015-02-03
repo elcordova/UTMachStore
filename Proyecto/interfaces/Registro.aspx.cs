@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.LogicaDeNegocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -41,6 +42,7 @@ namespace Proyecto.interfaces
             }
             else
             {
+
                 datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
                 datosUsuarioCorreo = lnUsuario.buscarCorreo(TextBoxEmail.Text);
@@ -98,19 +100,24 @@ namespace Proyecto.interfaces
 
         private void validarCedula()
         {
-            if (!datosUsuarioCedula.Count.Equals(0))
+            if (TextBoxCedula.Text.Length == 10)
             {
-                if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+                if (!datosUsuarioCedula.Count.Equals(0))
                 {
-                    Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
-                    banderaCedula = false;
-                }
-                else
-                {
-                    banderaCedula = true;
-                }
+                    if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+                    {
+                        Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
+                        banderaCedula = false;
+                    }
+                    else
+                    {
+                        banderaCedula = true;
+                    }
 
+                }
             }
+
+            else Response.Write("<script language=javascript>alert('Digite correctamente la cédula');</script>");
         }
 
         private void validarNickname()
@@ -191,15 +198,5 @@ namespace Proyecto.interfaces
             validar.numeros(e);
             validar.esCedulaValida(TextBoxCedula.Text);
         }
-
-        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-
-        }
-
-
-       
-
-
     }
 }
