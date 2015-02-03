@@ -5533,60 +5533,24 @@ namespace Proyecto.dataBase
 	public partial class cp_listarproductonotificacionResult
 	{
 		
-		private long _codigo_Lis_Des;
-		
-		private System.Nullable<long> _codigo_Usu;
-		
-		private System.Nullable<long> _codigo_Pub;
+		private System.Nullable<int> _Column1;
 		
 		public cp_listarproductonotificacionResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Lis_Des", DbType="BigInt NOT NULL")]
-		public long codigo_Lis_Des
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
 		{
 			get
 			{
-				return this._codigo_Lis_Des;
+				return this._Column1;
 			}
 			set
 			{
-				if ((this._codigo_Lis_Des != value))
+				if ((this._Column1 != value))
 				{
-					this._codigo_Lis_Des = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt")]
-		public System.Nullable<long> codigo_Usu
-		{
-			get
-			{
-				return this._codigo_Usu;
-			}
-			set
-			{
-				if ((this._codigo_Usu != value))
-				{
-					this._codigo_Usu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Pub", DbType="BigInt")]
-		public System.Nullable<long> codigo_Pub
-		{
-			get
-			{
-				return this._codigo_Pub;
-			}
-			set
-			{
-				if ((this._codigo_Pub != value))
-				{
-					this._codigo_Pub = value;
+					this._Column1 = value;
 				}
 			}
 		}

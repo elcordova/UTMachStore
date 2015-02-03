@@ -40,5 +40,12 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.extraerCodigoUsuario(nick).ToList();
         }
+        public int contar(int val1, int val2)
+        {
+           
+            List<dataBase.cp_listarproductonotificacionResult> li = DB.cp_listarproductonotificacion(val1,val2).ToList();
+            int num = li.Count();
+            return num;
+        }
     }
 }

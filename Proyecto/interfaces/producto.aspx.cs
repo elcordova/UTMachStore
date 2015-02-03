@@ -52,24 +52,23 @@ namespace Proyecto.interfaces
 
         public void Button1_Click1(object sender, EventArgs e)
         {
-            
             int codigo = lnUsuario.idUsuario(Session["usuario"].ToString());
-            ld.codigo_Usu = codigo;
-            ld.codigo_Pub = Convert.ToInt16(Session["CodigoPublicacionVista"]);
-            lisdes.insertardeseo(ld);
-            Response.Write("<script language=javascript>alert('EL PRODUCTO A SIDO AÑADIDO A SU LISTA DE DESEOS');</script>");
+            int codpub=  Convert.ToInt16(Session["CodigoPublicacionVista"]);
+            int total=lisdes.contar(codigo, codpub);
+            if (total == 0)
+            {
 
+                ld.codigo_Usu = codigo;
+                ld.codigo_Pub = Convert.ToInt16(Session["CodigoPublicacionVista"]);
+                lisdes.insertardeseo(ld);
+                Response.Write("<script language=javascript>alert('EL PRODUCTO A SIDO AÑADIDO A SU LISTA DE DESEOS');</script>");
+            }
+            else
+            {
+                Response.Write("<script language=javascript>alert('EL PRODUCTO YA ESTA EN SU LISTA DE DESEOS');</script>");
+            }
         }
-
-        //public int contar()
-        // {
-        //    dataBase.DatosDataContext DB = new dataBase.DatosDataContext();
-        //     List<dataBase.cp_contarlistadeseosResult> li = DB.cp_contarlistadeseos().ToList();
-        //     int num = li.Count();
-        //     return num;
-        // }
- 
-
+      
 
         protected void Button2_Click(object sender, EventArgs e)
         {
