@@ -397,6 +397,16 @@
       <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.editarPublicacion" Method="editarPublicacion">
+    <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigo_categoria" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="nombre_publicacion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="datos_publicacion" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="numero_contacto" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="stock_produc" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.cp_insertarComentario" Method="cp_insertarComentario">
     <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
@@ -445,14 +455,26 @@
       <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.editarPublicacion" Method="editarPublicacion">
-    <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigo_categoria" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="nombre_publicacion" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="datos_publicacion" Type="System.String" DbType="VarChar(MAX)" />
-    <Parameter Name="numero_contacto" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
-    <Parameter Name="stock_produc" Type="System.Int32" DbType="Int" />
+  <Function Name="dbo.cp_insertarnotificacion" Method="cp_insertarnotificacion">
+    <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoCom" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_listarNotificacion" Method="cp_listarNotificacion">
+    <Parameter Name="valor" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cp_listarNotificacionResult">
+      <Column Name="idusuario" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nick" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="publicacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_numeroFinalComentario" Method="cp_numeroFinalComentario">
+    <ElementType Name="cp_numeroFinalComentarioResult">
+      <Column Name="codigo_Com" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

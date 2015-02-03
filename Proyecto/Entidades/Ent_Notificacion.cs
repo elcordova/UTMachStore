@@ -9,7 +9,7 @@ namespace Proyecto.Entidades
     {
         private int cod_Plubicacion;
         private string ruta;
-        private string cod_usuario;
+        private int cod_usuario;
         private int cod_comentario;
 
 
@@ -17,11 +17,11 @@ namespace Proyecto.Entidades
         {
             cod_Plubicacion = 0;
             ruta = "";
-            cod_usuario = "";
+            cod_usuario =0;
             cod_comentario = 0;
         }
 
-        public Ent_Notificacion(int codigoPublicacion, string rutaPublic, string codigoUsuario, int codigoComentario)
+        public Ent_Notificacion(int codigoPublicacion, string rutaPublic, int codigoUsuario, int codigoComentario)
         {
             cod_Plubicacion = codigoPublicacion;
             ruta = rutaPublic;
@@ -40,7 +40,7 @@ namespace Proyecto.Entidades
             get { return ruta; }
             set { ruta = value; }
         }
-        public string Codigo_Usuario
+        public int Codigo_Usuario
         {
             get { return cod_usuario; }
             set { cod_usuario = value; }
