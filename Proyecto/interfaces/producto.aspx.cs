@@ -16,7 +16,11 @@ namespace Proyecto.interfaces
         LN_Listadeseos lisdes = new LN_Listadeseos();
         LN_Usuario lnUsuario = new LN_Usuario();
         Entidades.Ent_Comentario ent_comentario = new Entidades.Ent_Comentario();
+        Entidades.Ent_Notificacion ent_notificacion = new Entidades.Ent_Notificacion();
         LogicaDeNegocio.LNComentario lncomentario = new LogicaDeNegocio.LNComentario();
+        LogicaDeNegocio.LN_Notificacion lnNotificacion = new LogicaDeNegocio.LN_Notificacion();
+
+
         public DateTime fechaHoy;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,6 +42,7 @@ namespace Proyecto.interfaces
                 ent_comentario.Comentario = txtComentario.Text;
                 ent_comentario.Fecha = fechaHoy.ToString("D");
                 lncomentario.insertarComentario(ent_comentario);
+
 
 
             }

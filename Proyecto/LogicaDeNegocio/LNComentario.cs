@@ -14,10 +14,7 @@ namespace Proyecto.LogicaDeNegocio
             DB.cp_insertarComentario(comentario.Codigo_Usuario, comentario.Codigo_Publicacion, comentario.Comentario, comentario.Fecha);
             DB.SubmitChanges();
         }
-        public string obtenerCedula()
-        {
-            return"";
-        }
+      
         public List<dataBase.cp_listarComentarioResult> listarComentario(int codigo)
         {
             return DB.cp_listarComentario(codigo).ToList();
