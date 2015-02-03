@@ -15,7 +15,7 @@ namespace Proyecto.LogicaDeNegocio
         //    DB.cp_insertarnotificacion(notificacion.Codigo_Publicacion, notificacion.Ruta_Publicacion, notificacion.Codigo_Usuario, notificacion.Codigo_Comentario);
          //   DB.SubmitChanges();
         }
-
+         
 
         public List<dataBase.cp_listarNotificacionResult> listarNotificacion(int id)
         {
