@@ -9,7 +9,7 @@
         Bienvenido! Esto es <span>UTMACH STORE</span>, un sitio, donde podras 
         <u>Negociar</u> &amp; <u>Promocionar</u> los productos que desses.
         Aqui te ofrecemos la oprtunidad de dar a conocer tus productos o servicios mediante publicaciones  
-        las cuales seran accedidas por muchos ususarios registradoos o no registrados que podran 
+        las cuales seran accedidas por muchos ususarios registradoos o no registrados que podran            |
         negociar con tigo acorde a tus exigencias.
         </h2>
 			<ul>  

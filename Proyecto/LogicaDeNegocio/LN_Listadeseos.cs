@@ -52,5 +52,15 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.cp_obtenercodigodeseo(codu,codp).ToList();
         }
+
+        public List<dataBase.PUBLICACIONESDESEOResult> publicacionesdeseo(int codu)
+        {
+            return DB.PUBLICACIONESDESEO(codu).ToList();
+        }
+
+        public List<dataBase.DatoslistaDeseosResult> datoslistadeseo(int codu)
+        {
+            return DB.DatoslistaDeseos(codu).ToList();
+        }
     }
 }
