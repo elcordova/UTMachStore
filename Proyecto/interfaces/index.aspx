@@ -11,7 +11,7 @@
         Aqui te ofrecemos la oprtunidad de dar a conocer tus productos o servicios mediante publicaciones 
         las cuales seran accedidas por muchos ususarios registradoos o no registrados que podran 
         negociar con tigo acorde a tus exigencias.
-        </h2>
+        </h2> 
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 			<ul> 
 				<li>
