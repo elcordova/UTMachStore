@@ -33,9 +33,9 @@ namespace Proyecto.dataBase
     partial void InsertCategorias(Categorias instance);
     partial void UpdateCategorias(Categorias instance);
     partial void DeleteCategorias(Categorias instance);
-    partial void InsertUsuarioNegociacion(UsuarioNegociacion instance);
-    partial void UpdateUsuarioNegociacion(UsuarioNegociacion instance);
-    partial void DeleteUsuarioNegociacion(UsuarioNegociacion instance);
+    partial void InsertUsuario(Usuario instance);
+    partial void UpdateUsuario(Usuario instance);
+    partial void DeleteUsuario(Usuario instance);
     partial void InsertComentarios(Comentarios instance);
     partial void UpdateComentarios(Comentarios instance);
     partial void DeleteComentarios(Comentarios instance);
@@ -66,9 +66,9 @@ namespace Proyecto.dataBase
     partial void InsertPublicaciones(Publicaciones instance);
     partial void UpdatePublicaciones(Publicaciones instance);
     partial void DeletePublicaciones(Publicaciones instance);
-    partial void InsertUsuario(Usuario instance);
-    partial void UpdateUsuario(Usuario instance);
-    partial void DeleteUsuario(Usuario instance);
+    partial void InsertUsuarioNegociacion(UsuarioNegociacion instance);
+    partial void UpdateUsuarioNegociacion(UsuarioNegociacion instance);
+    partial void DeleteUsuarioNegociacion(UsuarioNegociacion instance);
     #endregion
 		
 		public DatosDataContext() : 
@@ -109,11 +109,11 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		public System.Data.Linq.Table<UsuarioNegociacion> UsuarioNegociacion
+		public System.Data.Linq.Table<Usuario> Usuario
 		{
 			get
 			{
-				return this.GetTable<UsuarioNegociacion>();
+				return this.GetTable<Usuario>();
 			}
 		}
 		
@@ -197,11 +197,11 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		public System.Data.Linq.Table<Usuario> Usuario
+		public System.Data.Linq.Table<UsuarioNegociacion> UsuarioNegociacion
 		{
 			get
 			{
-				return this.GetTable<Usuario>();
+				return this.GetTable<UsuarioNegociacion>();
 			}
 		}
 		
@@ -339,9 +339,9 @@ namespace Proyecto.dataBase
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_insertarnotificacion")]
-		public int cp_insertarnotificacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string ruta, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoCom)
+		public int cp_insertarnotificacion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_Usu_Pub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoUsu, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoCom)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPub, ruta, codigoUsu, codigoCom);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPub, codigo_Usu_Pub, codigoUsu, codigoCom);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -738,87 +738,69 @@ namespace Proyecto.dataBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UsuarioNegociacion")]
-	public partial class UsuarioNegociacion : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Usuario")]
+	public partial class Usuario : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _codigo_Usu_Neg;
+		private long _codigo_Usu;
 		
-		private System.DateTime _fecha_UsuNeg;
+		private string _nombreComp_Usu;
 		
-		private System.Nullable<long> _codigo_Usu;
+		private string _nic_Usu;
 		
-		private System.Nullable<long> _cod_negociacion;
+		private string _direccion_Usu;
 		
-		private EntityRef<Negociacion> _Negociacion;
+		private string _password_Usu;
 		
-		private EntityRef<Usuario> _Usuario;
+		private string _email_Usu;
+		
+		private bool _estado_Usu;
+		
+		private string _cedula_Usu;
+		
+		private EntitySet<Comentarios> _Comentarios;
+		
+		private EntitySet<Lista_deseos> _Lista_deseos;
+		
+		private EntitySet<Publicaciones> _Publicaciones;
+		
+		private EntitySet<UsuarioNegociacion> _UsuarioNegociacion;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Oncodigo_Usu_NegChanging(long value);
-    partial void Oncodigo_Usu_NegChanged();
-    partial void Onfecha_UsuNegChanging(System.DateTime value);
-    partial void Onfecha_UsuNegChanged();
-    partial void Oncodigo_UsuChanging(System.Nullable<long> value);
+    partial void Oncodigo_UsuChanging(long value);
     partial void Oncodigo_UsuChanged();
-    partial void Oncod_negociacionChanging(System.Nullable<long> value);
-    partial void Oncod_negociacionChanged();
+    partial void OnnombreComp_UsuChanging(string value);
+    partial void OnnombreComp_UsuChanged();
+    partial void Onnic_UsuChanging(string value);
+    partial void Onnic_UsuChanged();
+    partial void Ondireccion_UsuChanging(string value);
+    partial void Ondireccion_UsuChanged();
+    partial void Onpassword_UsuChanging(string value);
+    partial void Onpassword_UsuChanged();
+    partial void Onemail_UsuChanging(string value);
+    partial void Onemail_UsuChanged();
+    partial void Onestado_UsuChanging(bool value);
+    partial void Onestado_UsuChanged();
+    partial void Oncedula_UsuChanging(string value);
+    partial void Oncedula_UsuChanged();
     #endregion
 		
-		public UsuarioNegociacion()
+		public Usuario()
 		{
-			this._Negociacion = default(EntityRef<Negociacion>);
-			this._Usuario = default(EntityRef<Usuario>);
+			this._Comentarios = new EntitySet<Comentarios>(new Action<Comentarios>(this.attach_Comentarios), new Action<Comentarios>(this.detach_Comentarios));
+			this._Lista_deseos = new EntitySet<Lista_deseos>(new Action<Lista_deseos>(this.attach_Lista_deseos), new Action<Lista_deseos>(this.detach_Lista_deseos));
+			this._Publicaciones = new EntitySet<Publicaciones>(new Action<Publicaciones>(this.attach_Publicaciones), new Action<Publicaciones>(this.detach_Publicaciones));
+			this._UsuarioNegociacion = new EntitySet<UsuarioNegociacion>(new Action<UsuarioNegociacion>(this.attach_UsuarioNegociacion), new Action<UsuarioNegociacion>(this.detach_UsuarioNegociacion));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu_Neg", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long codigo_Usu_Neg
-		{
-			get
-			{
-				return this._codigo_Usu_Neg;
-			}
-			set
-			{
-				if ((this._codigo_Usu_Neg != value))
-				{
-					this.Oncodigo_Usu_NegChanging(value);
-					this.SendPropertyChanging();
-					this._codigo_Usu_Neg = value;
-					this.SendPropertyChanged("codigo_Usu_Neg");
-					this.Oncodigo_Usu_NegChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_UsuNeg", DbType="DateTime NOT NULL")]
-		public System.DateTime fecha_UsuNeg
-		{
-			get
-			{
-				return this._fecha_UsuNeg;
-			}
-			set
-			{
-				if ((this._fecha_UsuNeg != value))
-				{
-					this.Onfecha_UsuNegChanging(value);
-					this.SendPropertyChanging();
-					this._fecha_UsuNeg = value;
-					this.SendPropertyChanged("fecha_UsuNeg");
-					this.Onfecha_UsuNegChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt")]
-		public System.Nullable<long> codigo_Usu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long codigo_Usu
 		{
 			get
 			{
@@ -828,10 +810,6 @@ namespace Proyecto.dataBase
 			{
 				if ((this._codigo_Usu != value))
 				{
-					if (this._Usuario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Oncodigo_UsuChanging(value);
 					this.SendPropertyChanging();
 					this._codigo_Usu = value;
@@ -841,95 +819,195 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cod_negociacion", DbType="BigInt")]
-		public System.Nullable<long> cod_negociacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string nombreComp_Usu
 		{
 			get
 			{
-				return this._cod_negociacion;
+				return this._nombreComp_Usu;
 			}
 			set
 			{
-				if ((this._cod_negociacion != value))
+				if ((this._nombreComp_Usu != value))
 				{
-					if (this._Negociacion.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncod_negociacionChanging(value);
+					this.OnnombreComp_UsuChanging(value);
 					this.SendPropertyChanging();
-					this._cod_negociacion = value;
-					this.SendPropertyChanged("cod_negociacion");
-					this.Oncod_negociacionChanged();
+					this._nombreComp_Usu = value;
+					this.SendPropertyChanged("nombreComp_Usu");
+					this.OnnombreComp_UsuChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Negociacion_UsuarioNegociacion", Storage="_Negociacion", ThisKey="cod_negociacion", OtherKey="cod_negociacion", IsForeignKey=true)]
-		public Negociacion Negociacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nic_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string nic_Usu
 		{
 			get
 			{
-				return this._Negociacion.Entity;
+				return this._nic_Usu;
 			}
 			set
 			{
-				Negociacion previousValue = this._Negociacion.Entity;
-				if (((previousValue != value) 
-							|| (this._Negociacion.HasLoadedOrAssignedValue == false)))
+				if ((this._nic_Usu != value))
 				{
+					this.Onnic_UsuChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Negociacion.Entity = null;
-						previousValue.UsuarioNegociacion.Remove(this);
-					}
-					this._Negociacion.Entity = value;
-					if ((value != null))
-					{
-						value.UsuarioNegociacion.Add(this);
-						this._cod_negociacion = value.cod_negociacion;
-					}
-					else
-					{
-						this._cod_negociacion = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Negociacion");
+					this._nic_Usu = value;
+					this.SendPropertyChanged("nic_Usu");
+					this.Onnic_UsuChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_UsuarioNegociacion", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true, DeleteRule="CASCADE")]
-		public Usuario Usuario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string direccion_Usu
 		{
 			get
 			{
-				return this._Usuario.Entity;
+				return this._direccion_Usu;
 			}
 			set
 			{
-				Usuario previousValue = this._Usuario.Entity;
-				if (((previousValue != value) 
-							|| (this._Usuario.HasLoadedOrAssignedValue == false)))
+				if ((this._direccion_Usu != value))
 				{
+					this.Ondireccion_UsuChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Usuario.Entity = null;
-						previousValue.UsuarioNegociacion.Remove(this);
-					}
-					this._Usuario.Entity = value;
-					if ((value != null))
-					{
-						value.UsuarioNegociacion.Add(this);
-						this._codigo_Usu = value.codigo_Usu;
-					}
-					else
-					{
-						this._codigo_Usu = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Usuario");
+					this._direccion_Usu = value;
+					this.SendPropertyChanged("direccion_Usu");
+					this.Ondireccion_UsuChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string password_Usu
+		{
+			get
+			{
+				return this._password_Usu;
+			}
+			set
+			{
+				if ((this._password_Usu != value))
+				{
+					this.Onpassword_UsuChanging(value);
+					this.SendPropertyChanging();
+					this._password_Usu = value;
+					this.SendPropertyChanged("password_Usu");
+					this.Onpassword_UsuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string email_Usu
+		{
+			get
+			{
+				return this._email_Usu;
+			}
+			set
+			{
+				if ((this._email_Usu != value))
+				{
+					this.Onemail_UsuChanging(value);
+					this.SendPropertyChanging();
+					this._email_Usu = value;
+					this.SendPropertyChanged("email_Usu");
+					this.Onemail_UsuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_Usu", DbType="Bit NOT NULL")]
+		public bool estado_Usu
+		{
+			get
+			{
+				return this._estado_Usu;
+			}
+			set
+			{
+				if ((this._estado_Usu != value))
+				{
+					this.Onestado_UsuChanging(value);
+					this.SendPropertyChanging();
+					this._estado_Usu = value;
+					this.SendPropertyChanged("estado_Usu");
+					this.Onestado_UsuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula_Usu", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string cedula_Usu
+		{
+			get
+			{
+				return this._cedula_Usu;
+			}
+			set
+			{
+				if ((this._cedula_Usu != value))
+				{
+					this.Oncedula_UsuChanging(value);
+					this.SendPropertyChanging();
+					this._cedula_Usu = value;
+					this.SendPropertyChanged("cedula_Usu");
+					this.Oncedula_UsuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Comentarios", Storage="_Comentarios", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
+		public EntitySet<Comentarios> Comentarios
+		{
+			get
+			{
+				return this._Comentarios;
+			}
+			set
+			{
+				this._Comentarios.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Lista_deseos", Storage="_Lista_deseos", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
+		public EntitySet<Lista_deseos> Lista_deseos
+		{
+			get
+			{
+				return this._Lista_deseos;
+			}
+			set
+			{
+				this._Lista_deseos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Publicaciones", Storage="_Publicaciones", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
+		public EntitySet<Publicaciones> Publicaciones
+		{
+			get
+			{
+				return this._Publicaciones;
+			}
+			set
+			{
+				this._Publicaciones.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_UsuarioNegociacion", Storage="_UsuarioNegociacion", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
+		public EntitySet<UsuarioNegociacion> UsuarioNegociacion
+		{
+			get
+			{
+				return this._UsuarioNegociacion;
+			}
+			set
+			{
+				this._UsuarioNegociacion.Assign(value);
 			}
 		}
 		
@@ -952,6 +1030,54 @@ namespace Proyecto.dataBase
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_Comentarios(Comentarios entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = this;
+		}
+		
+		private void detach_Comentarios(Comentarios entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = null;
+		}
+		
+		private void attach_Lista_deseos(Lista_deseos entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = this;
+		}
+		
+		private void detach_Lista_deseos(Lista_deseos entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = null;
+		}
+		
+		private void attach_Publicaciones(Publicaciones entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = this;
+		}
+		
+		private void detach_Publicaciones(Publicaciones entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = null;
+		}
+		
+		private void attach_UsuarioNegociacion(UsuarioNegociacion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = this;
+		}
+		
+		private void detach_UsuarioNegociacion(UsuarioNegociacion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Comentarios")]
@@ -972,9 +1098,9 @@ namespace Proyecto.dataBase
 		
 		private EntitySet<Notificaciones> _Notificaciones;
 		
-		private EntityRef<Publicaciones> _Publicaciones;
-		
 		private EntityRef<Usuario> _Usuario;
+		
+		private EntityRef<Publicaciones> _Publicaciones;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -995,8 +1121,8 @@ namespace Proyecto.dataBase
 		public Comentarios()
 		{
 			this._Notificaciones = new EntitySet<Notificaciones>(new Action<Notificaciones>(this.attach_Notificaciones), new Action<Notificaciones>(this.detach_Notificaciones));
-			this._Publicaciones = default(EntityRef<Publicaciones>);
 			this._Usuario = default(EntityRef<Usuario>);
+			this._Publicaciones = default(EntityRef<Publicaciones>);
 			OnCreated();
 		}
 		
@@ -1121,40 +1247,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Comentarios", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.Comentarios.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.Comentarios.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(long);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Comentarios", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Usuario Usuario
 		{
@@ -1185,6 +1277,40 @@ namespace Proyecto.dataBase
 						this._codigo_Usu = default(long);
 					}
 					this.SendPropertyChanged("Usuario");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Comentarios", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
+		public Publicaciones Publicaciones
+		{
+			get
+			{
+				return this._Publicaciones.Entity;
+			}
+			set
+			{
+				Publicaciones previousValue = this._Publicaciones.Entity;
+				if (((previousValue != value) 
+							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Publicaciones.Entity = null;
+						previousValue.Comentarios.Remove(this);
+					}
+					this._Publicaciones.Entity = value;
+					if ((value != null))
+					{
+						value.Comentarios.Add(this);
+						this._codigo_Pub = value.codigo_Pub;
+					}
+					else
+					{
+						this._codigo_Pub = default(long);
+					}
+					this.SendPropertyChanged("Publicaciones");
 				}
 			}
 		}
@@ -1885,9 +2011,9 @@ namespace Proyecto.dataBase
 		
 		private System.Nullable<long> _codigo_Pub;
 		
-		private EntityRef<Publicaciones> _Publicaciones;
-		
 		private EntityRef<Usuario> _Usuario;
+		
+		private EntityRef<Publicaciones> _Publicaciones;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1903,8 +2029,8 @@ namespace Proyecto.dataBase
 		
 		public Lista_deseos()
 		{
-			this._Publicaciones = default(EntityRef<Publicaciones>);
 			this._Usuario = default(EntityRef<Usuario>);
+			this._Publicaciones = default(EntityRef<Publicaciones>);
 			OnCreated();
 		}
 		
@@ -1976,40 +2102,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Lista_deseos", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
-		public Publicaciones Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones.Entity;
-			}
-			set
-			{
-				Publicaciones previousValue = this._Publicaciones.Entity;
-				if (((previousValue != value) 
-							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Publicaciones.Entity = null;
-						previousValue.Lista_deseos.Remove(this);
-					}
-					this._Publicaciones.Entity = value;
-					if ((value != null))
-					{
-						value.Lista_deseos.Add(this);
-						this._codigo_Pub = value.codigo_Pub;
-					}
-					else
-					{
-						this._codigo_Pub = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Publicaciones");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Lista_deseos", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true, DeleteRule="CASCADE")]
 		public Usuario Usuario
 		{
@@ -2040,6 +2132,40 @@ namespace Proyecto.dataBase
 						this._codigo_Usu = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Usuario");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Publicaciones_Lista_deseos", Storage="_Publicaciones", ThisKey="codigo_Pub", OtherKey="codigo_Pub", IsForeignKey=true)]
+		public Publicaciones Publicaciones
+		{
+			get
+			{
+				return this._Publicaciones.Entity;
+			}
+			set
+			{
+				Publicaciones previousValue = this._Publicaciones.Entity;
+				if (((previousValue != value) 
+							|| (this._Publicaciones.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Publicaciones.Entity = null;
+						previousValue.Lista_deseos.Remove(this);
+					}
+					this._Publicaciones.Entity = value;
+					if ((value != null))
+					{
+						value.Lista_deseos.Add(this);
+						this._codigo_Pub = value.codigo_Pub;
+					}
+					else
+					{
+						this._codigo_Pub = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Publicaciones");
 				}
 			}
 		}
@@ -2360,7 +2486,7 @@ namespace Proyecto.dataBase
 		
 		private System.Nullable<long> _codigo_Pub;
 		
-		private string _ruta;
+		private long _codigo_Usu_Puc;
 		
 		private System.Nullable<long> _codigo_Usu;
 		
@@ -2376,8 +2502,8 @@ namespace Proyecto.dataBase
     partial void Oncodigo_notChanged();
     partial void Oncodigo_PubChanging(System.Nullable<long> value);
     partial void Oncodigo_PubChanged();
-    partial void OnrutaChanging(string value);
-    partial void OnrutaChanged();
+    partial void Oncodigo_Usu_PucChanging(long value);
+    partial void Oncodigo_Usu_PucChanged();
     partial void Oncodigo_UsuChanging(System.Nullable<long> value);
     partial void Oncodigo_UsuChanged();
     partial void Oncodigo_ComChanging(System.Nullable<long> value);
@@ -2434,22 +2560,22 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ruta", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string ruta
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu_Puc", DbType="BigInt NOT NULL")]
+		public long codigo_Usu_Puc
 		{
 			get
 			{
-				return this._ruta;
+				return this._codigo_Usu_Puc;
 			}
 			set
 			{
-				if ((this._ruta != value))
+				if ((this._codigo_Usu_Puc != value))
 				{
-					this.OnrutaChanging(value);
+					this.Oncodigo_Usu_PucChanging(value);
 					this.SendPropertyChanging();
-					this._ruta = value;
-					this.SendPropertyChanged("ruta");
-					this.OnrutaChanged();
+					this._codigo_Usu_Puc = value;
+					this.SendPropertyChanged("codigo_Usu_Puc");
+					this.Oncodigo_Usu_PucChanged();
 				}
 			}
 		}
@@ -2791,9 +2917,9 @@ namespace Proyecto.dataBase
 		
 		private EntitySet<PagoPulicacion> _PagoPulicacion;
 		
-		private EntityRef<Categorias> _Categorias;
-		
 		private EntityRef<Usuario> _Usuario;
+		
+		private EntityRef<Categorias> _Categorias;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -2829,8 +2955,8 @@ namespace Proyecto.dataBase
 			this._Lista_deseos = new EntitySet<Lista_deseos>(new Action<Lista_deseos>(this.attach_Lista_deseos), new Action<Lista_deseos>(this.detach_Lista_deseos));
 			this._Negociacion = new EntitySet<Negociacion>(new Action<Negociacion>(this.attach_Negociacion), new Action<Negociacion>(this.detach_Negociacion));
 			this._PagoPulicacion = new EntitySet<PagoPulicacion>(new Action<PagoPulicacion>(this.attach_PagoPulicacion), new Action<PagoPulicacion>(this.detach_PagoPulicacion));
-			this._Categorias = default(EntityRef<Categorias>);
 			this._Usuario = default(EntityRef<Usuario>);
+			this._Categorias = default(EntityRef<Categorias>);
 			OnCreated();
 		}
 		
@@ -3120,40 +3246,6 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categorias_Publicaciones", Storage="_Categorias", ThisKey="codigo_Cat", OtherKey="codigo_Cat", IsForeignKey=true)]
-		public Categorias Categorias
-		{
-			get
-			{
-				return this._Categorias.Entity;
-			}
-			set
-			{
-				Categorias previousValue = this._Categorias.Entity;
-				if (((previousValue != value) 
-							|| (this._Categorias.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Categorias.Entity = null;
-						previousValue.Publicaciones.Remove(this);
-					}
-					this._Categorias.Entity = value;
-					if ((value != null))
-					{
-						value.Publicaciones.Add(this);
-						this._codigo_Cat = value.codigo_Cat;
-					}
-					else
-					{
-						this._codigo_Cat = default(long);
-					}
-					this.SendPropertyChanged("Categorias");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Publicaciones", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Usuario Usuario
 		{
@@ -3184,6 +3276,40 @@ namespace Proyecto.dataBase
 						this._codigo_Usu = default(long);
 					}
 					this.SendPropertyChanged("Usuario");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categorias_Publicaciones", Storage="_Categorias", ThisKey="codigo_Cat", OtherKey="codigo_Cat", IsForeignKey=true)]
+		public Categorias Categorias
+		{
+			get
+			{
+				return this._Categorias.Entity;
+			}
+			set
+			{
+				Categorias previousValue = this._Categorias.Entity;
+				if (((previousValue != value) 
+							|| (this._Categorias.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Categorias.Entity = null;
+						previousValue.Publicaciones.Remove(this);
+					}
+					this._Categorias.Entity = value;
+					if ((value != null))
+					{
+						value.Publicaciones.Add(this);
+						this._codigo_Cat = value.codigo_Cat;
+					}
+					else
+					{
+						this._codigo_Cat = default(long);
+					}
+					this.SendPropertyChanged("Categorias");
 				}
 			}
 		}
@@ -3281,69 +3407,87 @@ namespace Proyecto.dataBase
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Usuario")]
-	public partial class Usuario : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UsuarioNegociacion")]
+	public partial class UsuarioNegociacion : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _codigo_Usu;
+		private long _codigo_Usu_Neg;
 		
-		private string _nombreComp_Usu;
+		private System.DateTime _fecha_UsuNeg;
 		
-		private string _nic_Usu;
+		private System.Nullable<long> _codigo_Usu;
 		
-		private string _direccion_Usu;
+		private System.Nullable<long> _cod_negociacion;
 		
-		private string _password_Usu;
+		private EntityRef<Negociacion> _Negociacion;
 		
-		private string _email_Usu;
-		
-		private bool _estado_Usu;
-		
-		private string _cedula_Usu;
-		
-		private EntitySet<UsuarioNegociacion> _UsuarioNegociacion;
-		
-		private EntitySet<Comentarios> _Comentarios;
-		
-		private EntitySet<Lista_deseos> _Lista_deseos;
-		
-		private EntitySet<Publicaciones> _Publicaciones;
+		private EntityRef<Usuario> _Usuario;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Oncodigo_UsuChanging(long value);
+    partial void Oncodigo_Usu_NegChanging(long value);
+    partial void Oncodigo_Usu_NegChanged();
+    partial void Onfecha_UsuNegChanging(System.DateTime value);
+    partial void Onfecha_UsuNegChanged();
+    partial void Oncodigo_UsuChanging(System.Nullable<long> value);
     partial void Oncodigo_UsuChanged();
-    partial void OnnombreComp_UsuChanging(string value);
-    partial void OnnombreComp_UsuChanged();
-    partial void Onnic_UsuChanging(string value);
-    partial void Onnic_UsuChanged();
-    partial void Ondireccion_UsuChanging(string value);
-    partial void Ondireccion_UsuChanged();
-    partial void Onpassword_UsuChanging(string value);
-    partial void Onpassword_UsuChanged();
-    partial void Onemail_UsuChanging(string value);
-    partial void Onemail_UsuChanged();
-    partial void Onestado_UsuChanging(bool value);
-    partial void Onestado_UsuChanged();
-    partial void Oncedula_UsuChanging(string value);
-    partial void Oncedula_UsuChanged();
+    partial void Oncod_negociacionChanging(System.Nullable<long> value);
+    partial void Oncod_negociacionChanged();
     #endregion
 		
-		public Usuario()
+		public UsuarioNegociacion()
 		{
-			this._UsuarioNegociacion = new EntitySet<UsuarioNegociacion>(new Action<UsuarioNegociacion>(this.attach_UsuarioNegociacion), new Action<UsuarioNegociacion>(this.detach_UsuarioNegociacion));
-			this._Comentarios = new EntitySet<Comentarios>(new Action<Comentarios>(this.attach_Comentarios), new Action<Comentarios>(this.detach_Comentarios));
-			this._Lista_deseos = new EntitySet<Lista_deseos>(new Action<Lista_deseos>(this.attach_Lista_deseos), new Action<Lista_deseos>(this.detach_Lista_deseos));
-			this._Publicaciones = new EntitySet<Publicaciones>(new Action<Publicaciones>(this.attach_Publicaciones), new Action<Publicaciones>(this.detach_Publicaciones));
+			this._Negociacion = default(EntityRef<Negociacion>);
+			this._Usuario = default(EntityRef<Usuario>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long codigo_Usu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu_Neg", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long codigo_Usu_Neg
+		{
+			get
+			{
+				return this._codigo_Usu_Neg;
+			}
+			set
+			{
+				if ((this._codigo_Usu_Neg != value))
+				{
+					this.Oncodigo_Usu_NegChanging(value);
+					this.SendPropertyChanging();
+					this._codigo_Usu_Neg = value;
+					this.SendPropertyChanged("codigo_Usu_Neg");
+					this.Oncodigo_Usu_NegChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_UsuNeg", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_UsuNeg
+		{
+			get
+			{
+				return this._fecha_UsuNeg;
+			}
+			set
+			{
+				if ((this._fecha_UsuNeg != value))
+				{
+					this.Onfecha_UsuNegChanging(value);
+					this.SendPropertyChanging();
+					this._fecha_UsuNeg = value;
+					this.SendPropertyChanged("fecha_UsuNeg");
+					this.Onfecha_UsuNegChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Usu", DbType="BigInt")]
+		public System.Nullable<long> codigo_Usu
 		{
 			get
 			{
@@ -3353,6 +3497,10 @@ namespace Proyecto.dataBase
 			{
 				if ((this._codigo_Usu != value))
 				{
+					if (this._Usuario.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.Oncodigo_UsuChanging(value);
 					this.SendPropertyChanging();
 					this._codigo_Usu = value;
@@ -3362,195 +3510,95 @@ namespace Proyecto.dataBase
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombreComp_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string nombreComp_Usu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cod_negociacion", DbType="BigInt")]
+		public System.Nullable<long> cod_negociacion
 		{
 			get
 			{
-				return this._nombreComp_Usu;
+				return this._cod_negociacion;
 			}
 			set
 			{
-				if ((this._nombreComp_Usu != value))
+				if ((this._cod_negociacion != value))
 				{
-					this.OnnombreComp_UsuChanging(value);
+					if (this._Negociacion.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncod_negociacionChanging(value);
 					this.SendPropertyChanging();
-					this._nombreComp_Usu = value;
-					this.SendPropertyChanged("nombreComp_Usu");
-					this.OnnombreComp_UsuChanged();
+					this._cod_negociacion = value;
+					this.SendPropertyChanged("cod_negociacion");
+					this.Oncod_negociacionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nic_Usu", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string nic_Usu
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Negociacion_UsuarioNegociacion", Storage="_Negociacion", ThisKey="cod_negociacion", OtherKey="cod_negociacion", IsForeignKey=true)]
+		public Negociacion Negociacion
 		{
 			get
 			{
-				return this._nic_Usu;
+				return this._Negociacion.Entity;
 			}
 			set
 			{
-				if ((this._nic_Usu != value))
+				Negociacion previousValue = this._Negociacion.Entity;
+				if (((previousValue != value) 
+							|| (this._Negociacion.HasLoadedOrAssignedValue == false)))
 				{
-					this.Onnic_UsuChanging(value);
 					this.SendPropertyChanging();
-					this._nic_Usu = value;
-					this.SendPropertyChanged("nic_Usu");
-					this.Onnic_UsuChanged();
+					if ((previousValue != null))
+					{
+						this._Negociacion.Entity = null;
+						previousValue.UsuarioNegociacion.Remove(this);
+					}
+					this._Negociacion.Entity = value;
+					if ((value != null))
+					{
+						value.UsuarioNegociacion.Add(this);
+						this._cod_negociacion = value.cod_negociacion;
+					}
+					else
+					{
+						this._cod_negociacion = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Negociacion");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_direccion_Usu", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string direccion_Usu
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_UsuarioNegociacion", Storage="_Usuario", ThisKey="codigo_Usu", OtherKey="codigo_Usu", IsForeignKey=true, DeleteRule="CASCADE")]
+		public Usuario Usuario
 		{
 			get
 			{
-				return this._direccion_Usu;
+				return this._Usuario.Entity;
 			}
 			set
 			{
-				if ((this._direccion_Usu != value))
+				Usuario previousValue = this._Usuario.Entity;
+				if (((previousValue != value) 
+							|| (this._Usuario.HasLoadedOrAssignedValue == false)))
 				{
-					this.Ondireccion_UsuChanging(value);
 					this.SendPropertyChanging();
-					this._direccion_Usu = value;
-					this.SendPropertyChanged("direccion_Usu");
-					this.Ondireccion_UsuChanged();
+					if ((previousValue != null))
+					{
+						this._Usuario.Entity = null;
+						previousValue.UsuarioNegociacion.Remove(this);
+					}
+					this._Usuario.Entity = value;
+					if ((value != null))
+					{
+						value.UsuarioNegociacion.Add(this);
+						this._codigo_Usu = value.codigo_Usu;
+					}
+					else
+					{
+						this._codigo_Usu = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Usuario");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string password_Usu
-		{
-			get
-			{
-				return this._password_Usu;
-			}
-			set
-			{
-				if ((this._password_Usu != value))
-				{
-					this.Onpassword_UsuChanging(value);
-					this.SendPropertyChanging();
-					this._password_Usu = value;
-					this.SendPropertyChanged("password_Usu");
-					this.Onpassword_UsuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email_Usu", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string email_Usu
-		{
-			get
-			{
-				return this._email_Usu;
-			}
-			set
-			{
-				if ((this._email_Usu != value))
-				{
-					this.Onemail_UsuChanging(value);
-					this.SendPropertyChanging();
-					this._email_Usu = value;
-					this.SendPropertyChanged("email_Usu");
-					this.Onemail_UsuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado_Usu", DbType="Bit NOT NULL")]
-		public bool estado_Usu
-		{
-			get
-			{
-				return this._estado_Usu;
-			}
-			set
-			{
-				if ((this._estado_Usu != value))
-				{
-					this.Onestado_UsuChanging(value);
-					this.SendPropertyChanging();
-					this._estado_Usu = value;
-					this.SendPropertyChanged("estado_Usu");
-					this.Onestado_UsuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cedula_Usu", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string cedula_Usu
-		{
-			get
-			{
-				return this._cedula_Usu;
-			}
-			set
-			{
-				if ((this._cedula_Usu != value))
-				{
-					this.Oncedula_UsuChanging(value);
-					this.SendPropertyChanging();
-					this._cedula_Usu = value;
-					this.SendPropertyChanged("cedula_Usu");
-					this.Oncedula_UsuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_UsuarioNegociacion", Storage="_UsuarioNegociacion", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
-		public EntitySet<UsuarioNegociacion> UsuarioNegociacion
-		{
-			get
-			{
-				return this._UsuarioNegociacion;
-			}
-			set
-			{
-				this._UsuarioNegociacion.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Comentarios", Storage="_Comentarios", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
-		public EntitySet<Comentarios> Comentarios
-		{
-			get
-			{
-				return this._Comentarios;
-			}
-			set
-			{
-				this._Comentarios.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Lista_deseos", Storage="_Lista_deseos", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
-		public EntitySet<Lista_deseos> Lista_deseos
-		{
-			get
-			{
-				return this._Lista_deseos;
-			}
-			set
-			{
-				this._Lista_deseos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Publicaciones", Storage="_Publicaciones", ThisKey="codigo_Usu", OtherKey="codigo_Usu")]
-		public EntitySet<Publicaciones> Publicaciones
-		{
-			get
-			{
-				return this._Publicaciones;
-			}
-			set
-			{
-				this._Publicaciones.Assign(value);
 			}
 		}
 		
@@ -3572,54 +3620,6 @@ namespace Proyecto.dataBase
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_UsuarioNegociacion(UsuarioNegociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
-		}
-		
-		private void detach_UsuarioNegociacion(UsuarioNegociacion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
-		}
-		
-		private void attach_Comentarios(Comentarios entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
-		}
-		
-		private void detach_Comentarios(Comentarios entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
-		}
-		
-		private void attach_Lista_deseos(Lista_deseos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
-		}
-		
-		private void detach_Lista_deseos(Lista_deseos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
-		}
-		
-		private void attach_Publicaciones(Publicaciones entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
-		}
-		
-		private void detach_Publicaciones(Publicaciones entity)
-		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
 		}
 	}
 	
