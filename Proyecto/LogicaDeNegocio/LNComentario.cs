@@ -26,7 +26,24 @@ namespace Proyecto.LogicaDeNegocio
             return DB.Comentarios.ToList();
         }
 
-        
+        public List<dataBase.cp_numeroFinalComentarioResult> numeroComentarioFinal()
+        {
+            return DB.cp_numeroFinalComentario().ToList();
+        }
+
+        public int numeroComentario()
+        {
+            int id = 0;
+            var sqlid = from camp in numeroComentarioFinal()
+
+                        select new { id = camp.codigo_Com};
+
+            foreach (var extraerid in sqlid)
+            {
+                id = (int)extraerid.id;
+            }
+            return id;
+        }
 
         public String ContComentario(int codigo)
         {

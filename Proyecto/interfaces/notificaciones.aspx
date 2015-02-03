@@ -51,6 +51,10 @@
                     Label usuario = new Label();
                     usuario = (Label)Spinner1[contadorPosicionNotificacion].Controls[1];
                     usuario.Text = extraer.nick.ToString();
+                    
+                    Label titulo = new Label();
+                    titulo = (Label)Spinner1[contadorPosicionNotificacion].Controls[6];
+                    titulo.Text = extraer.nick.ToString();
 
                     PlaceHolder1.Controls.Add(Spinner1[contadorPosicionNotificacion]);
                     contadorPosicionNotificacion++;

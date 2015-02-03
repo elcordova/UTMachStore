@@ -484,6 +484,13 @@ namespace Proyecto.dataBase
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
 			return ((ISingleResult<cp_listarNotificacionResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_numeroFinalComentario")]
+		public ISingleResult<cp_numeroFinalComentarioResult> cp_numeroFinalComentario()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<cp_numeroFinalComentarioResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categorias")]
@@ -5663,6 +5670,32 @@ namespace Proyecto.dataBase
 				if ((this._fecha != value))
 				{
 					this._fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cp_numeroFinalComentarioResult
+	{
+		
+		private long _codigo_Com;
+		
+		public cp_numeroFinalComentarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Com", DbType="BigInt NOT NULL")]
+		public long codigo_Com
+		{
+			get
+			{
+				return this._codigo_Com;
+			}
+			set
+			{
+				if ((this._codigo_Com != value))
+				{
+					this._codigo_Com = value;
 				}
 			}
 		}
