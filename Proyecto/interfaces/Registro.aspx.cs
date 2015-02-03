@@ -192,6 +192,11 @@ namespace Proyecto.interfaces
             validar.esCedulaValida(TextBoxCedula.Text);
         }
 
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+
+        }
+
 
        
 
