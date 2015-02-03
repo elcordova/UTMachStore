@@ -11,7 +11,7 @@
                 easing: 'easeOutInCirc',
                 shape: 'waterWheel',
                 duration: 600
-            });
+            }); 
         });
     </script>
 </asp:Content>
@@ -33,10 +33,10 @@
 
                     
         <p class="MsoNormal">
-            <asp:Label ID="Label3" runat="server" Width="400" Text="Label" TextMode="MultiLine"></asp:Label><o:p></o:p>
+            <asp:Label ID="Label3" runat="server" Width="400" Text="Label" TextMode="MultiLine" ></asp:Label><o:p></o:p>
         </p>
         <p class="MsoNormal">
-             <asp:Label ID="Label5" runat="server" Text="Stock:  "></asp:Label> <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+             <asp:Label ID="Label5" runat="server" Text="Stock:  "></asp:Label> <asp:Label ID="Label4" runat="server" Text="jkk"></asp:Label>
             <o:p></o:p>
         </p>
       
@@ -77,7 +77,7 @@
         <div class="areglob">
 
             <asp:Button CssClass="boton_color_s" ID="Button1" runat="server" Text="Agregar a la lista" OnClick="Button1_Click1" />
-            <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" />
+            <asp:Button CssClass="boton_color_s" ID="Button2" runat="server" Text="Comprar" OnClick="Button2_Click1" />
         </div>
     </div>
 
@@ -143,7 +143,7 @@
                             letra=dato[i];
                             if (letra.ToString().Equals("-"))
                             {
-                                Label3.Text = Label3.Text +  "\n"+ letra.ToString();
+                                Label3.Text = Label3.Text + "<html><br/> </html>" + letra.ToString();
                         //        Label3.Text = Label3.Text + letra.ToString();
                             }
                             else
