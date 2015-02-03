@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="EdicionPublicacion.aspx.cs" Inherits="Proyecto.interfaces.EdicionPublicacion" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">editarPublicaciones
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content12" ContentPlaceHolderID="editarPublicaciones" runat="server">
     <br />
-    <h2 class="grid_12 caption clearfix"><span>Anunciate</span></h2>
+    <h2 class="grid_12 caption clearfix"><span>Editar Publicaciones</span></h2>
 
 
     <br />

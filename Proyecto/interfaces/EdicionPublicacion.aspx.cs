@@ -19,7 +19,7 @@ namespace Proyecto.interfaces
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
-
+            
             var sql = from camp in ingresoPublicacion.datosPublicacion(Convert.ToInt32(Session["CodigoPublicacionEdicion"].ToString()))
                        select new { nombrePub=camp.nombre_Pub, datoPub=camp.datos_Pub, contactoPub=camp.numero_con_Pub, precioProPub=camp.precio_Pub, stockProdPub=camp.stock_Pub};
             foreach (var extraer in sql)
@@ -29,7 +29,9 @@ namespace Proyecto.interfaces
                 txtNumeroContacto.Text = extraer.contactoPub.ToString();
                 txtPrecioProducto.Text = extraer.precioProPub.ToString();
                 txtStockProductos.Text = extraer.stockProdPub.ToString();
+               
             }
+            
         }
         
 
@@ -50,7 +52,7 @@ namespace Proyecto.interfaces
             txtPrecioProducto.Text = "";
             txtStockProductos.Text = "";
 
-
+            
             Response.Redirect("/interfaces/MisPublicaciones.aspx");//
         }
     }

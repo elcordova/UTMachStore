@@ -6,88 +6,68 @@
     &nbsp;&nbsp;&nbsp;
     
    <div>
-            <asp:PlaceHolder runat="server" ID="PlaceHolder1" />
-            <br />
-      
-            </div>
-     <%@ Reference Control="ControlMisPublicaciones.ascx" %>
-    <script runat="server" Language="C#">
+       <asp:PlaceHolder runat="server" ID="PlaceHolder1" />
+       <br />
+
+   </div>
+    <%@ Reference Control="ControlMisPublicaciones.ascx" %>
+    <script runat="server" language="C#">
         protected void Page_Load(object sender, EventArgs e)
         {
-               if (Session["usuario"] == null)
-        {
-            Response.Redirect("/interfaces/restriccion.aspx");
-        }
-        int contadorPublicaciones = 0;
-        int contadorPosicionPublicaciones = 0;
-        Proyecto.LogicaDeNegocio.LN_Publicacion lnPublicacion=new Proyecto.LogicaDeNegocio.LN_Publicacion();
-              
-        ASP.interfaces_controlmispublicaciones_ascx[] Spinner1;
-        try
-        {
-            string nickname = Session["usuario"].ToString();
-            int codigoUsuraio = 0;
-            var sql2 = from camp in lnPublicacion.codigoUsuario(nickname)
-            select new { codigoUS = camp.codigo_Usu };
-            foreach (var extraer in sql2)
+            if (Session["usuario"] == null)
             {
-                codigoUsuraio = Convert.ToInt32(extraer.codigoUS.ToString());
+                Response.Redirect("/interfaces/restriccion.aspx");
             }
-            var sql1 = from camp in lnPublicacion.ListaPublicaciones(codigoUsuraio)
-            select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
-            foreach (var extraer in sql1)
+            int contadorNotificaciones = 0;
+            int contadorPosicionNotificacion = 0;
+            Proyecto.LogicaDeNegocio.LNComentario lnComentario = new Proyecto.LogicaDeNegocio.LNComentario();
+            Proyecto.LogicaDeNegocio.LN_Notificacion lnNotificacion = new Proyecto.LogicaDeNegocio.LN_Notificacion();
+            Proyecto.LogicaDeNegocio.LN_Usuario lnUsuario = new Proyecto.LogicaDeNegocio.LN_Usuario();
+
+            ASP.interfaces_notificaciones_aspx[] Spinner1;
+            try
             {
-                extraer.nom_publicacion.ToString();
-                contadorPublicaciones++; }
-
-            Spinner1 = new ASP.interfaces_controlmispublicaciones_ascx[contadorPublicaciones];
-            var sql = from camp in lnPublicacion.ListaPublicaciones(codigoUsuraio)
-            select new { codigPubli=camp.codigo_Pub, nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
-            foreach (var extraer in sql)
-            {
-                        
-                Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmispublicaciones_ascx)LoadControl("ControlMisPublicaciones.ascx");
-                Label nombrePublicacion = new Label();
-                nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
-                nombrePublicacion.Text = extraer.nom_publicacion.ToString();
-
-                Label precioPublicacion = new Label();
-                precioPublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[9];
-                precioPublicacion.Text = extraer.pre_publicacion.ToString();
-
-                Label datosPubliacion = new Label();
-                datosPubliacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[11];
-                datosPubliacion.Text = extraer.dat_piblicacion.ToString();
-                String ruta = "";
-                var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
-                select new { rutaImagen= camp.ruta_Fot };
-                foreach (var extraerRuta in sql5)
+                var sql = from camp in lnNotificacion.listarNotificacion(lnUsuario.idUsuario(Session["usuario"].ToString()))
+                          select new { idUsuario=camp.idusuario, nick=camp.nick,nombrePublicacio=camp.publicacion, comentario=camp.comentario, fecha=camp.fecha };
+                foreach (var extraer in sql)
                 {
-                    ruta= extraerRuta.rutaImagen.ToString();
-                         
+                    extraer.nick.ToString();
+                    contadorNotificaciones++;
                 }
-                        
-                Image imagen = new Image();
-                imagen = (Image)Spinner1[contadorPosicionPublicaciones].Controls[7];
-                imagen.ImageUrl = ruta;
-                        
-                Button editarPubli = new Button();
-                editarPubli = (Button)Spinner1[contadorPosicionPublicaciones].Controls[5];
-                editarPubli.ID = extraer.codigPubli.ToString();
-                        
-                PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
-                contadorPosicionPublicaciones++;
+                Spinner1 = new ASP.interfaces_notificaciones_aspx[contadorNotificaciones];
+                var sql1 = from camp in lnNotificacion.listarNotificacion(lnUsuario.idUsuario(Session["usuario"].ToString()))
+                           select new { idUsuario = camp.idusuario, nick = camp.nick, nombrePublicacio = camp.publicacion, comentario = camp.comentario, fecha=camp.fecha };
+                foreach (var extraer in sql1)
+                {
+                    Spinner1[contadorPosicionNotificacion] = (ASP.interfaces_notificaciones_aspx)LoadControl("ControlNotificacion.ascx");
+                    Label mensaje = new Label();
+                    mensaje = (Label)Spinner1[contadorPosicionNotificacion].Controls[5];
+                    mensaje.Text = extraer.comentario.ToString();
+
+                    Label fecha = new Label();
+                    fecha = (Label)Spinner1[contadorPosicionNotificacion].Controls[3];
+                    fecha.Text = extraer.fecha.ToString();
+
+                    Label usuario = new Label();
+                    usuario = (Label)Spinner1[contadorPosicionNotificacion].Controls[1];
+                    usuario.Text = extraer.nick.ToString();
                     
-                    
+                    Label titulo = new Label();
+                    titulo = (Label)Spinner1[contadorPosicionNotificacion].Controls[6];
+                    titulo.Text = extraer.nick.ToString();
+
+                    PlaceHolder1.Controls.Add(Spinner1[contadorPosicionNotificacion]);
+                    contadorPosicionNotificacion++;
+                }
             }
-        }
-        catch (Exception ex)
-        {
-                        
-            Label p = new Label();
-            p.Text = ex.Message.ToString();
-            PlaceHolder1.Controls.Add(p);
-        }
+
+            catch (Exception ex)
+            {
+
+                Label p = new Label();
+                p.Text = ex.Message.ToString();
+                PlaceHolder1.Controls.Add(p);
+            }
         }
 
     </script>

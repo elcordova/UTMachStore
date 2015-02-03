@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto.interfaces
 {
-    public partial class ControlNotificacion : System.Web.UI.UserControl
+    public partial class CondicionesDeUso : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("/interfaces/restriccion.aspx");
-            }
+
         }
     }
 }

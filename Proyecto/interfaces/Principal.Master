@@ -101,6 +101,8 @@
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="editarPublicaciones" runat="server"> 
             </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="condiciones_de_uso" runat="server"> 
+            </asp:ContentPlaceHolder>
         </div>
         <div id="pie">
             <p class="grid_12 footer clearfix">

@@ -14,10 +14,7 @@ namespace Proyecto.LogicaDeNegocio
             DB.cp_insertarComentario(comentario.Codigo_Usuario, comentario.Codigo_Publicacion, comentario.Comentario, comentario.Fecha);
             DB.SubmitChanges();
         }
-        public string obtenerCedula()
-        {
-            return"";
-        }
+      
         public List<dataBase.cp_listarComentarioResult> listarComentario(int codigo)
         {
             return DB.cp_listarComentario(codigo).ToList();
@@ -29,7 +26,24 @@ namespace Proyecto.LogicaDeNegocio
             return DB.Comentarios.ToList();
         }
 
-        
+        public List<dataBase.cp_numeroFinalComentarioResult> numeroComentarioFinal()
+        {
+            return DB.cp_numeroFinalComentario().ToList();
+        }
+
+        public int numeroComentario()
+        {
+            int id = 0;
+            var sqlid = from camp in numeroComentarioFinal()
+
+                        select new { id = camp.codigo_Com};
+
+            foreach (var extraerid in sqlid)
+            {
+                id = (int)extraerid.id;
+            }
+            return id;
+        }
 
         public String ContComentario(int codigo)
         {

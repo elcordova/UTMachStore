@@ -455,4 +455,26 @@
       <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.cp_insertarnotificacion" Method="cp_insertarnotificacion">
+    <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoCom" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cp_listarNotificacion" Method="cp_listarNotificacion">
+    <Parameter Name="valor" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cp_listarNotificacionResult">
+      <Column Name="idusuario" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="nick" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="publicacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="comentario" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_numeroFinalComentario" Method="cp_numeroFinalComentario">
+    <ElementType Name="cp_numeroFinalComentarioResult">
+      <Column Name="codigo_Com" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
