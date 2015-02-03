@@ -39,7 +39,8 @@ namespace Proyecto.interfaces
                 ent_notificacion.Codigo_Publicacion = int.Parse(Session["CodigoPublicacionVista"].ToString());
                 ent_notificacion.Ruta_Publicacion = Session["CodigoPublicacionVista"].ToString();
                 ent_notificacion.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
-                //ent_notificacion.Codigo_Comentario
+                ent_notificacion.Codigo_Comentario = lncomentario.numeroComentario();
+                lnNotificacion.insertarNotificacion(ent_notificacion);
             }
             else
             {

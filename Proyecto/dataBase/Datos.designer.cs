@@ -478,6 +478,7 @@ namespace Proyecto.dataBase
 			return ((ISingleResult<cp_listarNotificacionResult>)(result.ReturnValue));
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editarPublicaciones")]
 		public int editarPublicaciones([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigoPublicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> codigo_categoria, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string datos_publicacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string numero_contacto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stock_produc)
 		{
@@ -490,6 +491,13 @@ namespace Proyecto.dataBase
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor);
 			return ((ISingleResult<ListaFotosPublicacionResult>)(result.ReturnValue));
+=======
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cp_numeroFinalComentario")]
+		public ISingleResult<cp_numeroFinalComentarioResult> cp_numeroFinalComentario()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<cp_numeroFinalComentarioResult>)(result.ReturnValue));
+>>>>>>> origin/master
 		}
 	}
 	
@@ -5675,6 +5683,7 @@ namespace Proyecto.dataBase
 		}
 	}
 	
+<<<<<<< HEAD
 	public partial class ListaFotosPublicacionResult
 	{
 		
@@ -5696,6 +5705,29 @@ namespace Proyecto.dataBase
 				if ((this._ruta_Fot != value))
 				{
 					this._ruta_Fot = value;
+=======
+	public partial class cp_numeroFinalComentarioResult
+	{
+		
+		private long _codigo_Com;
+		
+		public cp_numeroFinalComentarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigo_Com", DbType="BigInt NOT NULL")]
+		public long codigo_Com
+		{
+			get
+			{
+				return this._codigo_Com;
+			}
+			set
+			{
+				if ((this._codigo_Com != value))
+				{
+					this._codigo_Com = value;
+>>>>>>> origin/master
 				}
 			}
 		}

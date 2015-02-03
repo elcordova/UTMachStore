@@ -462,6 +462,7 @@
       <Column Name="fecha" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+<<<<<<< HEAD
   <Function Name="dbo.editarPublicaciones" Method="editarPublicaciones">
     <Parameter Name="codigoPublicacion" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="codigo_categoria" Type="System.Int64" DbType="BigInt" />
@@ -476,6 +477,11 @@
     <Parameter Name="valor" Type="System.Int64" DbType="BigInt" />
     <ElementType Name="ListaFotosPublicacionResult">
       <Column Name="ruta_Fot" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+=======
+  <Function Name="dbo.cp_numeroFinalComentario" Method="cp_numeroFinalComentario">
+    <ElementType Name="cp_numeroFinalComentarioResult">
+      <Column Name="codigo_Com" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+>>>>>>> origin/master
     </ElementType>
   </Function>
 </Database>

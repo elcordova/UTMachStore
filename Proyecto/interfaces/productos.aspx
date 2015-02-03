@@ -94,6 +94,7 @@
             <%@ Reference Control="~/interfaces/ControlMostrarPublicacion.ascx" %>
             <%@ Reference Control="~/interfaces/ControlMostrarPublicacion1.ascx" %>
             <%@ Reference Control="~/interfaces/ControlMostrarPublicacion2.ascx" %>
+
             <script runat="server" Language="C#">
                
             protected void Page_Load(object sender, EventArgs e)
@@ -233,7 +234,7 @@
            
 
 
-				<%--<a class="portfolio_item float alpha">
+				<a class="portfolio_item float alpha">
 					<span>Computación</span>
 					<img class="" src="images/computadora.jpg"  alt="" onclick="Button1_Click"/>
 				</a>
@@ -268,7 +269,7 @@
 				<a class="portfolio_item float omega" href="producto.aspx">
 					<span>Animales</span>
 					<img class="" src="images/perro.jpg"  alt=""/>
-				</a>--%>
+				</a>
 		</div>
 			
 		<div class="pr clearfix grid_12">&nbsp;</div>
