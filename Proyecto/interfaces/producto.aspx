@@ -11,7 +11,7 @@
                 easing: 'easeOutInCirc',
                 shape: 'waterWheel',
                 duration: 600
-            });
+            }); 
         });
     </script>
 </asp:Content>
@@ -143,7 +143,7 @@
                             letra=dato[i];
                             if (letra.ToString().Equals("-"))
                             {
-                                Label3.Text = Label3.Text +  "\n"+ letra.ToString();
+                                Label3.Text = Label3.Text +  "ll"+ letra.ToString();
                         //        Label3.Text = Label3.Text + letra.ToString();
                             }
                             else
