@@ -33,7 +33,7 @@
 
                     
         <p class="MsoNormal">
-            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label><o:p></o:p>
+            <asp:Label ID="Label3" runat="server" Width="400" Text="Label"></asp:Label><o:p></o:p>
         </p>
         <p class="MsoNormal">
              <asp:Label ID="Label5" runat="server" Text="Stock:  "></asp:Label> <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
@@ -136,7 +136,21 @@
                     foreach (var extraer in sql)
                     {
                         Label1.Text = extraer.nombrePub.ToString();
-                        Label3.Text = extraer.datoPub.ToString();
+                        string dato = extraer.datoPub.ToString();
+                        char letra; // letra vale 'u' 
+                        for (int i = 0; i < dato.Length; i++){
+                            letra=dato[i];
+                            if (letra.Equals("-"))
+                            {
+                                Label3.Text = Label3.Text + "\n";
+                                Label3.Text = Label3.Text + letra;
+                            }
+                            else
+                            {
+                                Label3.Text = Label3.Text + letra;
+                            }
+                        
+                        }
                         Label2.Text = extraer.precioProPub.ToString();
                         Label4.Text = extraer.stockProdPub.ToString();
                     }
