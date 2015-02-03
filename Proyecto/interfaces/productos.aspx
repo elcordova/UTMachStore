@@ -94,6 +94,7 @@
             <%@ Reference Control="~/interfaces/ControlMostrarPublicacion.ascx" %>
             <%@ Reference Control="~/interfaces/ControlMostrarPublicacion1.ascx" %>
             <%@ Reference Control="~/interfaces/ControlMostrarPublicacion2.ascx" %>
+
             <script runat="server" Language="C#">
                
             protected void Page_Load(object sender, EventArgs e)

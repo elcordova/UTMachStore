@@ -34,6 +34,11 @@ namespace Proyecto.interfaces
                 labelTitulo.Text = datosVent.ElementAt(0).nombre_Pub;
                 TextBox3.Text = (datosVent.ElementAt(0).datos_Pub.ToString() + " \n correo: " + datosVent.ElementAt(0).email_Usu);
                 TextBox2.Text = datosVent.ElementAt(0).stock_Pub + "";
+                if (TextBox2.Text.Trim() == "0" || 
+                    datosCom.ElementAt(0).codigo_Usu.Equals(datosCom.ElementAt(0).codigo_Usu))
+                {
+                    Button1.Enabled = false;
+                }
                 TextBox2.Enabled = false;
                 List<dataBase.buscarFormasEnvioResult> formasEnvio = venta.cargarFormasEnvio(int.Parse(Session["codigo_publicacion"].ToString()));
                 List<dataBase.buscarFormasPagoResult> formasPago = venta.cargarFormasPago(int.Parse(Session["codigo_publicacion"].ToString()));
