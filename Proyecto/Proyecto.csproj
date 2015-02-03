@@ -70,6 +70,7 @@
     <Content Include="interfaces\ControlMostrarPublicacion.ascx" />
     <Content Include="interfaces\ControlMostrarPublicacion1.ascx" />
     <Content Include="interfaces\ControlMostrarPublicacion2.ascx" />
+    <Content Include="interfaces\ControlNotificacion.ascx" />
     <Content Include="interfaces\css\otra.css" />
     <Content Include="interfaces\css\reset.css" />
     <Content Include="interfaces\css\styles.css" />
@@ -225,6 +226,13 @@
     <Compile Include="interfaces\ControlMostrarPublicacion2.ascx.designer.cs">
       <DependentUpon>ControlMostrarPublicacion2.ascx</DependentUpon>
     </Compile>
+    <Compile Include="interfaces\ControlNotificacion.ascx.cs">
+      <DependentUpon>ControlNotificacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\ControlNotificacion.ascx.designer.cs">
+      <DependentUpon>ControlNotificacion.ascx</DependentUpon>
+    </Compile>
     <Compile Include="interfaces\EdicionPublicacion.aspx.cs">
       <DependentUpon>EdicionPublicacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -358,6 +366,7 @@
     <Content Include="interfaces\psd\Thumbs.db" />
     <Content Include="dataBase\Datos.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Datos.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Web.Debug.config">
