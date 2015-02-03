@@ -21,7 +21,10 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.cp_listarNotificacion(id).ToList();
         }
-
+        public List<dataBase.Notificaciones> allNotificacion()
+        {
+            return DB.Notificaciones.ToList();
+        }
 
     }
 }

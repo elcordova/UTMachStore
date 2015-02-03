@@ -10,9 +10,8 @@
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/styles.css" />
     <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
-     
-	<!-- Scripts -->
     <script src="Scripts/jquery-1.9.1.min.js"></script>
+	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
@@ -62,8 +61,14 @@
 <body>
     <form id="form1" runat="server">
 
-        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-            <div class="container">
+    <img src="images/banner.jpg" /><h1 align="right"><asp:Label ID="Label1" runat="server"></asp:Label>
+        <asp:Label ID="Label2" runat="server"></asp:Label><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/interfaces/usuario.aspx"></asp:HyperLink><asp:Label ID="Label3" runat="server"></asp:Label><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="/interfaces/cerrarSesion.aspx"></asp:HyperLink>
+        </h1>
+&nbsp;<div id="cabeza" class="container_12 clearfix">
+            <!-- Text Logo -->
+            
+		<h3 id="logo" class="otromarg">UTMACH STORE</h3>
+        
                 <asp:ContentPlaceHolder ID="lista1" runat="server">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -86,22 +91,18 @@
                                 Registrate¡</a></li>
                             <li><a class="menu_texto" href="log.aspx"><span class="menu_subtexto">Login</span><br />
                                 Inicia sesion¡</a></li>
-                            <li align="center" id="li05" style="display: none"><a href="notificaciones.aspx"><span class="menu_subtexto">Notificaciones</span><br />
+                            <li align="center" id="li5" style="display: none"><a href="notificaciones.aspx"><span class="menu_subtexto">Notificaciones</span><br />
                                 <img src="images/notificacion.png" /></a></li>
-                            <li align="center" id="li06" style="display: none"><a href="ListaDeseos.aspx"><span class="menu_subtexto">Lista De Deseos</span><br />
+                            <li align="center" id="li6" style="display: none"><a href="ListaDeseos.aspx"><span class="menu_subtexto">Lista De Deseos</span><br />
                                 <img src="images/iconolista.png" /></a></li>
                         </ul>
-                    </div>
-                </asp:ContentPlaceHolder>
-                <!--/.nav-collapse -->
-            </div>
-        </nav>
-        <img class="centro_banner" src="images/banner.jpg" />
-        <h1 align="right">
-            <asp:Label ID="Label1" runat="server"></asp:Label>
-            <asp:Label ID="Label2" runat="server"></asp:Label><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="/interfaces/usuario.aspx"></asp:HyperLink><asp:Label ID="Label3" runat="server"></asp:Label><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="/interfaces/cerrarSesion.aspx"></asp:HyperLink>
-        </h1>
 
+                </asp:ContentPlaceHolder>
+      
+		
+		<!-- Navigation Menu -->
+        
+            </div>
         <div id="cuerpo">
             <asp:ContentPlaceHolder ID="contenido_principal" runat="server">
             </asp:ContentPlaceHolder>

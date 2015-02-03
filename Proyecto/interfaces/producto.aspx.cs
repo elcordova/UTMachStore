@@ -37,7 +37,7 @@ namespace Proyecto.interfaces
                 lncomentario.insertarComentario(ent_comentario);
                 // ingresar notificacion
                 ent_notificacion.Codigo_Publicacion = int.Parse(Session["CodigoPublicacionVista"].ToString());
-                ent_notificacion.Ruta_Publicacion = Session["CodigoPublicacionVista"].ToString();
+                ent_notificacion.Codigo_Usu_Pub = lncomentario.IDUsuarioPublicacion(int.Parse(Session["CodigoPublicacionVista"].ToString()));
                 ent_notificacion.Codigo_Usuario = lnUsuario.idUsuario(Session["usuario"].ToString());
                 ent_notificacion.Codigo_Comentario = lncomentario.numeroComentario();
                 lnNotificacion.insertarNotificacion(ent_notificacion);
