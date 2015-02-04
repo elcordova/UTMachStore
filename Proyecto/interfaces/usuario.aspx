@@ -18,8 +18,8 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;<asp:TextBox ID="TextBoxNombre" runat="server" Width="381px"></asp:TextBox>
         <asp:TextBox ID="TextBoxNombre1" runat="server" Visible="False" Width="381px"></asp:TextBox>
-        &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Ingrese solo letras" ForeColor="Red" ToolTip="Ingrese solo letras" ValidationExpression="^[a-zA-Z]*$">*</asp:RegularExpressionValidator>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Escriba nombres" ForeColor="Red">*</asp:RequiredFieldValidator>
+        &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Ingrese solo letras" ForeColor="Red" ToolTip="Ingrese solo letras" ValidationExpression="^[a-zA-Z]*$" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RegularExpressionValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Escriba nombres" ForeColor="Red" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RequiredFieldValidator>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
         <br />
         &nbsp;&nbsp;&nbsp;
@@ -31,7 +31,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBoxNick" runat="server" Width="200px" Enabled="False"></asp:TextBox>
         <asp:TextBox ID="TextBoxNick1" runat="server" Enabled="False" Visible="False" Width="200px"></asp:TextBox>
-        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxNick" ErrorMessage="Ingrese un nick" ForeColor="Red">*</asp:RequiredFieldValidator>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxNick" ErrorMessage="Ingrese un nick" ForeColor="Red" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RequiredFieldValidator>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <br />
@@ -43,8 +43,8 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;<asp:TextBox ID="TextBoxCedula" runat="server" Width="149px" MaxLength="10" TextMode="Number" Enabled="False"></asp:TextBox>
         <asp:TextBox ID="TextBoxCedula1" runat="server" Enabled="False" MaxLength="10" TextMode="Number" Visible="False" Width="149px"></asp:TextBox>
-        &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="Cedula Invalida" ForeColor="Red" ToolTip="Ingrese solo numeros" ValidationExpression="([0-9]|-)*">*</asp:RegularExpressionValidator>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="Ingrese cedula" ForeColor="Red">*</asp:RequiredFieldValidator>
+        &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="Cedula Invalida" ForeColor="Red" ToolTip="Ingrese solo numeros" ValidationExpression="([0-9]|-)*" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RegularExpressionValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="Ingrese cedula" ForeColor="Red" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RequiredFieldValidator>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <br />
@@ -55,7 +55,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBoxDireccion" runat="server" Width="395px"></asp:TextBox>
         <asp:TextBox ID="TextBoxDireccion1" runat="server" Visible="False" Width="395px"></asp:TextBox>
-        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxDireccion" ErrorMessage="Ingrese Direccion" ForeColor="Red">*</asp:RequiredFieldValidator>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxDireccion" ErrorMessage="Ingrese Direccion" ForeColor="Red" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RequiredFieldValidator>
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;
@@ -67,8 +67,8 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" Width="309px"></asp:TextBox>
         <asp:TextBox ID="TextBoxEmail1" runat="server" TextMode="Email" Visible="False" Width="309px"></asp:TextBox>
-        &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Correo Invalido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Ingrese correo" ForeColor="Red">*</asp:RequiredFieldValidator>
+        &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Correo Invalido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RegularExpressionValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Ingrese correo" ForeColor="Red" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RequiredFieldValidator>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <br />
