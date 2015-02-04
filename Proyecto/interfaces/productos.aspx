@@ -82,6 +82,146 @@
             <script runat="server" Language="C#">
                 public void Button8_Click(object sender, EventArgs e)
                 {
+                    int contadorPublicaciones = 0;
+                    int contadorPosicionPublicaciones = 0;
+                    int contadorPosicionPublicaciones1 = 0;
+                    int contadorPosicionPublicaciones2 = 0;
+                    try
+                    {
+
+                        double aux = 0;
+                        int controlTipo = 0;
+                        Proyecto.LogicaDeNegocio.LN_Publicacion lnPublicacion = new Proyecto.LogicaDeNegocio.LN_Publicacion();
+
+                        ASP.interfaces_controlmostrarpublicacion_ascx[] Spinner1;
+                        ASP.interfaces_controlmostrarpublicacion1_ascx[] Spinner2;
+                        ASP.interfaces_controlmostrarpublicacion2_ascx[] Spinner3;
+                        var sql1 = from camp in lnPublicacion.buquedaPublicaciones(TextBox1.Text)
+                                   select new { nom_publicacion = camp.nombre_Pub, dat_piblicacion = camp.datos_Pub, pre_publicacion = camp.precio_Pub };
+                        foreach (var extraer in sql1)
+                        {
+                            for (int cc = 0; cc < 8; cc++)
+                            {
+                                Label espacio3 = new Label();
+                                espacio3.Text = "<html> <br/> </html>";
+                                PlaceHolder2.Controls.Add(espacio3);
+
+                            }
+                            Label espacio = new Label();
+                            espacio.Text = "<html> <br/> </html>";
+                            PlaceHolder2.Controls.Add(espacio);
+                            extraer.nom_publicacion.ToString();
+                            contadorPublicaciones++;
+                        }
+                        aux = contadorPublicaciones / 3;
+                        contadorPublicaciones = Convert.ToInt32(aux) + 1;
+
+                        Spinner1 = new ASP.interfaces_controlmostrarpublicacion_ascx[contadorPublicaciones];
+                        Spinner2 = new ASP.interfaces_controlmostrarpublicacion1_ascx[contadorPublicaciones];
+                        Spinner3 = new ASP.interfaces_controlmostrarpublicacion2_ascx[contadorPublicaciones];
+
+                        var sql = from camp in lnPublicacion.buquedaPublicaciones(TextBox1.Text)
+                                  select new { codigPubli = camp.codigo_Pub, nom_publicacion = camp.nombre_Pub };
+                        foreach (var extraer in sql)
+                        {
+                            Label espacio1 = new Label();
+                            espacio1.Text = "<html> <br/> </html>";
+                            PlaceHolder2.Controls.Add(espacio1);
+
+                            if (controlTipo == 3)
+                            {
+                                controlTipo = 0;
+                            }
+
+                            if (controlTipo == 2)
+                            {
+                                controlTipo++; ;
+                                Spinner3[contadorPosicionPublicaciones2] = (ASP.interfaces_controlmostrarpublicacion2_ascx)LoadControl("ControlMostrarPublicacion2.ascx");
+                                Label nombrePublicacion = new Label();
+                                nombrePublicacion = (Label)Spinner3[contadorPosicionPublicaciones2].Controls[1];
+                                nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+
+                                String ruta = "";
+                                var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
+                                           select new { rutaImagen = camp.ruta_Fot };
+                                foreach (var extraerRuta in sql5)
+                                {
+                                    ruta = extraerRuta.rutaImagen.ToString();
+
+                                }
+
+                                ImageButton imagenBoton = new ImageButton();
+                                imagenBoton = (ImageButton)Spinner3[contadorPosicionPublicaciones2].Controls[3];
+                                imagenBoton.ImageUrl = ruta;
+                                imagenBoton.ID = extraer.codigPubli.ToString();
+
+                                PlaceHolder1.Controls.Add(Spinner3[contadorPosicionPublicaciones2]);
+                                contadorPosicionPublicaciones2++;
+                            }
+
+                            if (controlTipo == 1)
+                            {
+                                controlTipo++;
+
+                                Spinner2[contadorPosicionPublicaciones1] = (ASP.interfaces_controlmostrarpublicacion1_ascx)LoadControl("ControlMostrarPublicacion1.ascx");
+                                Label nombrePublicacion = new Label();
+                                nombrePublicacion = (Label)Spinner2[contadorPosicionPublicaciones1].Controls[1];
+                                nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+
+                                String ruta = "";
+                                var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
+                                           select new { rutaImagen = camp.ruta_Fot };
+                                foreach (var extraerRuta in sql5)
+                                {
+                                    ruta = extraerRuta.rutaImagen.ToString();
+
+                                }
+
+                                ImageButton imagenBoton = new ImageButton();
+                                imagenBoton = (ImageButton)Spinner2[contadorPosicionPublicaciones1].Controls[3];
+                                imagenBoton.ImageUrl = ruta;
+                                imagenBoton.ID = extraer.codigPubli.ToString();
+
+                                PlaceHolder1.Controls.Add(Spinner2[contadorPosicionPublicaciones1]);
+                                contadorPosicionPublicaciones1++;
+                            }
+
+                            if (controlTipo == 0)
+                            {
+                                controlTipo++;
+
+                                Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmostrarpublicacion_ascx)LoadControl("ControlMostrarPublicacion.ascx");
+                                Label nombrePublicacion = new Label();
+                                nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
+                                nombrePublicacion.Text = extraer.nom_publicacion.ToString();
+
+                                String ruta = "";
+                                var sql5 = from camp in lnPublicacion.rutaImagen(extraer.codigPubli.ToString())
+                                           select new { rutaImagen = camp.ruta_Fot };
+                                foreach (var extraerRuta in sql5)
+                                {
+                                    ruta = extraerRuta.rutaImagen.ToString();
+
+                                }
+
+                                ImageButton imagenBoton = new ImageButton();
+                                imagenBoton = (ImageButton)Spinner1[contadorPosicionPublicaciones].Controls[3];
+                                imagenBoton.ImageUrl = ruta;
+                                imagenBoton.ID = extraer.codigPubli.ToString();
+
+                                PlaceHolder1.Controls.Add(Spinner1[contadorPosicionPublicaciones]);
+                                contadorPosicionPublicaciones++;
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        //Label p = new Label();
+                        //p.Text = ex.Message.ToString()+ "     "+ contadorPublicaciones;
+                        //PlaceHolder1.Controls.Add(p);
+                    }
                     
                 }
             protected void Page_Load(object sender, EventArgs e)
@@ -91,7 +231,11 @@
                 {
                     Response.Redirect("/interfaces/restriccion.aspx");
                 }
+                
                 Button8.Click += new EventHandler(Button8_Click);
+                if (TextBox1.Text.Length==0)
+                {
+                    Session["busquedaPublicaciones"] = "false";
                     int contadorPublicaciones = 0;
                     int contadorPosicionPublicaciones = 0;
                     int contadorPosicionPublicaciones1 = 0;
@@ -227,10 +371,11 @@
                 catch (Exception ex)
                 {
 
-                    Label p = new Label();
-                    p.Text = ex.Message.ToString()+ "     "+ contadorPublicaciones;
-                    PlaceHolder1.Controls.Add(p);
+                    //Label p = new Label();
+                    //p.Text = ex.Message.ToString()+ "     "+ contadorPublicaciones;
+                    //PlaceHolder1.Controls.Add(p);
                 }
+            }
             }
             </script>
 

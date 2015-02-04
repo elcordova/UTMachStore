@@ -24,7 +24,6 @@ namespace Proyecto.interfaces
             }
             else
             {
-                TextBox1.Text = "1";
                 nueva_vent = new Entidades.Ent_Venta();
 
                 nueva_vent.codigo_usuario = Session["id_activo"].ToString();
@@ -63,7 +62,7 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (int.Parse((TextBox1.Text + "").Trim()) <= int.Parse((TextBox2.Text + "").Trim()))
+            if (int.Parse(TextBox1.Text + "".Trim()) <= int.Parse(TextBox2.Text + "".Trim()))
             {
                 nueva_vent.codigo_envio = int.Parse(DropDownListEnvio.SelectedValue);
                 nueva_vent.codigo_pago = int.Parse(DropDownListPago.SelectedValue);
@@ -74,10 +73,7 @@ namespace Proyecto.interfaces
                 //    Response.Redirect("/interfaces/productos.aspx");
                 enviarCorreos();
             }
-            else
-            {
-                Response.Write("<script language=javascript>alert('analice los campos de stock');</script>");
-            }
+            
 
 
         }
@@ -137,20 +133,11 @@ namespace Proyecto.interfaces
         }
     }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (TextBox1.Text.Trim().Equals(""))
-            {
-                Button1.Enabled = false;
-
-            }
-            else
-            {
-                if (int.Parse(TextBox1.Text.Trim().ToString()) <= int.Parse(TextBox2.Text.Trim().ToString()))
-                {
-                    Button1.Enabled = true;
-                }
-            }
+            args.IsValid = int.Parse(args.Value.ToString())<=int.Parse(TextBox2.Text);
+            //int stock = int.Parse(Convert.ToString(args.Value.ToString()));
+            
         }
     }
 }

@@ -61,5 +61,9 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.ListaFotosPublicacion(codigoPublicacion).ToList();
         }
+        public List<dataBase.BuscarPublicacionesResult> buquedaPublicaciones(string dato)
+        {
+            return DB.BuscarPublicaciones(dato).ToList();
+        }
     }
 }
