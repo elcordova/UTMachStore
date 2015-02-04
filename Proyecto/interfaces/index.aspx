@@ -1,16 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Proyecto.WebForm1" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="contenido_principal" runat="server">
+     <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
     <div class="hr grid_12 ">&nbsp;</div>
 	<div class="clear"></div>
     <!-- Featured Image Slider -->
 		<div id="featured" class="clearfix grid_12">  
         <h2 class="parrafos_c caption clearfix"> 
-        Bienvenido! Esto es <span>UTMACH STORE</span>, un sitio, donde podras 
-        <u>Negociar</u> &amp; <u>Promocionar</u> los productos que de estes.
+       Bienvenido! Esto es <strong>UTMACH STORE</strong>, un sitio, donde podras 
+        <strong>Negociar</strong> y <strong>Promocionar</strong> los productos que de estes.
         Aqui te ofrecemos la oportunidad de dar a conocer tus productos o servicios mediante publicaciones las cuales seran accedidas por muchos ususarios que podran 
         negociar con tigo acorde a tus exigencias.
-        </h2> 
+           </h2> 
         <div  class="liena_divisora"></div>  
 			<ul>  
 				<li>
