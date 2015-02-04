@@ -73,10 +73,7 @@ namespace Proyecto.interfaces
                 //    Response.Redirect("/interfaces/productos.aspx");
                 enviarCorreos();
             }
-            else
-            {
-                Response.Write("<script language=javascript>alert('analice los campos de stock');</script>");
-            }
+            
 
 
         }
@@ -135,5 +132,12 @@ namespace Proyecto.interfaces
             }
         }
     }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = int.Parse(args.Value.ToString())<=int.Parse(TextBox2.Text);
+            //int stock = int.Parse(Convert.ToString(args.Value.ToString()));
+            
+        }
     }
 }
