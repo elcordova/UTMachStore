@@ -28,13 +28,13 @@
 				<div class="hr clearfix dotted">&nbsp;</div>
                 <a href="#" class="current">
                     <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
-                        <asp:Button ID="Button1" class="button float right" runat="server" Text="Teléfonos - Tablets" OnClientClick="sisi();"  Width="210px" />
+                        <asp:Button ID="Button1" class="button float right" runat="server" Text="Teléfonos - Tablets"   Width="210px" />
                     </h6>
                 </a>
                 <br />
                <a href="#" class="current">
                     <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
-                        <asp:Button ID="Button2" class="button float right" runat="server" Text="Computación - Electrónica" OnClientClick="return false;"  Width="210px" />
+                        <asp:Button ID="Button2" class="button float right" runat="server" Text="Computación - Electrónica"   Width="210px" />
                     </h6>
                 </a>
                 <br />
@@ -81,8 +81,7 @@
 
             <script runat="server" Language="C#">
                 int controlCategorias = 0;
-                public string sis()
-                { return "ols"; }
+                
                 public Boolean myJSfunction()
                 {
                     return false;
@@ -393,12 +392,16 @@
                 { buscarporCategoria(7); }
             protected void Page_Load(object sender, EventArgs e)
             {
-                
+                Session["controlBusqueda"] = "true";  
                 if (Session["usuario"] == null)
                 {
                     Response.Redirect("/interfaces/restriccion.aspx");
                 }
-                
+
+                if (IsPostBack == true)
+                {
+                    Session["controlBusqueda"] = "false";
+                }
                 Button8.Click += new EventHandler(Button8_Click);
                 Button1.Click += new EventHandler(Button1_Click);
                 Button2.Click += new EventHandler(Button2_Click);
@@ -407,8 +410,8 @@
                 Button5.Click += new EventHandler(Button5_Click);
                 Button6.Click += new EventHandler(Button6_Click);
                 Button7.Click += new EventHandler(Button7_Click);
-            //    if (!this.IsPostBack)
-                if(true)
+              //  if (!this.IsPostBack)
+                if(Session["controlBusqueda"].ToString().Equals("true"))
                 {
                     Session["busquedaPublicaciones"] = "false";
                     int contadorPublicaciones = 0;
