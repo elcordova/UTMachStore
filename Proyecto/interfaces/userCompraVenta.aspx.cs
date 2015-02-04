@@ -11,7 +11,8 @@ namespace Proyecto.interfaces
     {
 
         LogicaDeNegocio.LN_Usuario lnUsuario = new LogicaDeNegocio.LN_Usuario();
-        LogicaDeNegocio.EncriptacionDeDatos encrip = new LogicaDeNegocio.EncriptacionDeDatos();
+        LogicaDeNegocio.Ln_ListarVentas lv = new LogicaDeNegocio.Ln_ListarVentas();
+        LogicaDeNegocio.Ln_ListarCompras lc = new LogicaDeNegocio.Ln_ListarCompras();
         Entidades.Ent_Usuario usuario = new Entidades.Ent_Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,8 +21,24 @@ namespace Proyecto.interfaces
             {
                 Response.Redirect("/interfaces/restriccion.aspx");
             }
+            listarventas();
+            listarcompras();
             
         }
+
+        public void listarventas() {
+            int idusuario = lnUsuario.idUsuario(Session["usuario"].ToString());
+            gridventas.DataSource = lv.ListarVentasTable(idusuario);
+            gridventas.DataBind();
+        }
+
+        public void listarcompras() {
+            int idusuario = lnUsuario.idUsuario(Session["usuario"].ToString());
+            gridcompras.DataSource = lc.ListarComprasTable(idusuario);
+            gridcompras.DataBind();
+        }
+
+        
         
         
         protected void gridventas_SelectedIndexChanged(object sender, EventArgs e)

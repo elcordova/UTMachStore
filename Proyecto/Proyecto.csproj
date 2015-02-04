@@ -258,6 +258,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dataBase\Datos.cs">
+      <DependentUpon>Datos.dbml</DependentUpon>
+    </Compile>
     <Compile Include="dataBase\Datos.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -266,6 +269,8 @@
     <Compile Include="Entidades\Ent_Comentario.cs" />
     <Compile Include="Entidades\Ent_Fotos.cs" />
     <Compile Include="Entidades\Ent_Listadeseos.cs" />
+    <Compile Include="Entidades\Ent_Listarcompras.cs" />
+    <Compile Include="Entidades\Ent_Listarventas.cs" />
     <Compile Include="Entidades\Ent_Notificacion.cs" />
     <Compile Include="Entidades\Ent_Publicaciones.cs" />
     <Compile Include="Entidades\Ent_Usuario.cs" />
@@ -457,6 +462,8 @@
     <Compile Include="LogicaDeNegocio\LNComentario.cs" />
     <Compile Include="LogicaDeNegocio\LNFoto.cs" />
     <Compile Include="LogicaDeNegocio\LN_Listadeseos.cs" />
+    <Compile Include="LogicaDeNegocio\Ln_ListarCompras.cs" />
+    <Compile Include="LogicaDeNegocio\Ln_ListarVentas.cs" />
     <Compile Include="LogicaDeNegocio\LN_Notificacion.cs" />
     <Compile Include="LogicaDeNegocio\LN_Publicacion.cs" />
     <Compile Include="LogicaDeNegocio\LN_Usuario.cs" />
