@@ -11,7 +11,7 @@
 
 
          <div>
-                    <asp:PlaceHolder runat="server" ID="PlaceHolder1" />
+                    <asp:PlaceHolder runat="server" ID="PlaceHolder2" /><asp:PlaceHolder runat="server" ID="PlaceHolder1" />
                     <br />     
                     </div>
             
@@ -23,6 +23,7 @@
                
             protected void Page_Load(object sender, EventArgs e)
             {
+              
                 if (Session["usuario"] == null)
                 {
                     Response.Redirect("/interfaces/restriccion.aspx");
@@ -55,7 +56,8 @@
                                select new { codigoPublicacio=camp.codigo_Pub };
                     foreach (var extraer in sql1)
                     {
-                        
+                        extraer.codigoPublicacio.ToString();
+                        contadorPublicaciones++;
                     }
                     aux = contadorPublicaciones / 3;
                     contadorPublicaciones = Convert.ToInt32(aux) + 1;
@@ -135,6 +137,7 @@
                         {
                             controlTipo++;
 
+                            
                             Spinner1[contadorPosicionPublicaciones] = (ASP.interfaces_controlmostrarpublicacion_ascx)LoadControl("ControlMostrarPublicacion.ascx");
                             Label nombrePublicacion = new Label();
                             nombrePublicacion = (Label)Spinner1[contadorPosicionPublicaciones].Controls[1];
