@@ -26,16 +26,17 @@
 &nbsp;<p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cantidad a comprar:
             <asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="45px" ToolTip="por defecto 1 unidad"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Nunero entero" ForeColor="Red" MaximumValue="1000" MinimumValue="0" ToolTip="Nunero entero">*</asp:RangeValidator>
-            &nbsp;<asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox1" ControlToValidate="TextBox2" Display="Dynamic" ErrorMessage="No puede ser igual ni mayor a lo que hay en stock" ToolTip="No puede ser igual ni mayor a lo que hay en stock" ValueToCompare="TextBox1&lt;TextBox2">*</asp:CompareValidator>
+&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox1" ErrorMessage="Campo obligatorio" ForeColor="Red" Font-Bold="True" Font-Size="Larger" ToolTip="Campo obligatorio">*</asp:RequiredFieldValidator>
+            &nbsp;<asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="TextBox2" Display="Dynamic" ErrorMessage="Error de stock" Font-Bold="True" Font-Size="Larger" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate" SetFocusOnError="True" ToolTip="No se puede vender todo los productos">*</asp:CustomValidator>
             &nbsp;&nbsp;&nbsp; productos en stock:<asp:TextBox ID="TextBox2" runat="server" Height="16px" Width="45px" ReadOnly="True"></asp:TextBox>
-        &nbsp;<asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Nunero entero" ForeColor="Red" MaximumValue="1000" MinimumValue="0" ToolTip="Nunero entero">*</asp:RangeValidator>
-        </p>
+        &nbsp;</p>
     <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Porfavor seleccione una de las formas de pago establecidas por el vendedor<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="DropDownListPago" runat="server" Height="35px" Width="200px">
+                <asp:ListItem>nose</asp:ListItem>
             </asp:DropDownList>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownListPago" ErrorMessage="Escoga una de las opciones" ForeColor="Red" Font-Bold="True" Font-Size="Larger" ToolTip="Escoga una de las opciones">*</asp:RequiredFieldValidator>
         </p>
         <div class="hr dotted clearfix">&nbsp;</div>
     <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forma de envio</h4>
@@ -44,6 +45,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="DropDownListEnvio" runat="server" Height="35px" Width="200px">
             </asp:DropDownList>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="DropDownListEnvio" ErrorMessage="Escoga una de las opciones" ForeColor="Red" Font-Bold="True" Font-Size="Larger" ToolTip="Escoga una de las opciones">*</asp:RequiredFieldValidator>
         </p>
         <div class="hr dotted clearfix">&nbsp;</div>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

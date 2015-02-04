@@ -62,8 +62,6 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (int.Parse(TextBox1.Text + "".Trim()) <= int.Parse(TextBox2.Text + "".Trim()))
-            {
                 nueva_vent.codigo_envio = int.Parse(DropDownListEnvio.SelectedValue);
                 nueva_vent.codigo_pago = int.Parse(DropDownListPago.SelectedValue);
                 nueva_vent.fecha_negociacion = System.DateTime.Now;
@@ -72,13 +70,6 @@ namespace Proyecto.interfaces
                 // Response.Write("<script language=javascript>alert('Compra Exitosa....los datos relevantes fueron enviados a su correo');</script>");
                 //    Response.Redirect("/interfaces/productos.aspx");
                 enviarCorreos();
-            }
-            else
-            {
-                Response.Write("<script language=javascript>alert('analice los campos de stock');</script>");
-            }
-
-
         }
 
         private void enviarCorreos()
@@ -135,5 +126,12 @@ namespace Proyecto.interfaces
             }
         }
     }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = int.Parse(TextBox1.Text + "".Trim()) <= int.Parse(args.Value + "".Trim());
+            //int stock = int.Parse(Convert.ToString(args.Value.ToString()));
+            
+        }
     }
 }
