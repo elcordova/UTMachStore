@@ -22,7 +22,7 @@
 				<div class="hr clearfix dotted">&nbsp;</div>
                 <li><a href="#" class="current">
                     <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
-                        <asp:Button ID="Button1" runat="server" Text="Teléfonos - Tables" Width="183px" />
+                        <asp:Button ID="Button1" runat="server" Text="Teléfonos - Tables" Width="183px" OnClick="Button1_Click1" />
                     </h6>
                 </a></li>
                 <li><a href="#" class="current">

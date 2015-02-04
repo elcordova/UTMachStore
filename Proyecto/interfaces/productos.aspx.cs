@@ -30,5 +30,10 @@ namespace Proyecto.interfaces
             Response.Redirect("/interfaces/producto.aspx");
         }
 
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
