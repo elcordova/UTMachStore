@@ -399,7 +399,8 @@
                 Button5.Click += new EventHandler(Button5_Click);
                 Button6.Click += new EventHandler(Button6_Click);
                 Button7.Click += new EventHandler(Button7_Click);
-                if (!this.IsPostBack)
+            //    if (!this.IsPostBack)
+                if(true)
                 {
                     Session["busquedaPublicaciones"] = "false";
                     int contadorPublicaciones = 0;
