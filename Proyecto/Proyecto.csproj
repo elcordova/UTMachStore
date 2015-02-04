@@ -123,6 +123,7 @@
     <Content Include="interfaces\images\control.jpg" />
     <Content Include="interfaces\images\converse.jpg" />
     <Content Include="interfaces\images\delicious.png" />
+    <Content Include="interfaces\images\editpub.png" />
     <Content Include="interfaces\images\facebook.png" />
     <Content Include="interfaces\images\flickr.png" />
     <Content Include="interfaces\images\iconolista.png" />
@@ -144,6 +145,7 @@
     <Content Include="interfaces\images\play3.jpg" />
     <Content Include="interfaces\images\play4.jpg" />
     <Content Include="interfaces\images\portatil.jpg" />
+    <Content Include="interfaces\images\publicr.png" />
     <Content Include="interfaces\images\registro1.png" />
     <Content Include="interfaces\images\search.png" />
     <Content Include="interfaces\images\SolicitudU.png" />
