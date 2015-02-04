@@ -270,16 +270,36 @@ DESCRIPTION: A premium business and portfolio theme.
 	.alpha								{margin-left:0;}
 	.omega								{margin-right:0;}
 
-.imgn
+.img_log
 {
-    margin-left:40%;
+    margin-left:30%;
     float:left;
 }
-.text1
+.form_log
 {
+    text-align:justify;
     float:left;
     margin-left:2%;
+    margin-top:3%;
 }
+.img_reg
+{
+    margin-left:27%;
+    float:left;
+}
+.form_reg
+{
+    text-align:justify;
+    float:left;
+    margin-left:2%;
+    margin-top:3%;
+}
+.btn_cent
+{
+    margin-left:35%;
+}
+
+
 .text2
 {
     float:left;
@@ -409,4 +429,19 @@ DESCRIPTION: A premium business and portfolio theme.
 .tabla {
     margin-left:15%;
     border:1px solid;
+}
+.liena_divisora
+{
+    margin-top:5%;
+}
+.parrafos_c
+{
+    text-align:justify;
+    margin-left:10%;
+    margin-right:10%;
+
+}
+.cent_tit
+{
+    margin-left:35%;
 }
