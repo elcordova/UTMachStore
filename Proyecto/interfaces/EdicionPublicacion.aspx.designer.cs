@@ -40,15 +40,6 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// Control txtDatosPublicacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDatosPublicacion;
-        
-        /// <summary>
         /// Control RequiredFieldValidator1.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace Proyecto.interfaces {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
+        /// Control txtDatosPublicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDatosPublicacion;
         
         /// <summary>
         /// Control txtNumeroContacto.
@@ -130,8 +130,6 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
         
         /// <summary>
-<<<<<<< HEAD
-=======
         /// Control RequiredFieldValidator6.
         /// </summary>
         /// <remarks>
@@ -141,7 +139,6 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
->>>>>>> origin/master
         /// Control FileUploadSubir.
         /// </summary>
         /// <remarks>
