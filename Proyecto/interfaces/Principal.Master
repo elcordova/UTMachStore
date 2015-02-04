@@ -27,20 +27,24 @@
 	        var div = document.getElementById("li01");
 	        var div2 = document.getElementById("li02");
 	        var div3 = document.getElementById("li03");
+	        var div4 = document.getElementById("li04");
             
 	        div.style.display = "none";
 	        div2.style.display = "none";
 	        div3.style.display = "block";
+	        div4.style.display = "block";
 	    }
 
 	    function MostrarDiv() {
 	        var div = document.getElementById("li01");
 	        var div2 = document.getElementById("li02");
 	        var div3 = document.getElementById("li03");
+	        var div3 = document.getElementById("li04");
 
 	        div.style.display = "block";
 	        div2.style.display = "block";
 	        div3.style.display = "none";
+	        div4.style.display = "none";
 	    }
 	</script>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -60,7 +64,9 @@
             <asp:ContentPlaceHolder ID="lista1" runat="server"> 
 
                 <ul id="navigation" class="grid_8" align="left">
-                    <li align="right" id="li4" ><a href="ListaDeseos.aspx"><span class="meta">Listadeseos</span></a></li>
+                    
+                    <li align="right" id="li04" style="display:none"><a href="ListaDeseos.aspx"><span class="meta">Lista De Deseos</span><br />
+                        <img src="images/iconolista.png" /></a></li>
                     <li align="right" id="li03" style="display:none"><a href="notificaciones.aspx"><span class="meta">Notificaciones</span><br />
                         <img src="images/notificacion.png" /></a></li>
                     <li align="left" id="li01"><a href="log.aspx"><span class="meta">inicia sesion</span><br />login</a></li>
