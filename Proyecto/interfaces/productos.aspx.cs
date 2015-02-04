@@ -23,7 +23,7 @@ namespace Proyecto.interfaces
             //}
             
         }
-
+        
         protected void Button1_Click()
         {
             Session["codigo_publicacion"] = 10026;

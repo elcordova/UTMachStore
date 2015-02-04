@@ -28,13 +28,13 @@
 				<div class="hr clearfix dotted">&nbsp;</div>
                 <a href="#" class="current">
                     <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
-                        <asp:Button ID="Button1" class="button float right" runat="server" Text="Teléfonos - Tables" Width="210px" />
+                        <asp:Button ID="Button1" class="button float right" runat="server" Text="Teléfonos - Tablets" OnClientClick="sisi();"  Width="210px" />
                     </h6>
                 </a>
                 <br />
                <a href="#" class="current">
                     <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
-                        <asp:Button ID="Button2" class="button float right" runat="server" Text="Computación - Electrónica" Width="210px" />
+                        <asp:Button ID="Button2" class="button float right" runat="server" Text="Computación - Electrónica" OnClientClick="return false;"  Width="210px" />
                     </h6>
                 </a>
                 <br />
@@ -81,6 +81,14 @@
 
             <script runat="server" Language="C#">
                 int controlCategorias = 0;
+                public string sis()
+                { return "ols"; }
+                public Boolean myJSfunction()
+                {
+                    return false;
+                }
+                
+
                 public void Button8_Click(object sender, EventArgs e)
                 {
                     int contadorPublicaciones = 0;
