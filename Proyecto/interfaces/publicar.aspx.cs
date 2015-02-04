@@ -52,7 +52,7 @@ namespace Proyecto.interfaces
         }
         protected void Button2_Click(object sender, EventArgs e)
         {
-            entidadPublicacion.Codigo_Categoria = cmbCategoria.SelectedIndex+1;
+            entidadPublicacion.Codigo_Categoria = cmbCategoria.SelectedIndex + 1;
             string nickname = Session["usuario"].ToString();
             int codigoUsuraio = 0;
             var sql1 = from camp in ingresoPublicacion.codigoUsuario(nickname)
@@ -63,7 +63,7 @@ namespace Proyecto.interfaces
             }
             entidadPublicacion.Codigo_usuario = codigoUsuraio;
             entidadPublicacion.Nombre_Publicacion = txtTituloPublicacion.Text;
-            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text; 
+            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;
             DateTime thisDay = DateTime.Today;
             entidadPublicacion.Fecha_Publicacion = thisDay.ToString("D");
             entidadPublicacion.Numero_ContactoPublicacion = txtNumeroContacto.Text;
@@ -72,7 +72,8 @@ namespace Proyecto.interfaces
             entidadPublicacion.Stock_ProductoPublicacion = Convert.ToInt32(txtStockProductos.Text);
             ingresoPublicacion.insertarUsuario(entidadPublicacion);
             int codiFormapago = 0;
-            if(c1.Checked){
+            if (c1.Checked)
+            {
                 codiFormapago = 1;
                 ingresoPublicacion.insertarFormaPago(numeropublicacion(), codiFormapago);
             }
@@ -86,7 +87,7 @@ namespace Proyecto.interfaces
                 codiFormapago = 3;
                 ingresoPublicacion.insertarFormaPago(numeropublicacion(), codiFormapago);
             }
-            
+
             guardarIdPublicacion();
             txtTituloPublicacion.Text = "";
             txtDatosPublicacion.Text = "";
@@ -103,13 +104,13 @@ namespace Proyecto.interfaces
         private void guardarIdPublicacion()
         {
             var sql = from camp in lnfoto.listarFotos()
-                      select new {codigo=camp.Codigo, nombre = camp.nombre, ruta = camp.ruta };
+                      select new { codigo = camp.Codigo, nombre = camp.nombre, ruta = camp.ruta };
             foreach (var extraer in sql)
             {
-                entfoto.Codigo_Publicacion=numeropublicacion();
+                entfoto.Codigo_Publicacion = numeropublicacion();
                 entfoto.Nombre_Foto = extraer.nombre;
                 entfoto.Ruta_Foto = extraer.ruta;
-                lnfoto.ActualizarFoto(entfoto,(int)extraer.codigo );
+                lnfoto.ActualizarFoto(entfoto, (int)extraer.codigo);
 
             }
         }
@@ -200,6 +201,24 @@ namespace Proyecto.interfaces
         protected void txtNumeroContacto_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.numeros(e);
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var sql = from camp in lnfoto.listarFotos()
+                          select new { codigo = camp.Codigo };
+                foreach (var extraer in sql)
+                {
+                    lnfoto.eliminarFoto((int)extraer.codigo);
+                }
+                Response.Redirect("/interfaces/MisPublicaciones.aspx");
+            }
+            catch
+            {
+              
+            }
         }
 
     }

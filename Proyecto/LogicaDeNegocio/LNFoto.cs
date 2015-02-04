@@ -43,5 +43,11 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.cp_numeroFinalPublicacion().ToList();
         }
+
+        public void eliminarFoto(int codigo)
+        {
+            DB.cp_eliminarFoto(codigo);
+            DB.SubmitChanges();
+        }
     }
 }

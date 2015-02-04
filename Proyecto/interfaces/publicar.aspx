@@ -83,6 +83,7 @@
            
 
         <asp:Button ID="Button2" runat="server" Text="Publicar" OnClick="Button2_Click" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
     <br />
     <br />
     <br />

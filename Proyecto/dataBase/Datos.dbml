@@ -567,4 +567,8 @@
       <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.cp_eliminarFoto" Method="cp_eliminarFoto">
+    <Parameter Name="codigo" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
