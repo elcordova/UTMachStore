@@ -13,15 +13,6 @@ namespace Proyecto.interfaces {
     public partial class ListaDeseos {
         
         /// <summary>
-        /// Control Label4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
         /// Control Button1.
         /// </summary>
         /// <remarks>
@@ -40,12 +31,12 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Control BulletedList1.
+        /// Control PlaceHolder1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedList1;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
     }
 }

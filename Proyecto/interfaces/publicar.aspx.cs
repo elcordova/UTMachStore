@@ -63,7 +63,7 @@ namespace Proyecto.interfaces
             }
             entidadPublicacion.Codigo_usuario = codigoUsuraio;
             entidadPublicacion.Nombre_Publicacion = txtTituloPublicacion.Text;
-            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text;
+            entidadPublicacion.Datos_Publicacion = txtDatosPublicacion.Text; 
             DateTime thisDay = DateTime.Today;
             entidadPublicacion.Fecha_Publicacion = thisDay.ToString("D");
             entidadPublicacion.Numero_ContactoPublicacion = txtNumeroContacto.Text;
