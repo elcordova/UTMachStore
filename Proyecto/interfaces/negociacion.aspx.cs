@@ -62,18 +62,24 @@ namespace Proyecto.interfaces
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (int.Parse(TextBox1.Text + "".Trim()) <= int.Parse(TextBox2.Text + "".Trim()))
+            try
             {
-                nueva_vent.codigo_envio = int.Parse(DropDownListEnvio.SelectedValue);
-                nueva_vent.codigo_pago = int.Parse(DropDownListPago.SelectedValue);
-                nueva_vent.fecha_negociacion = System.DateTime.Now;
-                nueva_vent.cantidad_pub = int.Parse((TextBox1.Text + "").Trim());
-                venta.guardarVenta(nueva_vent);
-                // Response.Write("<script language=javascript>alert('Compra Exitosa....los datos relevantes fueron enviados a su correo');</script>");
-                //    Response.Redirect("/interfaces/productos.aspx");
-                enviarCorreos();
+                if (int.Parse(TextBox1.Text + "".Trim()) <= int.Parse(TextBox2.Text + "".Trim()))
+                {
+                    nueva_vent.codigo_envio = int.Parse(DropDownListEnvio.SelectedValue);
+                    nueva_vent.codigo_pago = int.Parse(DropDownListPago.SelectedValue);
+                    nueva_vent.fecha_negociacion = System.DateTime.Now;
+                    nueva_vent.cantidad_pub = int.Parse((TextBox1.Text + "").Trim());
+                    venta.guardarVenta(nueva_vent);
+                    // Response.Write("<script language=javascript>alert('Compra Exitosa....los datos relevantes fueron enviados a su correo');</script>");
+                    //    Response.Redirect("/interfaces/productos.aspx");
+                    enviarCorreos();
+                }
             }
-            
+            catch (Exception eas)
+            {
+                Response.Write("<script language=javascript>alert('Ingrese un Valor Numerico');</script>");
+            }
 
 
         }
@@ -135,9 +141,15 @@ namespace Proyecto.interfaces
 
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
+            try { 
             args.IsValid = int.Parse(args.Value.ToString())<=int.Parse(TextBox2.Text);
             //int stock = int.Parse(Convert.ToString(args.Value.ToString()));
+            }
+            catch(Exception er)
+            {
+                Response.Write("<script language=javascript>alert('Ingrese un Valor Numerico');</script>");
             
+            }
         }
     }
 }
