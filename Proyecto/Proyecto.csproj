@@ -166,6 +166,8 @@
     <Content Include="interfaces\notificaciones.aspx" />
     <Content Include="interfaces\producto.aspx" />
     <Content Include="interfaces\productos.aspx" />
+    <Content Include="interfaces\productosBCategoria.aspx" />
+    <Content Include="interfaces\productosBTexto.aspx" />
     <Content Include="interfaces\publicar.aspx" />
     <Content Include="interfaces\QuienesSomos.aspx" />
     <Content Include="interfaces\Registro.aspx" />
@@ -409,6 +411,20 @@
     </Compile>
     <Compile Include="interfaces\productos.aspx.designer.cs">
       <DependentUpon>productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\productosBCategoria.aspx.cs">
+      <DependentUpon>productosBCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\productosBCategoria.aspx.designer.cs">
+      <DependentUpon>productosBCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\productosBTexto.aspx.cs">
+      <DependentUpon>productosBTexto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="interfaces\productosBTexto.aspx.designer.cs">
+      <DependentUpon>productosBTexto.aspx</DependentUpon>
     </Compile>
     <Compile Include="interfaces\publicar.aspx.cs">
       <DependentUpon>publicar.aspx</DependentUpon>
