@@ -28,7 +28,7 @@
 				<div class="hr clearfix dotted">&nbsp;</div>
                 <a href="#" class="current">
                     <h6 style="text-align: justify; font-family: 'Comic Sans MS'; color: #6666FF; font-weight: normal; font-style: italic;">
-                        <asp:Button ID="Button1" class="button float right" runat="server" Text="Teléfonos - Tables" Width="210px" OnClick="Button1_Click1" />
+                        <asp:Button ID="Button1" class="button float right" runat="server" Text="Teléfonos - Tables" Width="210px" />
                     </h6>
                 </a>
                 <br />
@@ -80,8 +80,9 @@
             <%@ Reference Control="~/interfaces/ControlMostrarPublicacion2.ascx" %>
 
             <script runat="server" Language="C#">
-                public void Button1_Click8()
+                public void Button8_Click(object sender, EventArgs e)
                 {
+                    
                 }
             protected void Page_Load(object sender, EventArgs e)
             {
@@ -90,6 +91,7 @@
                 {
                     Response.Redirect("/interfaces/restriccion.aspx");
                 }
+                Button8.Click += new EventHandler(Button8_Click);
                     int contadorPublicaciones = 0;
                     int contadorPosicionPublicaciones = 0;
                     int contadorPosicionPublicaciones1 = 0;
