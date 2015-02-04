@@ -5,104 +5,52 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="loguin" runat="server">
 
    
-
+    <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
 
     <br /><br /><br /><br />
 
     
-                <h1>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <h1 class="cent_tit">
+               
                 BIENVENIDO A UTMACH STORE</h1>
 
-                 <br /><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    
-    <img class="imgn" src="images/log.png"/>
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div class="text1" id="formn">
-            <div class="control-group clearfix required ">
-                    <label class="control-label" for="h2">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    Nickname</label>&nbsp;
-                    <div class="controls input">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Ingrese direccion" ForeColor="Red" Font-Bold="True" Font-Size="Larger" ToolTip="Campo obligatorio">*</asp:RequiredFieldValidator>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        <br />
-                    </div>
+    <div class="row container-fluid">
+        <div class="col-md-6 col-md-6 col-md-6">
+            <img class="imgn" src="images/log.png" /></div>
+        <div class="col-md-6 col-md-6 col-md-6">
+        <form role="form">
+            <div class="form-group ">
+                <label class="control-label" for="h2">
+                    Nickname</label>
+                        <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" ></asp:TextBox>
+                        
             </div>
-            <div class="control-group clearfix required ">
-                <div class="controls input">
-                    &nbsp;<br />
-                </div>
-            </div>
-            <div class="control-group clearfix required ">
-                <div class="controls input">
-                    &nbsp;<br />
-                </div>
-            </div>
-            <div class="control-group clearfix required ">
+            <div class="form-group">
                 <label class="control-label" for="h6">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp; 
-                Contraseña</label>&nbsp;
-                    <div class="controls input">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBox5" runat="server" TextMode="Password"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox5" ErrorMessage="Ingrese direccion" ForeColor="Red" Font-Bold="True" Font-Size="Larger" ToolTip="Campo obligatorio">*</asp:RequiredFieldValidator>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <br />
+                    Contraseña</label>
+                      <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox5" ErrorMessage="Ingrese direccion" ForeColor="Red" Font-Bold="True" Font-Size="Larger" ToolTip="Campo obligatorio">*</asp:RequiredFieldValidator>
+        
                     </div>
-            </div>
-            <div class="control-group clearfix required ">
-                <div class="controls input">
-                    <br />
-                    <br />
-                </div>
-            </div>
+   
             <div class="form-actions">
-                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                ¿Olvidaste tu contraseña?</asp:LinkButton><br />
-                <br />
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">
+                ¿Olvidaste tu contraseña?</asp:LinkButton>
                 <asp:Panel ID="Panel1" runat="server" Height="71px" Visible="False">
                     <br />
                     Ingrese su Correo:
-                    <asp:TextBox ID="TextBoxCorreo" runat="server" TextMode="Email"></asp:TextBox>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="ButtonEnviar" runat="server" OnClick="ButtonEnviar_Click" Text="Enviar" />
-                    <br />
-                    <br />
-                    Si su correo es el correcto, se le enviarán sus datos</asp:Panel>
+                    <asp:TextBox ID="TextBoxCorreo" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                    <asp:Button ID="ButtonEnviar" runat="server" CssClass="btn btn-primary" OnClick="ButtonEnviar_Click" Text="Enviar" />
+                   
+                    Si su correo es el correcto, se le enviarán sus datos
+                </asp:Panel>
                 <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button2" runat="server" Text="Iniciar sesion" OnClick="Button2_Click" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button1" runat="server" Text="Registrarse" OnClick="Button1_Click" />
+                <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary" Text="Iniciar sesion" OnClick="Button2_Click" />
+                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Registrarse" OnClick="Button1_Click" />
             </div>
+        </form>
         </div>
+      </div>  
     <br />
     <br />
     <br />
@@ -128,5 +76,5 @@
     <br />
     <br />
     <br />
-    <br />
+    </div>
 </asp:Content>

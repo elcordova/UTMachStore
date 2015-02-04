@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Proyecto.WebForm1" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="contenido_principal" runat="server">
-    <div class="hr grid_12">&nbsp;</div>
+    <div class="hr grid_12 ">&nbsp;</div>
 	<div class="clear"></div>
     <!-- Featured Image Slider -->
 		<div id="featured" class="clearfix grid_12">  
@@ -46,7 +46,7 @@
 				</li>  
 			</ul> 
 		</div>
-		<div class="hr grid_12 clearfix">&nbsp;</div>
+		<div class="hr grid_12 clearfix ">&nbsp;</div>
            <h2 class="parrafos_c caption clearfix">
                 Para conocer mas acerca de UTMACH STORE, sus politicas y condiciones puedes verlas en el siguiente enlace.
                 <a href="CondicionesDeUso.aspx"><u>Politicas y condiciones de uso</u></a>
