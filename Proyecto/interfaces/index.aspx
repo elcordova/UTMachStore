@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="contenido_principal" runat="server">
     <div class="hr grid_12">&nbsp;</div>
-	 <div class="clear"></div>
+	<div class="clear"></div>
     <!-- Featured Image Slider -->
 		<div id="featured" class="clearfix grid_12">  
         <h2 class="parrafos_c caption clearfix"> 

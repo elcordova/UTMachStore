@@ -270,6 +270,8 @@ DESCRIPTION: A premium business and portfolio theme.
 	.alpha								{margin-left:0;}
 	.omega								{margin-right:0;}
 
+
+/*login*/
 .img_log
 {
     margin-left:30%;
@@ -282,6 +284,7 @@ DESCRIPTION: A premium business and portfolio theme.
     margin-left:2%;
     margin-top:3%;
 }
+/*registro*/
 .img_reg
 {
     margin-left:27%;
@@ -298,6 +301,42 @@ DESCRIPTION: A premium business and portfolio theme.
 {
     margin-left:35%;
 }
+/*publicar*/
+.form_publ
+{
+    text-align:justify;
+    float:left;
+    margin-left:-5%;
+    margin-top:3%;
+}
+.img_publ
+{
+    width:50%;
+    margin-top:9%;
+    float:left;
+    margin-left:5%;
+}
+.cent_tit_publ
+{
+    margin-left:45%;
+}
+/*edicion de publicaciones*/
+.form_edpubl
+{
+    text-align:justify;
+    float:left;
+    margin-left:1%;
+    margin-top:3%;
+}
+.img_edpubl
+{
+    width:35%;
+    margin-top:5%;
+    float:left;
+    margin-left:15%;
+}
+
+
 
 
 .text2
