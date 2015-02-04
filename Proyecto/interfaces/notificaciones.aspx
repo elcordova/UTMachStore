@@ -50,7 +50,7 @@
                     foreach (var extraerNik in nick)
                     {
                         Label usuario = new Label();
-                        usuario = (Label)Spinner1[contadorPosicionNotificacion].Controls[3];
+                        usuario = (Label)Spinner1[contadorPosicionNotificacion].Controls[1];
                         usuario.Text = extraerNik.NickUsuario.ToString();
                     }
                     //obtener publicacion
