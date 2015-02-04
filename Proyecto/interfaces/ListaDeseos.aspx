@@ -8,10 +8,10 @@
 
     <h1 class="centrado_titulo">Lista de deseos</h1>
     <div class="pr grid_12 clearfix">&nbsp;</div>
-    <div class="boton2_centrar">
+
 
          <div>
-                    <asp:PlaceHolder runat="server" ID="PlaceHolder2" /><asp:PlaceHolder runat="server" ID="PlaceHolder1" />
+                    <asp:PlaceHolder runat="server" ID="PlaceHolder1" />
                     <br />     
                     </div>
             
@@ -173,7 +173,7 @@
             }
             </script>
 
-    </div>
+
     <br />
     <br />
     <br />

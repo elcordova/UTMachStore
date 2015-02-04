@@ -65,5 +65,9 @@ namespace Proyecto.LogicaDeNegocio
         {
             return DB.BuscarPublicaciones(dato).ToList();
         }
+        public List<dataBase.ListarporCategoriaResult> buquedaPublicacionesCategoria(int codigoCategoria)
+        {
+            return DB.ListarporCategoria(codigoCategoria).ToList();
+        }
     }
 }
