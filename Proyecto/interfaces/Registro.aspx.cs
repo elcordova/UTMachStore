@@ -42,7 +42,6 @@ namespace Proyecto.interfaces
             }
             else
             {
-
                 datosUsuarioNick = lnUsuario.buscarNick(TextBoxNickname.Text);
                 datosUsuarioCedula = lnUsuario.buscarCedula(TextBoxCedula.Text);
                 datosUsuarioCorreo = lnUsuario.buscarCorreo(TextBoxEmail.Text);
@@ -250,6 +249,11 @@ namespace Proyecto.interfaces
             //si el décimo dígito calculado es igual al digitado la cédula es correcta
             MessageBox.Show("cedula no valida registrada " + d10);
             args.IsValid = d10 == d[9];
+        }
+
+        protected void CustomValidator1_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = args.Value.Length <= 10;
         }
         }
     }
