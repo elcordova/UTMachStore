@@ -5,7 +5,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="Productos" runat="server">
     <!-- Catch Line and Link -->
 			<h2 class="grid_12 caption clearfix"><span>Compra y venta: </span>En la siguiente sección nos encontraremos con los productos más destacados en ventas por los usuarios</h2>
-		    <a href="MisPublicaciones.aspx" class="button float right">Mis publicaciones</a>
+		   <div>
+               <br />
+         <h2 class="grid_12 caption clearfix">      <asp:Label ID="Label1" runat="server" Text="   Buscar:  "></asp:Label></h2> <asp:TextBox ID="TextBox1" runat="server" Width="400" Height="25">&nbsp;&nbsp;&nbsp;</asp:TextBox><a><asp:Button ID="Button8" runat="server" Text="Buscar" Height="25" /></a>
+		   </div>
+
+
+             <a href="MisPublicaciones.aspx" class="button float right">Mis publicaciones</a>
             <a href="publicar.aspx" class="button float right">Crear publicacion</a>
 		<div class="pr grid_12 clearfix">&nbsp;</div>
 		
@@ -74,9 +80,12 @@
             <%@ Reference Control="~/interfaces/ControlMostrarPublicacion2.ascx" %>
 
             <script runat="server" Language="C#">
-               
+                public void Button1_Click8()
+                {
+                }
             protected void Page_Load(object sender, EventArgs e)
             {
+                
                 if (Session["usuario"] == null)
                 {
                     Response.Redirect("/interfaces/restriccion.aspx");
