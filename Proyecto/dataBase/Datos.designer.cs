@@ -540,6 +540,13 @@ namespace Proyecto.dataBase
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codigoPub, codigo_Usu_Pub, codigoUsu, codigoCom);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.listar_Compras")]
+		public ISingleResult<listar_ComprasResult> listar_Compras([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idusuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idusuario);
+			return ((ISingleResult<listar_ComprasResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categorias")]
@@ -6369,6 +6376,50 @@ namespace Proyecto.dataBase
 				if ((this._ruta != value))
 				{
 					this._ruta = value;
+				}
+			}
+		}
+	}
+	
+	public partial class listar_ComprasResult
+	{
+		
+		private string _Publicacion;
+		
+		private decimal _Precio;
+		
+		public listar_ComprasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publicacion", DbType="VarChar(50)")]
+		public string Publicacion
+		{
+			get
+			{
+				return this._Publicacion;
+			}
+			set
+			{
+				if ((this._Publicacion != value))
+				{
+					this._Publicacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Precio", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Precio
+		{
+			get
+			{
+				return this._Precio;
+			}
+			set
+			{
+				if ((this._Precio != value))
+				{
+					this._Precio = value;
 				}
 			}
 		}

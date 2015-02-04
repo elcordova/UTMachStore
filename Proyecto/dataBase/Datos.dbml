@@ -545,4 +545,11 @@
     <Parameter Name="codigoCom" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.listar_Compras" Method="listar_Compras">
+    <Parameter Name="idusuario" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="listar_ComprasResult">
+      <Column Name="Publicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
