@@ -304,13 +304,6 @@
     <Parameter Name="ruta" Type="System.String" DbType="VarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.cp_insertarnotificacion" Method="cp_insertarnotificacion">
-    <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigo_Usu_Pub" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
-    <Parameter Name="codigoCom" Type="System.Int64" DbType="BigInt" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.cp_listarComentario" Method="cp_listarComentario">
     <Parameter Name="valor" Type="System.Int32" DbType="Int" />
     <ElementType Name="cp_listarComentarioResult">
@@ -328,14 +321,6 @@
       <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="STOCK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="FECHA" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.cp_listarFoto" Method="cp_listarFoto">
-    <ElementType Name="cp_listarFotoResult">
-      <Column Name="Codigo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="publicacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="ruta" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.cp_listarNotificacion" Method="cp_listarNotificacion">
@@ -544,5 +529,20 @@
       <Column Name="estado_Pub" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="stock_Pub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.cp_listarFoto" Method="cp_listarFoto">
+    <ElementType Name="cp_listarFotoResult">
+      <Column Name="Codigo" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="publicacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ruta" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cp_insertarnotificacion" Method="cp_insertarnotificacion">
+    <Parameter Name="codigoPub" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigo_Usu_Pub" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoUsu" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="codigoCom" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

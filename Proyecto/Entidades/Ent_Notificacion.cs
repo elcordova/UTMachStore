@@ -7,17 +7,17 @@ namespace Proyecto.Entidades
 {
     public class Ent_Notificacion
     {
-      private int cod_Plubicacion;
+        private int cod_Plubicacion;
         private int codigo_Usu_Pub;
         private int cod_usuario;
         private int cod_comentario;
 
 
-        public Ent_Notificacion() 
+        public Ent_Notificacion()
         {
             cod_Plubicacion = 0;
             codigo_Usu_Pub = 0;
-            cod_usuario =0;
+            cod_usuario = 0;
             cod_comentario = 0;
         }
 
@@ -50,6 +50,6 @@ namespace Proyecto.Entidades
             get { return cod_comentario; }
             set { cod_comentario = value; }
         }
-       
+
     }
 }
