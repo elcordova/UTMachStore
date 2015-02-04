@@ -31,7 +31,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBoxNick" runat="server" Width="200px" Enabled="False"></asp:TextBox>
         <asp:TextBox ID="TextBoxNick1" runat="server" Enabled="False" Visible="False" Width="200px"></asp:TextBox>
-        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxNick" ErrorMessage="Ingrese un nick" ForeColor="Red" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="TextBoxNick" ErrorMessage="Ingrese un nick" ForeColor="Red" Font-Bold="True" Font-Size="Larger" SetFocusOnError="True">*</asp:RequiredFieldValidator>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         <br />
