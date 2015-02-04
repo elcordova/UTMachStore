@@ -50,7 +50,7 @@
                     foreach (var extraerNik in nick)
                     {
                         Label usuario = new Label();
-                        usuario = (Label)Spinner1[contadorPosicionNotificacion].Controls[1];
+                        usuario = (Label)Spinner1[contadorPosicionNotificacion].Controls[3];
                         usuario.Text = extraerNik.NickUsuario.ToString();
                     }
                     //obtener publicacion
@@ -60,7 +60,7 @@
                     foreach (var extraerTitulo in Titulopublicacion)
                     {
                         Label titulo = new Label();
-                        titulo = (Label)Spinner1[contadorPosicionNotificacion].Controls[3];
+                        titulo = (Label)Spinner1[contadorPosicionNotificacion].Controls[1];
                         titulo.Text = extraerTitulo.titulo.ToString();
                     }
                     //obtener fecha

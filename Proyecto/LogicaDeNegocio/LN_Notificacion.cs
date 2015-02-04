@@ -12,8 +12,8 @@ namespace Proyecto.LogicaDeNegocio
 
         public void insertarNotificacion(Entidades.Ent_Notificacion notificacion)
         {
-        //    DB.cp_insertarnotificacion(notificacion.Codigo_Publicacion, notificacion.Ruta_Publicacion, notificacion.Codigo_Usuario, notificacion.Codigo_Comentario);
-         //   DB.SubmitChanges();
+          DB.cp_insertarnotificacion(notificacion.Codigo_Publicacion, notificacion.Codigo_Usu_Pub, notificacion.Codigo_Usuario, notificacion.Codigo_Comentario);
+          DB.SubmitChanges();
         }
          
 

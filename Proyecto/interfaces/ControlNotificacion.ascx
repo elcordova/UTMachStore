@@ -9,10 +9,9 @@
 				</div> 
 				<div class="comment_content"> 
 					<div class="clearfix">
-						<cite class="author_name"> <asp:Label ID="lblTituloPublicacion" runat="server" Text="Titulo"></asp:Label>
-                        <br />
-                        <asp:Label ID="lblusuario" runat="server" Text="usuario"></asp:Label></cite>       
-						<div class="comment-meta commentmetadata">
+						<cite class="author_name"> En la Publicidad <asp:Label ID="lblTituloPublicacion" runat="server" Text="Titulo"></asp:Label>
+                        <br /><br />
+                        <asp:Label ID="lblusuario" runat="server" Text="usuario"></asp:Label>&nbsp;Menciono lo siguiente:</cite><div class="comment-meta commentmetadata">
                             <asp:Label ID="LBFecha" runat="server" Text="January 6, 2010 at 6:26 am"></asp:Label></div> 
 					</div>
 					<div class="comment_text"> 
