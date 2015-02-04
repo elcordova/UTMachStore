@@ -13,11 +13,11 @@
                 <h1 class="cent_tit">
                
                 BIENVENIDO A UTMACH STORE</h1>
-
+    <div class="container" style="padding:40px 60px 20px 60px">
     <div class="row container-fluid">
-        <div class="col-md-6 col-md-6 col-md-6">
+        <div class="col-md-6 col-md-6 col-md-6" style="padding:1px 1px 1px 150px" >
             <img class="imgn" src="images/log.png" /></div>
-        <div class="col-md-6 col-md-6 col-md-6">
+        <div class="col-md-6 col-md-6 col-md-6" style="padding:1px 150px 1px 1px">
         <form role="form">
             <div class="form-group ">
                 <label class="control-label" for="h2">
