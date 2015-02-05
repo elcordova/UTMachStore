@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="verificarCuenta.aspx.cs" Inherits="Proyecto.interfaces.verificarCuenta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="verificarCuenta.aspx.cs" Inherits="Proyecto.interfaces.verificarCuenta" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
