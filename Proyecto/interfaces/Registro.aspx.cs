@@ -38,7 +38,7 @@ namespace Proyecto.interfaces
 
             if (camposVacios())
             {
-                Response.Write("<script language=javascript>alert('Porfavor rellene todos los campos correctamente');</script>");
+                Response.Write("<script language=javascript>alert('Porfavor digite corretamente  la cedula');</script>");
             }
             else
             {
@@ -68,10 +68,7 @@ namespace Proyecto.interfaces
 
         private bool camposVacios()
         {
-            if (usuario.Nombre_usu.Equals("") || usuario.Nic_usu.Equals("") || usuario.Direccion_usu.Equals("")
-                            || usuario.Email_usu.Equals("") || usuario.Cedula_usu.Equals("") || TextBoxPasswd.Text.Equals("")
-                            || TextBoxConfPasswd.Text.Equals(""))
-            {
+            if (usuario.Cedula_usu.Length<=9)        {
                 return true;
             }
             else
@@ -100,27 +97,28 @@ namespace Proyecto.interfaces
         private void validarCedula()
         {
             Validaciones uti = new Validaciones();
-            
+
             if (TextBoxCedula.Text.Length == 10)
             {
-                if(!uti.esCedulaValida(TextBoxCedula.Text)){
-
-                if (!datosUsuarioCedula.Count.Equals(0))
+                if (!validaCedulaRUC(TextBoxCedula.Text))
                 {
-                    if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+
+                    if (!datosUsuarioCedula.Count.Equals(0))
                     {
-                        Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
-                        banderaCedula = false;
-                    }
-                    else
-                    {
-                        banderaCedula = true;
-                    }
+                        if (datosUsuarioCedula.ElementAt(0).cedula_Usu.Equals(TextBoxCedula.Text))
+                        {
+                            Response.Write("<script language=javascript>alert('Esta Cédula: " + usuario.Cedula_usu + " ya está registrada');</script>");
+                            banderaCedula = false;
+                        }
+                        else
+                        {
+                            banderaCedula = true;
+                        }
 
                     }
                 }
-                else { Response.Write("<script language=javascript>alert('Esta Cédula no es valida');</script>"); }    
-                }
+                else { Response.Write("<script language=javascript>alert('Esta Cédula no es valida');</script>"); }
+            }
 
             else Response.Write("<script language=javascript>alert('Digite correctamente la cédula');</script>");
         }
@@ -195,7 +193,7 @@ namespace Proyecto.interfaces
         protected void TextBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.Letras(e);
-            
+
         }
 
         protected void TextBoxCedula_KeyPress(object sender, KeyPressEventArgs e)
@@ -204,56 +202,59 @@ namespace Proyecto.interfaces
             validar.esCedulaValida(TextBoxCedula.Text);
         }
 
-        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            string cedula = args.Value;
-            MessageBox.Show("cedula no valida registrada " + cedula);
-            
-             //verifica que tenga 10 dígitos 
-            if (!(cedula.Length == 10))
-            {
-                args.IsValid=false;
+        public bool validaCedulaRUC(String cad)
+        {   
+        bool resp = true;
+        int [] cedula = new int[cad.Length];
+        int res = 0;
+        if (cedula.Length == 10) {
+            for (int c = 0; c < cedula.Length; c++) {
+                cedula[c] = Convert.ToInt32(Convert.ToString(cad.ElementAt(c)));
+                int r = c % 2;
+                if (r == 0) {
+                    cedula[c] = cedula[c] * 2;
+                    if (cedula[c] > 9) {
+                        cedula[c] = cedula[c] - 9;
+                    }
+                }
             }
-            //verifica que los dos primeros dígitos correspondan a un valor entre 1 y NUMERO_DE_PROVINCIAS
-            int prov = int.Parse(cedula.Substring(0, 2));
-            if (!((prov > 0) && (prov <= 24)))
-            {
-                args.IsValid = false;
+            for (int c = 0; c < cedula.Length - 1; c++) {
+                res = res + cedula[c];
             }
-            //verifica que el último dígito de la cédula sea válido
-            int[] d = new int[10];
-            //Asignamos el string a un array
-            for (int i = 0; i < d.Length; i++)
-            {
-                d[i] = int.Parse(cedula.Substring(i, 1) + "");
+            res = res % 10;
+            if (res != 0) {
+                res = 10 - res;
             }
-            int imp = 0;
-            int par = 0;
-            //sumamos los duplos de posición impar
-            for (int i = 0; i < d.Length; i += 2)
-            {
-                d[i] = ((d[i] * 2) > 9) ? ((d[i] * 2) - 9) : (d[i] * 2);
-                imp += d[i];
-            }
-            //sumamos los digitos de posición par
-            for (int i = 1; i < (d.Length - 1); i += 2)
-            {
-                par += d[i];
-            }
-            //Sumamos los dos resultados
-            int suma = imp + par;
-            //Restamos de la decena superior
-            int d10 = int.Parse(Convert.ToString(suma + 10).Substring(0, 1) + "0") - suma;
-            //Si es diez el décimo dígito es cero        
-            d10 = (d10 == 10) ? 0 : d10;
-            //si el décimo dígito calculado es igual al digitado la cédula es correcta
-            MessageBox.Show("cedula no valida registrada " + d10);
-            args.IsValid = d10 == d[9];
-        }
+            if (res == cedula[9]) {
+                //MessageBox.Show("correcto");
+            } else {
+                resp = false;
+               //MessageBox.Show("incorrecto");
 
-        protected void CustomValidator1_ServerValidate1(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = args.Value.Length <= 10;
+            }
+        } else {
+            resp = false;
+             //MessageBox.Show("incorrecto");
+
         }
+        return resp;
+    }
+
+        protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            try
+            {
+                args.IsValid = args.Value.Length >= 10 && args.Value.ToString().CompareTo("1111111111") != 0 && args.Value.ToString().CompareTo("2222222222") != 0 &&
+                args.Value.ToString().CompareTo("3333333333") != 0 && args.Value.ToString().CompareTo("4444444444") != 0 && args.Value.ToString().CompareTo("5555555555") != 0 &&
+                args.Value.ToString().CompareTo("6666666666") != 0 && args.Value.ToString().CompareTo("7777777777") != 0 && args.Value.ToString().CompareTo("8888888888") != 0 && args.Value.ToString().CompareTo("9999999999") != 0
+                && Convert.ToString(validaCedulaRUC(args.Value.ToString())).CompareTo("true") != 0;
+            }
+            catch (Exception er)
+            {
+                Response.Write("<script language=javascript>alert('Error en campo de cedula');</script>");
+
+            }
         }
     }
+}
+

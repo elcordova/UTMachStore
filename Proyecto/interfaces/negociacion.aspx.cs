@@ -143,7 +143,6 @@ namespace Proyecto.interfaces
         {
             try { 
             args.IsValid = int.Parse(args.Value.ToString())<=int.Parse(TextBox2.Text);
-            //int stock = int.Parse(Convert.ToString(args.Value.ToString()));
             }
             catch(Exception er)
             {

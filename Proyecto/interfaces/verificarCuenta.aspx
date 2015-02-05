@@ -44,7 +44,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TextBoxNombre" runat="server"></asp:TextBox>
                         &nbsp;
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Ingrese codigo" Font-Bold="True" Font-Size="Larger" ForeColor="Red" ToolTip="Campo Obligatorio">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Ingrese codigo" Font-Bold="True" Font-Size="Larger" ForeColor="Red" ToolTip="Ingrese nombre de usuario" SetFocusOnError="True">Campo Obligatorio</asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                         <br />
                     </div>
@@ -70,7 +70,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TextBoxPasswd" runat="server" TextMode="Password"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxPasswd" ErrorMessage="Ingrese codigo" Font-Bold="True" Font-Size="Larger" ForeColor="Red" ToolTip="Campo Obligatorio">*</asp:RequiredFieldValidator>
+                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxPasswd" ErrorMessage="Ingrese codigo" Font-Bold="True" Font-Size="Larger" ForeColor="Red" ToolTip="Ingrese contraseña" SetFocusOnError="True">Campo Obligatorio</asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <br />
                     </div>
@@ -90,7 +90,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TextBoxCod" runat="server"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxCod" ErrorMessage="Ingrese codigo" Font-Bold="True" Font-Size="Larger" ForeColor="Red" ToolTip="Campo Obligatorio">*</asp:RequiredFieldValidator>
+                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxCod" ErrorMessage="Ingrese codigo" Font-Bold="True" Font-Size="Larger" ForeColor="Red" SetFocusOnError="True">Ingrese codigo de verificacion</asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <br />
                     </div>
