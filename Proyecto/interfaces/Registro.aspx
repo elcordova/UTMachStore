@@ -2,8 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="registro" runat="server">
+    
     <br />
     <br />
+    <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
     <br />
     <br />
 
@@ -11,115 +13,122 @@
     <legend class="centrado_legend">Registra una nueva Cuenta</legend>
     <div class="areglob">
     </div>
+    <div class="row">
+        <div class="col-md-6 col-md-6 col-md-6">
+            <img class="imgn" src="images/SolicitudU.png" />
+        </div>
+        <div class="col-md-6 col-md-6 col-md-6" id="formn">
+            <div role="form">
+                <div class="form-group">
+                    <label class="control-label">Nombre</label>
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <asp:TextBox ID="TextBoxNombre" CssClass="col-xs-7 form-control" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="col-xs-1">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="col-xs-1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Large" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        </div>
+                        
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1"  runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Small" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[a-z A-Z ]*">sin numeros</asp:RegularExpressionValidator>
+                        
+                        <br />
+                    </div>
+                </div>
 
-    <br />
-    <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    
-                    
-                    <img class="imgn" src="images/SolicitudU.png" />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div class="text1" id="formn">
-            <div class="control-group clearfix required ">
-                <label class="control-label" for="h2">Nombre</label>
-                <label class="control-label" for="h3">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp; 
-                </label>
-                &nbsp;
-                    <div class="controls input">
-                        &nbsp;<asp:TextBox ID="TextBoxNombre" runat="server" Width="322px" MaxLength="30"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[a-z A-Z ]*">Solo letras(sin numeros)</asp:RegularExpressionValidator>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form-group">
+                    <label  for="h4">Direccion</label>
+                    <div class="row">
+                        <div class="col-xs-7">
+                    <asp:TextBox ID="TextBoxDireccion" CssClass="form-control col-xs-7" runat="server" MaxLength="50"></asp:TextBox>
+                    </div> <div class="col-xs-1">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="col-xs-1" runat="server" ControlToValidate="TextBoxDireccion" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        </div>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="TextBoxEmail">Email</label>
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" CssClass="form-control col-xs-7" MaxLength="50"></asp:TextBox>
+                        </div>
+                        <div class="col-xs-1">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" CssClass="col-xs-1" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        </div>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Small" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Error email invalido</asp:RegularExpressionValidator>
+                    </div>
+
+                </div>
+                <div class="form-group clearfix required ">
+                    <label for="TextBoxNickname">Nickname</label>
+                    <div class="row">
+                        <div class="col-xs-7">
+                   <asp:TextBox ID="TextBoxNickname" CssClass="col-xs-7 form-control" runat="server" AutoPostBack="True" MaxLength="15"></asp:TextBox>
+                       </div>
+                        <div class="col-xs-1">
+                            <asp:RequiredFieldValidator CssClass="col-xs-1" ID ="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxNickname" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                       </div>
+                        </div>
+                    </div>
+                <div class="form-group">
+                <label class="control-label" for="h7">
+                    Cedula</label>
+                    <div class="row">
+                        <div class ="col-xs-7">
+                            <asp:TextBox ID="TextBoxCedula" CssClass="form-control col-xs-7" runat="server" MaxLength="10"></asp:TextBox>
+                        </div>
+                        <div class="col-xs-1">
+                            <asp:RequiredFieldValidator CssClass="col-xs-1" ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        </div>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Small" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="([0-9]|-)*">Solo numeros</asp:RegularExpressionValidator>
+                        &nbsp;<asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="ErrorCedula" OnServerValidate="CustomValidator2_ServerValidate" SetFocusOnError="True" Font-Bold="True" Font-Size="Small" ForeColor="Red">Cedula no valida</asp:CustomValidator>
+
+
                         <br />
                     </div>
-            </div>
-            <div class="control-group clearfix required ">
-                <div class="controls input">
-                    &nbsp;<br />
                 </div>
-            </div>
-            <div class="control-group clearfix required ">
-                <label class="control-label" for="h4">Direccion</label>
-                <label class="control-label" for="h5">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                Email</label>
-                <div class="controls input">
-                    &nbsp;<asp:TextBox ID="TextBoxDireccion" runat="server" MaxLength="50"></asp:TextBox>
-                    &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxDireccion" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" MaxLength="50"></asp:TextBox>
-                &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Error email invalido</asp:RegularExpressionValidator>
-                </div>
-                &nbsp;<div class="controls input">
-                    &nbsp;<br />
-                </div>
-            </div>
-            <div class="control-group clearfix required ">
-                Nickname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <label class="control-label" for="h7">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cedula</label>&nbsp;
-                    <div class="controls input">
-                        &nbsp;<asp:TextBox ID="TextBoxNickname" runat="server" AutoPostBack="True" MaxLength="15"></asp:TextBox>
-                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxNickname" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxCedula" runat="server" MaxLength="10"  ></asp:TextBox>
-                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="([0-9]|-)*">Solo numeros(sin letras)</asp:RegularExpressionValidator>
-                        &nbsp;<asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="ErrorCedula" OnServerValidate="CustomValidator2_ServerValidate" SetFocusOnError="True" Font-Bold="True" Font-Size="Larger" ForeColor="Red">Cedula no valida</asp:CustomValidator>
-                        
-                        
-                        <br />
-                    </div>
-            </div>
-            <div class="control-group clearfix required ">
-                <div class="controls input">
-                    <br />
-            <div class="control-group clearfix required ">
-                <label class="control-label" for="h6">Contraseña</label>
-                <label class="control-label" for="h7">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Verificar Contraseña</label>&nbsp;
-                    <div class="controls input">
-                        &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
+                <div class="form-group clearfix required ">
+                            <label class="control-label" for="h6">Contraseña</label>
+                    <div class="row">
+                        <div class="col-xs-7">
+                        <asp:TextBox ID="TextBoxPasswd" runat="server" CssClass="form-control col-xs-7" TextMode="Password" MaxLength="8"></asp:TextBox>
+                        </div>
+                            </div>
+                            </div>
+                <div class="form-group clearfix required ">
+                    <div>
+                    <label class="control-label" for="TextBoxConfPasswd">
+                        Verificar Contraseña</label>
+                        <div class="row">
+                            <div class="col-xs-7">
+                        <asp:TextBox ID="TextBoxConfPasswd" CssClass="col-xs-7 form-control" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
+                                </div>
+                            <div  class="col-xs-1">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" CssClass="col-xs-1" runat="server" ControlToValidate="TextBoxConfPasswd" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        </div>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxPasswd" ControlToValidate="TextBoxConfPasswd" ErrorMessage="ErrorVerificacion" SetFocusOnError="True" Font-Bold="True" Font-Size="Small" Font-Strikeout="False" ForeColor="Red">No coinciden las contraseñas</asp:CompareValidator>
+                        </div>
+                            
+                        &nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxConfPasswd" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBoxConfPasswd" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
-                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxPasswd" ControlToValidate="TextBoxConfPasswd" ErrorMessage="ErrorVerificacion" SetFocusOnError="True" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red">No coinciden las contraseñas</asp:CompareValidator>
                         <br />
                     </div>
-            </div>
-                    <br />
-                </div>
-            </div>
-            <div class="form-actions">
+                        </div>
+                
+                        <br />
+                    
+               
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button1" runat="server" Text="Registrar" OnClick="Button1_Click1" />
+                <asp:Button ID="Button1" CssClass="btn btn-block" runat="server" Text="Registrar" OnClick="Button1_Click1" />
+                
             </div>
         </div>
+
+    </div>
+        
+    
     <br />
     <br />
     <br />
