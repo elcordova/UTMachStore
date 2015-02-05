@@ -1129,14 +1129,18 @@ hr {
   border-top: 1px solid #eeeeee;
 }
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    top: 771px;
+    left: 15px;
 }
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
@@ -1581,6 +1585,8 @@ pre code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+    top: 0px;
+    left: 0px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;

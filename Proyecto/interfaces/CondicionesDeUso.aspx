@@ -2,11 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content15" ContentPlaceHolderID="contenido_principal" runat="server">
-    
+    <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
     <h1 class="cent_tit clearfix">Terminos y condiciones de uso</h1>
     <p class="parrafos_c">
         
-        &nbsp;&nbsp;&nbsp;&nbsp;•	La página permitirá la privacidad de información del usuario, excepto cuando este realice una negociación con otro, en dicho caso, ambos podrán intercambiar información.<br /><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;•	UTMachStore permitirá la privacidad de información del usuario, excepto cuando este realice una negociación con otro, en dicho caso, ambos podrán intercambiar información.<br /><br />
         •	El usuario no logueado tendrá acceso a la presentación de la página de inicio e información de la misma.<br /><br />
         •	Únicamente el usuario registrado contará con permisos para realizar comentarios, publicaciones, negociaciones o recibir notificaciones.<br /><br />
         •	Se permitirá al usuario interactuar como vendedor o comprador al mismo tiempo.<br /><br />
