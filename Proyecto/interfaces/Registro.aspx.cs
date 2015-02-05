@@ -38,7 +38,7 @@ namespace Proyecto.interfaces
 
             if (camposVacios())
             {
-                Response.Write("<script language=javascript>alert('Porfavor rellene todos los campos correctamente');</script>");
+                Response.Write("<script language=javascript>alert('Porfavor digite corretamente  la cedula');</script>");
             }
             else
             {
@@ -68,10 +68,7 @@ namespace Proyecto.interfaces
 
         private bool camposVacios()
         {
-            if (usuario.Nombre_usu.Equals("") || usuario.Nic_usu.Equals("") || usuario.Direccion_usu.Equals("")
-                            || usuario.Email_usu.Equals("") || usuario.Cedula_usu.Equals("") || TextBoxPasswd.Text.Equals("")
-                            || TextBoxConfPasswd.Text.Equals(""))
-            {
+            if (usuario.Cedula_usu.Length<=9)        {
                 return true;
             }
             else
@@ -245,10 +242,18 @@ namespace Proyecto.interfaces
 
         protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            args.IsValid = args.Value.Length >= 10 && args.Value.ToString().CompareTo("1111111111") != 0 && args.Value.ToString().CompareTo("2222222222") != 0 &&
-            args.Value.ToString().CompareTo("3333333333") != 0 && args.Value.ToString().CompareTo("4444444444") != 0 && args.Value.ToString().CompareTo("5555555555") != 0 &&
-            args.Value.ToString().CompareTo("6666666666") != 0 && args.Value.ToString().CompareTo("7777777777") != 0 && args.Value.ToString().CompareTo("8888888888") != 0 && args.Value.ToString().CompareTo("9999999999") != 0
-            && Convert.ToString(validaCedulaRUC(args.Value.ToString())).CompareTo("true")!=0;
+            try
+            {
+                args.IsValid = args.Value.Length >= 10 && args.Value.ToString().CompareTo("1111111111") != 0 && args.Value.ToString().CompareTo("2222222222") != 0 &&
+                args.Value.ToString().CompareTo("3333333333") != 0 && args.Value.ToString().CompareTo("4444444444") != 0 && args.Value.ToString().CompareTo("5555555555") != 0 &&
+                args.Value.ToString().CompareTo("6666666666") != 0 && args.Value.ToString().CompareTo("7777777777") != 0 && args.Value.ToString().CompareTo("8888888888") != 0 && args.Value.ToString().CompareTo("9999999999") != 0
+                && Convert.ToString(validaCedulaRUC(args.Value.ToString())).CompareTo("true") != 0;
+            }
+            catch (Exception er)
+            {
+                Response.Write("<script language=javascript>alert('Error en campo de cedula');</script>");
+
+            }
         }
     }
 }

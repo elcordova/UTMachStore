@@ -85,7 +85,7 @@
                         <asp:TextBox ID="TextBoxCedula" runat="server" MaxLength="10"  ></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="([0-9]|-)*">Solo numeros(sin letras)</asp:RegularExpressionValidator>
-                        &nbsp;<asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="ErrorCedula" OnServerValidate="CustomValidator2_ServerValidate" SetFocusOnError="True" ValidateEmptyText="True">Cedula no valida</asp:CustomValidator>
+                        &nbsp;<asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="ErrorCedula" OnServerValidate="CustomValidator2_ServerValidate" SetFocusOnError="True" Font-Bold="True" Font-Size="Larger" ForeColor="Red">Cedula no valida</asp:CustomValidator>
                         
                         
                         <br />
@@ -104,7 +104,8 @@
                         &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TextBoxConfPasswd" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxPasswd" ControlToValidate="TextBoxConfPasswd" ErrorMessage="ErrorVerificacion" SetFocusOnError="True" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red">No coinciden las contraseñas</asp:CompareValidator>
+                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBoxConfPasswd" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxPasswd" ControlToValidate="TextBoxConfPasswd" ErrorMessage="ErrorVerificacion" SetFocusOnError="True" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red">No coinciden las contraseñas</asp:CompareValidator>
                         <br />
                     </div>
             </div>
