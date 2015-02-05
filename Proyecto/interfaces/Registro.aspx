@@ -6,20 +6,18 @@
     <br />
     <br />
     <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
-    <br />
-    <br />
-
-
-    <legend class="centrado_legend">Registra una nueva Cuenta</legend>
+   <legend class="centrado_legend">Registra una nueva Cuenta</legend>
     <div class="areglob">
     </div>
-    <div class="row">
-        <div class="col-md-6 col-md-6 col-md-6">
+     <div class="container" >
+   
+    <div class="row container-fluid" >
+        <div class="col-md-6 col-md-6 col-md-6" style="padding:150px 1px 1px 150px">
             <img class="imgn" src="images/SolicitudU.png" />
         </div>
-        <div class="col-md-6 col-md-6 col-md-6" id="formn">
+        <div class="col-md-6 col-md-6 col-md-6" style="padding:1px 150px 1px 1px" id="formn">
             <div role="form">
-                <div class="form-group">
+                <div class="form-group"style="padding:-10px 1px -10px 1px">
                     <label class="control-label">Nombre</label>
                     <div class="row">
                         <div class="col-xs-7">
@@ -35,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group"style="padding:-10px 1px -10px 1px">
                     <label  for="h4">Direccion</label>
                     <div class="row">
                         <div class="col-xs-7">
@@ -45,7 +43,7 @@
                         </div>    
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="padding:-10px 1px -10px 1px">
                     <label for="TextBoxEmail">Email</label>
                     <div class="row">
                         <div class="col-xs-7">
@@ -58,7 +56,7 @@
                     </div>
 
                 </div>
-                <div class="form-group clearfix required ">
+                <div class="form-group clearfix required "style="padding:-10px 1px -10px 1px">
                     <label for="TextBoxNickname">Nickname</label>
                     <div class="row">
                         <div class="col-xs-7">
@@ -69,7 +67,7 @@
                        </div>
                         </div>
                     </div>
-                <div class="form-group">
+                <div class="form-group" style="padding:-10px 1px -10px 1px">
                 <label class="control-label" for="h7">
                     Cedula</label>
                     <div class="row">
@@ -86,7 +84,7 @@
                         <br />
                     </div>
                 </div>
-                <div class="form-group clearfix required ">
+                <div class="form-group clearfix required  "style="padding:-10px 1px -10px 1px"">
                             <label class="control-label" for="h6">Contraseña</label>
                     <div class="row">
                         <div class="col-xs-7">
@@ -94,7 +92,7 @@
                         </div>
                             </div>
                             </div>
-                <div class="form-group clearfix required ">
+                <div class="form-group clearfix required "style="padding:-10px 1px -10px 1px">
                     <div>
                     <label class="control-label" for="TextBoxConfPasswd">
                         Verificar Contraseña</label>
@@ -107,52 +105,21 @@
                         </div>
                                 <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxPasswd" ControlToValidate="TextBoxConfPasswd" ErrorMessage="ErrorVerificacion" SetFocusOnError="True" Font-Bold="True" Font-Size="Small" Font-Strikeout="False" ForeColor="Red">No coinciden las contraseñas</asp:CompareValidator>
                         </div>
-                            
-                        &nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <br />
                     </div>
                         </div>
                 
                         <br />
                     
                
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button1" CssClass="btn btn-block" runat="server" Text="Registrar" OnClick="Button1_Click1" />
-                
+                   <div style="padding:1px 190px 2px 1px">
+                <asp:Button ID="Button1" CssClass="btn btn-primary btn-block" runat="server"  Text="Registrar" OnClick="Button1_Click1" />
+                </div>
             </div>
         </div>
 
     </div>
         
-    
+   
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    </div>
 </asp:Content>

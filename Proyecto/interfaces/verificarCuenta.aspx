@@ -7,46 +7,32 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="loguin" runat="server">
-    <br /><br /><br /><br />
+    <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
+     
 
     
                 <h1>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
                 UTMach Store | Validación de Cuenta</h1>
 
-                 <br /><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-6 col-md-6">
     <img class="imgn" src="images/log.png"/>
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div class="text1" id="formn">
-            <div class="control-group clearfix required ">
+                    </div>
+                        <div class="col-md-6 col-md-6 col-md-6">
+                           
+                            <form role="form" id="formn">
+            <div class="form-group clearfix required ">
                     <label class="control-label" for="h2">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    Nickname</label>&nbsp;
-                    <div class="controls input">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBoxNombre" runat="server"></asp:TextBox>
-                        &nbsp;
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Ingrese codigo" Font-Bold="True" Font-Size="Larger" ForeColor="Red" ToolTip="Ingrese nombre de usuario" SetFocusOnError="True">Campo Obligatorio</asp:RequiredFieldValidator>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        <br />
+                   Nickname</label>&nbsp;
+                    <div class="row">
+                        <div class="col-xs-7">
+                        <asp:TextBox ID="TextBoxNombre" CssClass="form-control col-xs-7" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="col-xs-1">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="col-xs-1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="Ingrese codigo" Font-Bold="True" Font-Size="Larger" ForeColor="Red" ToolTip="Ingrese nombre de usuario" SetFocusOnError="True">Campo Obligatorio</asp:RequiredFieldValidator>
+                        </div>
                     </div>
             </div>
             <div class="control-group clearfix required ">
@@ -107,32 +93,12 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
-        </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+        </form>
+
+                        </div>
+                   </div>
+
+                    </div>
     <table style="width: 80%;">
         <tr>
             <td class="auto-style1">&nbsp;</td>
@@ -150,6 +116,7 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+                     
     <br />
     <br />
     <br />

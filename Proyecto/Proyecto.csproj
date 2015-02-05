@@ -69,6 +69,12 @@
     <Content Include="Content\bootstrap\bootstrap.min.css">
       <DependentUpon>bootstrap.css</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap\bootstrap.rtl.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\bootstrap.rtl.min.css">
+      <DependentUpon>bootstrap.rtl.css</DependentUpon>
+    </Content>
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="interfaces\cerrarSesion.aspx" />
     <Content Include="interfaces\compra.aspx" />
@@ -253,6 +259,9 @@
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\bootstrap\bootstrap.css.map">
       <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\bootstrap.rtl.css.map">
+      <DependentUpon>bootstrap.rtl.css</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

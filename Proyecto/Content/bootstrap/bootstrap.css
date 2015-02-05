@@ -1129,18 +1129,14 @@ hr {
   border-top: 1px solid #eeeeee;
 }
 .sr-only {
-  border-style: none;
-    border-color: inherit;
-    border-width: 0;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    top: 771px;
-    left: 15px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
@@ -1585,8 +1581,6 @@ pre code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-    top: -2147483648px;
-    left: -2147483648px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -1607,8 +1601,7 @@ pre code {
   width: 66.66666667%;
 }
 .col-xs-7 {
-  width: 68%;
-    height: 44px;
+  width: 58.33333333%;
 }
 .col-xs-6 {
   width: 50%;
@@ -1617,8 +1610,7 @@ pre code {
   width: 41.66666667%;
 }
 .col-xs-4 {
-  width: 32%;
-    height: 34px;
+  width: 33.33333333%;
 }
 .col-xs-3 {
   width: 25%;
@@ -2522,7 +2514,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 20px;
+  height: 34px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -2596,7 +2588,6 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
-    height: 72px;
 }
 .radio,
 .checkbox {

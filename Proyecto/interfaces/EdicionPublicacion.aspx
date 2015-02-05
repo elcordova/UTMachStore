@@ -4,6 +4,7 @@
 
 <asp:Content ID="Content12" ContentPlaceHolderID="editarPublicaciones" runat="server">
     <br />
+    <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
     <h2 class="grid_12 caption clearfix"><span>Editar Publicaciones</span></h2>
 
 
