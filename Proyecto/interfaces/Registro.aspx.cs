@@ -38,7 +38,7 @@ namespace Proyecto.interfaces
 
             if (camposVacios())
             {
-                //Response.Write("<script language=javascript>alert('Porfavor rellene todos los campos correctamente');</script>");
+                Response.Write("<script language=javascript>alert('Porfavor rellene todos los campos correctamente');</script>");
             }
             else
             {

@@ -42,7 +42,9 @@
                 &nbsp;
                     <div class="controls input">
                         &nbsp;<asp:TextBox ID="TextBoxNombre" runat="server" Width="322px" MaxLength="30"></asp:TextBox>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="[a-z A-Z ]*">Solo letras(sin numeros)</asp:RegularExpressionValidator>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <br />
                     </div>
             </div>
@@ -60,9 +62,12 @@
                 Email</label>
                 <div class="controls input">
                     &nbsp;<asp:TextBox ID="TextBoxDireccion" runat="server" MaxLength="50"></asp:TextBox>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxDireccion" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TextBoxEmail" runat="server" TextMode="Email" MaxLength="50"></asp:TextBox>
-                &nbsp;&nbsp;</div>
+                &nbsp;&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Error email invalido</asp:RegularExpressionValidator>
+                </div>
                 &nbsp;<div class="controls input">
                     &nbsp;<br />
                 </div>
@@ -75,9 +80,12 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cedula</label>&nbsp;
                     <div class="controls input">
                         &nbsp;<asp:TextBox ID="TextBoxNickname" runat="server" AutoPostBack="True" MaxLength="15"></asp:TextBox>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBoxNickname" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TextBoxCedula" runat="server" MaxLength="10"  ></asp:TextBox>
-                        &nbsp;&nbsp;<asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="ErrorCedula" OnServerValidate="CustomValidator2_ServerValidate" SetFocusOnError="True">Cedula no valida</asp:CustomValidator>
+                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="RequiredFieldValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="RegularExpressionValidator" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red" SetFocusOnError="True" ValidationExpression="([0-9]|-)*">Solo numeros(sin letras)</asp:RegularExpressionValidator>
+                        &nbsp;<asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="TextBoxCedula" ErrorMessage="ErrorCedula" OnServerValidate="CustomValidator2_ServerValidate" SetFocusOnError="True" ValidateEmptyText="True">Cedula no valida</asp:CustomValidator>
                         
                         
                         <br />
@@ -96,7 +104,7 @@
                         &nbsp;<asp:TextBox ID="TextBoxPasswd" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="TextBoxConfPasswd" runat="server" TextMode="Password" MaxLength="8"></asp:TextBox>
-                        &nbsp;&nbsp;<asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxPasswd" ControlToValidate="TextBoxConfPasswd" ErrorMessage="ErrorVerificacion" SetFocusOnError="True">No coinciden las contraseñas</asp:CompareValidator>
+                        &nbsp;&nbsp;<asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxPasswd" ControlToValidate="TextBoxConfPasswd" ErrorMessage="ErrorVerificacion" SetFocusOnError="True" Font-Bold="True" Font-Size="Larger" Font-Strikeout="False" ForeColor="Red">No coinciden las contraseñas</asp:CompareValidator>
                         <br />
                     </div>
             </div>
