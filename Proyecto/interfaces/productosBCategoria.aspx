@@ -6,7 +6,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="Productos" runat="server">
     <!-- Catch Line and Link -->
 			<h2 class="grid_12 caption clearfix"><span>Compra y venta: </span>En la siguiente sección nos encontraremos con los productos más destacados en ventas por los usuarios</h2>
-		   <div>
+		   <div> 
                <br />
          <h2 class="grid_12 caption clearfix">      <asp:Label ID="Label1" runat="server" Text="   Buscar:  "></asp:Label></h2> <asp:TextBox ID="TextBox1" runat="server" Width="400" Height="25">&nbsp;&nbsp;&nbsp;</asp:TextBox><a><asp:Button ID="Button8" runat="server" Text="Buscar" Height="25" /></a>
 		   </div>
