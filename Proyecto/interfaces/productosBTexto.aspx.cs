@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 namespace Proyecto.interfaces
 {
     public partial class productosBTexto : System.Web.UI.Page
-    {
+    { 
         protected void Page_Load(object sender, EventArgs e)
         {
 
