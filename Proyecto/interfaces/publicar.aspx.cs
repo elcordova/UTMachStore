@@ -221,5 +221,10 @@ namespace Proyecto.interfaces
             }
         }
 
+        protected void txtDatosPublicacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

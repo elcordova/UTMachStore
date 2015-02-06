@@ -8,7 +8,7 @@
 		<div id="featured" class="clearfix grid_12">  
         <h2 class="parrafos_c caption clearfix"> 
        Bienvenido! Esto es <strong>UTMACH STORE</strong>, un sitio, donde podras 
-        <strong>Negociar</strong> y <strong>Promocionar</strong> los productos que de estes.
+        <strong>Negociar</strong> y <strong>Promocionar</strong> los productos que desees.
         Aqui te ofrecemos la oportunidad de dar a conocer tus productos o servicios mediante publicaciones las cuales seran accedidas por muchos ususarios que podran 
         negociar con tigo acorde a tus exigencias.
            </h2> 
@@ -49,7 +49,7 @@
 		</div>
 		<div class="hr grid_12 clearfix ">&nbsp;</div>
            <h2 class="parrafos_c caption clearfix">
-                Para conocer mas acerca de UTMACH STORE, sus politicas y condiciones puedes verlas en el siguiente enlace.
+                Para conocer más acerca de UTMACH STORE, sus politicas y condiciones puedes verlas en el siguiente enlace.
                 <a href="CondicionesDeUso.aspx"><u>Politicas y condiciones de uso</u></a>
            </h2> 
             

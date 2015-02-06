@@ -76,6 +76,11 @@
       <DependentUpon>bootstrap.rtl.css</DependentUpon>
     </Content>
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="imagenesPublicaciones\agenda.jpg" />
+    <Content Include="imagenesPublicaciones\audifonos.jpg" />
+    <Content Include="imagenesPublicaciones\camarasony.jpg" />
+    <Content Include="imagenesPublicaciones\celular.jpg" />
+    <Content Include="imagenesPublicaciones\portatil.jpg" />
     <Content Include="interfaces\cerrarSesion.aspx" />
     <Content Include="interfaces\compra.aspx" />
     <Content Include="interfaces\CondicionesDeUso.aspx" />
@@ -521,9 +526,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="imagenesPublicaciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="dataBase\Datos.dbml.layout">
       <DependentUpon>Datos.dbml</DependentUpon>
