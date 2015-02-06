@@ -548,18 +548,18 @@ namespace Proyecto.dataBase
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.listar_Ventas")]
-		public ISingleResult<listar_VentasResult1> listar_Ventas([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idusuario)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.listar_Compras")]
+		public ISingleResult<listar_ComprasResult> listar_Compras([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idusuario)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idusuario);
-			return ((ISingleResult<listar_VentasResult1>)(result.ReturnValue));
+			return ((ISingleResult<listar_ComprasResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.listar_Compras")]
-		public ISingleResult<listar_ComprasResult1> listar_Compras([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idusuario)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.listar_Ventas")]
+		public ISingleResult<listar_VentasResult> listar_Ventas([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> idusuario)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idusuario);
-			return ((ISingleResult<listar_ComprasResult1>)(result.ReturnValue));
+			return ((ISingleResult<listar_VentasResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -6521,7 +6521,105 @@ namespace Proyecto.dataBase
 		}
 	}
 	
-	public partial class listar_VentasResult1
+	public partial class listar_ComprasResult
+	{
+		
+		private string _Publicacion;
+		
+		private decimal _Precio;
+		
+		private string _Fecha;
+		
+		private int _Cantidad_Disponible;
+		
+		private string _Yo;
+		
+		public listar_ComprasResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publicacion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Publicacion
+		{
+			get
+			{
+				return this._Publicacion;
+			}
+			set
+			{
+				if ((this._Publicacion != value))
+				{
+					this._Publicacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Precio", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Precio
+		{
+			get
+			{
+				return this._Precio;
+			}
+			set
+			{
+				if ((this._Precio != value))
+				{
+					this._Precio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Cantidad Disponible]", Storage="_Cantidad_Disponible", DbType="Int NOT NULL")]
+		public int Cantidad_Disponible
+		{
+			get
+			{
+				return this._Cantidad_Disponible;
+			}
+			set
+			{
+				if ((this._Cantidad_Disponible != value))
+				{
+					this._Cantidad_Disponible = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Yo", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string Yo
+		{
+			get
+			{
+				return this._Yo;
+			}
+			set
+			{
+				if ((this._Yo != value))
+				{
+					this._Yo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class listar_VentasResult
 	{
 		
 		private string _Nick;
@@ -6536,7 +6634,7 @@ namespace Proyecto.dataBase
 		
 		private System.Nullable<long> _Comprador;
 		
-		public listar_VentasResult1()
+		public listar_VentasResult()
 		{
 		}
 		
@@ -6632,104 +6730,6 @@ namespace Proyecto.dataBase
 				if ((this._Comprador != value))
 				{
 					this._Comprador = value;
-				}
-			}
-		}
-	}
-	
-	public partial class listar_ComprasResult1
-	{
-		
-		private string _Publicacion;
-		
-		private decimal _Precio;
-		
-		private string _Fecha;
-		
-		private int _Cantidad_Disponible;
-		
-		private string _Yo;
-		
-		public listar_ComprasResult1()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publicacion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Publicacion
-		{
-			get
-			{
-				return this._Publicacion;
-			}
-			set
-			{
-				if ((this._Publicacion != value))
-				{
-					this._Publicacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Precio", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Precio
-		{
-			get
-			{
-				return this._Precio;
-			}
-			set
-			{
-				if ((this._Precio != value))
-				{
-					this._Precio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Cantidad Disponible]", Storage="_Cantidad_Disponible", DbType="Int NOT NULL")]
-		public int Cantidad_Disponible
-		{
-			get
-			{
-				return this._Cantidad_Disponible;
-			}
-			set
-			{
-				if ((this._Cantidad_Disponible != value))
-				{
-					this._Cantidad_Disponible = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Yo", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string Yo
-		{
-			get
-			{
-				return this._Yo;
-			}
-			set
-			{
-				if ((this._Yo != value))
-				{
-					this._Yo = value;
 				}
 			}
 		}

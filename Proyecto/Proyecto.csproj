@@ -512,7 +512,6 @@
     <Content Include="interfaces\psd\Thumbs.db" />
     <Content Include="dataBase\Datos.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Datos.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Scripts\jquery-1.9.0.min.map" />
