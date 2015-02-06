@@ -93,15 +93,17 @@ namespace Proyecto.interfaces
 
         protected void LinkButtonVerMisDatos_Click(object sender, EventArgs e)
         {
-            llenarDatos();
-
+            PanelContra.Visible = false;
+            llenarDatos(); 
             PanelDatos.Visible = true;
         }
 
         protected void LinkButtonCambiarContra_Click(object sender, EventArgs e)
         {
+            PanelDatos.Visible = false;
             llenarDatos();
             PanelContra.Visible = true;
+           
         }
 
         protected void ButtonCambiarContra_Click(object sender, EventArgs e)

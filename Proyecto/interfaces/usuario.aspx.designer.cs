@@ -40,6 +40,15 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.LinkButton LinkButtonVenCom;
         
         /// <summary>
+        /// Control LinkButtonCambiarContra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonCambiarContra;
+        
+        /// <summary>
         /// Control PanelDatos.
         /// </summary>
         /// <remarks>
@@ -220,15 +229,6 @@ namespace Proyecto.interfaces {
         protected global::System.Web.UI.WebControls.Button ButtonActualizar;
         
         /// <summary>
-        /// Control LinkButtonCambiarContra.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonCambiarContra;
-        
-        /// <summary>
         /// Control PanelContra.
         /// </summary>
         /// <remarks>
@@ -272,6 +272,15 @@ namespace Proyecto.interfaces {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxConfirContra;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control ButtonCambiarContra.

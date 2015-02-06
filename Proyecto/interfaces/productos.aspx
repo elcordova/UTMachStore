@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="productos.aspx.cs" Inherits="Proyecto.interfaces.productos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Productos" runat="server">

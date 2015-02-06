@@ -19,20 +19,29 @@
             </h1>
             <div class="hr dotted clearfix">&nbsp;</div>
             <h4>Datos de Negociacion</h4>
-            <div class="form-group">
+            <div class="form-group"> 
                 <label for="TextBox3">
                     Datos de Vendedor</label>
                 <asp:TextBox ID="TextBox3" CssClass="form-control " Rows="3" runat="server" TextMode="MultiLine"></asp:TextBox>
             </div>
-            <div class="form-group">
+            <div class="form-group ">
 
-                <label class="col-lg-4 col-md-4 col-sm-4">
+                <label class="col-md-4 col-md-4 col-md-4">
                     cantidad a comprar:</label>
-                <asp:TextBox ID="TextBox1" CssClass="control-label col-lg-2 col-md-2 col-sm-2" runat="server" ToolTip="por defecto 1 unidad"></asp:TextBox>
-                <asp:CustomValidator CssClass="col-lg-1 col-md-1 col-sm-1" ID="CustomValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Error de stock" Font-Bold="True" Font-Size="Larger" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate" ToolTip="No se puede vender todo los productos" SetFocusOnError="True">*</asp:CustomValidator>
-                <asp:RequiredFieldValidator CssClass="col-lg-1 col-md-1 col-sm-1" ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox1" ErrorMessage="Campo obligatorio" ForeColor="Red" Font-Bold="True" Font-Size="Larger" ToolTip="Campo obligatorio">*</asp:RequiredFieldValidator>
-                <label class=" control-label col-lg-4 col-md-4 col-sm-4">productos en stock:</label><asp:TextBox ID="TextBox2" runat="server" CssClass="control-label col-lg-2 col-md-2 col-sm-2" ReadOnly="True"></asp:TextBox>
-
+                <div class="row">
+                    <div class="col-xs-2 " >
+                        <asp:TextBox ID="TextBox1" CssClass="form-control col-xs-1 " runat="server" ToolTip="por defecto 1 unidad"></asp:TextBox>
+                    </div>
+                    <asp:CustomValidator CssClass="col-md-1 col-md-1 col-md-1" ID="CustomValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Error de stock" Font-Bold="True" Font-Size="Larger" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate" ToolTip="No se puede vender todo los productos" SetFocusOnError="True">*</asp:CustomValidator>
+                    <asp:RequiredFieldValidator CssClass="col-md-1 col-md-1 col-md-1" ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox1" ErrorMessage="Campo obligatorio" ForeColor="Red" Font-Bold="True" Font-Size="Larger" ToolTip="Campo obligatorio">*</asp:RequiredFieldValidator>
+                </div>
+            </div>
+                <div class="form-group ">
+                <label class=" control-label col-md-4 col-md-4 col-md-4">productos en stock:</label>
+                    <div class="row">
+                    <div class="col-xs-2 " ><asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" ReadOnly="True"></asp:TextBox>
+                        </div>
+                        </div>
             </div>
             <div class="hr dotted clearfix">&nbsp;</div>
             <h4>Forma de Pago</h4>
