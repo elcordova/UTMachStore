@@ -6,7 +6,7 @@
             width: 429px;
         }
         #TextAreaDatos {
-            width: 364px;
+            width: 364px; 
         }
     </style>
 </asp:Content>
