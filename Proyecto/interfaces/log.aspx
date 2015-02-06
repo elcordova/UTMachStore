@@ -1,11 +1,25 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="log.aspx.cs" Inherits="Proyecto.interfaces.log" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/interfaces/Principal.Master" AutoEventWireup="true" CodeBehind="log.aspx.cs" Inherits="Proyecto.interfaces.log" enableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="loguin" runat="server">
 
-   
-    <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" />
+   <script>
+       function clicOlvidaste() {
+           if ($('#panelAlterno').hasClass("hidden")) {
+           $('#panelAlterno').removeClass("hidden");
+           $('#loguin_Button2').addClass("hidden")
+           $('#loguin_Button1').addClass("hidden")
+       }else{
+               $('#panelAlterno').addClass("hidden");
+               $('#loguin_Button2').removeClass("hidden");
+               $('#loguin_Button1').removeClass("hidden");
+       }
+           return false;
+       
+       }
+   </script>
+    <link href="../Content/bootstrap/bootstrap.css" rel="stylesheet" media="all" />
 
     <br /><br /><br /><br />
 
@@ -33,48 +47,33 @@
         
                     </div>
    
-            <div class="form-actions">
-                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">
-                ¿Olvidaste tu contraseña?</asp:LinkButton>
-                <asp:Panel ID="Panel1" runat="server" Height="71px" Visible="False">
-                    <br />
-                    Ingrese su Correo:
-                    <asp:TextBox ID="TextBoxCorreo" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
-                    <asp:Button ID="ButtonEnviar" runat="server" CssClass="btn btn-primary" OnClick="ButtonEnviar_Click" Text="Enviar" />
+            <div class="panel-collapse ">
+                <a href="#" id="LinkButton1" onclick="clicOlvidaste(); return false;">¿Olvidaste tu contraseña?</a>
+                <div id="panelAlterno" class="hidden">
+                    
+                    <asp:Panel ID="Panel1" runat="server" Height="71px">
+                        <div class="form-group">
+                            <label class="control-label">
+                                Ingrese su Correo:</label>
+                            <asp:TextBox ID="TextBoxCorreo" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Button ID="ButtonEnviar" runat="server" CssClass="btn btn-primary" OnClick="ButtonEnviar_Click" Text="Enviar" />
+                        </div>
+                        Si su correo es el correcto, se le enviarán sus datos
                    
-                    Si su correo es el correcto, se le enviarán sus datos
-                </asp:Panel>
-                <br />
-                <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary" Text="Iniciar sesion" OnClick="Button2_Click" />
-                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Registrarse" OnClick="Button1_Click" />
+                    </asp:Panel>
+                </div>
+                    
+                <div>
+                </div>
             </div>
+                <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary" Text="Iniciar sesion" OnClick="Button2_Click" />
+         
+        <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Registrarse" OnClick="Button1_Click" />
+          
         </form>
         </div>
       </div>  
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     </div>
 </asp:Content>
