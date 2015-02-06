@@ -18,7 +18,7 @@
 
 					<a href="productos.aspx">
 						<span>UTMACH STORE</span>
-						<img src="images/card1.jpg" alt="" />
+						<img src="images/card1.jpg" alt="" /> 
 					</a>
 				</li>  
 				<li>
